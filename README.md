@@ -53,7 +53,6 @@ Klient:
      - placówek(wypożyczalni),
    - Informacje o wypożyczeniach
 
-
   Narzędzia i technologie:
    - JavaFX 
    - MySQL  
