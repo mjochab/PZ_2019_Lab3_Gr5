@@ -55,9 +55,11 @@ Klient:
 
 
   Narzędzia i technologie:
-   - JavaFX - IntelliJ
-   - MySQL  - GitHub
-   - Jira 
+   - JavaFX 
+   - MySQL  
+   - Jira
+   - IntelliJ
+   - GitHub
 
 
   Twórcy:
