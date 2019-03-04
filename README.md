@@ -10,6 +10,7 @@
 
 
 User stories:
+
 Administrator:
   1. Chce mieć możliwość do zalogowania się do aplikacji
   2. Chce mieć możliwość do zarządzania pracownikami oraz klientami
