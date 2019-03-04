@@ -17,7 +17,6 @@
   - zarządzanie pojazdami
   - zarządzanie pracownikami
   - zarządzanie klientami
-  - generowaniu raportu do pliku pdf
 
   Nasza baza danych będzie zawierać następujące informacje:
    - Spis:
