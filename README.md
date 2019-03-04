@@ -6,7 +6,7 @@
    
   Aplikacja umożliwia użytkownikom wypożyczenie wybranego samochodu
   dostępnego z naszej floty lub wypożyczenie samochodu od innych użytkowników aplikacji.
-  Klient ma możliwość udostępnienia swojego własnego samochodu do wypożyczenia celach zarobkowych.
+  Klient ma możliwość udostępnienia swojego własnego samochodu do wypożyczenia w celach zarobkowych.
 
 
 User stories:
