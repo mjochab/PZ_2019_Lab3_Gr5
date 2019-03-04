@@ -1,6 +1,6 @@
 # PZ_2019_Lab3_Gr5
 
-                               Aplikacja do zarządzania i wynajmu samochodów
+                                                  Wypożyczalnia samochodów
 
 O naszej aplikacji:
  - Przy użyciu naszej aplikacji będzie można w łatwy sposób wynająć samochód, oraz 
