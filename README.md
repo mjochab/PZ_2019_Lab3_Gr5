@@ -24,9 +24,11 @@ Gromadzone dane w bazie danych
 - informacje na temat wypożyczeń i wypożyczeń
 - informacje na temat ilości samochodów na danych placach
 
-Technologia:
-- Aplikacja:
-- Baza Danych:
+Technologie:
+ - JavaFX - IntelliJ
+ - MySQL
+ - GitHub
+ - Jira 
 
 Twórcy:
  - Tomasz Chudzik
