@@ -3,7 +3,8 @@
 Aplikacja do wynajmu samochodów
 
 Technologia:
-Baza Danych:
+- Aplikacja:
+- Baza Danych:
 
 Twórcy:
  - Tomasz Chudzik
