@@ -14,7 +14,6 @@ Aplikacja ta ma pomóc w wynajmowaniu samochodów, jak i również w administrac
 
 Aplikacja będzie zawierać role:
 - Administrator systemu
-- Właściciel / Dyrektor
 - Pracownicy
 - Klienci
 
