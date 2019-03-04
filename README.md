@@ -48,9 +48,9 @@ Klient:
    - Spis:
      - klientów,
      - pracowników,
-     - administrator,
+     - administratorów,
      - pojazdów,
-     - placówek,
+     - placówek(wypożyczalni),
    - Informacje o wypożyczeniach
 
 
