@@ -2,12 +2,11 @@
 
                                                   Wypożyczalnia samochodów
 
-  O naszej aplikacji:
-  
-     Przy użyciu naszej aplikacji będzie można w łatwy sposób wynająć samochód oraz zarządzać flotą pojazdów. 
-  Nasza aplikacja będzie umożliwiała użytkownikom wypożyczenie wybranego samochodu dostępnego z naszej floty
-  lub wypożyczenie samochodu od innych użytkowników. Klient ma możliwość udostępnienia swojego własnego samochodu
-  do wypożyczenia w celach zarobkowych. Administrator może zarządzać pojazdami, np. przenosić je między wybranymi salonami.
+ O naszej aplikacji:
+   
+  Aplikacja umożliwia użytkownikom wypożyczenie wybranego samochodu
+  dostępnego z naszej floty lub wypożyczenie samochodu od innych użytkowników aplikacji.
+  Klient ma możliwość udostępnienia swojego własnego samochodu do wypożyczenia celach zarobkowych.
 
 
 User stories:
