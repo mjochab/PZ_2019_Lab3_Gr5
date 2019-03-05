@@ -14,6 +14,7 @@
    ![diagram_przypadkow_uzycia](https://user-images.githubusercontent.com/47949957/53783937-db702880-3f13-11e9-821d-2261254fdf52.JPG)
    
    - Aktywności:
+   
    ![diagram_aktywnosci](https://user-images.githubusercontent.com/47949957/53783939-e32fcd00-3f13-11e9-93de-1c82f2b6e33a.jpg)
    
    - Sekwencji:
