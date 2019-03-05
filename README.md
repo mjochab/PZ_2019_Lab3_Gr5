@@ -11,7 +11,7 @@
 ## Diagramy:
 
    -  Przypadków użycia:
-   ![diagram_przypadkow_uzycia](https://user-images.githubusercontent.com/47949957/53783937-db702880-3f13-11e9-821d-2261254fdf52.JPG)
+   ![diagram_przypadkow_uzycia](https://user-images.githubusercontent.com/47949957/53828833-05126980-3f7f-11e9-96ee-613342b55891.png)
    
    - Aktywności:
    
