@@ -1,15 +1,15 @@
 # PZ_2019_Lab3_Gr5
 
-                                                  Wypożyczalnia samochodów
+# Wypożyczalnia samochodów
 
- O naszej aplikacji:
+## O naszej aplikacji:
    
   Aplikacja umożliwia użytkownikom wypożyczenie wybranego samochodu
   dostępnego z naszej floty lub wypożyczenie samochodu od innych użytkowników aplikacji.
   Klient ma możliwość udostępnienia swojego własnego samochodu do wypożyczenia w celach zarobkowych.
 
 
-User stories:
+## User stories:
 
 Administrator:
   1. Chce mieć możliwość do zalogowania się do aplikacji
@@ -33,7 +33,7 @@ Klient:
   4. Chce mieć możliwość wyboru pojazdu do wypożyczenia oraz wyboru terminu wypożyczenia: “od kiedy”, “do kiedy”
 
 
-  Funkcjonalności naszej aplikacji:
+## Funkcjonalności naszej aplikacji:
   - wynajem pojazdu,
   - rezerwacja pojazdu,
   - udostępnienie pojazdu,
@@ -44,7 +44,7 @@ Klient:
   - zarządzanie klientami,
 
 
-  Nasza baza danych będzie zawierać następujące informacje:
+## Nasza baza danych będzie zawierać następujące informacje:
    - Spis:
      - klientów,
      - pracowników,
@@ -53,7 +53,7 @@ Klient:
      - placówek(wypożyczalni),
    - Informacje o wypożyczeniach
 
-  Narzędzia i technologie:
+## Narzędzia i technologie:
    - JavaFX 
    - MySQL  
    - Jira
@@ -61,7 +61,7 @@ Klient:
    - GitHub
 
 
-  Twórcy:
+## Twórcy:
    - Tomasz Chudzik
    - Filip Konior
    - Łukasz Kowalski
