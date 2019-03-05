@@ -21,7 +21,20 @@
    ![diagram_sekwencji](https://user-images.githubusercontent.com/47949957/53783941-e32fcd00-3f13-11e9-9ab5-d0f60cfc4c7a.png)
    
 
-## User stories:
+
+## Funkcjonalności naszej aplikacji:
+  - wynajem pojazdu,
+  - rezerwacja pojazdu,
+  - udostępnienie pojazdu,
+  - wgląd w historię swoich wypożyczeń samochodu,
+  - wgląd w historię swoich udostępnień samochodu,
+  - zarządzanie pojazdami,
+  - zarządzanie pracownikami,
+  - zarządzanie klientami,
+  
+  
+  
+  ## Zakresy uprawnień:
 
 Administrator:
   1. Chce mieć możliwość do zalogowania się do aplikacji
@@ -44,16 +57,6 @@ Klient:
   3. Chce mieć możliwość podglądu oraz ewentualnego zakończenia udostępniania samochodu
   4. Chce mieć możliwość wyboru pojazdu do wypożyczenia oraz wyboru terminu wypożyczenia: “od kiedy”, “do kiedy”
 
-
-## Funkcjonalności naszej aplikacji:
-  - wynajem pojazdu,
-  - rezerwacja pojazdu,
-  - udostępnienie pojazdu,
-  - wgląd w historię swoich wypożyczeń samochodu,
-  - wgląd w historię swoich udostępnień samochodu,
-  - zarządzanie pojazdami,
-  - zarządzanie pracownikami,
-  - zarządzanie klientami,
 
 
 ## Nasza baza danych będzie zawierać następujące informacje:
