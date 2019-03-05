@@ -20,6 +20,8 @@
    - Sekwencji:
    ![diagram_sekwencji](https://user-images.githubusercontent.com/47949957/53783941-e32fcd00-3f13-11e9-9ab5-d0f60cfc4c7a.png)
    
+   -Klas:
+   ![klas](https://user-images.githubusercontent.com/47949957/53831151-65f07080-3f84-11e9-9575-400f4a0aa04f.png)   
 
 
 ## Funkcjonalności naszej aplikacji:
