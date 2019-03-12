@@ -5,7 +5,7 @@
 # Spis treści:
 1. [O naszej aplikacji](#o-naszej-aplikacji)
 2. [Diagramy](#diagramy)
-     - [- Przypadków użycia](#--przypadków-użycia)
+     - [Przypadków użycia](#--przypadków-użycia)
      - [Aktywności](#--aktywności)
      - [Sekwencji](#--sekwencji)
      - [Klas](#--klas)
