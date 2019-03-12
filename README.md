@@ -87,4 +87,4 @@ Klient:
    - Adrian Czupich
    
 ## Licencja:
-   MIT License szczegóły w pliku LICENSE
+   MIT License szczegóły w pliku [LICENSE.md](LICENSE.md)
