@@ -105,4 +105,4 @@ Nasza baza danych będzie zawierać następujące informacje:
    - Adrian Czupich
    
 ## Licencja:
-   MIT License szczegóły w pliku [LICENSE.md](LICENSE)
+   MIT License szczegóły w pliku [LICENSE](LICENSE)
