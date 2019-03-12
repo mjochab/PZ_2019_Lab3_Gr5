@@ -86,3 +86,5 @@ Klient:
    - Patryk Krawiec
    - Adrian Czupich
    
+## Licencja:
+   MIT License szczegóły w pliku LICENSE
