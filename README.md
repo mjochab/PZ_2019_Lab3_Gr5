@@ -18,7 +18,8 @@
    ![diagram_aktywnosci](https://user-images.githubusercontent.com/47949957/53783939-e32fcd00-3f13-11e9-93de-1c82f2b6e33a.jpg)
    
    - Sekwencji:
-   ![diagram_sekwencji](https://user-images.githubusercontent.com/47949957/53783941-e32fcd00-3f13-11e9-9ab5-d0f60cfc4c7a.png)
+   ![diagram_sekwencji](https://user-images.githubusercontent.com/26200573/54179388-f228f900-4498-11e9-8e34-e7d3578c448b.PNG)
+
    
    - Klas:
    ![klas](https://user-images.githubusercontent.com/47949957/53831151-65f07080-3f84-11e9-9575-400f4a0aa04f.png)   
