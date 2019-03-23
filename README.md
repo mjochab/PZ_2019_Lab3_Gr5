@@ -108,7 +108,7 @@ Nasza baza danych będzie zawierać następujące informacje:
 ## Licencja:
    MIT License szczegóły w pliku [LICENSE](LICENSE)
    
-#### Wyglad:
+#### Widoki:
      ![okno startowe startowe](https://user-images.githubusercontent.com/47949957/54594492-12286180-4a31-11e9-8603-9c5865f75956.png)
 
      - Okno administratora
