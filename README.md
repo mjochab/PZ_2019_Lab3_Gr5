@@ -112,7 +112,9 @@ Okno startowe:
 
 Okno administratora:
     ![okno_administratora](https://user-images.githubusercontent.com/37296747/54594556-3126f380-4a31-11e9-9194-25bcd0929fe6.PNG)
-     
+Okno klienta:
+     ![home](https://user-images.githubusercontent.com/26200573/54594877-d5a93580-4a31-11e9-836e-9be8df40ffe9.png)
+
 ## Licencja:
    MIT License szczegóły w pliku [LICENSE](LICENSE)
 
