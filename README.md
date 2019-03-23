@@ -107,10 +107,10 @@ Nasza baza danych będzie zawierać następujące informacje:
    
    
 #### Widoki:
-     ![okno startowe startowe](https://user-images.githubusercontent.com/47949957/54594492-12286180-4a31-11e9-8603-9c5865f75956.png)
+    ![okno startowe startowe](https://user-images.githubusercontent.com/47949957/54594492-12286180-4a31-11e9-8603-9c5865f75956.png)
 
      - Okno administratora
-     ![okno_administratora](https://user-images.githubusercontent.com/37296747/54594556-3126f380-4a31-11e9-9194-25bcd0929fe6.PNG)
+    ![okno_administratora](https://user-images.githubusercontent.com/37296747/54594556-3126f380-4a31-11e9-9194-25bcd0929fe6.PNG)
      
 ## Licencja:
    MIT License szczegóły w pliku [LICENSE](LICENSE)
