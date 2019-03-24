@@ -115,7 +115,7 @@ Okno administratora:
 Okno klienta:
      ![home](https://user-images.githubusercontent.com/26200573/54594877-d5a93580-4a31-11e9-836e-9be8df40ffe9.png)
 Okno rezerwacji pojazdu
-     ![home](https://user-images.githubusercontent.com/37652885/54880549-da148a80-4e45-11e9-9d23-267562ba3624.png)
+     ![home](https://user-images.githubusercontent.com/37652885/54882778-cbd26880-4e5d-11e9-93b2-145f988bbc29.png)
 ## Licencja:
    MIT License szczegóły w pliku [LICENSE](LICENSE)
 
