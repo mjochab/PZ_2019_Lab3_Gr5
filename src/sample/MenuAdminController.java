@@ -18,4 +18,5 @@ public class MenuAdminController {
         adminPane.getChildren().setAll(pane);
     }
 
+
 }
