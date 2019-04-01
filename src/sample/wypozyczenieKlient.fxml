@@ -11,9 +11,9 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="wypPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.WypozyczenieKlientController">
+<AnchorPane fx:id="wypPane" prefHeight="386.0" prefWidth="559.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.WypozyczenieKlientController">
    <children>
-      <BorderPane prefHeight="400.0" prefWidth="600.0">
+      <BorderPane prefHeight="400.0" prefWidth="700.0">
          <top>
             <MenuBar BorderPane.alignment="CENTER">
               <menus>
@@ -26,7 +26,7 @@
             </MenuBar>
          </top>
       </BorderPane>
-      <TableView layoutX="8.0" layoutY="83.0" prefHeight="257.0" prefWidth="416.0">
+      <TableView layoutX="29.0" layoutY="83.0" prefHeight="288.0" prefWidth="419.0">
         <columns>
           <TableColumn prefWidth="119.0" text="Marka" />
           <TableColumn prefWidth="91.0" text="Model" />
@@ -34,11 +34,11 @@
             <TableColumn prefWidth="90.0" text="Rok produkcji" />
         </columns>
       </TableView>
-      <Label layoutX="202.0" layoutY="33.0" prefHeight="27.0" prefWidth="185.0" text="Dostępne samochody" textFill="WHITE" AnchorPane.leftAnchor="202.0" AnchorPane.rightAnchor="213.0">
+      <Label layoutX="224.0" layoutY="33.0" prefHeight="27.0" prefWidth="185.0" text="Dostępne samochody" textFill="WHITE" AnchorPane.leftAnchor="224.0" AnchorPane.rightAnchor="191.0">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Button layoutX="470.0" layoutY="290.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="71.0" text="Dalej" />
+      <Button layoutX="525.0" layoutY="290.0" mnemonicParsing="false" onAction="#opentermin" prefHeight="40.0" prefWidth="70.0" text="Dalej" />
    </children>
 </AnchorPane>

@@ -7,20 +7,13 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 
-public class WypozyczenieKlientController {
+public class PodWynController {
 
     @FXML
-    private AnchorPane wypPane;
-
+    private AnchorPane podPane;
 
     public void openMenu(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("menuKlient.fxml"));
-        wypPane.getChildren().setAll(pane);
+        podPane.getChildren().setAll(pane);
     }
-
-    public void opentermin(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("terminKlient.fxml"));
-        wypPane.getChildren().setAll(pane);
-    }
-
 }
