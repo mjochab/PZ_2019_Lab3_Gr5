@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
@@ -37,5 +38,6 @@
       <TextField layoutX="22.0" layoutY="128.0" promptText="Data początkowa" />
       <TextField layoutX="22.0" layoutY="164.0" promptText="Data Końcowa" />
       <TextField layoutX="22.0" layoutY="200.0" promptText="Pojazd" />
+      <ScrollPane layoutX="185.0" layoutY="83.0" prefHeight="275.0" prefWidth="489.0" />
     </children>
 </AnchorPane>

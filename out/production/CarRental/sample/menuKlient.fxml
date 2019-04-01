@@ -5,8 +5,6 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
@@ -26,19 +24,15 @@
             </MenuBar>
          </top>
       </BorderPane>
-      <AnchorPane layoutX="371.0" layoutY="78.0" prefHeight="256.0" prefWidth="286.0" style="-fx-background-color: #6d0303;">
+      <AnchorPane layoutX="245.0" layoutY="139.0" prefHeight="183.0" prefWidth="189.0" style="-fx-background-color: #6d0303;">
          <children>
-            <Button layoutX="53.0" layoutY="145.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="162.0" text="Wypożycz samochód" translateX="7.0" />
-            <Button layoutX="55.0" layoutY="96.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="162.0" text="Udostępnij samochód" translateX="5.0" />
-            <Button layoutX="55.0" layoutY="194.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="162.0" text="Historia wypożyczeń" translateX="5.0" />
-            <Button layoutX="55.0" layoutY="47.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="162.0" text="Moje wypożyczenia" translateX="5.0" />
+            <Button layoutX="6.0" layoutY="16.0" mnemonicParsing="false" onAction="#loadwypozyczenieKlient" prefHeight="25.0" prefWidth="162.0" text="Wypożycz samochód" translateX="7.0" />
+            <Button layoutX="6.0" layoutY="58.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Udostępnij samochód" translateX="5.0" />
+            <Button layoutX="6.0" layoutY="142.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Historia wypożyczeń" translateX="5.0" />
+            <Button layoutX="6.0" layoutY="100.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Moje wypożyczenia" translateX="5.0" />
          </children>
       </AnchorPane>
-      <ImageView fitHeight="167.0" fitWidth="294.0" layoutX="47.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/logimg1.jpg" />
-         </image></ImageView>
-      <Label layoutX="57.0" layoutY="50.0" text="Wypożyczalnia samochodów" textFill="WHITE">
+      <Label layoutX="214.0" layoutY="60.0" prefHeight="27.0" prefWidth="247.0" text="Wypożyczalnia samochodów" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
