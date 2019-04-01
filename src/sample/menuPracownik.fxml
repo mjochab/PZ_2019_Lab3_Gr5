@@ -28,7 +28,7 @@
                   <Button fx:id="zarzadzajPojazdami_btn" layoutX="177.0" layoutY="51.0" mnemonicParsing="false" onAction="#zarzadzajPojazdami" prefHeight="25.0" prefWidth="162.0" text="Zarządzaj pojazdami" translateX="7.0" />
                   <Button fx:id="zarzadzajUzytkownikami_btn" layoutX="179.0" layoutY="14.0" mnemonicParsing="false" onAction="#zarzadzajUzytkownikami" prefHeight="25.0" prefWidth="162.0" text="Zarządzaj użytkownikami" translateX="5.0" />
                   <Button fx:id="zarzadzajWypozyczeniami_btn" layoutX="179.0" layoutY="87.0" mnemonicParsing="false" onAction="#zarzadzajWypozyczeniami" prefHeight="25.0" prefWidth="162.0" text="Zarządzaj wypożyczeniami" translateX="5.0" />
-                  <Button layoutX="350.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Wypożycz Samochód" translateX="5.0" />
+                  <Button fx:id="wypozyczeniePracownik" layoutX="350.0" layoutY="14.0" mnemonicParsing="false" onAction="#wypozyczeniePracownik" prefHeight="25.0" prefWidth="162.0" text="Wypożycz Samochód" translateX="5.0" />
                   <Button fx:id="udostepnijPojazd" layoutX="355.0" layoutY="51.0" mnemonicParsing="false" onAction="#udostepnijPojazd" prefHeight="25.0" prefWidth="162.0" text="Udostępnij samochód" />
                   <Button fx:id="historiaWypozyczen" layoutX="355.0" layoutY="87.0" mnemonicParsing="false" onAction="#historiaWypozyczen" prefHeight="25.0" prefWidth="162.0" text="Historia wypożyczeń" />
                </children>

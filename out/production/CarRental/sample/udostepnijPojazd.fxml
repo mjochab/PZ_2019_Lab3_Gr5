@@ -42,6 +42,6 @@
         <TextField layoutX="28.0" layoutY="272.0" promptText="Cena" />
       <TextField layoutX="28.0" layoutY="306.0" promptText="Data od" />
       <TextField layoutX="28.0" layoutY="342.0" promptText="Data do" />
-        <ScrollPane layoutX="196.0" layoutY="78.0" prefHeight="289.0" prefWidth="486.0" />
+        <ScrollPane layoutX="196.0" layoutY="99.0" prefHeight="268.0" prefWidth="486.0" />
     </children>
 </AnchorPane>
