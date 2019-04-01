@@ -5,8 +5,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -30,11 +28,6 @@
             <Insets />
          </opaqueInsets>
       </AnchorPane>
-      <ImageView fitHeight="223.0" fitWidth="392.0" layoutX="307.0" layoutY="151.0" opacity="0.56" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/logimg1.jpg" />
-         </image>
-      </ImageView>
       <Label layoutX="168.0" layoutY="14.0" prefHeight="40.0" prefWidth="365.0" text="WYPOŻYCZALNIA SAMOCHODÓW" textFill="WHITE">
          <font>
             <Font name="Candara Bold" size="24.0" />
