@@ -21,12 +21,12 @@
             </MenuBar>
          </top>
       </BorderPane>
-      <AnchorPane layoutY="25.0" prefHeight="57.0" prefWidth="700.0" style="-fx-background-color: #6d0303;">
+      <AnchorPane layoutY="25.0" prefHeight="103.0" prefWidth="700.0" style="-fx-background-color: #6d0303;">
          <children>
-            <Button layoutX="-1.0" layoutY="16.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Zarządzaj Pracownikami" translateX="7.0" />
-            <Button layoutX="177.0" layoutY="16.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Zarządzaj klientami" translateX="5.0" />
-            <Button layoutX="526.0" layoutY="16.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Zarządzaj Wypożyczeniami" translateX="5.0" />
-            <Button layoutX="351.0" layoutY="16.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Zarządzaj Pojazdami" translateX="5.0" />
+            <Button layoutX="175.0" layoutY="58.0" mnemonicParsing="false" onAction="#zarzadzajUzytkownikamiAdmin" prefHeight="25.0" prefWidth="162.0" text="Zarządzaj pracownikami" translateX="7.0" />
+            <Button layoutX="177.0" layoutY="16.0" mnemonicParsing="false" onAction="#zarzadzajUzytkownikamiAdmin" prefHeight="25.0" prefWidth="162.0" text="Zarządzaj klientami" translateX="5.0" />
+            <Button layoutX="351.0" layoutY="58.0" mnemonicParsing="false" onAction="#zarzadzajWypozyczeniamiAdmin" prefHeight="25.0" prefWidth="162.0" text="Zarządzaj wypożyczeniami" translateX="5.0" />
+            <Button layoutX="351.0" layoutY="16.0" mnemonicParsing="false" onAction="#zarzadzajPojazdamiAdmin" prefHeight="25.0" prefWidth="162.0" text="Zarządzaj pojazdami" translateX="5.0" />
          </children>
       </AnchorPane>
    </children>
