@@ -13,42 +13,42 @@ public class MenuPracownikController {
 
 
     public void logOut(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("login.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/login.fxml"));
         pracownikPane.getChildren().setAll(pane);
     }
 
     public void menuPracownik(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("menuPracownik.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/menuPracownik.fxml"));
         pracownikPane.getChildren().setAll(pane);
     }
     public void zarzadzajPojazdami(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("zarzadzajPojazdami.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/zarzadzajPojazdami.fxml"));
         pracownikPane.getChildren().setAll(pane);
     }
     public void zarzadzajUzytkownikami(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("zarzadzajUzytkownikami.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/zarzadzajUzytkownikami.fxml"));
         pracownikPane.getChildren().setAll(pane);
     }
     public void zarzadzajWypozyczeniami(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("zarzadzajWypozyczeniami.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/zarzadzajWypozyczeniami.fxml"));
         pracownikPane.getChildren().setAll(pane);
     }
 
     public void historiaWypozyczen(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("historiaWypozyczen.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/historiaWypozyczen.fxml"));
         pracownikPane.getChildren().setAll(pane);
     }
     public void udostepnijPojazd(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("udostepnijPojazd.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/udostepnijPojazd.fxml"));
         pracownikPane.getChildren().setAll(pane);
     }
     public void terminPracownik(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("terminPracownik.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/terminPracownik.fxml"));
         pracownikPane.getChildren().setAll(pane);
     }
 
     public void mojeWypozyczenia(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("mojeWypozyczenia.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/mojeWypozyczenia.fxml"));
         pracownikPane.getChildren().setAll(pane);
     }
 

@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="pracownikPane" prefHeight="386.0" prefWidth="559.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.WypozyczeniePracownikController">
+<AnchorPane fx:id="pracownikPane" prefHeight="386.0" prefWidth="559.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.WypozyczeniePracownikController">
     <children>
         <BorderPane prefHeight="72.0" prefWidth="700.0">
             <top>

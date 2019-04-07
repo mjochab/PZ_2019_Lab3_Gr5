@@ -21,17 +21,17 @@ public class LoginController implements Initializable {
     }
 
     public void loadMenuAdmin(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("menuAdmin.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/menuAdmin.fxml"));
         rootPane.getChildren().setAll(pane);
     }
 
     public void loadMenuPracownik(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("menuPracownik.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/menuPracownik.fxml"));
         rootPane.getChildren().setAll(pane);
     }
 
     public void loadMenuKlient(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("menuKlient.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/menuKlient.fxml"));
         rootPane.getChildren().setAll(pane);
     }
 

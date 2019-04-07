@@ -13,12 +13,12 @@ public class zarzadzajPojazdamiAdminController {
 
 
     public void logOut(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("login.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/login.fxml"));
         adminPane.getChildren().setAll(pane);
     }
 
     public void menuAdmin(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("menuAdmin.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/menuAdmin.fxml"));
         adminPane.getChildren().setAll(pane);
     }
 

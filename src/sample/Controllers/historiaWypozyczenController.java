@@ -14,12 +14,12 @@ public class historiaWypozyczenController {
 
 
     public void logOut(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("login.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/login.fxml"));
         pracownikPane.getChildren().setAll(pane);
     }
 
     public void menuPracownik(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("menuPracownik.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/menuPracownik.fxml"));
         pracownikPane.getChildren().setAll(pane);
     }
 

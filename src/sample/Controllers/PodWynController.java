@@ -13,11 +13,11 @@ public class PodWynController {
     private AnchorPane klientPane;
 
     public void openMenu(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("menuKlient.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/menuKlient.fxml"));
         klientPane.getChildren().setAll(pane);
     }
     public void wypozyczenieKlient(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("wypozyczenieKlient.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/wypozyczenieKlient.fxml"));
         klientPane.getChildren().setAll(pane);
     }
 

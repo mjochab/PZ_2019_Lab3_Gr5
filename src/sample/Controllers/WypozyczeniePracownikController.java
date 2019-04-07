@@ -14,21 +14,21 @@ public class WypozyczeniePracownikController {
 
 
     public void logOut(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("login.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/login.fxml"));
         pracownikPane.getChildren().setAll(pane);
     }
 
     public void menuPracownik(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("menuPracownik.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/menuPracownik.fxml"));
         pracownikPane.getChildren().setAll(pane);
     }
 
     public void terminPracownik(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("terminPracownik.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/terminPracownik.fxml"));
         pracownikPane.getChildren().setAll(pane);
     }
     public void podWynP(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("podWynP.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/podWynP.fxml"));
         pracownikPane.getChildren().setAll(pane);
     }
 
