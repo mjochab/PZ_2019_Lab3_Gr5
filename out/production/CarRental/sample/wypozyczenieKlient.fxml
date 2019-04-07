@@ -11,34 +11,36 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="wypPane" prefHeight="386.0" prefWidth="559.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.WypozyczenieKlientController">
+<AnchorPane fx:id="klientPane" prefHeight="386.0" prefWidth="559.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.WypozyczenieKlientController">
    <children>
-      <BorderPane prefHeight="400.0" prefWidth="700.0">
+      <BorderPane prefHeight="72.0" prefWidth="700.0">
          <top>
             <MenuBar BorderPane.alignment="CENTER">
               <menus>
                 <Menu mnemonicParsing="false" text="Powrót">
                   <items>
                     <MenuItem mnemonicParsing="false" onAction="#openMenu" text="Menu" />
+                        <MenuItem mnemonicParsing="false" onAction="#terminKlient" text="Termin" />
                   </items>
                 </Menu>
               </menus>
             </MenuBar>
          </top>
       </BorderPane>
-      <TableView layoutX="29.0" layoutY="83.0" prefHeight="288.0" prefWidth="419.0">
+      <TableView layoutX="29.0" layoutY="83.0" prefHeight="238.0" prefWidth="640.0">
         <columns>
-          <TableColumn prefWidth="119.0" text="Marka" />
-          <TableColumn prefWidth="91.0" text="Model" />
-            <TableColumn prefWidth="115.0" text="Nadwozie" />
-            <TableColumn prefWidth="90.0" text="Rok produkcji" />
+          <TableColumn prefWidth="144.0" text="Marka" />
+          <TableColumn prefWidth="148.0" text="Model" />
+            <TableColumn prefWidth="127.0" text="Rodzaj" />
+            <TableColumn prefWidth="132.0" text="Rok produkcji" />
+            <TableColumn prefWidth="88.0" text="Cena" />
         </columns>
       </TableView>
-      <Label layoutX="224.0" layoutY="33.0" prefHeight="27.0" prefWidth="185.0" text="Dostępne samochody" textFill="WHITE" AnchorPane.leftAnchor="224.0" AnchorPane.rightAnchor="191.0">
+      <Label alignment="CENTER" layoutX="28.0" layoutY="33.0" prefHeight="27.0" prefWidth="640.0" text="Dostępne samochody" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="28.0" AnchorPane.rightAnchor="32.0">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Button layoutX="525.0" layoutY="290.0" mnemonicParsing="false" onAction="#opentermin" prefHeight="40.0" prefWidth="70.0" text="Dalej" />
+      <Button layoutX="309.0" layoutY="331.0" mnemonicParsing="false" onAction="#podWyn" prefHeight="15.0" prefWidth="83.0" text="Dalej" />
    </children>
 </AnchorPane>

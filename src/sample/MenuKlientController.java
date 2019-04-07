@@ -18,8 +18,24 @@ public class MenuKlientController {
         klientPane.getChildren().setAll(pane);
     }
 
-    public void loadwypozyczenieKlient(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("wypozyczenieKlient.fxml"));
+    public void terminKlient(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("terminKlient.fxml"));
         klientPane.getChildren().setAll(pane);
     }
+
+    public void udostepnijPojazdK(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("udostepnijPojazdK.fxml"));
+        klientPane.getChildren().setAll(pane);
+    }
+
+    public void historiaWypozyczenK(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("historiaWypozyczenK.fxml"));
+        klientPane.getChildren().setAll(pane);
+    }
+
+    public void menuKlient(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("menuKlient.fxml"));
+        klientPane.getChildren().setAll(pane);
+    }
+
 }

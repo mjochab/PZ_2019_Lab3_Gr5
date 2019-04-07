@@ -10,17 +10,22 @@ import java.io.IOException;
 public class WypozyczenieKlientController {
 
     @FXML
-    private AnchorPane wypPane;
+    private AnchorPane klientPane;
 
 
     public void openMenu(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("menuKlient.fxml"));
-        wypPane.getChildren().setAll(pane);
+        klientPane.getChildren().setAll(pane);
     }
 
-    public void opentermin(ActionEvent event) throws IOException {
+    public void podWyn(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("podWyn.fxml"));
+        klientPane.getChildren().setAll(pane);
+    }
+
+    public void terminKlient(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("terminKlient.fxml"));
-        wypPane.getChildren().setAll(pane);
+        klientPane.getChildren().setAll(pane);
     }
 
 }

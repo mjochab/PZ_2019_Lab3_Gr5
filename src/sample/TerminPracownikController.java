@@ -7,10 +7,9 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 
-public class terminPracownikController {
+public class TerminPracownikController {
     @FXML
     private AnchorPane pracownikPane;
-    private AnchorPane zarzadzajPojazdamiPane;
 
 
     public void logOut(ActionEvent event) throws IOException {
@@ -22,7 +21,10 @@ public class terminPracownikController {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("menuPracownik.fxml"));
         pracownikPane.getChildren().setAll(pane);
     }
-
+    public void wypozyczeniePracownik(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("wypozyczeniePracownik.fxml"));
+        pracownikPane.getChildren().setAll(pane);
+    }
 
 
 }

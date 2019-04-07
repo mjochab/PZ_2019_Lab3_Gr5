@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<AnchorPane fx:id="pracownikPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MenuPracownikController">
+<AnchorPane fx:id="klientPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.udostepnijPojazdKController">
     <children>
         <BorderPane prefHeight="30.0" prefWidth="700.0">
             <top>
@@ -18,8 +18,8 @@
                     <menus>
                         <Menu mnemonicParsing="false" text="Powrót">
                             <items>
-                                <MenuItem fx:id="logout_btn" mnemonicParsing="false" onAction="#logOut" text="Do logowania" />
-                                <MenuItem fx:id="menuPracownik_btn" mnemonicParsing="false" onAction="#menuPracownik" text="Panel pracownik" />
+                                <MenuItem mnemonicParsing="false" onAction="#logOut" text="Do logowania" />
+                                <MenuItem mnemonicParsing="false" onAction="#menuKlient" text="Panel Klienta" />
                             </items>
                         </Menu>
                     </menus>
@@ -39,19 +39,19 @@
         <TextField layoutX="28.0" layoutY="200.0" promptText="Rodzaj Paliwa" />
         <TextField layoutX="28.0" layoutY="237.0" promptText="Przebieg" />
         <TextField layoutX="28.0" layoutY="272.0" promptText="Cena" />
-      <TextField layoutX="28.0" layoutY="306.0" promptText="Data od" />
-      <TextField layoutX="28.0" layoutY="342.0" promptText="Data do" />
-      <TableView layoutX="189.0" layoutY="78.0" prefHeight="306.0" prefWidth="500.0">
-        <columns>
-          <TableColumn prefWidth="61.0" text="Marka" />
-          <TableColumn prefWidth="69.0" text="Model" />
-            <TableColumn prefWidth="67.0" text="Rocznik" />
-            <TableColumn prefWidth="68.0" text="Paliwo" />
-            <TableColumn prefWidth="71.0" text="Przebieg" />
-            <TableColumn prefWidth="44.0" text="Cena" />
-            <TableColumn prefWidth="61.0" text="Data od" />
-            <TableColumn prefWidth="56.0" text="Data do" />
-        </columns>
-      </TableView>
+        <TextField layoutX="28.0" layoutY="306.0" promptText="Data od" />
+        <TextField layoutX="28.0" layoutY="342.0" promptText="Data do" />
+        <TableView layoutX="189.0" layoutY="78.0" prefHeight="306.0" prefWidth="500.0">
+            <columns>
+                <TableColumn prefWidth="61.0" text="Marka" />
+                <TableColumn prefWidth="69.0" text="Model" />
+                <TableColumn prefWidth="67.0" text="Rocznik" />
+                <TableColumn prefWidth="68.0" text="Paliwo" />
+                <TableColumn prefWidth="71.0" text="Przebieg" />
+                <TableColumn prefWidth="44.0" text="Cena" />
+                <TableColumn prefWidth="61.0" text="Data od" />
+                <TableColumn prefWidth="56.0" text="Data do" />
+            </columns>
+        </TableView>
     </children>
 </AnchorPane>

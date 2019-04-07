@@ -7,10 +7,15 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 
-public class TerminKlientController {
+public class udostepnijPojazdKController {
 
     @FXML
     private AnchorPane klientPane;
+
+    public void logOut(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("login.fxml"));
+        klientPane.getChildren().setAll(pane);
+    }
 
     public void menuKlient(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("menuKlient.fxml"));
@@ -21,5 +26,6 @@ public class TerminKlientController {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("wypozyczenieKlient.fxml"));
         klientPane.getChildren().setAll(pane);
     }
+
 
 }

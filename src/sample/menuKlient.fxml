@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="klientPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MenuKlientController">
+<AnchorPane fx:id="klientPane" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MenuKlientController">
    <children>
       <BorderPane prefHeight="30.0" prefWidth="700.0">
          <top>
@@ -24,17 +24,17 @@
             </MenuBar>
          </top>
       </BorderPane>
-      <AnchorPane layoutX="245.0" layoutY="139.0" prefHeight="183.0" prefWidth="189.0" style="-fx-background-color: #6d0303;">
+      <AnchorPane layoutX="250.0" layoutY="140.0" prefHeight="190.0" prefWidth="190.0" style="-fx-background-color: #6d0303;">
          <children>
-            <Button layoutX="6.0" layoutY="16.0" mnemonicParsing="false" onAction="#loadwypozyczenieKlient" prefHeight="25.0" prefWidth="162.0" text="Wypożycz samochód" translateX="7.0" />
-            <Button layoutX="6.0" layoutY="58.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Udostępnij samochód" translateX="5.0" />
-            <Button layoutX="6.0" layoutY="142.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Historia wypożyczeń" translateX="5.0" />
+            <Button layoutX="6.0" layoutY="16.0" mnemonicParsing="false" onAction="#terminKlient" prefHeight="25.0" prefWidth="162.0" text="Wypożycz samochód" translateX="7.0" />
+            <Button layoutX="6.0" layoutY="58.0" mnemonicParsing="false" onAction="#udostepnijPojazdK" prefHeight="25.0" prefWidth="162.0" text="Udostępnij samochód" translateX="5.0" />
             <Button layoutX="6.0" layoutY="100.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Moje wypożyczenia" translateX="5.0" />
+            <Button layoutX="6.0" layoutY="142.0" mnemonicParsing="false" onAction="#historiaWypozyczenK" prefHeight="25.0" prefWidth="162.0" text="Historia wypożyczeń" translateX="5.0" />
          </children>
       </AnchorPane>
-      <Label layoutX="214.0" layoutY="60.0" prefHeight="27.0" prefWidth="247.0" text="Wypożyczalnia samochodów" textAlignment="CENTER" textFill="WHITE">
+      <Label alignment="CENTER" layoutX="250.0" layoutY="82.0" prefHeight="30.0" prefWidth="190.0" text="Witaj Kliencie!" textAlignment="CENTER" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font size="18.0" />
          </font>
       </Label>
    </children>

@@ -42,8 +42,8 @@ public class MenuPracownikController {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("udostepnijPojazd.fxml"));
         pracownikPane.getChildren().setAll(pane);
     }
-    public void wypozyczeniePracownik(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("wypozyczeniePracownik.fxml"));
+    public void terminPracownik(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("terminPracownik.fxml"));
         pracownikPane.getChildren().setAll(pane);
     }
 

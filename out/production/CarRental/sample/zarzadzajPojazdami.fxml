@@ -4,7 +4,8 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
@@ -34,12 +35,23 @@
                 </AnchorPane>
             </bottom>
         </BorderPane>
-      <TextField layoutX="28.0" layoutY="78.0" promptText="Marka Pojazdu" />
-      <TextField layoutX="28.0" layoutY="112.0" promptText="Model Pojazdu" />
-      <TextField layoutX="28.0" layoutY="144.0" promptText="Rocznik" />
-      <TextField layoutX="28.0" layoutY="179.0" promptText="Rodzaj Paliwa" />
-      <TextField layoutX="28.0" layoutY="216.0" promptText="Przebieg" />
-      <TextField layoutX="28.0" layoutY="251.0" promptText="Cena" />
-      <ScrollPane layoutX="196.0" layoutY="78.0" prefHeight="289.0" prefWidth="486.0" />
+      <TextField layoutX="28.0" layoutY="78.0" promptText="Marka" />
+      <TextField layoutX="28.0" layoutY="112.0" promptText="Model" />
+      <TextField layoutX="28.0" layoutY="144.0" promptText="Rodzaj" />
+      <TextField layoutX="28.0" layoutY="177.0" promptText="Rocznik" />
+      <TextField layoutX="28.0" layoutY="212.0" promptText="Paliwo" />
+      <TextField layoutX="28.0" layoutY="249.0" promptText="Przebieg" />
+      <TextField layoutX="28.0" layoutY="284.0" promptText="Cena" />
+      <TableView layoutX="192.0" layoutY="79.0" prefHeight="308.0" prefWidth="494.0">
+        <columns>
+          <TableColumn prefWidth="93.0" text="Marka" />
+          <TableColumn text="Model" />
+            <TableColumn prefWidth="87.0" text="Rodzaj" />
+            <TableColumn prefWidth="62.0" text="Rocznik" />
+            <TableColumn prefWidth="48.0" text="Paliwo" />
+            <TableColumn prefWidth="73.0" text="Przebieg" />
+            <TableColumn prefWidth="50.0" text="Cena" />
+        </columns>
+      </TableView>
     </children>
 </AnchorPane>

@@ -7,10 +7,10 @@ package sample;
 
         import java.io.IOException;
 
-public class wypozyczeniePracownikController {
+public class WypozyczeniePracownikController {
     @FXML
     private AnchorPane pracownikPane;
-    private AnchorPane zarzadzajPojazdamiPane;
+
 
 
     public void logOut(ActionEvent event) throws IOException {
@@ -20,6 +20,15 @@ public class wypozyczeniePracownikController {
 
     public void menuPracownik(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("menuPracownik.fxml"));
+        pracownikPane.getChildren().setAll(pane);
+    }
+
+    public void terminPracownik(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("terminPracownik.fxml"));
+        pracownikPane.getChildren().setAll(pane);
+    }
+    public void podWynP(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("podWynP.fxml"));
         pracownikPane.getChildren().setAll(pane);
     }
 
