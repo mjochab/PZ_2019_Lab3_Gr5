@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pracownikPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.MenuPracownikController">
+   <children>
+      <MenuBar prefHeight="25.0" prefWidth="700.0">
+         <menus>
+            <Menu mnemonicParsing="false" text="Powrót">
+               <items>
+                  <MenuItem fx:id="logout_btn" mnemonicParsing="false" onAction="#logOut" text="Do logowania" />
+                  <MenuItem fx:id="menuPracownik_btn" mnemonicParsing="false" onAction="#menuPracownik" text="Panel pracownik" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <AnchorPane layoutX="249.0" layoutY="97.0" prefHeight="286.0" prefWidth="203.0" style="-fx-background-color: #6d0303;">
+         <children>
+            <Button fx:id="zarzadzajPojazdami_btn" layoutX="14.0" layoutY="59.0" mnemonicParsing="false" onAction="#zarzadzajPojazdami" prefHeight="25.0" prefWidth="162.0" text="Zarządzaj pojazdami" translateX="7.0" />
+            <Button fx:id="zarzadzajUzytkownikami_btn" layoutX="16.0" layoutY="22.0" mnemonicParsing="false" onAction="#zarzadzajUzytkownikami" prefHeight="25.0" prefWidth="162.0" text="Zarządzaj użytkownikami" translateX="5.0" />
+            <Button fx:id="zarzadzajWypozyczeniami_btn" layoutX="16.0" layoutY="95.0" mnemonicParsing="false" onAction="#zarzadzajWypozyczeniami" prefHeight="25.0" prefWidth="162.0" text="Zarządzaj wypożyczeniami" translateX="5.0" />
+            <Button fx:id="mojeWypozyczenia" layoutX="21.0" layoutY="131.0" mnemonicParsing="false" onAction="#mojeWypozyczenia" prefHeight="25.0" prefWidth="162.0" text="Moje wypożyczenia" />
+            <Button fx:id="wypozyczeniePracownik" layoutX="16.0" layoutY="168.0" mnemonicParsing="false" onAction="#terminPracownik" prefHeight="25.0" prefWidth="162.0" text="Wypożycz Samochód" translateX="5.0" />
+            <Button fx:id="udostepnijPojazd" layoutX="21.0" layoutY="205.0" mnemonicParsing="false" onAction="#udostepnijPojazd" prefHeight="25.0" prefWidth="162.0" text="Udostępnij samochód" />
+            <Button fx:id="historiaWypozyczen" layoutX="21.0" layoutY="241.0" mnemonicParsing="false" onAction="#historiaWypozyczen" prefHeight="25.0" prefWidth="162.0" text="Historia wypożyczeń" />
+         </children>
+      </AnchorPane>
+      <Label alignment="CENTER" layoutX="249.0" layoutY="53.0" prefHeight="27.0" prefWidth="203.0" text="Witaj Pracowniku!" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

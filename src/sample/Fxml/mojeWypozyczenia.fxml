@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<AnchorPane fx:id="pracownikPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.MenuPracownikController">
+    <children>
+        <BorderPane prefHeight="30.0" prefWidth="700.0">
+            <top>
+                <MenuBar prefHeight="25.0" prefWidth="700.0" BorderPane.alignment="CENTER">
+                    <menus>
+                        <Menu mnemonicParsing="false" text="Powrót">
+                            <items>
+                                <MenuItem fx:id="logout_btn" mnemonicParsing="false" onAction="#logOut" text="Do logowania" />
+                                <MenuItem fx:id="menuPracownik_btn" mnemonicParsing="false" onAction="#menuPracownik" text="Panel pracownik" />
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+            </top>
+            <bottom>
+                <AnchorPane prefHeight="37.0" prefWidth="700.0" style="-fx-background-color: #6d0303;" BorderPane.alignment="CENTER">
+                    <children>
+                        <Button layoutY="4.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Edytuj Wypozyczenie" translateX="7.0" />
+                        <Button layoutX="174.0" layoutY="4.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Potwierdź" translateX="5.0" />
+                    </children>
+                </AnchorPane>
+            </bottom>
+        </BorderPane>
+        <TextField layoutX="21.0" layoutY="77.0" promptText="Marka" />
+        <TextField layoutX="21.0" layoutY="111.0" promptText="Model" />
+        <TextField layoutX="21.0" layoutY="148.0" promptText="Data początkowa" />
+        <TextField layoutX="21.0" layoutY="185.0" promptText="Data końcowa" />
+        <TableView layoutX="178.0" layoutY="77.0" prefHeight="294.0" prefWidth="492.0">
+            <columns>
+                <TableColumn prefWidth="120.0" text="Marka" />
+                <TableColumn prefWidth="73.0" text="Model" />
+                <TableColumn prefWidth="173.0" text="Data początkowa" />
+                <TableColumn prefWidth="125.0" text="Data końcowa" />
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>
