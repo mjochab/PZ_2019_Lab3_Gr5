@@ -19,7 +19,7 @@
                     <menus>
                         <Menu mnemonicParsing="false" text="Powrót">
                             <items>
-                                <MenuItem mnemonicParsing="false" onAction="#menuPracownik" text="Menu" />
+                                <MenuItem mnemonicParsing="false" onAction="#menuPracownik" text="Panel pracownika" />
                                 <MenuItem mnemonicParsing="false" onAction="#terminPracownik" text="Termin" />
                             </items>
                         </Menu>

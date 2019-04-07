@@ -27,9 +27,12 @@
             </top>
             <bottom>
                 <AnchorPane prefHeight="37.0" prefWidth="700.0" style="-fx-background-color: #6d0303;" BorderPane.alignment="CENTER">
-                    <children>
-                        <Button layoutX="23.0" layoutY="6.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Dodaj Pojazd" translateX="7.0" />
-                    </children>
+               <children>
+                        <Button layoutX="25.0" layoutY="6.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Dodaj Pojazd" />
+                  <Button layoutX="189.0" layoutY="6.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Potwierdź zmiany" />
+                  <Button layoutX="350.0" layoutY="6.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Usuń Pojazd" />
+                  <Button layoutX="513.0" layoutY="6.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Dodaj Pojazd" />
+               </children>
                 </AnchorPane>
             </bottom>
         </BorderPane>

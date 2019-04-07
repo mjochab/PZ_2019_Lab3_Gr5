@@ -16,7 +16,7 @@
                     <menus>
                         <Menu mnemonicParsing="false" onAction="#menuPracownik" text="Powrót">
                             <items>
-                                <MenuItem mnemonicParsing="false" onAction="#menuPracownik" text="Menu" />
+                                <MenuItem mnemonicParsing="false" onAction="#menuPracownik" text="Panel pracownika" />
                                 <MenuItem mnemonicParsing="false" onAction="#wypozyczeniePracownik" text="Pojazdy" />
                             </items>
                         </Menu>

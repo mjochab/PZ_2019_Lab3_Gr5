@@ -38,4 +38,9 @@ public class MenuKlientController {
         klientPane.getChildren().setAll(pane);
     }
 
+    public void mojeWypozyczeniaK(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("mojeWypozyczeniaK.fxml"));
+        klientPane.getChildren().setAll(pane);
+    }
+
 }

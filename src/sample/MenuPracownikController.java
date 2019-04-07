@@ -47,4 +47,9 @@ public class MenuPracownikController {
         pracownikPane.getChildren().setAll(pane);
     }
 
+    public void mojeWypozyczenia(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("mojeWypozyczenia.fxml"));
+        pracownikPane.getChildren().setAll(pane);
+    }
+
 }

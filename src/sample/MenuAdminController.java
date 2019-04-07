@@ -37,4 +37,9 @@ public class MenuAdminController {
         adminPane.getChildren().setAll(pane);
     }
 
+    public void zarzadzajPracownikami(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("zarzadzajPracownikami.fxml"));
+        adminPane.getChildren().setAll(pane);
+    }
+
 }
