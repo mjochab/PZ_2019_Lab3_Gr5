@@ -1,11 +1,11 @@
 package sample.Controllers;
 
-        import javafx.event.ActionEvent;
-        import javafx.fxml.FXML;
-        import javafx.fxml.FXMLLoader;
-        import javafx.scene.layout.AnchorPane;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.layout.AnchorPane;
 
-        import java.io.IOException;
+import java.io.IOException;
 
 public class WypozyczeniePracownikController {
     @FXML

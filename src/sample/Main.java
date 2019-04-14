@@ -5,11 +5,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import sample.Domain.administrator;
+import sample.Connectivity.ConnectionClass;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 
 public class Main extends Application {
 
@@ -22,10 +21,26 @@ public class Main extends Application {
     }
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
 
-
-
+        dodaj();
         launch(args);
     }
+
+    public static void dodaj() throws Exception{
+       try{
+           ConnectionClass connectionClass = new ConnectionClass();
+           Connection connection = connectionClass.getConnection();
+
+           PreparedStatement dodaj = connection.prepareStatement("INSERT INTO administrator VALUES(1,1,'admin','admin','Jan','Kowalski',1234567889");
+           dodaj.executeUpdate();
+       }catch (Exception e)
+       {
+           System.out.println(e);
+       }
+       finally {
+        System.out.println("Dodano");
+    }
+}
+
 }
