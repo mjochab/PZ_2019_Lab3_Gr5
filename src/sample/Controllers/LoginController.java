@@ -37,5 +37,7 @@ public class LoginController implements Initializable {
 
     public void printHello(ActionEvent event){
         System.out.println("Nie ma jeszcze bazy danych!");
+
+
     }
 }
