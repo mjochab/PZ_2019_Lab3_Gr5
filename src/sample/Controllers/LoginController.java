@@ -2,10 +2,7 @@ package sample.Controllers;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ResourceBundle;
 
 import com.mysql.cj.protocol.Resultset;
@@ -47,16 +44,29 @@ public class LoginController implements Initializable {
     try {
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "" );
-        Statement statement = con.createStatement();
-        ResultSet rs = statement.executeQuery("select * from klient");
+        PreparedStatement stmt = con.prepareStatement("INSERT INTO klient VALUES(?,?,?,?,?,?,?,?)");
+        stmt.setInt(1,3);
+        stmt.setString(2,"AndrzejK");
+        stmt.setString(3,"haslo");
+        stmt.setString(4,"Andrzej");
+        stmt.setString(5,"Kowalski");
+        stmt.setString(6,"1997-04-04");
+        stmt.setString(7,"Sanok");
+        stmt.setString(8,"12345678901");
+        stmt.executeUpdate();
+        ResultSet rs = stmt.executeQuery("select * from klient");
         while(rs.next())
         {
             System.out.println(rs.getString(4));
         }
 
+
     }catch (Exception e)
     {
         System.out.println(e);
     };
+
+
+
     }
 }
