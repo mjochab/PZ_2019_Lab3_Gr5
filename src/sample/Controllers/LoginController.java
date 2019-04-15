@@ -49,10 +49,11 @@ public class LoginController implements Initializable {
         stmt.setString(3,"adik");
         stmt.setString(4,"Jan");
         stmt.setString(5,"Kowalski");
-        stmt.setString(6,"1997-04-04");
+        stmt.setString(6,"01.01.1999");
         stmt.setString(7,"Sanok");
         stmt.setFloat(8,12345678912F);
         stmt.executeUpdate();
+
 
         PreparedStatement stmt2 = con.prepareStatement("INSERT INTO pracownik VALUES(?,?,?,?,?,?,?)");
         stmt2.setInt(1,1);
@@ -65,18 +66,37 @@ public class LoginController implements Initializable {
         stmt2.executeUpdate();
 
 
-        PreparedStatement stmt1 = con.prepareStatement("INSERT INTO administrator VALUES(?,?,?,?,?,?,?)");
-        stmt1.setInt(1,1);
-        stmt1.setInt(2,1);
-        stmt1.setString(3,"adik");
-        stmt1.setString(4,"adik");
-        stmt1.setString(5,"Jan");
-        stmt1.setString(6,"Kowalski");
-        stmt1.setFloat(7,12345678912f);
-        stmt1.executeUpdate();
+        PreparedStatement stmt3 = con.prepareStatement("INSERT INTO administrator VALUES(?,?,?,?,?,?,?)");
+        stmt3.setInt(1,1);
+        stmt3.setInt(2,1);
+        stmt3.setString(3,"adik");
+        stmt3.setString(4,"adik");
+        stmt3.setString(5,"Jan");
+        stmt3.setString(6,"Kowalski");
+        stmt3.setFloat(7,12345678912f);
+        stmt3.executeUpdate();
 
-        ResultSet rs = stmt1.executeQuery("select * from administrator");
+        PreparedStatement stmt4 = con.prepareStatement("INSERT INTO samochod VALUES(?,?,?,?,?,?,?)");
+        stmt4.setInt(1, 1);
+        stmt4.setString(2, "Renault");
+        stmt4.setString(3,"Laguna");
+        stmt4.setString(4,"Sedan");
+        stmt4.setString(5,"Diesel");
+        stmt4.setString(6, "130000");
+        stmt4.setString(7,"1500");
+        stmt4.executeUpdate();
 
+        PreparedStatement stmt5 = con.prepareStatement("INSERT INTO samochod VALUES(?,?,?,?,?,?,?)");
+        stmt5.setInt(1, 2);
+        stmt5.setString(2, "BMW");
+        stmt5.setString(3,"Seria 1");
+        stmt5.setString(4,"BMX");
+        stmt5.setString(5,"Benzyna");
+        stmt5.setString(6, "25000");
+        stmt5.setString(7,"500");
+        stmt5.executeUpdate();
+
+        ResultSet rs = stmt2.executeQuery("select * from administrator");
 
         while(rs.next())
         {

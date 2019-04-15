@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<AnchorPane fx:id="adminPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.MenuAdminController">
+<AnchorPane fx:id="adminPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.zarzadzajPojazdamiAdminController">
     <children>
         <BorderPane prefHeight="30.0" prefWidth="700.0">
             <top>
@@ -42,15 +42,14 @@
         <TextField layoutX="28.0" layoutY="212.0" promptText="Paliwo" />
         <TextField layoutX="28.0" layoutY="249.0" promptText="Przebieg" />
         <TextField layoutX="28.0" layoutY="284.0" promptText="Cena" />
-        <TableView layoutX="192.0" layoutY="79.0" prefHeight="308.0" prefWidth="494.0">
+        <TableView fx:id="tabelka_pojazdy" layoutX="192.0" layoutY="79.0" prefHeight="308.0" prefWidth="494.0">
             <columns>
-                <TableColumn prefWidth="93.0" text="Marka" />
-                <TableColumn text="Model" />
-                <TableColumn prefWidth="87.0" text="Rodzaj" />
-                <TableColumn prefWidth="62.0" text="Rocznik" />
-                <TableColumn prefWidth="48.0" text="Paliwo" />
-                <TableColumn prefWidth="73.0" text="Przebieg" />
-                <TableColumn prefWidth="50.0" text="Cena" />
+                <TableColumn fx:id="col_marka" prefWidth="93.0" text="Marka" />
+                <TableColumn fx:id="col_model" text="Model" />
+                <TableColumn fx:id="col_rodzaj" prefWidth="87.0" text="Rodzaj" />
+                <TableColumn fx:id="col_paliwo" prefWidth="90.0" text="Paliwo" />
+                <TableColumn fx:id="col_przebieg" prefWidth="64.0" text="Przebieg" />
+                <TableColumn fx:id="col_cena" prefWidth="79.0" text="Cena" />
             </columns>
         </TableView>
     </children>
