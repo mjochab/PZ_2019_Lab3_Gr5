@@ -38,7 +38,7 @@ public class zarzadzajUzytkownikamiController implements Initializable {
     @FXML
     private TableColumn<ModelTable, String> col_miejscowosc;
     @FXML
-    private TableColumn<ModelTable, Double> col_pesel;
+    private TableColumn<ModelTable, Long> col_pesel;
 
     ObservableList<ModelTable> oblist = FXCollections.observableArrayList();
 
@@ -64,7 +64,7 @@ public class zarzadzajUzytkownikamiController implements Initializable {
             ResultSet rs = con.createStatement().executeQuery("select * from klient");
 
             while (rs.next()){
-                oblist.add(new ModelTable( rs.getString(4), rs.getString(5),rs.getString(6), rs.getString(7),""+ rs.getDouble(8)));
+                oblist.add(new ModelTable( rs.getString(4), rs.getString(5),rs.getString(6), rs.getString(7),""+ rs.getLong(8)));
             }
 
 

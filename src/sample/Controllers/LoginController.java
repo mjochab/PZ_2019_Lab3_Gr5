@@ -96,6 +96,66 @@ public class LoginController implements Initializable {
         stmt5.setString(7,"500");
         stmt5.executeUpdate();
 
+        PreparedStatement stmt6 = con.prepareStatement("INSERT INTO samochod VALUES(?,?,?,?,?,?,?)");
+        stmt6.setInt(1, 3);
+        stmt6.setString(2, "Pegueot");
+        stmt6.setString(3,"405");
+        stmt6.setString(4,"Pick Up");
+        stmt6.setString(5,"Diesel");
+        stmt6.setString(6, "7000");
+        stmt6.setString(7,"2000");
+        stmt6.executeUpdate();
+
+        PreparedStatement stmt7 = con.prepareStatement("INSERT INTO samochod VALUES(?,?,?,?,?,?,?)");
+        stmt7.setInt(1, 4);
+        stmt7.setString(2, "Jaguar");
+        stmt7.setString(3,"Huracane");
+        stmt7.setString(4,"Limousine");
+        stmt7.setString(5,"Benzyna");
+        stmt7.setString(6, "13000");
+        stmt7.setString(7,"21000");
+        stmt7.executeUpdate();
+
+        PreparedStatement stmt8 = con.prepareStatement("INSERT INTO samochod VALUES(?,?,?,?,?,?,?)");
+        stmt8.setInt(1, 5);
+        stmt8.setString(2, "Renault");
+        stmt8.setString(3,"Laguna");
+        stmt8.setString(4,"Sedan");
+        stmt8.setString(5,"Diesel");
+        stmt8.setString(6, "130000");
+        stmt8.setString(7,"1500");
+        stmt8.executeUpdate();
+
+        PreparedStatement stmt9 = con.prepareStatement("INSERT INTO samochod VALUES(?,?,?,?,?,?,?)");
+        stmt9.setInt(1, 6);
+        stmt9.setString(2, "BMW");
+        stmt9.setString(3,"Seria 1");
+        stmt9.setString(4,"BMX");
+        stmt9.setString(5,"Benzyna");
+        stmt9.setString(6, "25000");
+        stmt9.setString(7,"500");
+        stmt9.executeUpdate();
+
+        PreparedStatement stmt10 = con.prepareStatement("INSERT INTO samochod VALUES(?,?,?,?,?,?,?)");
+        stmt10.setInt(1, 7);
+        stmt10.setString(2, "Pegueot");
+        stmt10.setString(3,"405");
+        stmt10.setString(4,"Pick Up");
+        stmt10.setString(5,"Diesel");
+        stmt10.setString(6, "7000");
+        stmt10.setString(7,"2000");
+        stmt10.executeUpdate();
+
+        PreparedStatement stmt11 = con.prepareStatement("INSERT INTO samochod VALUES(?,?,?,?,?,?,?)");
+        stmt11.setInt(1, 8);
+        stmt11.setString(2, "Jaguar");
+        stmt11.setString(3,"Huracane");
+        stmt11.setString(4,"Limousine");
+        stmt11.setString(5,"Benzyna");
+        stmt11.setString(6, "13000");
+        stmt11.setString(7,"21000");
+        stmt11.executeUpdate();
+
         ResultSet rs = stmt2.executeQuery("select * from administrator");
 
         while(rs.next())

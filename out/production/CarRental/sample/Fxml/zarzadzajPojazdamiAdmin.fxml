@@ -42,14 +42,14 @@
         <TextField layoutX="28.0" layoutY="212.0" promptText="Paliwo" />
         <TextField layoutX="28.0" layoutY="249.0" promptText="Przebieg" />
         <TextField layoutX="28.0" layoutY="284.0" promptText="Cena" />
-        <TableView fx:id="tabelka_pojazdy" layoutX="192.0" layoutY="79.0" prefHeight="308.0" prefWidth="494.0">
+        <TableView fx:id="tabelka_pojazdy" layoutX="222.0" layoutY="75.0" prefHeight="312.0" prefWidth="464.0">
             <columns>
-                <TableColumn fx:id="col_marka" prefWidth="93.0" text="Marka" />
-                <TableColumn fx:id="col_model" text="Model" />
+                <TableColumn fx:id="col_marka" prefWidth="77.0" text="Marka" />
+                <TableColumn fx:id="col_model" prefWidth="96.0" text="Model" />
                 <TableColumn fx:id="col_rodzaj" prefWidth="87.0" text="Rodzaj" />
-                <TableColumn fx:id="col_paliwo" prefWidth="90.0" text="Paliwo" />
-                <TableColumn fx:id="col_przebieg" prefWidth="64.0" text="Przebieg" />
-                <TableColumn fx:id="col_cena" prefWidth="79.0" text="Cena" />
+                <TableColumn fx:id="col_paliwo" prefWidth="63.0" text="Paliwo" />
+                <TableColumn fx:id="col_przebieg" prefWidth="83.0" text="Przebieg" />
+                <TableColumn fx:id="col_cena" prefWidth="57.0" text="Cena" />
             </columns>
         </TableView>
     </children>

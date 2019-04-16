@@ -23,7 +23,7 @@
       <AnchorPane layoutX="249.0" layoutY="97.0" prefHeight="286.0" prefWidth="203.0" style="-fx-background-color: #6d0303;">
          <children>
             <Button fx:id="zarzadzajPojazdami_btn" layoutX="14.0" layoutY="59.0" mnemonicParsing="false" onAction="#zarzadzajPojazdami" prefHeight="25.0" prefWidth="162.0" text="Zarządzaj pojazdami" translateX="7.0" />
-            <Button fx:id="zarzadzajUzytkownikami_btn" layoutX="16.0" layoutY="22.0" mnemonicParsing="false" onAction="#zarzadzajUzytkownikami" prefHeight="25.0" prefWidth="162.0" text="Zarządzaj użytkownikami" translateX="5.0" />
+            <Button fx:id="zarzadzajUzytkownikami_btn" layoutX="16.0" layoutY="22.0" mnemonicParsing="false" onAction="#zarzadzajUzytkownikami" prefHeight="25.0" prefWidth="162.0" text="Zarządzaj klientami" translateX="5.0" />
             <Button fx:id="zarzadzajWypozyczeniami_btn" layoutX="16.0" layoutY="95.0" mnemonicParsing="false" onAction="#zarzadzajWypozyczeniami" prefHeight="25.0" prefWidth="162.0" text="Zarządzaj wypożyczeniami" translateX="5.0" />
             <Button fx:id="mojeWypozyczenia" layoutX="21.0" layoutY="131.0" mnemonicParsing="false" onAction="#mojeWypozyczenia" prefHeight="25.0" prefWidth="162.0" text="Moje wypożyczenia" />
             <Button fx:id="wypozyczeniePracownik" layoutX="16.0" layoutY="168.0" mnemonicParsing="false" onAction="#terminPracownik" prefHeight="25.0" prefWidth="162.0" text="Wypożycz Samochód" translateX="5.0" />
