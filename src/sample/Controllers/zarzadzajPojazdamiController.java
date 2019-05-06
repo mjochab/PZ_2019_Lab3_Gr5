@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import sample.DBConnector;
@@ -18,7 +19,6 @@ import java.sql.*;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.scene.control.TextField;
 
 public class zarzadzajPojazdamiController implements Initializable {
     @FXML
@@ -54,7 +54,7 @@ public class zarzadzajPojazdamiController implements Initializable {
     ObservableList<ModelTablePojazdy> oblist1 = FXCollections.observableArrayList();
 
 
-    public void DodajAuto(ActionEvent event) throws IOException{
+    public void dodajAuto(ActionEvent event) throws IOException{
         String marka = String.valueOf(autoMarka.getCharacters());
         String model = String.valueOf(autoModel.getCharacters());
         String Rodzaj = String.valueOf(autoRodzaj.getCharacters());

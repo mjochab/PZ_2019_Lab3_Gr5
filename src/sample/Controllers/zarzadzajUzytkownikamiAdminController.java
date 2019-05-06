@@ -1,6 +1,5 @@
 package sample.Controllers;
 
-import java.sql.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -14,15 +13,10 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import sample.DBConnector;
 
-import javax.xml.transform.Result;
-import java.sql.SQLException;
-
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.DriverManager;
+import java.sql.*;
 import java.util.Date;
-import java.util.Observable;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -55,7 +49,7 @@ public class zarzadzajUzytkownikamiAdminController implements Initializable  {
     @FXML private TextField userPesel;
     ObservableList<ModelTable> oblist = FXCollections.observableArrayList();
 
-    public void DodajUsera(ActionEvent event) throws IOException{
+    public void dodajUsera(ActionEvent event) throws IOException{
         String imie = String.valueOf(userImie.getCharacters());
         String nazwisko = String.valueOf(userNazwisko.getCharacters());
         String data = String.valueOf(userImie.getCharacters());
