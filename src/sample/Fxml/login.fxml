@@ -2,9 +2,11 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Bloom?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -12,9 +14,9 @@
    <children>
       <AnchorPane layoutX="24.0" layoutY="102.0" opacity="0.95" prefHeight="270.0" prefWidth="283.0" style="-fx-background-color: #6d0707;">
          <children>
-            <TextField layoutX="34.0" layoutY="89.0" prefHeight="25.0" prefWidth="215.0" promptText="Nazwa użytkownika" />
-            <PasswordField layoutX="34.0" layoutY="135.0" prefHeight="25.0" prefWidth="215.0" promptText="Hasło" />
-            <Button alignment="CENTER" layoutX="74.0" layoutY="196.0" mnemonicParsing="false" onAction="#printHello" prefHeight="25.0" prefWidth="136.0" style="-fx-background-color: #e27171;" text="ZALOGUJ" textFill="#fffefe">
+            <TextField fx:id="login_tf" layoutX="34.0" layoutY="89.0" prefHeight="25.0" prefWidth="215.0" promptText="Nazwa użytkownika" />
+            <PasswordField fx:id="password_tf" layoutX="34.0" layoutY="135.0" prefHeight="25.0" prefWidth="215.0" promptText="Hasło" />
+            <Button alignment="CENTER" layoutX="74.0" layoutY="196.0" mnemonicParsing="false" onAction="#logIn" prefHeight="25.0" prefWidth="136.0" style="-fx-background-color: #e27171;" text="ZALOGUJ" textFill="#fffefe">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Button>
@@ -22,6 +24,15 @@
                <font>
                   <Font name="System Bold" size="19.0" />
                </font>
+            </Label>
+            <ChoiceBox fx:id="role_cb" layoutX="138.0" layoutY="49.0" prefHeight="25.0" prefWidth="111.0" />
+            <Label layoutX="19.0" layoutY="51.0" prefHeight="21.0" prefWidth="111.0" text="ZALOGUJ JAKO:" textFill="#eeadad">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <effect>
+                  <Bloom />
+               </effect>
             </Label>
          </children>
          <opaqueInsets>
@@ -34,8 +45,9 @@
          </font>
       </Label>
       <Label layoutX="227.0" layoutY="54.0" text="NAJWIEKSZA BAZA POJAZDÓW W POLSCE" textFill="WHITE" />
-      <Button fx:id="adminPane" layoutX="411.0" layoutY="148.0" mnemonicParsing="false" onAction="#loadMenuAdmin" prefHeight="31.0" prefWidth="130.0" text="Menu Admin" />
-      <Button fx:id="pracPane" layoutX="411.0" layoutY="185.0" mnemonicParsing="false" onAction="#loadMenuPracownik" text="Menu Pracownik" />
-      <Button fx:id="klientPane" layoutX="411.0" layoutY="222.0" mnemonicParsing="false" onAction="#loadMenuKlient" prefHeight="31.0" prefWidth="130.0" text="Menu Klient" />
+      <Button fx:id="adminPane" layoutX="351.0" layoutY="90.0" mnemonicParsing="false" onAction="#loadMenuAdmin" text="Menu Admin" />
+      <Button fx:id="pracPane" layoutX="455.0" layoutY="90.0" mnemonicParsing="false" onAction="#loadMenuPracownik" text="Menu Pracownik" />
+      <Button fx:id="klientPane" layoutX="576.0" layoutY="90.0" mnemonicParsing="false" onAction="#loadMenuKlient" text="Menu Klient" />
+      <Button layoutX="601.0" layoutY="360.0" mnemonicParsing="false" onAction="#printHello" prefHeight="25.0" prefWidth="85.0" text="Insert Test" />
    </children>
 </AnchorPane>

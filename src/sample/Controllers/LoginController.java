@@ -1,26 +1,48 @@
 package sample.Controllers;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 import java.util.ResourceBundle;
 
-//import com.mysql.cj.protocol.Resultset;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.scene.layout.AnchorPane;
-//import org.hibernate.jdbc.Expectation;
-
 public class LoginController implements Initializable {
+    @FXML
+    private ChoiceBox<String> role_cb;
+
+    @FXML
+    private PasswordField password_tf;
+
+    @FXML
+    private TextField login_tf;
 
     @FXML
     private AnchorPane rootPane;
 
+    ObservableList list = FXCollections.observableArrayList();
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        loadDataToCheckBox();
+    }
 
+    private void loadDataToCheckBox(){
+        list.removeAll(list);
+        String k = "Klient";
+        String p = "Pracownik";
+        String a = "Admin";
+        list.addAll(k, p, a);
+        role_cb.getItems().addAll(list);
     }
 
     public void loadMenuAdmin(ActionEvent event) throws IOException {
@@ -54,7 +76,7 @@ public class LoginController implements Initializable {
         stmt.setFloat(8,12345678912F);
         stmt.executeUpdate();
 
-        System.out.println(1);
+
         PreparedStatement stmt2 = con.prepareStatement("INSERT INTO pracownik VALUES(?,?,?,?,?,?,?)");
         stmt2.setInt(1,1);
         stmt2.setInt(2,1);
@@ -65,7 +87,7 @@ public class LoginController implements Initializable {
         stmt2.setFloat(7, 12345678912F);
         stmt2.executeUpdate();
 
-        System.out.println(1);
+
         PreparedStatement stmt3 = con.prepareStatement("INSERT INTO administrator VALUES(?,?,?,?,?,?,?)");
         stmt3.setInt(1,1);
         stmt3.setInt(2,1);
@@ -171,5 +193,82 @@ public class LoginController implements Initializable {
 
 
 
+    }
+
+    public void logIn(ActionEvent event) {
+
+        String role = role_cb.getValue();
+
+        Connection con = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "" );
+
+            if(role == "Klient") {
+                ps = con.prepareStatement("SELECT * FROM klient WHERE login = ? and haslo = ?");
+
+                ps.setString(1, login_tf.getText());
+                ps.setString(2, password_tf.getText());
+                rs = ps.executeQuery();
+
+                if (rs.next()) {
+                    AnchorPane pane = null;
+                    try {
+                        pane = FXMLLoader.load(getClass().getResource("../Fxml/menuKlient.fxml"));
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    rootPane.getChildren().setAll(pane);
+                } else {
+                    System.out.println("Niepoprawny login lub hasło klienta!");
+                }
+            }else if(role == "Admin"){
+                ps = con.prepareStatement("SELECT * FROM administrator WHERE login = ? and haslo = ?");
+
+                ps.setString(1, login_tf.getText());
+                ps.setString(2, password_tf.getText());
+                rs = ps.executeQuery();
+
+                if (rs.next()) {
+                    AnchorPane pane = null;
+                    try {
+                        pane = FXMLLoader.load(getClass().getResource("../Fxml/menuAdmin.fxml"));
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    rootPane.getChildren().setAll(pane);
+                } else {
+                    System.out.println("Niepoprawny login lub hasło administratora!");
+                }
+            }else if(role == "Pracownik"){
+                ps = con.prepareStatement("SELECT * FROM pracownik WHERE login = ? and haslo = ?");
+
+                ps.setString(1, login_tf.getText());
+                ps.setString(2, password_tf.getText());
+                rs = ps.executeQuery();
+
+                if (rs.next()) {
+                    AnchorPane pane = null;
+                    try {
+                        pane = FXMLLoader.load(getClass().getResource("../Fxml/menuPracownik.fxml"));
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    rootPane.getChildren().setAll(pane);
+                } else {
+                    System.out.println("Niepoprawny login lub hasło pracownika!");
+                }
+            }else if(role == null){
+                System.out.println("Nie wybrano roli!");
+            }
+
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
