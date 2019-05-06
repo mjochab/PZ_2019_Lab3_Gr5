@@ -1,17 +1,18 @@
 package sample.Controllers;
 
-import java.io.IOException;
-import java.net.URL;
-import java.sql.*;
-import java.util.ResourceBundle;
-
-//import com.mysql.cj.protocol.Resultset;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
-//import org.hibernate.jdbc.Expectation;
+
+import java.io.IOException;
+import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
 
@@ -54,7 +55,7 @@ public class LoginController implements Initializable {
         stmt.setFloat(8,12345678912F);
         stmt.executeUpdate();
 
-        System.out.println(1);
+
         PreparedStatement stmt2 = con.prepareStatement("INSERT INTO pracownik VALUES(?,?,?,?,?,?,?)");
         stmt2.setInt(1,1);
         stmt2.setInt(2,1);
@@ -65,7 +66,7 @@ public class LoginController implements Initializable {
         stmt2.setFloat(7, 12345678912F);
         stmt2.executeUpdate();
 
-        System.out.println(1);
+
         PreparedStatement stmt3 = con.prepareStatement("INSERT INTO administrator VALUES(?,?,?,?,?,?,?)");
         stmt3.setInt(1,1);
         stmt3.setInt(2,1);

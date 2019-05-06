@@ -28,20 +28,20 @@
             <bottom>
                 <AnchorPane prefHeight="37.0" prefWidth="700.0" style="-fx-background-color: #6d0303;" BorderPane.alignment="CENTER">
                     <children>
-                        <Button layoutY="4.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Dodaj Uzytkownika" translateX="7.0" fx:id="button" onAction="#DodajUsera"/>
+                        <Button layoutY="4.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Dodaj Uzytkownika" translateX="7.0" />
                         <Button layoutX="174.0" layoutY="4.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Edytuj Uzytkownika" translateX="5.0" />
                         <Button layoutX="345.0" layoutY="4.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Usuń Uzytkownika" translateX="5.0" />
                     </children>
                 </AnchorPane>
             </bottom>
         </BorderPane>
-      <TextField layoutX="30.0" layoutY="96.0" promptText="Imie" fx:id="userImie"/>
-      <TextField layoutX="30.0" layoutY="129.0" promptText="Nazwisko" fx:id="userNazwisko"/>
-      <TextField layoutX="30.0" layoutY="164.0" promptText="Data Urodzenia" fx:id="userData"/>
-      <TextField layoutX="30.0" layoutY="200.0" promptText="Miejscowość" fx:id="userMiejscowosc"/>
-      <TextField layoutX="30.0" layoutY="237.0" promptText="Numer Telefonu" fx:id="userTelefon"/>
-      <TextField layoutX="30.0" layoutY="277.0" promptText="Email" fx:id="userMail"/>
-      <TextField layoutX="30.0" layoutY="316.0" promptText="Pesel" fx:id="userPesel"/>
+      <TextField layoutX="30.0" layoutY="96.0" promptText="Imie" />
+      <TextField layoutX="30.0" layoutY="129.0" promptText="Nazwisko" />
+      <TextField layoutX="30.0" layoutY="164.0" promptText="Data Urodzenia" />
+      <TextField layoutX="30.0" layoutY="200.0" promptText="Miejscowość" />
+      <TextField layoutX="30.0" layoutY="237.0" promptText="Numer Telefonu" />
+      <TextField layoutX="30.0" layoutY="277.0" promptText="Email" />
+      <TextField layoutX="30.0" layoutY="316.0" promptText="Pesel" />
       <TableView fx:id="tabelka" layoutX="226.0" layoutY="73.0" prefHeight="298.0" prefWidth="451.0">
           <columns>
               <TableColumn fx:id="col_imie" prefWidth="46.0" text="imie" />
