@@ -34,6 +34,6 @@
                 <TableColumn prefWidth="78.0" text="Cena" />
             </columns>
         </TableView>
-        <Button layoutX="537.0" layoutY="335.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" text="Generuj raport" />
+        <Button layoutX="537.0" layoutY="335.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="130.0" text="Generuj raport" />
     </children>
 </AnchorPane>

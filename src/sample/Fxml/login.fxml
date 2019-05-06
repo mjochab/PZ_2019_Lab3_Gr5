@@ -34,8 +34,8 @@
          </font>
       </Label>
       <Label layoutX="227.0" layoutY="54.0" text="NAJWIEKSZA BAZA POJAZDÓW W POLSCE" textFill="WHITE" />
-      <Button fx:id="adminPane" layoutX="351.0" layoutY="90.0" mnemonicParsing="false" onAction="#loadMenuAdmin" text="Menu Admin" />
-      <Button fx:id="pracPane" layoutX="455.0" layoutY="90.0" mnemonicParsing="false" onAction="#loadMenuPracownik" text="Menu Pracownik" />
-      <Button fx:id="klientPane" layoutX="576.0" layoutY="90.0" mnemonicParsing="false" onAction="#loadMenuKlient" text="Menu Klient" />
+      <Button fx:id="adminPane" layoutX="411.0" layoutY="148.0" mnemonicParsing="false" onAction="#loadMenuAdmin" prefHeight="31.0" prefWidth="130.0" text="Menu Admin" />
+      <Button fx:id="pracPane" layoutX="411.0" layoutY="185.0" mnemonicParsing="false" onAction="#loadMenuPracownik" text="Menu Pracownik" />
+      <Button fx:id="klientPane" layoutX="411.0" layoutY="222.0" mnemonicParsing="false" onAction="#loadMenuKlient" prefHeight="31.0" prefWidth="130.0" text="Menu Klient" />
    </children>
 </AnchorPane>

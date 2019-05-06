@@ -9,6 +9,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="pracownikPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.MenuPracownikController">
     <children>
@@ -28,16 +29,22 @@
             <bottom>
                 <AnchorPane prefHeight="37.0" prefWidth="700.0" style="-fx-background-color: #6d0303;" BorderPane.alignment="CENTER">
                     <children>
-                        <Button layoutY="4.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Edytuj Wypozyczenie" translateX="7.0" />
-                        <Button layoutX="174.0" layoutY="4.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Potwierdź" translateX="5.0" />
+                        <Button layoutY="4.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="147.0" text="Edytuj Wypozyczenie" translateX="7.0">
+                     <font>
+                        <Font size="13.0" />
+                     </font></Button>
+                        <Button layoutX="173.0" layoutY="4.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="147.0" text="Potwierdź" translateX="5.0">
+                     <font>
+                        <Font size="13.0" />
+                     </font></Button>
                     </children>
                 </AnchorPane>
             </bottom>
         </BorderPane>
-        <TextField layoutX="21.0" layoutY="77.0" promptText="Marka" />
-        <TextField layoutX="21.0" layoutY="111.0" promptText="Model" />
-        <TextField layoutX="21.0" layoutY="148.0" promptText="Data początkowa" />
-        <TextField layoutX="21.0" layoutY="185.0" promptText="Data końcowa" />
+        <TextField layoutX="8.0" layoutY="77.0" prefHeight="31.0" prefWidth="147.0" promptText="Marka" />
+        <TextField layoutX="8.0" layoutY="112.0" prefHeight="31.0" prefWidth="147.0" promptText="Model" />
+        <TextField layoutX="8.0" layoutY="147.0" prefHeight="31.0" prefWidth="147.0" promptText="Data początkowa" />
+        <TextField layoutX="8.0" layoutY="182.0" prefHeight="31.0" prefWidth="147.0" promptText="Data końcowa" />
         <TableView layoutX="178.0" layoutY="77.0" prefHeight="294.0" prefWidth="492.0">
             <columns>
                 <TableColumn prefWidth="120.0" text="Marka" />

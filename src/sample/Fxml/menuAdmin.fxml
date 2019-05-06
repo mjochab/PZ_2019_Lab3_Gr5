@@ -23,12 +23,12 @@
             </MenuBar>
          </top>
       </BorderPane>
-      <AnchorPane layoutX="250.0" layoutY="140.0" prefHeight="190.0" prefWidth="190.0" style="-fx-background-color: #6d0303;">
+      <AnchorPane layoutX="234.0" layoutY="140.0" prefHeight="190.0" prefWidth="223.0" style="-fx-background-color: #6d0303;">
          <children>
-            <Button layoutX="9.0" layoutY="16.0" mnemonicParsing="false" onAction="#zarzadzajUzytkownikamiAdmin" prefHeight="25.0" prefWidth="162.0" text="Zarządzaj klientami" translateX="5.0" />
-            <Button layoutX="9.0" layoutY="55.0" mnemonicParsing="false" onAction="#zarzadzajPojazdamiAdmin" prefHeight="25.0" prefWidth="162.0" text="Zarządzaj pojazdami" translateX="5.0" />
-            <Button layoutX="7.0" layoutY="95.0" mnemonicParsing="false" onAction="#zarzadzajPracownikami" prefHeight="25.0" prefWidth="162.0" text="Zarządzaj pracownikami" translateX="7.0" />
-            <Button layoutX="9.0" layoutY="133.0" mnemonicParsing="false" onAction="#zarzadzajWypozyczeniamiAdmin" prefHeight="25.0" prefWidth="162.0" text="Zarządzaj wypożyczeniami" translateX="5.0" />
+            <Button layoutX="9.0" layoutY="19.0" mnemonicParsing="false" onAction="#zarzadzajUzytkownikamiAdmin" prefHeight="25.0" prefWidth="200.0" text="Zarządzaj klientami" translateX="5.0" />
+            <Button layoutX="9.0" layoutY="59.0" mnemonicParsing="false" onAction="#zarzadzajPojazdamiAdmin" prefHeight="25.0" prefWidth="200.0" text="Zarządzaj pojazdami" translateX="5.0" />
+            <Button layoutX="7.0" layoutY="99.0" mnemonicParsing="false" onAction="#zarzadzajPracownikami" prefHeight="25.0" prefWidth="200.0" text="Zarządzaj pracownikami" translateX="7.0" />
+            <Button layoutX="9.0" layoutY="139.0" mnemonicParsing="false" onAction="#zarzadzajWypozyczeniamiAdmin" prefHeight="25.0" prefWidth="200.0" text="Zarządzaj wypożyczeniami" translateX="5.0" />
          </children>
       </AnchorPane>
       <Label alignment="CENTER" layoutX="250.0" layoutY="83.0" prefHeight="27.0" prefWidth="190.0" text="Witaj Adminie!" textAlignment="CENTER" textFill="WHITE">
