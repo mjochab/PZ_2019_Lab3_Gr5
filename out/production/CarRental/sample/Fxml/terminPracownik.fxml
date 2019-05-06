@@ -21,13 +21,13 @@
                 </Menu>
             </menus>
         </MenuBar>
-        <DatePicker layoutX="263.0" layoutY="207.0" />
+        <DatePicker layoutX="242.0" layoutY="212.0" />
         <Label alignment="CENTER" layoutX="263.0" layoutY="177.0" prefHeight="21.0" prefWidth="174.0" text="Data oddania" textFill="WHITE">
             <font>
                 <Font size="15.0" />
             </font>
         </Label>
-        <DatePicker layoutX="263.0" layoutY="107.0" />
+        <DatePicker layoutX="241.0" layoutY="109.0" />
         <Label alignment="CENTER" layoutX="263.0" layoutY="77.0" prefHeight="21.0" prefWidth="174.0" text="Data wypożyczenia" textFill="WHITE">
             <font>
                 <Font size="15.0" />

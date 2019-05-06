@@ -9,6 +9,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="adminPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.MenuAdminController">
     <children>
@@ -28,19 +29,28 @@
             <bottom>
                 <AnchorPane prefHeight="37.0" prefWidth="700.0" style="-fx-background-color: #6d0303;" BorderPane.alignment="CENTER">
                     <children>
-                        <Button layoutY="4.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Dodaj Wypozyczenie" translateX="7.0" />
-                        <Button layoutX="174.0" layoutY="4.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Edytuj Wypozyczenie" translateX="5.0" />
-                        <Button layoutX="345.0" layoutY="4.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Usuń Wypozyczenie" translateX="5.0" />
+                        <Button layoutX="1.0" layoutY="3.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Dodaj Wypozyczenie" translateX="7.0">
+                     <font>
+                        <Font size="13.0" />
+                     </font></Button>
+                        <Button layoutX="175.0" layoutY="3.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Edytuj Wypozyczenie" translateX="5.0">
+                     <font>
+                        <Font size="13.0" />
+                     </font></Button>
+                        <Button layoutX="346.0" layoutY="3.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Usuń Wypozyczenie" translateX="5.0">
+                     <font>
+                        <Font size="13.0" />
+                     </font></Button>
                     </children>
                 </AnchorPane>
             </bottom>
         </BorderPane>
-        <TextField layoutX="22.0" layoutY="94.0" promptText="Pesel" />
-        <TextField layoutX="22.0" layoutY="129.0" promptText="Marka" />
-        <TextField layoutX="22.0" layoutY="272.0" promptText="Cena" />
-        <TextField layoutX="22.0" layoutY="200.0" promptText="Data początkowa" />
-        <TextField layoutX="22.0" layoutY="237.0" promptText="Data końcowa" />
-        <TextField layoutX="22.0" layoutY="163.0" promptText="Model" />
+        <TextField layoutX="20.0" layoutY="94.0" prefHeight="31.0" prefWidth="142.0" promptText="Pesel" />
+        <TextField layoutX="20.0" layoutY="129.0" prefHeight="31.0" prefWidth="142.0" promptText="Marka" />
+        <TextField layoutX="20.0" layoutY="269.0" prefHeight="31.0" prefWidth="142.0" promptText="Cena" />
+        <TextField layoutX="20.0" layoutY="199.0" prefHeight="31.0" prefWidth="142.0" promptText="Data początkowa" />
+        <TextField layoutX="20.0" layoutY="234.0" prefHeight="31.0" prefWidth="142.0" promptText="Data końcowa" />
+        <TextField layoutX="20.0" layoutY="164.0" prefHeight="31.0" prefWidth="142.0" promptText="Model" />
         <TableView layoutX="178.0" layoutY="77.0" prefHeight="294.0" prefWidth="492.0">
             <columns>
                 <TableColumn prefWidth="90.0" text="Pesel" />

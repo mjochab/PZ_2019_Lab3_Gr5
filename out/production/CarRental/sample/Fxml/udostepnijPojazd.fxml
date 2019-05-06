@@ -9,6 +9,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="pracownikPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.MenuPracownikController">
     <children>
@@ -28,22 +29,34 @@
             <bottom>
                 <AnchorPane prefHeight="37.0" prefWidth="700.0" style="-fx-background-color: #6d0303;" BorderPane.alignment="CENTER">
                <children>
-                        <Button layoutX="25.0" layoutY="6.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Dodaj Pojazd" />
-                  <Button layoutX="189.0" layoutY="6.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Potwierdź zmiany" />
-                  <Button layoutX="350.0" layoutY="6.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Usuń Pojazd" />
-                  <Button layoutX="513.0" layoutY="6.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Dodaj Pojazd" />
+                        <Button layoutX="22.0" layoutY="4.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Dodaj Pojazd">
+                     <font>
+                        <Font size="13.0" />
+                     </font></Button>
+                  <Button layoutX="186.0" layoutY="4.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Potwierdź zmiany">
+                     <font>
+                        <Font size="13.0" />
+                     </font></Button>
+                  <Button layoutX="347.0" layoutY="4.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Usuń Pojazd">
+                     <font>
+                        <Font size="13.0" />
+                     </font></Button>
+                  <Button layoutX="510.0" layoutY="4.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Dodaj Pojazd">
+                     <font>
+                        <Font size="13.0" />
+                     </font></Button>
                </children>
                 </AnchorPane>
             </bottom>
         </BorderPane>
-        <TextField layoutX="28.0" layoutY="99.0" promptText="Marka Pojazdu" />
-        <TextField layoutX="28.0" layoutY="133.0" promptText="Model Pojazdu" />
-        <TextField layoutX="28.0" layoutY="165.0" promptText="Rocznik" />
-        <TextField layoutX="28.0" layoutY="200.0" promptText="Rodzaj Paliwa" />
-        <TextField layoutX="28.0" layoutY="237.0" promptText="Przebieg" />
-        <TextField layoutX="28.0" layoutY="272.0" promptText="Cena" />
-      <TextField layoutX="28.0" layoutY="306.0" promptText="Data od" />
-      <TextField layoutX="28.0" layoutY="342.0" promptText="Data do" />
+        <TextField layoutX="22.0" layoutY="99.0" prefHeight="31.0" prefWidth="139.0" promptText="Marka Pojazdu" />
+        <TextField layoutX="22.0" layoutY="134.0" prefHeight="31.0" prefWidth="139.0" promptText="Model Pojazdu" />
+        <TextField layoutX="22.0" layoutY="169.0" prefHeight="31.0" prefWidth="139.0" promptText="Rocznik" />
+        <TextField layoutX="22.0" layoutY="204.0" prefHeight="31.0" prefWidth="139.0" promptText="Rodzaj Paliwa" />
+        <TextField layoutX="22.0" layoutY="239.0" prefHeight="31.0" prefWidth="139.0" promptText="Przebieg" />
+        <TextField layoutX="22.0" layoutY="274.0" prefHeight="31.0" prefWidth="139.0" promptText="Cena" />
+      <TextField layoutX="22.0" layoutY="309.0" prefHeight="31.0" prefWidth="139.0" promptText="Data od" />
+      <TextField layoutX="22.0" layoutY="344.0" prefHeight="31.0" prefWidth="139.0" promptText="Data do" />
       <TableView layoutX="189.0" layoutY="78.0" prefHeight="306.0" prefWidth="500.0">
         <columns>
           <TableColumn prefWidth="61.0" text="Marka" />

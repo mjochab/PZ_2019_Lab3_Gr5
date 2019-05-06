@@ -29,15 +29,15 @@
             <bottom>
                 <AnchorPane prefHeight="37.0" prefWidth="700.0" style="-fx-background-color: #6d0303;" BorderPane.alignment="CENTER">
                     <children>
-                        <Button layoutX="2.0" layoutY="2.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Dodaj Wypozyczenie" translateX="7.0">
+                        <Button layoutX="2.0" layoutY="3.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Dodaj Wypozyczenie" translateX="7.0">
                      <font>
                         <Font size="13.0" />
                      </font></Button>
-                        <Button layoutX="176.0" layoutY="2.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Edytuj Wypozyczenie" translateX="5.0">
+                        <Button layoutX="176.0" layoutY="3.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Edytuj Wypozyczenie" translateX="5.0">
                      <font>
                         <Font size="13.0" />
                      </font></Button>
-                        <Button layoutX="347.0" layoutY="2.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Usuń Wypozyczenie" translateX="5.0">
+                        <Button layoutX="347.0" layoutY="3.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Usuń Wypozyczenie" translateX="5.0">
                      <font>
                         <Font size="13.0" />
                      </font></Button>
