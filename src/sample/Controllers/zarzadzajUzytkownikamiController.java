@@ -49,7 +49,7 @@ public class zarzadzajUzytkownikamiController implements Initializable {
     @FXML private TextField userMail;
     @FXML private TextField userPesel;
 
-    public void DodajUsera(ActionEvent event) throws IOException{
+    public void dodajUsera(ActionEvent event) throws IOException{
         String imie = String.valueOf(userImie.getCharacters());
         String nazwisko = String.valueOf(userNazwisko.getCharacters());
         String data = String.valueOf(userImie.getCharacters());

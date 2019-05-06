@@ -16,7 +16,6 @@ import sample.DBConnector;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
-import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -59,7 +58,7 @@ public class zarzadzajPojazdamiAdminController implements Initializable {
         adminPane.getChildren().setAll(pane);
     }
 
-    public void DodajAuto(ActionEvent event) throws IOException{
+    public void dodajAuto(ActionEvent event) throws IOException{
         String marka = String.valueOf(autoMarka.getCharacters());
         String model = String.valueOf(autoModel.getCharacters());
         String Rodzaj = String.valueOf(autoRodzaj.getCharacters());
