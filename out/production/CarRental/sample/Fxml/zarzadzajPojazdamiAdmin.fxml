@@ -28,20 +28,20 @@
             <bottom>
                 <AnchorPane prefHeight="37.0" prefWidth="700.0" style="-fx-background-color: #6d0303;" BorderPane.alignment="CENTER">
                     <children>
-                        <Button layoutY="4.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Dodaj Pojazd" translateX="7.0" />
+                        <Button layoutY="4.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Dodaj Pojazd" translateX="7.0" fx:id="button" onAction="#DodajAuto"/>
                         <Button layoutX="174.0" layoutY="4.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Edytuj Pojazd" translateX="5.0" />
                         <Button layoutX="345.0" layoutY="4.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Usuń Pojazd" translateX="5.0" />
                     </children>
                 </AnchorPane>
             </bottom>
         </BorderPane>
-        <TextField layoutX="28.0" layoutY="78.0" promptText="Marka" />
-        <TextField layoutX="28.0" layoutY="112.0" promptText="Model" />
-        <TextField layoutX="28.0" layoutY="144.0" promptText="Rodzaj" />
-        <TextField layoutX="28.0" layoutY="177.0" promptText="Rocznik" />
-        <TextField layoutX="28.0" layoutY="212.0" promptText="Paliwo" />
-        <TextField layoutX="28.0" layoutY="249.0" promptText="Przebieg" />
-        <TextField layoutX="28.0" layoutY="284.0" promptText="Cena" />
+        <TextField layoutX="28.0" layoutY="78.0" promptText="Marka" fx:id="autoMarka"/>
+        <TextField layoutX="28.0" layoutY="112.0" promptText="Model" fx:id="autoModel"/>
+        <TextField layoutX="28.0" layoutY="144.0" promptText="Rodzaj" fx:id="autoRodzaj"/>
+        <TextField layoutX="28.0" layoutY="177.0" promptText="Rocznik" fx:id="autoRocznik"/>
+        <TextField layoutX="28.0" layoutY="212.0" promptText="Paliwo" fx:id="autoPaliwo"/>
+        <TextField layoutX="28.0" layoutY="249.0" promptText="Przebieg" fx:id="autoPrzebieg"/>
+        <TextField layoutX="28.0" layoutY="284.0" promptText="Cena" fx:id="autoCena"/>
         <TableView fx:id="tabelka_pojazdy" layoutX="222.0" layoutY="75.0" prefHeight="312.0" prefWidth="464.0">
             <columns>
                 <TableColumn fx:id="col_marka" prefWidth="77.0" text="Marka" />
