@@ -265,9 +265,7 @@ public class LoginController implements Initializable {
                 System.out.println("Nie wybrano roli!");
             }
 
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
+        } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
     }
