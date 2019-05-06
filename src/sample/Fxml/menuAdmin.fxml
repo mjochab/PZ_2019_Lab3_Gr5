@@ -23,12 +23,12 @@
             </MenuBar>
          </top>
       </BorderPane>
-      <AnchorPane layoutX="234.0" layoutY="140.0" prefHeight="190.0" prefWidth="223.0" style="-fx-background-color: #6d0303;">
+      <AnchorPane layoutX="218.0" layoutY="134.0" prefHeight="192.0" prefWidth="255.0" styleClass="okienko" stylesheets="@../../../style.css">
          <children>
-            <Button layoutX="7.0" layoutY="17.0" mnemonicParsing="false" onAction="#zarzadzajUzytkownikamiAdmin" prefHeight="25.0" prefWidth="200.0" text="Zarządzaj klientami" translateX="5.0" />
-            <Button layoutX="7.0" layoutY="57.0" mnemonicParsing="false" onAction="#zarzadzajPojazdamiAdmin" prefHeight="25.0" prefWidth="200.0" text="Zarządzaj pojazdami" translateX="5.0" />
-            <Button layoutX="5.0" layoutY="97.0" mnemonicParsing="false" onAction="#zarzadzajPracownikami" prefHeight="25.0" prefWidth="200.0" text="Zarządzaj pracownikami" translateX="7.0" />
-            <Button layoutX="7.0" layoutY="137.0" mnemonicParsing="false" onAction="#zarzadzajWypozyczeniamiAdmin" prefHeight="25.0" prefWidth="200.0" text="Zarządzaj wypożyczeniami" translateX="5.0" />
+            <Button layoutX="23.0" layoutY="21.0" mnemonicParsing="false" onAction="#zarzadzajUzytkownikamiAdmin" prefHeight="25.0" prefWidth="200.0" text="Zarządzaj klientami" translateX="5.0" />
+            <Button layoutX="23.0" layoutY="61.0" mnemonicParsing="false" onAction="#zarzadzajPojazdamiAdmin" prefHeight="25.0" prefWidth="200.0" text="Zarządzaj pojazdami" translateX="5.0" />
+            <Button layoutX="21.0" layoutY="101.0" mnemonicParsing="false" onAction="#zarzadzajPracownikami" prefHeight="25.0" prefWidth="200.0" text="Zarządzaj pracownikami" translateX="7.0" />
+            <Button layoutX="23.0" layoutY="141.0" mnemonicParsing="false" onAction="#zarzadzajWypozyczeniamiAdmin" prefHeight="25.0" prefWidth="200.0" text="Zarządzaj wypożyczeniami" translateX="5.0" />
          </children>
       </AnchorPane>
       <Label alignment="CENTER" layoutX="250.0" layoutY="83.0" prefHeight="27.0" prefWidth="190.0" text="Witaj Adminie!" textAlignment="CENTER" textFill="WHITE">

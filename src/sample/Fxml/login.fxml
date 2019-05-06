@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.LoginController">
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.LoginController">
    <children>
-      <AnchorPane layoutX="24.0" layoutY="102.0" opacity="0.95" prefHeight="270.0" prefWidth="283.0" style="-fx-background-color: #6d0707;">
+      <AnchorPane layoutX="24.0" layoutY="102.0" opacity="0.95" prefHeight="270.0" prefWidth="283.0" style="-fx-background-color: #6d0303; -fx-border-style: double; -fx-border-color: #018786; -fx-border-width: 10;" styleClass="okienko" stylesheets="@../../../style.css">
          <children>
             <TextField fx:id="login_tf" layoutX="34.0" layoutY="89.0" prefHeight="25.0" prefWidth="215.0" promptText="Nazwa użytkownika" />
             <PasswordField fx:id="password_tf" layoutX="34.0" layoutY="135.0" prefHeight="25.0" prefWidth="215.0" promptText="Hasło" />
@@ -48,6 +48,6 @@
       <Button fx:id="adminPane" layoutX="351.0" layoutY="90.0" mnemonicParsing="false" onAction="#loadMenuAdmin" text="Menu Admin" />
       <Button fx:id="pracPane" layoutX="455.0" layoutY="90.0" mnemonicParsing="false" onAction="#loadMenuPracownik" text="Menu Pracownik" />
       <Button fx:id="klientPane" layoutX="576.0" layoutY="90.0" mnemonicParsing="false" onAction="#loadMenuKlient" text="Menu Klient" />
-      <Button layoutX="601.0" layoutY="360.0" mnemonicParsing="false" onAction="#printHello" prefHeight="25.0" prefWidth="85.0" text="Insert Test" />
+      <Button layoutX="575.0" layoutY="360.0" mnemonicParsing="false" onAction="#printHello" prefHeight="31.0" prefWidth="111.0" text="Insert Test" />
    </children>
 </AnchorPane>

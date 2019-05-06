@@ -24,12 +24,12 @@
             </MenuBar>
          </top>
       </BorderPane>
-      <AnchorPane layoutX="212.0" layoutY="140.0" prefHeight="190.0" prefWidth="263.0" style="-fx-background-color: #6d0303;">
+      <AnchorPane layoutX="220.0" layoutY="134.0" prefHeight="191.0" prefWidth="260.0" styleClass="okienko" stylesheets="@../../../style.css">
          <children>
-            <Button layoutX="26.0" layoutY="17.0" mnemonicParsing="false" onAction="#mojeWypozyczeniaK" prefHeight="25.0" prefWidth="200.0" text="Moje wypożyczenia" translateX="5.0" />
-            <Button layoutX="24.0" layoutY="97.0" mnemonicParsing="false" onAction="#terminKlient" prefHeight="25.0" prefWidth="200.0" text="Wypożycz samochód" translateX="7.0" />
-            <Button layoutX="26.0" layoutY="57.0" mnemonicParsing="false" onAction="#udostepnijPojazdK" prefHeight="25.0" prefWidth="200.0" text="Udostępnij samochód" translateX="5.0" />
-            <Button layoutX="26.0" layoutY="137.0" mnemonicParsing="false" onAction="#historiaWypozyczenK" prefHeight="25.0" prefWidth="200.0" text="Historia wypożyczeń" translateX="5.0" />
+            <Button layoutX="25.0" layoutY="20.0" mnemonicParsing="false" onAction="#mojeWypozyczeniaK" prefHeight="25.0" prefWidth="200.0" text="Moje wypożyczenia" translateX="5.0" />
+            <Button layoutX="23.0" layoutY="100.0" mnemonicParsing="false" onAction="#terminKlient" prefHeight="25.0" prefWidth="200.0" text="Wypożycz samochód" translateX="7.0" />
+            <Button layoutX="25.0" layoutY="60.0" mnemonicParsing="false" onAction="#udostepnijPojazdK" prefHeight="25.0" prefWidth="200.0" text="Udostępnij samochód" translateX="5.0" />
+            <Button layoutX="25.0" layoutY="140.0" mnemonicParsing="false" onAction="#historiaWypozyczenK" prefHeight="25.0" prefWidth="200.0" text="Historia wypożyczeń" translateX="5.0" />
          </children>
       </AnchorPane>
       <Label alignment="CENTER" layoutX="250.0" layoutY="82.0" prefHeight="30.0" prefWidth="190.0" text="Witaj Kliencie!" textAlignment="CENTER" textFill="WHITE">

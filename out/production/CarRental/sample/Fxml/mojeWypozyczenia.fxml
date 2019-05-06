@@ -41,10 +41,10 @@
                 </AnchorPane>
             </bottom>
         </BorderPane>
-        <TextField layoutX="8.0" layoutY="77.0" prefHeight="31.0" prefWidth="147.0" promptText="Marka" />
-        <TextField layoutX="8.0" layoutY="112.0" prefHeight="31.0" prefWidth="147.0" promptText="Model" />
-        <TextField layoutX="8.0" layoutY="147.0" prefHeight="31.0" prefWidth="147.0" promptText="Data początkowa" />
-        <TextField layoutX="8.0" layoutY="182.0" prefHeight="31.0" prefWidth="147.0" promptText="Data końcowa" />
+        <TextField layoutX="11.0" layoutY="93.0" prefHeight="31.0" prefWidth="147.0" promptText="Marka" />
+        <TextField layoutX="11.0" layoutY="128.0" prefHeight="31.0" prefWidth="147.0" promptText="Model" />
+        <TextField layoutX="11.0" layoutY="163.0" prefHeight="31.0" prefWidth="147.0" promptText="Data początkowa" />
+        <TextField layoutX="11.0" layoutY="198.0" prefHeight="31.0" prefWidth="147.0" promptText="Data końcowa" />
         <TableView layoutX="178.0" layoutY="77.0" prefHeight="294.0" prefWidth="492.0">
             <columns>
                 <TableColumn prefWidth="120.0" text="Marka" />
