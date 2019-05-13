@@ -49,6 +49,7 @@ public class zarzadzajUzytkownikamiController implements Initializable {
     @FXML private TextField userMail;
     @FXML private TextField userPesel;
 
+
     public void dodajUsera(ActionEvent event) throws IOException{
         String imie = String.valueOf(userImie.getCharacters());
         String nazwisko = String.valueOf(userNazwisko.getCharacters());
@@ -93,6 +94,90 @@ public class zarzadzajUzytkownikamiController implements Initializable {
             System.out.println(e);
         };
     }
+
+
+    public void updateUser()
+    {
+
+        try
+        {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+            PreparedStatement updateQuery = con.prepareStatement("UPDATE klient set login=?, haslo=?, imie=?, nazwisko=?, data_urodzenia=?, miejscowosc=?, pesel=?");
+
+            updateQuery.setString(2, userImie.getText());
+            updateQuery.setString(3, userNazwisko.getText());
+            updateQuery.setString(4, userData.getText());
+            updateQuery.setString(5, userMiejscowosc.getText());
+            updateQuery.setString(6, userTelefon.getText());
+            updateQuery.setString(7, userPesel.getText());
+
+            updateQuery.executeUpdate();
+
+
+
+
+
+        }catch (Exception e)
+        {
+            System.out.println(e);
+        }
+    }
+
+    public void showOnClick()
+    {
+        try {
+
+            ModelTable modelTable = (ModelTable) tabelka.getSelectionModel().getSelectedItem();
+            String showquery = "SELECT * FROM klient";
+
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+            PreparedStatement updateQuery = con.prepareStatement(showquery);
+
+
+            userImie.setText(modelTable.getImie());
+            userNazwisko.setText(modelTable.getNazwisko());
+            userData.setText(modelTable.getData_urodzenia());
+            userMiejscowosc.setText(modelTable.getMiejscowosc());
+            userPesel.setText(modelTable.getPesel());
+
+            updateQuery.close();
+        }
+            catch (Exception e)
+        {
+            System.out.println(e);
+
+        }
+    }
+
+    public void deleteUser()
+    {
+
+        String imie = null;
+        try {
+
+            ModelTable modelTable = (ModelTable) tabelka.getSelectionModel().getSelectedItem();
+            String showquery = "DELETE FROM klient where imie=?";
+
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+            PreparedStatement updateQuery = con.prepareStatement(showquery);
+            updateQuery.setString(1, modelTable.getImie());
+            imie=modelTable.getImie();
+            updateQuery.executeUpdate();
+
+            updateQuery.close();
+        }
+        catch (Exception e)
+        {
+            System.out.println(e);
+
+        }
+    }
+
+
+
     public void logOut(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/login.fxml"));
         pracownikPane.getChildren().setAll(pane);
@@ -133,5 +218,29 @@ public class zarzadzajUzytkownikamiController implements Initializable {
 
 
 
+    }
+    public void loadData()
+    {
+        {
+
+            try {
+                Connection con = DBConnector.getConnection();
+
+                ResultSet rs = con.createStatement().executeQuery("select * from klient");
+
+                while (rs.next()) {
+                    oblist.add(new ModelTable(rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), "" + rs.getLong(8)));
+                }
+
+
+            } catch (SQLException ex) {
+                Logger.getLogger(zarzadzajUzytkownikamiAdminController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+
+            tabelka.setItems(oblist);
+
+
+        }
     }
 }
