@@ -26,13 +26,13 @@
          </center>
         </BorderPane>
       <TableView layoutX="14.0" layoutY="39.0" prefHeight="299.0" prefWidth="682.0">
-        <columns>
-          <TableColumn prefWidth="145.0" text="Marka" />
-          <TableColumn prefWidth="152.0" text="Model" />
-            <TableColumn prefWidth="142.0" text="Data początkowa" />
-            <TableColumn prefWidth="126.0" text="Data końcowa" />
-            <TableColumn prefWidth="116.0" text="Cena" />
-        </columns>
+          <columns>
+              <TableColumn fx:id="col_Marka" prefWidth="145.0" text="Marka" />
+              <TableColumn fx:id="col_Model" prefWidth="152.0" text="Model" />
+              <TableColumn fx:id="col_DataStart" prefWidth="142.0" text="Data początkowa" />
+              <TableColumn fx:id="col_DataStop" prefWidth="126.0" text="Data końcowa" />
+              <TableColumn fx:id="col_Cena" prefWidth="78.0" text="Cena" />
+          </columns>
       </TableView>
       <Button layoutX="542.0" layoutY="361.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="140.0" text="Generuj raport" />
     </children>

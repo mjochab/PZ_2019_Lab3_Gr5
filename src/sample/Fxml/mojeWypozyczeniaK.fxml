@@ -47,10 +47,10 @@
         <TextField layoutX="16.0" layoutY="197.0" prefHeight="31.0" prefWidth="132.0" promptText="Data końcowa" />
         <TableView layoutX="178.0" layoutY="77.0" prefHeight="294.0" prefWidth="492.0">
             <columns>
-                <TableColumn prefWidth="120.0" text="Marka" />
-                <TableColumn prefWidth="73.0" text="Model" />
-                <TableColumn prefWidth="165.0" text="Data początkowa" />
-                <TableColumn prefWidth="133.0" text="Data końcowa" />
+                <TableColumn fx:id="col_marka" prefWidth="120.0" text="Marka" />
+                <TableColumn fx:id="col_model" prefWidth="73.0" text="Model" />
+                <TableColumn fx:id="col_dataStart" prefWidth="165.0" text="Data początkowa" />
+                <TableColumn fx:id="col_dataStop" prefWidth="133.0" text="Data końcowa" />
             </columns>
         </TableView>
     </children>

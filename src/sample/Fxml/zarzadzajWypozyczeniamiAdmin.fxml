@@ -53,12 +53,12 @@
         <TextField layoutX="20.0" layoutY="164.0" prefHeight="31.0" prefWidth="142.0" promptText="Model" />
         <TableView layoutX="178.0" layoutY="77.0" prefHeight="294.0" prefWidth="492.0">
             <columns>
-                <TableColumn prefWidth="90.0" text="Pesel" />
-                <TableColumn prefWidth="86.0" text="Marka" />
-                <TableColumn prefWidth="55.0" text="Model" />
-                <TableColumn prefWidth="108.0" text="Data początkowa" />
-                <TableColumn prefWidth="85.0" text="Data końcowa" />
-                <TableColumn prefWidth="65.0" text="Cena" />
+                <TableColumn fx:id="col_Pesel" prefWidth="90.0" text="Pesel" />
+                <TableColumn fx:id="col_Marka" prefWidth="86.0" text="Marka" />
+                <TableColumn fx:id="col_Model" prefWidth="55.0" text="Model" />
+                <TableColumn fx:id="col_DataPoczatkowa" prefWidth="108.0" text="Data początkowa" />
+                <TableColumn fx:id="col_DataKoncowa" prefWidth="85.0" text="Data końcowa" />
+                <TableColumn fx:id="col_cena" prefWidth="65.0" text="Cena" />
             </columns>
         </TableView>
     </children>
