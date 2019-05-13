@@ -197,7 +197,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="mysql-connector-java-8.0.151" level="project" />
+    <orderEntry type="library" exported="" name="mysql-connector-java-8.0.151" level="project" />
     <orderEntry type="module-library" exported="" scope="TEST">
       <library name="JUnit4">
         <CLASSES>
@@ -227,5 +227,7 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="mysql-connector-java-8.0.152" level="project" />
+    <orderEntry type="library" name="itextpdf-5.1.0" level="project" />
   </component>
 </module>
