@@ -37,7 +37,7 @@
                      <font>
                         <Font size="13.0" />
                      </font></Button>
-                        <Button layoutX="350.0" layoutY="3.0" mnemonicParsing="false" onAction="#deleteUser" prefHeight="25.0" prefWidth="162.0" text="Usuń Uzytkownika" translateX="5.0">
+                        <Button layoutX="350.0" layoutY="3.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Usuń Uzytkownika" translateX="5.0">
                      <font>
                         <Font size="13.0" />
                      </font></Button>
@@ -52,7 +52,7 @@
       <TextField fx:id="userTelefon" layoutX="16.0" layoutY="236.0" promptText="Numer Telefonu" />
       <TextField fx:id="userMail" layoutX="16.0" layoutY="271.0" promptText="Email" />
       <TextField fx:id="userPesel" layoutX="16.0" layoutY="306.0" promptText="Pesel" />
-      <TableView fx:id="tabelka" layoutX="226.0" layoutY="73.0" onMouseClicked="#showOnClick" prefHeight="298.0" prefWidth="451.0">
+      <TableView fx:id="tabelka" layoutX="226.0" layoutY="73.0" prefHeight="298.0" prefWidth="451.0">
           <columns>
               <TableColumn fx:id="col_imie" prefWidth="46.0" text="imie" />
               <TableColumn fx:id="col_nazwisko" prefWidth="117.0" text="nazwisko" />

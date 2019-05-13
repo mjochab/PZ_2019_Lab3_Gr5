@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="dodanie ModelTableWypozyczenie">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/Generate_auta.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarRental.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CarRental.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CarRental/sample/Fxml/zarzadzajUzytkownikami.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CarRental/sample/Fxml/zarzadzajUzytkownikami.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Controllers/historiaWypozyczenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controllers/historiaWypozyczenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Generate_PDF_Klienci.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Generate_PDF_Klienci.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Generate_PDF_Pracownicy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Generate_PDF_Pracownicy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Generate_PDF_Samochody.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Generate_PDF_Samochody.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Generate_PDF_Wypozyczenia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Generate_PDF_Wypozyczenia.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -75,10 +75,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/Controllers/zarzadzajUzytkownikamiController.java">
+        <entry file="file://$PROJECT_DIR$/src/sample/Controllers/zarzadzajPojazdamiController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3264">
-              <caret line="211" column="27" selection-start-line="211" selection-start-column="27" selection-end-line="211" selection-end-column="27" />
+            <state relative-caret-position="-1118">
+              <caret line="38" column="54" selection-start-line="38" selection-start-column="54" selection-end-line="38" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -87,11 +87,73 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/Fxml/zarzadzajUzytkownikami.fxml">
-          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+        <entry file="file://$PROJECT_DIR$/src/sample/Generate_PDF_Wypozyczenia.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/Generate_PDF_Klienci.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="24" column="41" lean-forward="true" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/Generate_PDF_Samochody.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" lean-forward="true" selection-end-line="55" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/sample/Generate_auta.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="28" lean-forward="true" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/Generate_PDF_Pracownicy.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -99,8 +161,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Test/sample/UnitTest1Test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+            <state relative-caret-position="238">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -109,59 +171,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/Controllers/LoginController.java">
+        <entry file="file://$PROJECT_DIR$/src/sample/UnitTest1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/sample/Controllers/historiaWypozyczenController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="50" column="2" selection-start-line="50" selection-start-column="2" selection-end-line="50" selection-end-column="2" />
+            <state relative-caret-position="34">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/Controllers/zarzadzajPojazdamiController.java">
+        <entry file="file://$PROJECT_DIR$/src/sample/DBConnector.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1649">
-              <caret line="141" column="5" selection-start-line="141" selection-start-column="5" selection-end-line="141" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/Controllers/zarzadzajPracownikamiController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="39" column="39" selection-start-line="39" selection-start-column="39" selection-end-line="39" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/Controllers/ModelTablePojazdy.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="39" selection-start-line="39" selection-end-line="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/Fxml/zarzadzajPojazdami.fxml">
-          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" column="85" selection-start-line="31" selection-start-column="85" selection-end-line="31" selection-end-column="106" />
+            <state relative-caret-position="204">
+              <caret line="14" selection-start-line="13" selection-start-column="7" selection-end-line="14" />
             </state>
           </provider>
         </entry>
@@ -229,6 +251,7 @@
         <option value="$PROJECT_DIR$/src/sample/Controllers/zarzadzajUzytkownikamiController.java" />
         <option value="$PROJECT_DIR$/src/sample/Main.java" />
         <option value="$PROJECT_DIR$/src/sample/Fxml/login.fxml" />
+        <option value="$PROJECT_DIR$/src/sample/Controllers/LoginController.java" />
         <option value="$PROJECT_DIR$/src/sample/UnitTest1.java" />
         <option value="$PROJECT_DIR$/out/production/CarRental/sample/Fxml/zarzadzajWypozyczeniami.fxml" />
         <option value="$PROJECT_DIR$/out/production/CarRental/sample/Fxml/zarzadzajPojazdami.fxml" />
@@ -238,6 +261,7 @@
         <option value="$PROJECT_DIR$/out/production/CarRental/sample/Fxml/menuKlient.fxml" />
         <option value="$PROJECT_DIR$/out/production/CarRental/sample/Fxml/menuPracownik.fxml" />
         <option value="$PROJECT_DIR$/src/sample/Controllers/MenuPracownikController.java" />
+        <option value="$PROJECT_DIR$/src/sample/Fxml/zarzadzajUzytkownikami.fxml" />
         <option value="$PROJECT_DIR$/src/sample/Fxml/zarzadzajWypozyczeniami.fxml" />
         <option value="$PROJECT_DIR$/src/sample/Fxml/zarzadzajWypozyczeniamiAdmin.fxml" />
         <option value="$PROJECT_DIR$/src/sample/Fxml/wypozyczeniePracownik.fxml" />
@@ -255,12 +279,10 @@
         <option value="$PROJECT_DIR$/src/sample/Controllers/zarzadzajWypozyczeniamiController.java" />
         <option value="$PROJECT_DIR$/src/sample/Generate_PDF.java" />
         <option value="$PROJECT_DIR$/src/sample/Generate_PDF_Pracownicy.java" />
-        <option value="$PROJECT_DIR$/src/sample/Generate_PDF_Wypozyczenia.java" />
         <option value="$PROJECT_DIR$/src/sample/Generate_PDF_Klienci.java" />
+        <option value="$PROJECT_DIR$/src/sample/Generate_PDF_Wypozyczenia.java" />
         <option value="$PROJECT_DIR$/src/sample/Generate_PDF_Samochody.java" />
-        <option value="$PROJECT_DIR$/src/sample/Fxml/zarzadzajUzytkownikami.fxml" />
-        <option value="$PROJECT_DIR$/src/sample/Controllers/LoginController.java" />
-        <option value="$PROJECT_DIR$/src/sample/Controllers/historiaWypozyczenController.java" />
+        <option value="$PROJECT_DIR$/src/sample/Generate_auta.java" />
       </list>
     </option>
   </component>
@@ -272,10 +294,9 @@
     </treeState>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2" />
-    <option name="y" value="16" />
-    <option name="width" value="1294" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1184" />
+    <option name="width" value="1383" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -285,6 +306,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -295,11 +317,6 @@
             <path>
               <item name="PZ_2019_Lab3_Gr5" type="b2602c69:ProjectViewProjectNode" />
               <item name="PZ_2019_Lab3_Gr5" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PZ_2019_Lab3_Gr5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PZ_2019_Lab3_Gr5" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -311,15 +328,18 @@
             <path>
               <item name="PZ_2019_Lab3_Gr5" type="b2602c69:ProjectViewProjectNode" />
               <item name="PZ_2019_Lab3_Gr5" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PZ_2019_Lab3_Gr5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PZ_2019_Lab3_Gr5" type="462c0819:PsiDirectoryNode" />
+              <item name="Test" type="462c0819:PsiDirectoryNode" />
               <item name="sample" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -336,12 +356,12 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557782262018" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557788205104" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/junit-4.13-beta-3.jar!/" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../itextpdf-5.1.0.jar!/" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
@@ -381,7 +401,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.Generate_PDF_Samochody">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -456,6 +476,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Generate_auta" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="sample.Generate_auta" />
+      <module name="CarRental" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sample.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="sample.Main" />
       <module name="CarRental" />
@@ -478,25 +512,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UnitTest1Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CarRental" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sample.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="sample" />
-      <option name="MAIN_CLASS_NAME" value="sample.UnitTest1Test" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -508,6 +523,7 @@
       </method>
     </configuration>
     <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="moduleWithDependencies" />
@@ -529,11 +545,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Generate_PDF_Klienci" />
-        <item itemvalue="Application.Generate_PDF_Wypozyczenia" />
         <item itemvalue="Application.Generate_PDF_Samochody" />
+        <item itemvalue="Application.Generate_auta" />
+        <item itemvalue="Application.Generate_PDF_Wypozyczenia" />
+        <item itemvalue="Application.Generate_PDF_Klienci" />
         <item itemvalue="Application.Generate_PDF_Pracownicy" />
-        <item itemvalue="JUnit.UnitTest1Test" />
       </list>
     </recent_temporary>
   </component>
@@ -654,14 +670,7 @@
       <option name="project" value="LOCAL" />
       <updated>1557769320901</updated>
     </task>
-    <task id="LOCAL-00016" summary="pobieranie danych do formularza - baza pod edycje danych(klient)&#10;usuwanie danych z tabeli - bez odświeżania danych(klient)">
-      <created>1557787495184</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1557787495184</updated>
-    </task>
-    <option name="localTasksCounter" value="17" />
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -709,10 +718,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1378" height="916" extended-state="6" />
+    <frame x="1184" y="0" width="1383" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.20333838" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.21390778" />
       <window_info id="Structure" order="1" weight="0.24966443" />
       <window_info id="Favorites" order="2" weight="0.3295302" />
       <window_info id="Designer" order="3" />
@@ -721,7 +730,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3588761" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.25929978" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39934534" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -732,7 +741,7 @@
       <window_info anchor="bottom" id="Changes" order="10" />
       <window_info anchor="bottom" id="Profiler" order="11" />
       <window_info anchor="bottom" id="Event Log" order="12" weight="0.32569557" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.32056195" />
+      <window_info active="true" anchor="bottom" id="Messages" order="13" visible="true" weight="0.32166302" />
       <window_info anchor="bottom" id="Terminal" order="14" weight="0.32932165" />
       <window_info anchor="bottom" id="GitHub Pull Requests" order="15" weight="0.33694476" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -799,19 +808,26 @@
     <MESSAGE value="jedna poprawka" />
     <MESSAGE value="dodanie &quot;fx:id&quot; do tabelek" />
     <MESSAGE value="dodanie ModelTableWypozyczenie" />
-    <MESSAGE value="pobieranie danych do formularza - baza pod edycje danych(klient)&#10;usuwanie danych z tabeli - bez odświeżania danych(klient)" />
-    <option name="LAST_COMMIT_MESSAGE" value="pobieranie danych do formularza - baza pod edycje danych(klient)&#10;usuwanie danych z tabeli - bez odświeżania danych(klient)" />
+    <option name="LAST_COMMIT_MESSAGE" value="dodanie ModelTableWypozyczenie" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/sample/Fxml/zarzadzajUzytkownikamiAdmin.fxml">
+    <entry file="file://$PROJECT_DIR$/src/sample/Fxml/zarzadzajUzytkownikami.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-410">
-          <caret line="23" column="31" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="31" />
+        <state relative-caret-position="17">
+          <caret line="31" column="46" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Fxml/zarzadzajPojazdami.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-289">
+          <caret line="31" column="85" lean-forward="true" selection-start-line="31" selection-start-column="85" selection-end-line="31" selection-end-column="106" />
         </state>
       </provider>
     </entry>
@@ -947,6 +963,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/zarzadzajPracownikamiController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="37" column="20" lean-forward="true" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Fxml/zarzadzajPojazdamiAdmin.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
@@ -960,6 +983,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="901">
           <caret line="53" column="31" selection-start-line="53" selection-start-column="31" selection-end-line="53" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/ModelTablePojazdy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1012,10 +1042,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/zarzadzajUzytkownikamiController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="29" column="40" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Controllers/zarzadzajWypozyczeniamiController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="473">
           <caret line="80" selection-start-line="80" selection-end-line="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/historiaWypozyczenController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1048,6 +1095,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1339">
+          <caret line="116" column="36" selection-start-line="116" selection-start-column="36" selection-end-line="116" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Controllers/MenuAdminController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-166">
@@ -1055,10 +1109,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/UnitTest1.java">
+    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/zarzadzajPojazdamiController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state relative-caret-position="-1118">
+          <caret line="38" column="54" selection-start-line="38" selection-start-column="54" selection-end-line="38" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1072,6 +1129,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Test/sample/UnitTest1Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/DBConnector.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -1079,10 +1146,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/UnitTest1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Generate_PDF_Pracownicy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        <state relative-caret-position="240">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1091,18 +1165,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Generate_PDF_Klienci.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Generate_PDF_Samochody.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="40" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="40" />
+        <state relative-caret-position="204">
+          <caret line="24" column="41" lean-forward="true" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1111,85 +1175,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Generate_PDF_Wypozyczenia.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="27" column="49" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
+        <state relative-caret-position="238">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/zarzadzajUzytkownikamiController.java">
+    <entry file="file://$PROJECT_DIR$/src/sample/Generate_PDF_Samochody.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3264">
-          <caret line="211" column="27" selection-start-line="211" selection-start-column="27" selection-end-line="211" selection-end-column="27" />
+        <state relative-caret-position="238">
+          <caret line="14" lean-forward="true" selection-end-line="55" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/zarzadzajPojazdamiController.java">
+    <entry file="file://$PROJECT_DIR$/src/sample/Generate_auta.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1649">
-          <caret line="141" column="5" selection-start-line="141" selection-start-column="5" selection-end-line="141" selection-end-column="5" />
+        <state relative-caret-position="204">
+          <caret line="12" column="28" lean-forward="true" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/zarzadzajPracownikamiController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="39" column="39" selection-start-line="39" selection-start-column="39" selection-end-line="39" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/ModelTablePojazdy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Fxml/zarzadzajPojazdami.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="85" selection-start-line="31" selection-start-column="85" selection-end-line="31" selection-end-column="106" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Fxml/zarzadzajUzytkownikami.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Test/sample/UnitTest1Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/historiaWypozyczenController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="50" column="2" selection-start-line="50" selection-start-column="2" selection-end-line="50" selection-end-column="2" />
         </state>
       </provider>
     </entry>

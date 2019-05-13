@@ -103,30 +103,6 @@ public class zarzadzajPojazdamiController implements Initializable {
         };
     }
 
-    public void showOnClick()
-    {
-        try {
-
-            ModelTablePojazdy modelTablePojazdy = (ModelTablePojazdy) tabelka_pojazdy.getSelectionModel().getSelectedItem();
-            String showquery = "SELECT * FROM pojazd";
-
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
-            PreparedStatement updateQuery = con.prepareStatement(showquery);
-
-
-            autoMarka.setText(modelTablePojazdy.getMarka());
-            autoModel.setText(modelTablePojazdy.getModel());
-            autoRodzaj.setText(modelTablePojazdy.getRodzaj());
-            updateQuery.close();
-        }
-        catch (Exception e)
-        {
-            System.out.println(e);
-
-        }
-    }
-
     public void czytaj(){
         System.out.println();
     }

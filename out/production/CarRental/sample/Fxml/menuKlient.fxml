@@ -24,7 +24,7 @@
             </MenuBar>
          </top>
       </BorderPane>
-      <AnchorPane layoutX="220.0" layoutY="134.0" prefHeight="191.0" prefWidth="260.0" styleClass="okienko" stylesheets="@../../../style.css">
+      <AnchorPane layoutX="220.0" layoutY="134.0" prefHeight="191.0" prefWidth="260.0" style="-fx-background-color: #6d0707;">
          <children>
             <Button layoutX="25.0" layoutY="20.0" mnemonicParsing="false" onAction="#mojeWypozyczeniaK" prefHeight="25.0" prefWidth="200.0" text="Moje wypożyczenia" translateX="5.0" />
             <Button layoutX="23.0" layoutY="100.0" mnemonicParsing="false" onAction="#terminKlient" prefHeight="25.0" prefWidth="200.0" text="Wypożycz samochód" translateX="7.0" />
