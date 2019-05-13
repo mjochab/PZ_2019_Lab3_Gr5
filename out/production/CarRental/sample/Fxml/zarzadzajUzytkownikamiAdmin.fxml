@@ -29,7 +29,7 @@
             <bottom>
                 <AnchorPane prefHeight="37.0" prefWidth="700.0" style="-fx-background-color: #6d0303;" BorderPane.alignment="CENTER">
                     <children>
-                        <Button layoutX="13.0" layoutY="3.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Dodaj Uzytkownika" translateX="7.0">
+                        <Button layoutX="13.0" layoutY="3.0" mnemonicParsing="false" onAction="#dodajUsera" prefHeight="25.0" prefWidth="162.0" text="Dodaj Uzytkownika" translateX="7.0">
                      <font>
                         <Font size="13.0" />
                      </font></Button>
@@ -45,13 +45,13 @@
                 </AnchorPane>
             </bottom>
         </BorderPane>
-        <TextField layoutX="18.0" layoutY="96.0" promptText="Imie" />
-        <TextField layoutX="18.0" layoutY="131.0" promptText="Nazwisko" />
-        <TextField layoutX="18.0" layoutY="166.0" promptText="Data Urodzenia" />
-        <TextField layoutX="18.0" layoutY="201.0" promptText="Miejscowość" />
-        <TextField layoutX="18.0" layoutY="236.0" promptText="Numer Telefonu" />
-        <TextField layoutX="18.0" layoutY="271.0" promptText="Email" />
-        <TextField layoutX="18.0" layoutY="306.0" promptText="Pesel" />
+        <TextField fx:id="userImie" layoutX="18.0" layoutY="96.0" promptText="Imie" />
+        <TextField fx:id="userNazwisko" layoutX="18.0" layoutY="131.0" promptText="Nazwisko" />
+        <TextField fx:id="userData" layoutX="18.0" layoutY="166.0" promptText="Data Urodzenia" />
+        <TextField fx:id="userMiejscowosc" layoutX="18.0" layoutY="201.0" promptText="Miejscowość" />
+        <TextField fx:id="userTelefon" layoutX="18.0" layoutY="236.0" promptText="Numer Telefonu" />
+        <TextField fx:id="userMail" layoutX="18.0" layoutY="271.0" promptText="Email" />
+        <TextField fx:id="userPesel" layoutX="18.0" layoutY="306.0" promptText="Pesel" />
         <TableView fx:id="tabelka" layoutX="226.0" layoutY="89.0" prefHeight="282.0" prefWidth="451.0">
             <columns>
                 <TableColumn fx:id="col_imie" prefWidth="64.0" text="imie" />

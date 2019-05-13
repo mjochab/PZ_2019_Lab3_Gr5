@@ -29,7 +29,7 @@
             <bottom>
                 <AnchorPane prefHeight="37.0" prefWidth="700.0" style="-fx-background-color: #6d0303;" BorderPane.alignment="CENTER">
                     <children>
-                        <Button layoutX="16.0" layoutY="4.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Dodaj Pojazd" translateX="7.0">
+                        <Button layoutX="16.0" layoutY="4.0" mnemonicParsing="false" onAction="#dodajAuto" prefHeight="25.0" prefWidth="162.0" text="Dodaj Pojazd" translateX="7.0">
                      <font>
                         <Font size="13.0" />
                      </font></Button>
@@ -45,13 +45,13 @@
                 </AnchorPane>
             </bottom>
         </BorderPane>
-        <TextField layoutX="20.0" layoutY="88.0" promptText="Marka" />
-        <TextField layoutX="20.0" layoutY="123.0" promptText="Model" />
-        <TextField layoutX="20.0" layoutY="158.0" promptText="Rodzaj" />
-        <TextField layoutX="20.0" layoutY="193.0" promptText="Rocznik" />
-        <TextField layoutX="20.0" layoutY="228.0" promptText="Paliwo" />
-        <TextField layoutX="20.0" layoutY="263.0" promptText="Przebieg" />
-        <TextField layoutX="20.0" layoutY="298.0" promptText="Cena" />
+        <TextField fx:id="autoMarka" layoutX="20.0" layoutY="88.0" promptText="Marka" />
+        <TextField fx:id="autoModel" layoutX="20.0" layoutY="123.0" promptText="Model" />
+        <TextField fx:id="autoRodzaj" layoutX="20.0" layoutY="158.0" promptText="Rodzaj" />
+        <TextField fx:id="autoRocznik" layoutX="20.0" layoutY="193.0" promptText="Rocznik" />
+        <TextField fx:id="autoPaliwo" layoutX="20.0" layoutY="228.0" promptText="Paliwo" />
+        <TextField fx:id="autoPrzebieg" layoutX="20.0" layoutY="263.0" promptText="Przebieg" />
+        <TextField fx:id="autoCena" layoutX="20.0" layoutY="298.0" promptText="Cena" />
         <TableView fx:id="tabelka_pojazdy" layoutX="227.0" layoutY="73.0" prefHeight="314.0" prefWidth="459.0">
             <columns>
                 <TableColumn fx:id="col_marka" prefWidth="67.0" text="Marka" />

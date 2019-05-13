@@ -51,5 +51,4 @@ public class MenuPracownikController {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/mojeWypozyczenia.fxml"));
         pracownikPane.getChildren().setAll(pane);
     }
-
 }
