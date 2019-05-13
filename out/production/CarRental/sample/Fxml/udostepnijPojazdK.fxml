@@ -59,14 +59,14 @@
         <TextField layoutX="22.0" layoutY="344.0" prefHeight="31.0" prefWidth="145.0" promptText="Data do" />
         <TableView layoutX="189.0" layoutY="78.0" prefHeight="306.0" prefWidth="500.0">
             <columns>
-                <TableColumn prefWidth="61.0" text="Marka" />
-                <TableColumn prefWidth="69.0" text="Model" />
-                <TableColumn prefWidth="67.0" text="Rocznik" />
-                <TableColumn prefWidth="68.0" text="Paliwo" />
-                <TableColumn prefWidth="71.0" text="Przebieg" />
-                <TableColumn prefWidth="44.0" text="Cena" />
-                <TableColumn prefWidth="61.0" text="Data od" />
-                <TableColumn prefWidth="56.0" text="Data do" />
+                <TableColumn fx:id="col_Marka" prefWidth="61.0" text="Marka" />
+                <TableColumn fx:id="col_Model" prefWidth="69.0" text="Model" />
+                <TableColumn fx:id="col_Rocznik" prefWidth="67.0" text="Rocznik" />
+                <TableColumn fx:id="col_Paliwo" prefWidth="68.0" text="Paliwo" />
+                <TableColumn fx:id="col_przebieg" prefWidth="71.0" text="Przebieg" />
+                <TableColumn fx:id="col_cena" prefWidth="44.0" text="Cena" />
+                <TableColumn fx:id="col_dataStart" prefWidth="61.0" text="Data od" />
+                <TableColumn fx:id="col_dataStop" prefWidth="56.0" text="Data do" />
             </columns>
         </TableView>
     </children>

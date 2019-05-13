@@ -74,6 +74,5 @@ public class zarzadzajWypozyczeniamiController {
             System.out.println(var14);
         }
 
-
     }
 }

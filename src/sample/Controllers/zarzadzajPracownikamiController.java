@@ -8,16 +8,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import sample.DBConnector;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.Date;
+import java.sql.*;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -35,6 +33,14 @@ public class zarzadzajPracownikamiController implements Initializable {
     private TableColumn<ModelTablePracownicy, String> col_login;
     @FXML
     private TableColumn<ModelTablePracownicy, String> col_pesel;
+
+    @FXML private TextField imie;
+    @FXML private TextField nazwisko;
+    @FXML private TextField dataUrodzenia;
+    @FXML private TextField miejscowosc;
+    @FXML private TextField nrTel;
+    @FXML private TextField eMail;
+    @FXML private TextField pesel;
 
     ObservableList<ModelTablePracownicy> oblist2 = FXCollections.observableArrayList();
 
@@ -98,4 +104,6 @@ public class zarzadzajPracownikamiController implements Initializable {
 
 
     }
+
+
 }
