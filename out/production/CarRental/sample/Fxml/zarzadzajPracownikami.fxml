@@ -45,13 +45,13 @@
                 </AnchorPane>
             </bottom>
         </BorderPane>
-        <TextField layoutX="20.0" layoutY="96.0" promptText="Imie" />
-        <TextField layoutX="20.0" layoutY="131.0" promptText="Nazwisko" />
-        <TextField layoutX="20.0" layoutY="166.0" promptText="Data Urodzenia" />
-        <TextField layoutX="20.0" layoutY="201.0" promptText="Miejscowość" />
-        <TextField layoutX="20.0" layoutY="236.0" promptText="Numer Telefonu" />
-        <TextField layoutX="20.0" layoutY="271.0" promptText="Email" />
-        <TextField layoutX="20.0" layoutY="306.0" promptText="Pesel" />
+        <TextField fx:id="imie" layoutX="20.0" layoutY="96.0" promptText="Imie" />
+        <TextField fx:id="nazwisko" layoutX="20.0" layoutY="131.0" promptText="Nazwisko" />
+        <TextField fx:id="dataUrodzenia" layoutX="20.0" layoutY="166.0" promptText="Data Urodzenia" />
+        <TextField fx:id="miejscowosc" layoutX="20.0" layoutY="201.0" promptText="Miejscowość" />
+        <TextField fx:id="nrTel" layoutX="20.0" layoutY="236.0" promptText="Numer Telefonu" />
+        <TextField fx:id="eMail" layoutX="20.0" layoutY="271.0" promptText="Email" />
+        <TextField fx:id="Pesel" layoutX="20.0" layoutY="306.0" promptText="Pesel" />
       <TextField layoutX="20.0" layoutY="341.0" promptText="Zarobki" />
         <TableView fx:id="tabelka_pracownicy" layoutX="224.0" layoutY="79.0" prefHeight="292.0" prefWidth="473.0">
             <columns>
