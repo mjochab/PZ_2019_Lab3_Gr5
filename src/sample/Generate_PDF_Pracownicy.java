@@ -10,20 +10,20 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-public class Generate_PDF {
+public class Generate_PDF_Pracownicy {
 
 
     public static void main(String [] args){
 
         try{
 
-            String file_name="C:\\Users\\Tommy\\IdeaProjects\\Projekt\\Raport.pdf";
+            String file_name="C:\\Users\\Tommy\\IdeaProjects\\Projekt\\Raport_pracownikow.pdf";
             Document document = new Document();
             PdfWriter.getInstance(document, new FileOutputStream(file_name));
             document.open();
 
-           // DBConnection obJDBConnection = new DBConnection();
-           // Connection connection = obJDBConnection.getConnection();
+            // DBConnection obJDBConnection = new DBConnection();
+            // Connection connection = obJDBConnection.getConnection();
 
             Connection connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
 
@@ -31,12 +31,12 @@ public class Generate_PDF {
             PreparedStatement ps = null;
             ResultSet rs = null;
 
-            String query="SELECT * FROM wypozyczenie";
+            String query="SELECT * FROM pracownik";
             ps=connection.prepareStatement(query);
             rs=ps.executeQuery();
 
             while(rs.next()){
-                Paragraph para = new Paragraph(rs.getString("wypozyczenie_id")+ " "+rs.getString("klient_id")+ " "+rs.getString("pracownik_id")+ " "+rs.getString("samochod_id")+ " "+rs.getString("data_od")+ " "+rs.getString("data_do"));
+                Paragraph para = new Paragraph(rs.getString("imie")+ " "+rs.getString("nazwisko")+ " "+rs.getString("pesel"));
                 document.add(para);
                 document.add(new Paragraph(" "));
             }
