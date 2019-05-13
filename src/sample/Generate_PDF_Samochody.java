@@ -22,8 +22,8 @@ public class Generate_PDF_Samochody {
             PdfWriter.getInstance(document, new FileOutputStream(file_name));
             document.open();
 
-            // DBConnection obJDBConnection = new DBConnection();
-            // Connection connection = obJDBConnection.getConnection();
+            Paragraph para1 = new Paragraph("Aktualny spis samochdów: \n\n\n");
+            document.add(para1);
 
             Connection connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
 
@@ -35,10 +35,13 @@ public class Generate_PDF_Samochody {
             ps=connection.prepareStatement(query);
             rs=ps.executeQuery();
 
+
             while(rs.next()){
+
                 Paragraph para = new Paragraph(rs.getString("samochod_id")+ " "+rs.getString("marka")+ " "+rs.getString("model")+ " "+rs.getString("rodzaj")+ " "+rs.getString("paliwo")+ " "+rs.getString("przebieg")+ " "+rs.getString("Cena"));
                 document.add(para);
                 document.add(new Paragraph(" "));
+
             }
 
             document.close();

@@ -22,8 +22,8 @@ public class Generate_PDF_Pracownicy {
             PdfWriter.getInstance(document, new FileOutputStream(file_name));
             document.open();
 
-            // DBConnection obJDBConnection = new DBConnection();
-            // Connection connection = obJDBConnection.getConnection();
+            Paragraph para1 = new Paragraph("Aktualny spis pracowników: \n\n\n");
+            document.add(para1);
 
             Connection connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
 
