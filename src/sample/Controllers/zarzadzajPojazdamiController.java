@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TablePosition;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -53,6 +54,51 @@ public class zarzadzajPojazdamiController implements Initializable {
 
     ObservableList<ModelTablePojazdy> oblist1 = FXCollections.observableArrayList();
 
+    public void modujAuto(ActionEvent event) throws  IOException{
+        System.out.println("-");
+
+        TablePosition pozycja = tabelka_pojazdy.getSelectionModel().getSelectedCells().get(0);
+        int index = pozycja.getRow();
+
+        String marka = String.valueOf(autoMarka.getCharacters());
+        String model = String.valueOf(autoModel.getCharacters());
+        String Rodzaj = String.valueOf(autoRodzaj.getCharacters());
+        String Rocznik = String.valueOf(autoRocznik.getCharacters());
+        String Paliwo = String.valueOf(autoPaliwo.getCharacters());
+        String przebieg = String.valueOf(autoPrzebieg.getCharacters());
+        String cena = String.valueOf(autoCena.getCharacters());
+
+        try {
+            index++;
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+
+            PreparedStatement stmt = con.prepareStatement("SELECT * FROM samochod");
+            String zapytanie = "Select * FROM samochod ORDER BY samochod_id LIMIT " + index;
+            ResultSet rs = stmt.executeQuery(zapytanie);
+            String a;
+            int i=0;
+            while(rs.next()) {
+                a = rs.getString(1);
+                i++;
+            }
+            System.out.println(i);
+            PreparedStatement stmt2 = con.prepareStatement("UPDATE `samochod` SET `marka`=(?),`model`=(?),`rodzaj`=(?),`paliwo`=(?),`przebieg`=(?),`Cena`=(?) WHERE samochod_id=(?)");
+            stmt2.setString(1, marka);
+            stmt2.setString(2, model);
+            stmt2.setString(3, Rodzaj);
+            stmt2.setString(4, Paliwo);
+            stmt2.setString(5, przebieg);
+            stmt2.setString(6, cena);
+            stmt2.setInt(7, i);
+            stmt2.executeUpdate();
+
+
+        }catch (Exception e)
+    {
+        System.out.println(e);
+    };
+    }
 
     public void dodajAuto(ActionEvent event) throws IOException{
         String marka = String.valueOf(autoMarka.getCharacters());
