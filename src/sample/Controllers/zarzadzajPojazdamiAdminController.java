@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TablePosition;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -16,6 +17,7 @@ import sample.DBConnector;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -58,6 +60,145 @@ public class zarzadzajPojazdamiAdminController implements Initializable {
         adminPane.getChildren().setAll(pane);
     }
 
+    public void klik(ActionEvent event) throws  IOException{        //funkcja przenosi dane do tabelki po lewej stronie, jak tyknie sie wiersz w tabeli to przenosi
+        //TablePosition pozycja = tabelka_pojazdy.getSelectionModel().getSelectedCells().get(0);
+        //int index = pozycja.getRow();
+        String abc;
+        abc = tabelka_pojazdy.toString();
+        System.out.println(abc);
+        ArrayList<String> dane = new ArrayList<String>();
+        try {
+            TablePosition pozycja = tabelka_pojazdy.getSelectionModel().getSelectedCells().get(0);
+            int index = pozycja.getRow();
+
+            index++;
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+
+            PreparedStatement stmt = con.prepareStatement("SELECT * FROM samochod");
+            String zapytanie = "Select * FROM samochod ORDER BY samochod_id LIMIT " + index;
+            ResultSet rs = stmt.executeQuery(zapytanie);
+            String a;
+            int i=0;
+            while(rs.next()) {
+                a = rs.getString(1);
+                i++;
+            }
+            System.out.println(i);
+
+
+            String model, rodzaj, rocznik, paliwo, przebieg, cena;
+            zapytanie = "Select * FROM samochod where samochod_id = " + i;
+            ResultSet rs2 = stmt.executeQuery(zapytanie);
+            System.out.println(rs2);
+            if(rs2.next()) {
+                dane.add(rs2.getString("marka"));
+                dane.add(rs2.getString("model"));
+                dane.add(rs2.getString("rodzaj"));
+                dane.add(rs2.getString("paliwo"));
+                int wartosc = rs2.getInt("przebieg");
+                dane.add(String.valueOf(wartosc));
+                double wartosc2 = rs2.getDouble("Cena");
+                dane.add(String.valueOf(wartosc));
+                autoMarka.setText(String.valueOf(dane.get(0)));
+                autoModel.setText(String.valueOf(dane.get(1)));
+                autoRodzaj.setText(String.valueOf(dane.get(2)));
+                autoRocznik.setText(String.valueOf(dane.get(3)));
+                autoPaliwo.setText(String.valueOf(dane.get(4)));
+                autoPrzebieg.setText(String.valueOf(dane.get(5)));
+                autoCena.setText(String.valueOf(dane.get(6)));
+            }
+
+
+        }catch (Exception e)
+        {
+            System.out.println(e);
+        };
+
+
+    }
+
+    public void usunAuto(ActionEvent event) throws  IOException{
+        TablePosition pozycja = tabelka_pojazdy.getSelectionModel().getSelectedCells().get(0);
+        int index = pozycja.getRow();
+
+        try {
+            index++;
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+
+            PreparedStatement stmt = con.prepareStatement("SELECT * FROM samochod");
+            String zapytanie = "Select * FROM samochod ORDER BY samochod_id LIMIT " + index;
+            ResultSet rs = stmt.executeQuery(zapytanie);
+            String a;
+            int i=0;
+            while(rs.next()) {
+                a = rs.getString(1);
+                i++;
+            }
+            System.out.println(i);
+            PreparedStatement stmt2 = con.prepareStatement("DELETE FROM samochod WHERE samochod_id = (?)");
+            stmt2.setInt(1, i);
+            stmt2.executeUpdate();
+
+
+
+
+        }catch (Exception e)
+        {
+            System.out.println(e);
+        };
+
+        tabelka_pojazdy.refresh();
+    }
+
+    public void modujAuto(ActionEvent event) throws  IOException{
+        System.out.println("-");
+
+        TablePosition pozycja = tabelka_pojazdy.getSelectionModel().getSelectedCells().get(0);
+        int index = pozycja.getRow();
+
+        String marka = String.valueOf(autoMarka.getCharacters());
+        String model = String.valueOf(autoModel.getCharacters());
+        String Rodzaj = String.valueOf(autoRodzaj.getCharacters());
+        String Rocznik = String.valueOf(autoRocznik.getCharacters());
+        String Paliwo = String.valueOf(autoPaliwo.getCharacters());
+        String przebieg = String.valueOf(autoPrzebieg.getCharacters());
+        String cena = String.valueOf(autoCena.getCharacters());
+
+        try {
+            index++;
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+
+            PreparedStatement stmt = con.prepareStatement("SELECT * FROM samochod");
+            String zapytanie = "Select * FROM samochod ORDER BY samochod_id LIMIT " + index;
+            ResultSet rs = stmt.executeQuery(zapytanie);
+            String a;
+            int i=0;
+            while(rs.next()) {
+                a = rs.getString(1);
+                i++;
+            }
+            System.out.println(i);
+            PreparedStatement stmt2 = con.prepareStatement("UPDATE `samochod` SET `marka`=(?),`model`=(?),`rodzaj`=(?),`paliwo`=(?),`przebieg`=(?),`Cena`=(?) WHERE samochod_id=(?)");
+            stmt2.setString(1, marka);
+            stmt2.setString(2, model);
+            stmt2.setString(3, Rodzaj);
+            stmt2.setString(4, Paliwo);
+            stmt2.setString(5, przebieg);
+            stmt2.setString(6, cena);
+            stmt2.setInt(7, i);
+            stmt2.executeUpdate();
+            tabelka_pojazdy.refresh();
+
+
+        }catch (Exception e)
+        {
+            System.out.println(e);
+        }
+
+    }
     public void dodajAuto(ActionEvent event) throws IOException{
         String marka = String.valueOf(autoMarka.getCharacters());
         String model = String.valueOf(autoModel.getCharacters());
