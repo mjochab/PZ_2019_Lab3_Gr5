@@ -144,7 +144,7 @@ public class zarzadzajPojazdamiController implements Initializable {
         {
             System.out.println(e);
         };
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/menuPracownik.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/zarzadzajPojazdami.fxml"));
         pracownikPane.getChildren().setAll(pane);
 
     tabelka_pojazdy.refresh();
@@ -196,7 +196,7 @@ public class zarzadzajPojazdamiController implements Initializable {
     {
         System.out.println(e);
     }
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/menuPracownik.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/zarzadzajPojazdami.fxml"));
         pracownikPane.getChildren().setAll(pane);
     }
 
