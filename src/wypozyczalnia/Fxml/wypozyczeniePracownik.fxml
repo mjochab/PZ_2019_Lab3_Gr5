@@ -15,7 +15,7 @@
     <children>
         <BorderPane prefHeight="72.0" prefWidth="700.0">
             <top>
-                <MenuBar BorderPane.alignment="CENTER">
+                <MenuBar maxWidth="-Infinity" minWidth="-Infinity" prefWidth="800.0" BorderPane.alignment="CENTER">
                     <menus>
                         <Menu mnemonicParsing="false" text="Powrót">
                             <items>
