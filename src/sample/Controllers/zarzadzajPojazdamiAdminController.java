@@ -78,17 +78,18 @@ public class zarzadzajPojazdamiAdminController implements Initializable {
             PreparedStatement stmt = con.prepareStatement("SELECT * FROM samochod");
             String zapytanie = "Select * FROM samochod ORDER BY samochod_id LIMIT " + index;
             ResultSet rs = stmt.executeQuery(zapytanie);
-            String a;
+            String a = "0";
             int i=0;
             while(rs.next()) {
                 a = rs.getString(1);
                 i++;
             }
-            System.out.println(i);
+            int numer = Integer.parseInt(a);
+            System.out.println(numer);
 
 
             String model, rodzaj, rocznik, paliwo, przebieg, cena;
-            zapytanie = "Select * FROM samochod where samochod_id = " + i;
+            zapytanie = "Select * FROM samochod where samochod_id = " + numer;
             ResultSet rs2 = stmt.executeQuery(zapytanie);
             System.out.println(rs2);
             if(rs2.next()) {
@@ -115,8 +116,8 @@ public class zarzadzajPojazdamiAdminController implements Initializable {
             System.out.println(e);
         };
 
-
     }
+
 
     public void usunAuto(ActionEvent event) throws  IOException{
         TablePosition pozycja = tabelka_pojazdy.getSelectionModel().getSelectedCells().get(0);
