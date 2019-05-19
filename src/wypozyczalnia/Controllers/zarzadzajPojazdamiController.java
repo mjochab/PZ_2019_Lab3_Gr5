@@ -198,6 +198,7 @@ public class zarzadzajPojazdamiController implements Initializable {
     }
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/zarzadzajPojazdami.fxml"));
         pracownikPane.getChildren().setAll(pane);
+        
     }
 
 
