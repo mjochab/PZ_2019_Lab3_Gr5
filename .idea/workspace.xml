@@ -4,11 +4,117 @@
     <bookmark url="file://$PROJECT_DIR$/out/production/CarRental/sample/Fxml/zarzadzajPojazdami.fxml" line="31" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="modyfikacja i usuniecie pojazdow, aktualizacja">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="- modyfikacja wyglądu okien,&#10;- zmiana rozdzielczości,&#10;- wprowadzenie ikon, grafik i loga,&#10;- zmiana wizualna formatek: &quot;login.fxml&quot; i &quot;historiaWypozyczen.fxml&quot;,&#10;- zmiana nazwy pakietu z &quot;sample&quot; na &quot;wypozyczalnia&quot;">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/itextpdf_5_1_02.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/junit_4_121.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wypozyczalnia/Fxml/login.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wypozyczalnia/Icons/Cars/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wypozyczalnia/Icons/Cars/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wypozyczalnia/Icons/Cars/3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wypozyczalnia/Icons/Cars/4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wypozyczalnia/Icons/Cars/5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wypozyczalnia/Icons/Cars/6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wypozyczalnia/Icons/Logos/CarLog.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wypozyczalnia/Icons/Logos/CarLogo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wypozyczalnia/Icons/Logos/CarLogo2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wypozyczalnia/Icons/back.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wypozyczalnia/Icons/car.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wypozyczalnia/Icons/cars.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wypozyczalnia/Icons/history.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wypozyczalnia/Icons/login.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wypozyczalnia/Icons/logout.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wypozyczalnia/Icons/password.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wypozyczalnia/Icons/rent.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wypozyczalnia/Icons/user.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/wypozyczalnia/Icons/users.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/itextpdf_5_1_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/junit_4_12.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/junit_4_12.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_151.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_152.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarRental.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CarRental.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/sample/UnitTest1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/wypozyczalnia/UnitTest1Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CarRental/META-INF/CarRental.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CarRental/sample/Fxml/HistoriaWypozyczenK.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Fxml/HistoriaWypozyczenK.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CarRental/sample/Fxml/historiaWypozyczen.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CarRental/sample/Fxml/login.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CarRental/sample/Fxml/menuAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CarRental/sample/Fxml/menuAdmin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CarRental/sample/Fxml/menuKlient.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CarRental/sample/Fxml/menuKlient.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CarRental/sample/Fxml/menuPracownik.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CarRental/sample/Fxml/menuPracownik.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CarRental/sample/Fxml/mojeWypozyczenia.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CarRental/sample/Fxml/mojeWypozyczeniaK.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CarRental/sample/Fxml/podWyn.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CarRental/sample/Fxml/podWynP.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CarRental/sample/Fxml/terminKlient.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CarRental/sample/Fxml/terminPracownik.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CarRental/sample/Fxml/udostepnijPojazd.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CarRental/sample/Fxml/udostepnijPojazdK.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Fxml/udostepnijPojazdK.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CarRental/sample/Fxml/wypozyczenieKlient.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Fxml/wypozyczenieKlient.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CarRental/sample/Fxml/wypozyczeniePracownik.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Fxml/wypozyczeniePracownik.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CarRental/sample/Fxml/zarzadzajPojazdami.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CarRental/sample/Fxml/zarzadzajPojazdami.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Controllers/zarzadzajPojazdamiAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controllers/zarzadzajPojazdamiAdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Controllers/zarzadzajPojazdamiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controllers/zarzadzajPojazdamiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CarRental/sample/Fxml/zarzadzajPojazdamiAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Fxml/zarzadzajPojazdamiAdmin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CarRental/sample/Fxml/zarzadzajPracownikami.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Fxml/zarzadzajPracownikami.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CarRental/sample/Fxml/zarzadzajUzytkownikami.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CarRental/sample/Fxml/zarzadzajUzytkownikamiAdmin.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CarRental/sample/Fxml/zarzadzajWypozyczeniami.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Fxml/zarzadzajWypozyczeniami.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CarRental/sample/Fxml/zarzadzajWypozyczeniamiAdmin.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Controllers/MenuAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Controllers/MenuAdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Controllers/MenuKlientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Controllers/MenuKlientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Controllers/MenuPracownikController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Controllers/MenuPracownikController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Controllers/ModelTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Table_Models/ModelTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Controllers/ModelTablePojazdy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Controllers/ModelTablePojazdy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Controllers/ModelTablePracownicy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Controllers/ModelTablePracownicy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Controllers/ModelTableWypozyczenie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Controllers/ModelTableWypozyczenie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Controllers/PodWynController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Controllers/PodWynController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Controllers/PodWynPController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Controllers/PodWynPController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Controllers/TerminKlientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Controllers/TerminKlientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Controllers/TerminPracownikController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Controllers/TerminPracownikController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Controllers/WypozyczenieKlientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Controllers/WypozyczenieKlientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Controllers/WypozyczeniePracownikController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Controllers/WypozyczeniePracownikController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Controllers/historiaWypozyczenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Controllers/historiaWypozyczenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Controllers/udostepnijPojazdController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Controllers/udostepnijPojazdController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Controllers/udostepnijPojazdKController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Controllers/udostepnijPojazdKController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Controllers/zarzadzajPojazdamiAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajPojazdamiAdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Controllers/zarzadzajPojazdamiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajPojazdamiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Controllers/zarzadzajPracownikamiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajPracownikamiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Controllers/zarzadzajUzytkownikamiAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajUzytkownikamiAdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Controllers/zarzadzajUzytkownikamiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajUzytkownikamiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Controllers/zarzadzajWypozyczeniamiAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajWypozyczeniamiAdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Controllers/zarzadzajWypozyczeniamiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajWypozyczeniamiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/DBConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/DBConnector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Fxml/HistoriaWypozyczenK.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Fxml/historiaWypozyczen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Fxml/historiaWypozyczen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Fxml/login.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Fxml/menuAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Fxml/menuAdmin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Fxml/menuKlient.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Fxml/menuKlient.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Fxml/menuPracownik.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Fxml/menuPracownik.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Fxml/mojeWypozyczenia.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Fxml/mojeWypozyczenia.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Fxml/mojeWypozyczeniaK.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Fxml/mojeWypozyczeniaK.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Fxml/podWyn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Fxml/podWyn.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Fxml/podWynP.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Fxml/podWynP.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Fxml/terminKlient.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Fxml/terminKlient.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Fxml/terminPracownik.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Fxml/terminPracownik.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Fxml/udostepnijPojazd.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Fxml/udostepnijPojazd.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Fxml/udostepnijPojazdK.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Fxml/wypozyczenieKlient.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Fxml/wypozyczeniePracownik.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Fxml/zarzadzajPojazdami.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Fxml/zarzadzajPojazdami.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Fxml/zarzadzajPojazdamiAdmin.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Fxml/zarzadzajPracownikami.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Fxml/zarzadzajUzytkownikami.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Fxml/zarzadzajUzytkownikami.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Fxml/zarzadzajUzytkownikamiAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Fxml/zarzadzajUzytkownikamiAdmin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Fxml/zarzadzajWypozyczeniami.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Fxml/zarzadzajWypozyczeniamiAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Fxml/zarzadzajWypozyczeniamiAdmin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Generate_PDF_Klienci.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Generate_PDF_Klienci.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Generate_PDF_Pracownicy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Generate_PDF_Pracownicy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Generate_PDF_Samochody.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Generate_PDF_Samochody.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Generate_PDF_Wypozyczenia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Generate_PDF_Wypozyczenia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Table_Models/ModelTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Controllers/ModelTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Table_Models/ModelTablePojazdy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Table_Models/ModelTablePojazdy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Table_Models/ModelTablePracownicy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Table_Models/ModelTablePracownicy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/UnitTest1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/UnitTest1.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -64,8 +170,7 @@
     <breakpoint_rules converted="true" />
   </component>
   <component name="DefaultGradleProjectSettings">
-    <option name="testRunner" value="GRADLE" />
-    <option name="delegatedBuild" value="true" />
+    <option name="isMigrated" value="true" />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="JavaFxApplication" />
@@ -73,44 +178,72 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/Controllers/zarzadzajPojazdamiController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="115" lean-forward="true" selection-start-line="57" selection-end-line="115" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Fxml/login.fxml">
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+          <provider editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/out/production/CarRental/sample/Fxml/zarzadzajPojazdamiAdmin.fxml">
+        <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="672">
-              <caret line="47" column="33" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
+            <state relative-caret-position="391">
+              <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
             </state>
           </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/sample/Controllers/zarzadzajPojazdamiAdminController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="117" lean-forward="true" selection-start-line="117" selection-end-line="117" />
+        <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Fxml/historiaWypozyczen.fxml">
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="331">
+              <caret line="26" column="49" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/out/production/CarRental/sample/Fxml/zarzadzajPojazdami.fxml">
+        <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/historiaWypozyczenController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="43" selection-start-line="43" selection-end-line="47" selection-end-column="27" />
+            <state relative-caret-position="68">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
             </state>
           </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/MenuPracownikController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/MenuKlientController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Icons/back.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Fxml/podWyn.fxml">
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+          <provider editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Fxml/podWynP.fxml">
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+          <provider editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -131,7 +264,7 @@
       <find>LoginController</find>
       <find>mie</find>
       <find>ini</find>
-      <find>klik</find>
+      <find>logou</find>
     </findStrings>
   </component>
   <component name="FindManager">
@@ -142,8 +275,8 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
-        <option value="pkrawiec &lt;pkrawiec97@gmail.com&gt;" />
         <option value="Patryk Krawiec &lt;pkrawiec97@gmail.com&gt;" />
+        <option value="pkrawiec &lt;pkrawiec97@gmail.com&gt;" />
         <option value="Pifciu &lt;filipkonior1@gmail.com&gt;" />
         <option value="pkrawiec" />
       </list>
@@ -158,9 +291,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/sample/Controllers/MenuAdminController.java" />
-        <option value="$PROJECT_DIR$/src/sample/DBConnector.java" />
-        <option value="$PROJECT_DIR$/src/sample/Controllers/ModelTable.java" />
         <option value="$PROJECT_DIR$/src/sample/Controllers/ModelTablePojazdy.java" />
         <option value="$PROJECT_DIR$/src/sample/Controllers/ModelTablePracownicy.java" />
         <option value="$PROJECT_DIR$/src/sample/Table_Models/ModelTablePojazdy.java" />
@@ -201,14 +331,17 @@
         <option value="$PROJECT_DIR$/src/sample/Generate_PDF_Wypozyczenia.java" />
         <option value="$PROJECT_DIR$/src/sample/Generate_PDF_Samochody.java" />
         <option value="$PROJECT_DIR$/src/sample/Generate_auta.java" />
+        <option value="$PROJECT_DIR$/out/production/CarRental/sample/Fxml/zarzadzajPojazdami.fxml" />
+        <option value="$PROJECT_DIR$/out/production/CarRental/sample/Fxml/zarzadzajPojazdamiAdmin.fxml" />
         <option value="$PROJECT_DIR$/src/sample/Fxml/menuAdmin.fxml" />
         <option value="$PROJECT_DIR$/src/sample/Fxml/menuKlient.fxml" />
         <option value="$PROJECT_DIR$/src/sample/Fxml/menuPracownik.fxml" />
         <option value="$PROJECT_DIR$/Test/sample/UnitTest1Test.java" />
-        <option value="$PROJECT_DIR$/out/production/CarRental/sample/Fxml/zarzadzajPojazdami.fxml" />
         <option value="$PROJECT_DIR$/src/sample/Controllers/zarzadzajPojazdamiController.java" />
-        <option value="$PROJECT_DIR$/out/production/CarRental/sample/Fxml/zarzadzajPojazdamiAdmin.fxml" />
         <option value="$PROJECT_DIR$/src/sample/Controllers/zarzadzajPojazdamiAdminController.java" />
+        <option value="$PROJECT_DIR$/src/wypozyczalnia/Fxml/menuKlient.fxml" />
+        <option value="$PROJECT_DIR$/src/wypozyczalnia/Fxml/HistoriaWypozyczenK.fxml" />
+        <option value="$PROJECT_DIR$/src/wypozyczalnia/Fxml/historiaWypozyczen.fxml" />
       </list>
     </option>
   </component>
@@ -231,72 +364,60 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="folder" type="b2602c69:ProjectViewProjectNode" />
-              <item name="folder" type="462c0819:PsiDirectoryNode" />
+              <item name="PZ_2019_Lab3_Gr5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PZ_2019_Lab3_Gr5" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="folder" type="b2602c69:ProjectViewProjectNode" />
-              <item name="folder" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="PZ_2019_Lab3_Gr5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PZ_2019_Lab3_Gr5" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="folder" type="b2602c69:ProjectViewProjectNode" />
-              <item name="folder" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="production" type="462c0819:PsiDirectoryNode" />
+              <item name="PZ_2019_Lab3_Gr5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PZ_2019_Lab3_Gr5" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="folder" type="b2602c69:ProjectViewProjectNode" />
-              <item name="folder" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="production" type="462c0819:PsiDirectoryNode" />
-              <item name="CarRental" type="462c0819:PsiDirectoryNode" />
+              <item name="PZ_2019_Lab3_Gr5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PZ_2019_Lab3_Gr5" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="wypozyczalnia" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="folder" type="b2602c69:ProjectViewProjectNode" />
-              <item name="folder" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="production" type="462c0819:PsiDirectoryNode" />
-              <item name="CarRental" type="462c0819:PsiDirectoryNode" />
-              <item name="sample" type="462c0819:PsiDirectoryNode" />
+              <item name="PZ_2019_Lab3_Gr5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PZ_2019_Lab3_Gr5" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="wypozyczalnia" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="folder" type="b2602c69:ProjectViewProjectNode" />
-              <item name="folder" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="production" type="462c0819:PsiDirectoryNode" />
-              <item name="CarRental" type="462c0819:PsiDirectoryNode" />
-              <item name="sample" type="462c0819:PsiDirectoryNode" />
+              <item name="PZ_2019_Lab3_Gr5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PZ_2019_Lab3_Gr5" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="wypozyczalnia" type="462c0819:PsiDirectoryNode" />
               <item name="Fxml" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="folder" type="b2602c69:ProjectViewProjectNode" />
-              <item name="folder" type="462c0819:PsiDirectoryNode" />
+              <item name="PZ_2019_Lab3_Gr5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PZ_2019_Lab3_Gr5" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="wypozyczalnia" type="462c0819:PsiDirectoryNode" />
+              <item name="Icons" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="folder" type="b2602c69:ProjectViewProjectNode" />
-              <item name="folder" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sample" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="folder" type="b2602c69:ProjectViewProjectNode" />
-              <item name="folder" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sample" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="PZ_2019_Lab3_Gr5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -328,22 +449,22 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="sample" />
     </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="sample.Controllers" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\kofcik\IdeaProjects\PZ_2019_Lab3_Gr5_v2\src\sample\Table_Models" />
-      <recent name="C:\Users\Tommy\IdeaProjects\CarRental\src\sample" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Adrian\IdeaProjects\folder\.idea\libraries" />
       <recent name="C:\Users\User\Documents\GitHub\PZ_2019_Lab3_Gr5\src\sample\Fxml" />
       <recent name="C:\Users\User\Documents\GitHub\PZ_2019_Lab3_Gr5\src\sample\Controllers" />
       <recent name="C:\Users\Tommy\IdeaProjects\CarRental\src\sample\pracownik" />
       <recent name="C:\Users\User\IdeaProjects\CarRental\src\images" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="sample.Controllers" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\kofcik\IdeaProjects\PZ_2019_Lab3_Gr5_v2\src\sample\Table_Models" />
+      <recent name="C:\Users\Tommy\IdeaProjects\CarRental\src\sample" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -358,7 +479,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.Main (1)">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -379,20 +500,6 @@
     </configuration>
     <configuration name="Generate_PDF_Klienci" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="sample.Generate_PDF_Klienci" />
-      <module name="CarRental" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sample.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Generate_PDF_Pracownicy" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="sample.Generate_PDF_Pracownicy" />
       <module name="CarRental" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
@@ -440,6 +547,20 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="sample.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="wypozyczalnia.Main" />
+      <module name="CarRental" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="wypozyczalnia.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -502,11 +623,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Generate_PDF_Samochody" />
         <item itemvalue="Application.Generate_auta" />
         <item itemvalue="Application.Generate_PDF_Wypozyczenia" />
         <item itemvalue="Application.Generate_PDF_Klienci" />
-        <item itemvalue="Application.Generate_PDF_Pracownicy" />
       </list>
     </recent_temporary>
   </component>
@@ -641,14 +762,7 @@
       <option name="project" value="LOCAL" />
       <updated>1558136484648</updated>
     </task>
-    <task id="LOCAL-00018" summary="modyfikacja i usuniecie pojazdow, aktualizacja">
-      <created>1558276605167</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1558276605168</updated>
-    </task>
-    <option name="localTasksCounter" value="19" />
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -696,10 +810,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.25945538" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.21748401" />
       <window_info id="Structure" order="1" weight="0.24966443" />
       <window_info id="Favorites" order="2" weight="0.3295302" />
       <window_info id="Designer" order="3" />
@@ -708,18 +821,18 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.30932897" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.30877572" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39934534" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32827735" />
       <window_info anchor="bottom" id="Application Servers" order="7" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.19639935" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.19609967" />
       <window_info anchor="bottom" id="Problems" order="9" />
       <window_info anchor="bottom" id="Changes" order="10" />
       <window_info anchor="bottom" id="Profiler" order="11" />
-      <window_info anchor="bottom" id="Event Log" order="12" weight="0.32569557" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.31914893" />
+      <window_info anchor="bottom" id="Event Log" order="12" weight="0.32502708" />
+      <window_info active="true" anchor="bottom" id="Messages" order="13" visible="true" weight="0.31852654" />
       <window_info anchor="bottom" id="Terminal" order="14" weight="0.32932165" />
       <window_info anchor="bottom" id="GitHub Pull Requests" order="15" weight="0.33694476" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -787,332 +900,155 @@
     <MESSAGE value="dodanie &quot;fx:id&quot; do tabelek" />
     <MESSAGE value="dodanie ModelTableWypozyczenie" />
     <MESSAGE value="modyfikacja i usuniecie samochodu, przeniesienie danych do tabeleczki" />
-    <MESSAGE value="modyfikacja i usuniecie pojazdow, aktualizacja" />
-    <option name="LAST_COMMIT_MESSAGE" value="modyfikacja i usuniecie pojazdow, aktualizacja" />
+    <MESSAGE value="- modyfikacja wyglądu okien,&#10;- zmiana rozdzielczości,&#10;- wprowadzenie ikon, grafik i loga,&#10;- zmiana wizualna formatek: &quot;login.fxml&quot; i &quot;historiaWypozyczen.fxml&quot;,&#10;- zmiana nazwy pakietu z &quot;sample&quot; na &quot;wypozyczalnia&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="- modyfikacja wyglądu okien,&#10;- zmiana rozdzielczości,&#10;- wprowadzenie ikon, grafik i loga,&#10;- zmiana wizualna formatek: &quot;login.fxml&quot; i &quot;historiaWypozyczen.fxml&quot;,&#10;- zmiana nazwy pakietu z &quot;sample&quot; na &quot;wypozyczalnia&quot;" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/historiaWypozyczenController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/MenuKlientController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1339">
-          <caret line="116" column="36" selection-start-line="116" selection-start-column="36" selection-end-line="116" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/MenuAdminController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-166">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Generate_PDF_Pracownicy.java" />
-    <entry file="file://$PROJECT_DIR$/src/sample/Generate_auta.java" />
-    <entry file="file://$PROJECT_DIR$/src/sample/UnitTest1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/DBConnector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="14" selection-start-line="13" selection-start-column="7" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/production/CarRental/sample/Fxml/zarzadzajUzytkownikami.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="3" column="36" lean-forward="true" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Generate_PDF_Samochody.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-187">
-          <caret line="4" column="17" lean-forward="true" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Generate_PDF_Wypozyczenia.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/production/CarRental/sample/Fxml/zarzadzajWypozyczeniamiAdmin.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Generate_PDF_Klienci.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/production/CarRental/sample/Controllers/zarzadzajPojazdamiController.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="69" column="30" lean-forward="true" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#5715#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/zarzadzajWypozyczeniamiAdminController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-262">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/zarzadzajWypozyczeniamiController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-432">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/production/CarRental/sample/Fxml/zarzadzajWypozyczeniami.fxml">
-      <provider selected="true" editor-type-id="text-editor" />
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/ModelTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/MenuPracownikController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" selection-start-line="24" selection-end-line="25" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/out/production/CarRental/sample/Fxml/zarzadzajWypozyczeniami.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/ModelTable.java" />
+    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/MenuPracownikController.java" />
     <entry file="file://$PROJECT_DIR$/CarRental.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Fxml/menuAdmin.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="26" column="9" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Fxml/menuKlient.fxml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Fxml/menuPracownik.fxml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Fxml/mojeWypozyczenia.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="53" column="22" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Fxml/podWyn.fxml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Fxml/podWynP.fxml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Fxml/terminKlient.fxml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Fxml/historiaWypozyczen.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="22" column="31" lean-forward="true" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Fxml/HistoriaWypozyczenK.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="28" selection-start-line="28" selection-end-line="34" selection-end-column="22" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Fxml/terminPracownik.fxml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Fxml/udostepnijPojazd.fxml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Fxml/wypozyczenieKlient.fxml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Fxml/wypozyczeniePracownik.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="30" selection-start-line="30" selection-end-line="36" selection-end-column="22" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Fxml/zarzadzajPojazdami.fxml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Fxml/zarzadzajPojazdamiAdmin.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="50" column="31" selection-start-line="50" selection-start-column="31" selection-end-line="50" selection-end-column="31" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Fxml/zarzadzajPracownikami.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="53" column="31" selection-start-line="53" selection-start-column="31" selection-end-line="53" selection-end-column="31" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Fxml/zarzadzajUzytkownikami.fxml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Fxml/zarzadzajUzytkownikamiAdmin.fxml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Fxml/zarzadzajWypozyczeniamiAdmin.fxml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Fxml/zarzadzajWypozyczeniami.fxml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Fxml/login.fxml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Fxml/menuAdmin.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/sample/Fxml/menuKlient.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/sample/Fxml/menuPracownik.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/sample/Fxml/mojeWypozyczenia.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/sample/Fxml/podWyn.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/sample/Fxml/podWynP.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/sample/Fxml/terminKlient.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/sample/Fxml/historiaWypozyczen.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/sample/Fxml/HistoriaWypozyczenK.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/sample/Fxml/terminPracownik.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/sample/Fxml/udostepnijPojazd.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/sample/Fxml/wypozyczenieKlient.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/sample/Fxml/wypozyczeniePracownik.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/sample/Fxml/zarzadzajPojazdami.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/sample/Fxml/zarzadzajPojazdamiAdmin.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/sample/Fxml/zarzadzajPracownikami.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/sample/Fxml/zarzadzajUzytkownikami.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/sample/Fxml/zarzadzajUzytkownikamiAdmin.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/sample/Fxml/zarzadzajWypozyczeniamiAdmin.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/sample/Fxml/zarzadzajWypozyczeniami.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/sample/Fxml/login.fxml" />
     <entry file="file://$PROJECT_DIR$/out/production/CarRental/sample/Fxml/menuKlient.fxml">
-      <provider selected="true" editor-type-id="text-editor" />
       <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/out/production/CarRental/sample/Fxml/menuPracownik.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/out/production/CarRental/sample/Fxml/menuAdmin.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="25" column="77" lean-forward="true" selection-start-line="25" selection-start-column="77" selection-end-line="25" selection-end-column="77" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Test/sample/UnitTest1Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="10" selection-start-column="10" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/production/CarRental/sample/Fxml/wypozyczeniePracownik.fxml">
-      <provider selected="true" editor-type-id="text-editor" />
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Test/sample/UnitTest1Test.java" />
+    <entry file="file://$PROJECT_DIR$/out/production/CarRental/sample/Fxml/zarzadzajPojazdamiAdmin.fxml" />
     <entry file="file://$PROJECT_DIR$/out/production/CarRental/sample/Fxml/zarzadzajPojazdami.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="43" selection-start-line="43" selection-end-line="47" selection-end-column="27" />
-        </state>
-      </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/production/CarRental/sample/Fxml/zarzadzajPojazdamiAdmin.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="47" column="33" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/zarzadzajPojazdamiController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="115" lean-forward="true" selection-start-line="57" selection-end-line="115" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="442">
+          <caret line="35" column="85" selection-start-line="35" selection-start-column="85" selection-end-line="35" selection-end-column="107" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/zarzadzajPojazdamiAdminController.java">
+    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/zarzadzajPojazdamiController.java" />
+    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/zarzadzajPojazdamiAdminController.java" />
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="117" lean-forward="true" selection-start-line="117" selection-end-line="117" />
+        <state relative-caret-position="374">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Fxml/menuAdmin.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test/wypozyczalnia/UnitTest1Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Icons/car.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Fxml/menuKlient.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/MenuKlientController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Icons/users.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Icons/login.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Fxml/podWynP.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Fxml/podWyn.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Icons/back.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Icons/logout.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/MenuPracownikController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/historiaWypozyczenController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Fxml/login.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Fxml/HistoriaWypozyczenK.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Fxml/historiaWypozyczen.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="26" column="49" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
         </state>
       </provider>
     </entry>

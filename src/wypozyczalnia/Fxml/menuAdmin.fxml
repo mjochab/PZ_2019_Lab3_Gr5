@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="adminPane" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.MenuAdminController">
+<AnchorPane fx:id="adminPane" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.MenuAdminController">
    <children>
       <BorderPane layoutX="-1.0" prefHeight="30.0" prefWidth="700.0">
          <top>
@@ -23,7 +23,7 @@
             </MenuBar>
          </top>
       </BorderPane>
-      <AnchorPane layoutX="218.0" layoutY="134.0" prefHeight="192.0" prefWidth="255.0" styleClass="okienko" stylesheets="@../../../style.css">
+      <AnchorPane layoutX="218.0" layoutY="134.0" prefHeight="192.0" prefWidth="255.0">
          <children>
             <Button layoutX="23.0" layoutY="21.0" mnemonicParsing="false" onAction="#zarzadzajUzytkownikamiAdmin" prefHeight="25.0" prefWidth="200.0" text="Zarządzaj klientami" translateX="5.0" />
             <Button layoutX="23.0" layoutY="61.0" mnemonicParsing="false" onAction="#zarzadzajPojazdamiAdmin" prefHeight="25.0" prefWidth="200.0" text="Zarządzaj pojazdami" translateX="5.0" />

@@ -9,11 +9,11 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="klientPane" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.MenuKlientController">
+<AnchorPane fx:id="klientPane" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.MenuKlientController">
    <children>
       <BorderPane prefHeight="30.0" prefWidth="700.0">
          <top>
-            <MenuBar prefHeight="25.0" prefWidth="700.0" BorderPane.alignment="CENTER">
+            <MenuBar prefHeight="25.0" prefWidth="800.0" BorderPane.alignment="CENTER">
                <menus>
                   <Menu fx:id="logout_btn" mnemonicParsing="false" onAction="#logOut" text="Powrót">
                      <items>
@@ -24,7 +24,7 @@
             </MenuBar>
          </top>
       </BorderPane>
-      <AnchorPane layoutX="220.0" layoutY="134.0" prefHeight="191.0" prefWidth="260.0" styleClass="okienko" stylesheets="@../../../style.css">
+      <AnchorPane layoutX="220.0" layoutY="134.0" prefHeight="191.0" prefWidth="260.0">
          <children>
             <Button layoutX="25.0" layoutY="20.0" mnemonicParsing="false" onAction="#mojeWypozyczeniaK" prefHeight="25.0" prefWidth="200.0" text="Moje wypożyczenia" translateX="5.0" />
             <Button layoutX="23.0" layoutY="100.0" mnemonicParsing="false" onAction="#terminKlient" prefHeight="25.0" prefWidth="200.0" text="Wypożycz samochód" translateX="7.0" />

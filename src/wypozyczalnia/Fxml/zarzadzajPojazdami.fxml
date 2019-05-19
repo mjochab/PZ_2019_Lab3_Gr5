@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="pracownikPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.zarzadzajPojazdamiController">
+<AnchorPane fx:id="pracownikPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.zarzadzajPojazdamiController">
     <children>
         <BorderPane prefHeight="30.0" prefWidth="700.0">
             <top>
@@ -33,11 +33,11 @@
                      <font>
                         <Font size="13.0" />
                      </font></Button>
-                        <Button layoutX="190.0" layoutY="4.0" mnemonicParsing="false" onAction="#modujAuto" prefHeight="25.0" prefWidth="162.0" text="Edytuj Pojazd" translateX="5.0">
+                        <Button layoutX="190.0" layoutY="4.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Edytuj Pojazd" translateX="5.0">
                      <font>
                         <Font size="13.0" />
                      </font></Button>
-                        <Button layoutX="361.0" layoutY="4.0" mnemonicParsing="false" onAction="#usunAuto" prefHeight="25.0" prefWidth="162.0" text="Usuń Pojazd" translateX="5.0">
+                        <Button layoutX="361.0" layoutY="4.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Usuń Pojazd" translateX="5.0">
                      <font>
                         <Font size="13.0" />
                      </font></Button>
@@ -45,7 +45,7 @@
                 </AnchorPane>
             </bottom>
         </BorderPane>
-        <TextField fx:id="autoMarka" layoutX="20.0" layoutY="88.0" promptText="Marka" onAction="#klik"/>
+        <TextField fx:id="autoMarka" layoutX="20.0" layoutY="88.0" promptText="Marka" />
         <TextField fx:id="autoModel" layoutX="20.0" layoutY="123.0" promptText="Model" />
         <TextField fx:id="autoRodzaj" layoutX="20.0" layoutY="158.0" promptText="Rodzaj" />
         <TextField fx:id="autoRocznik" layoutX="20.0" layoutY="193.0" promptText="Rocznik" />
