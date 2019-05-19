@@ -45,7 +45,7 @@
                 </AnchorPane>
             </bottom>
         </BorderPane>
-        <TextField fx:id="autoMarka" layoutX="20.0" layoutY="88.0" promptText="Marka" />
+        <TextField fx:id="autoMarka" layoutX="20.0" layoutY="88.0" promptText="Marka" onAction="#klik"/>
         <TextField fx:id="autoModel" layoutX="20.0" layoutY="123.0" promptText="Model" />
         <TextField fx:id="autoRodzaj" layoutX="20.0" layoutY="158.0" promptText="Rodzaj" />
         <TextField fx:id="autoRocznik" layoutX="20.0" layoutY="193.0" promptText="Rocznik" />

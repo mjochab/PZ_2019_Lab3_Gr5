@@ -125,24 +125,26 @@ public class zarzadzajPojazdamiController implements Initializable {
             PreparedStatement stmt = con.prepareStatement("SELECT * FROM samochod");
             String zapytanie = "Select * FROM samochod ORDER BY samochod_id LIMIT " + index;
             ResultSet rs = stmt.executeQuery(zapytanie);
-            String a;
+            String a = "0";
             int i=0;
             while(rs.next()) {
                 a = rs.getString(1);
                 i++;
             }
-            System.out.println(i);
+            int numer = Integer.parseInt(a);
+            System.out.println(numer);
+
             PreparedStatement stmt2 = con.prepareStatement("DELETE FROM samochod WHERE samochod_id = (?)");
-            stmt2.setInt(1, i);
+            stmt2.setInt(1, numer);
             stmt2.executeUpdate();
-
-
 
 
         }catch (Exception e)
         {
             System.out.println(e);
         };
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/menuPracownik.fxml"));
+        pracownikPane.getChildren().setAll(pane);
 
     tabelka_pojazdy.refresh();
     }
@@ -169,13 +171,14 @@ public class zarzadzajPojazdamiController implements Initializable {
             PreparedStatement stmt = con.prepareStatement("SELECT * FROM samochod");
             String zapytanie = "Select * FROM samochod ORDER BY samochod_id LIMIT " + index;
             ResultSet rs = stmt.executeQuery(zapytanie);
-            String a;
+            String a = "0";
             int i=0;
             while(rs.next()) {
                 a = rs.getString(1);
                 i++;
             }
-            System.out.println(i);
+            int numer = Integer.parseInt(a);
+            System.out.println(numer);
             PreparedStatement stmt2 = con.prepareStatement("UPDATE `samochod` SET `marka`=(?),`model`=(?),`rodzaj`=(?),`paliwo`=(?),`przebieg`=(?),`Cena`=(?) WHERE samochod_id=(?)");
             stmt2.setString(1, marka);
             stmt2.setString(2, model);
@@ -183,7 +186,7 @@ public class zarzadzajPojazdamiController implements Initializable {
             stmt2.setString(4, Paliwo);
             stmt2.setString(5, przebieg);
             stmt2.setString(6, cena);
-            stmt2.setInt(7, i);
+            stmt2.setInt(7, numer);
             stmt2.executeUpdate();
             tabelka_pojazdy.refresh();
 
@@ -192,8 +195,10 @@ public class zarzadzajPojazdamiController implements Initializable {
     {
         System.out.println(e);
     }
-
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/menuPracownik.fxml"));
+        pracownikPane.getChildren().setAll(pane);
     }
+
 
     public void dodajAuto(ActionEvent event) throws IOException{
         String marka = String.valueOf(autoMarka.getCharacters());
@@ -242,6 +247,7 @@ public class zarzadzajPojazdamiController implements Initializable {
         {
             System.out.println(e);
         };
+
 
     }
 

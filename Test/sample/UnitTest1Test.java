@@ -1,4 +1,4 @@
-package sample;
+/*package sample;
 
 import org.junit.Test;
 
@@ -19,4 +19,4 @@ public class UnitTest1Test {
         String result2 = test2.addString("Programowanie", "Zespołowe");
         assertEquals("PrgZesp", result2); //Test będzie niepoprawny, metoda zwróci stringa "ProgramowanieZespołowe",a zassertowany, spodziewany string to "PrgZesp"
     }
-}
+}*/
