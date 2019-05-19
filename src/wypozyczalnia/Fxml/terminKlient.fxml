@@ -12,7 +12,7 @@
 
 <AnchorPane fx:id="klientPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.TerminKlientController">
    <children>
-      <MenuBar prefHeight="25.0" prefWidth="700.0">
+      <MenuBar maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="800.0">
         <menus>
           <Menu mnemonicParsing="false" text="Powrót">
             <items>
