@@ -226,11 +226,11 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="itextpdf-5.1.02" level="project" />
-    <orderEntry type="library" name="junit-4.121" level="project" />
-    <orderEntry type="library" name="junit-4.12" level="project" />
-    <orderEntry type="library" name="mysql-connector-java-8.0.151" level="project" />
-    <orderEntry type="library" name="junit-4.122" level="project" />
-    <orderEntry type="library" name="itextpdf-5.1.0" level="project" />
+    <orderEntry type="library" exported="" name="itextpdf-5.1.02" level="project" />
+    <orderEntry type="library" exported="" name="junit-4.121" level="project" />
+    <orderEntry type="library" exported="" name="junit-4.12" level="project" />
+    <orderEntry type="library" exported="" name="mysql-connector-java-8.0.151" level="project" />
+    <orderEntry type="library" exported="" name="junit-4.122" level="project" />
+    <orderEntry type="library" exported="" name="itextpdf-5.1.0" level="project" />
   </component>
 </module>

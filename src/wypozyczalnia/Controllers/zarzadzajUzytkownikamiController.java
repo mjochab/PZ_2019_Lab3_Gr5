@@ -45,8 +45,6 @@ public class zarzadzajUzytkownikamiController implements Initializable {
     @FXML private TextField userNazwisko;
     @FXML private TextField userData;
     @FXML private TextField userMiejscowosc;
-    @FXML private TextField userTelefon;
-    @FXML private TextField userMail;
     @FXML private TextField userPesel;
 
     public void dodajUsera(ActionEvent event) throws IOException{
@@ -55,8 +53,6 @@ public class zarzadzajUzytkownikamiController implements Initializable {
         String data = String.valueOf(userImie.getCharacters());
         String rocznik = String.valueOf(userData.getCharacters());
         String miejscowosc = String.valueOf(userMiejscowosc.getCharacters());
-        String telefon = String.valueOf(userTelefon.getCharacters());
-        String mail = String.valueOf(userMail.getCharacters());
         String pesel = String.valueOf(userPesel.getCharacters());
 
 

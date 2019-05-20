@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TablePosition;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -16,6 +17,7 @@ import wypozyczalnia.DBConnector;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -44,9 +46,20 @@ public class zarzadzajUzytkownikamiAdminController implements Initializable  {
     @FXML private TextField userNazwisko;
     @FXML private TextField userData;
     @FXML private TextField userMiejscowosc;
-    @FXML private TextField userTelefon;
-    @FXML private TextField userMail;
     @FXML private TextField userPesel;
+
+    public void logOut(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/login.fxml"));
+        adminPane.getChildren().setAll(pane);
+    }
+
+    public void menuAdmin(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/menuAdmin.fxml"));
+        adminPane.getChildren().setAll(pane);
+    }
+
+
+
     ObservableList<ModelTable> oblist = FXCollections.observableArrayList();
 
     public void dodajUsera(ActionEvent event) throws IOException{
@@ -55,8 +68,6 @@ public class zarzadzajUzytkownikamiAdminController implements Initializable  {
         String data = String.valueOf(userImie.getCharacters());
         String rocznik = String.valueOf(userData.getCharacters());
         String miejscowosc = String.valueOf(userMiejscowosc.getCharacters());
-        String telefon = String.valueOf(userTelefon.getCharacters());
-        String mail = String.valueOf(userMail.getCharacters());
         String pesel = String.valueOf(userPesel.getCharacters());
 
 
@@ -91,19 +102,114 @@ public class zarzadzajUzytkownikamiAdminController implements Initializable  {
         }catch (Exception e)
         {
             System.out.println(e);
+        }
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajUzytkownikamiAdmin.fxml"));
+        adminPane.getChildren().setAll(pane);
+        tabelka.refresh();
+
+    }
+
+    public void klik(ActionEvent event) throws  IOException{        //funkcja przenosi dane do tabelki po lewej stronie, jak tyknie sie wiersz w tabeli to przenosi
+        //TablePosition pozycja = tabelka_pojazdy.getSelectionModel().getSelectedCells().get(0);
+        //int index = pozycja.getRow();
+        String abc;
+        abc = tabelka.toString();
+        System.out.println(abc);
+        ArrayList<String> dane = new ArrayList<String>();
+        try {
+            TablePosition pozycja = tabelka.getSelectionModel().getSelectedCells().get(0);
+            int index = pozycja.getRow();
+
+            index++;
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+
+            PreparedStatement stmt = con.prepareStatement("SELECT * FROM klient");
+            String zapytanie = "Select * FROM klient ORDER BY klient_id LIMIT " + index;
+            ResultSet rs = stmt.executeQuery(zapytanie);
+            String a = "0";
+            int i=0;
+            while(rs.next()) {
+                a = rs.getString(1);
+                i++;
+            }
+            int numer = Integer.parseInt(a);
+            System.out.println(numer);
+
+
+            String model, rodzaj, paliwo, przebieg, cena;
+            zapytanie = "Select * FROM klient where klient_id = " + numer;
+            ResultSet rs2 = stmt.executeQuery(zapytanie);
+            System.out.println(rs2);
+            if(rs2.next()) {
+                dane.add(rs2.getString("imie"));
+                dane.add(rs2.getString("nazwisko"));
+                dane.add(rs2.getString("data_urodzenia"));
+                dane.add(rs2.getString("miejscowosc"));
+                dane.add(rs2.getString("pesel"));
+                userImie.setText(String.valueOf(dane.get(0)));
+                userNazwisko.setText(String.valueOf(dane.get(1)));
+                userData.setText(String.valueOf(dane.get(2)));
+                userMiejscowosc.setText(String.valueOf(dane.get(3)));
+                userPesel.setText(String.valueOf(dane.get(4)));
+            }
+
+
+        }catch (Exception e)
+        {
+            System.out.println(e);
         };
+
     }
-    public void logOut(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/login.fxml"));
+
+    public void modujKlient(ActionEvent event) throws  IOException{
+        System.out.println("-");
+
+        TablePosition pozycja = tabelka.getSelectionModel().getSelectedCells().get(0);
+        int index = pozycja.getRow();
+
+        String imie = String.valueOf(userImie.getCharacters());
+        String nazwisko = String.valueOf(userNazwisko.getCharacters());
+        String data_urodzenia = String.valueOf(userData.getCharacters());
+        String miejscowosc = String.valueOf(userMiejscowosc.getCharacters());
+        String pesel = String.valueOf(userPesel.getCharacters());
+
+        try {
+            index++;
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+
+            PreparedStatement stmt = con.prepareStatement("SELECT * FROM klient");
+            String zapytanie = "Select * FROM klient ORDER BY klient_id LIMIT " + index;
+            ResultSet rs = stmt.executeQuery(zapytanie);
+            String a = "0";
+            int i=0;
+            while(rs.next()) {
+                a = rs.getString(1);
+                i++;
+            }
+            int numer = Integer.parseInt(a);
+            System.out.println(numer);
+            PreparedStatement stmt2 = con.prepareStatement("UPDATE `klient` SET `imie`=(?),`nazwisko`=(?),`data_urodzenia`=(?),`miejscowosc`=(?),`pesel`=(?) WHERE klient_id=(?)");
+            stmt2.setString(1, imie);
+            stmt2.setString(2, nazwisko);
+            stmt2.setString(3, data_urodzenia);
+            stmt2.setString(4, miejscowosc);
+            stmt2.setString(5, pesel);
+            stmt2.setInt(6, numer);
+
+            stmt2.executeUpdate();
+
+
+        }catch (Exception e)
+        {
+            System.out.println(e);
+        }
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajUzytkownikamiAdmin.fxml"));
         adminPane.getChildren().setAll(pane);
+        tabelka.refresh();
+
     }
-
-    public void menuAdmin(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/menuAdmin.fxml"));
-        adminPane.getChildren().setAll(pane);
-    }
-
-
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

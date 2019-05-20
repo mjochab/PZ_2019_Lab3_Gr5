@@ -37,10 +37,15 @@
                      <font>
                         <Font size="13.0" />
                      </font></Button>
-                        <Button layoutX="350.0" layoutY="3.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Usuń Uzytkownika" translateX="5.0">
+                        <Button layoutX="525.0" layoutY="3.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Uzupełnij" translateX="5.0">
                      <font>
                         <Font size="13.0" />
                      </font></Button>
+                  <Button layoutX="358.0" layoutY="3.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Usuń Uzytkownika">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Button>
                     </children>
                 </AnchorPane>
             </bottom>
@@ -56,9 +61,9 @@
           <columns>
               <TableColumn fx:id="col_imie" prefWidth="46.0" text="imie" />
               <TableColumn fx:id="col_nazwisko" prefWidth="117.0" text="nazwisko" />
-              <TableColumn fx:id="col_data" prefWidth="81.0" text="data_urodzenia" />
+              <TableColumn fx:id="col_data" prefWidth="128.0" text="data_urodzenia" />
               <TableColumn fx:id="col_miejscowosc" prefWidth="124.0" text="miejscowosc" />
-              <TableColumn fx:id="col_pesel" prefWidth="82.0" text="pesel" />
+              <TableColumn fx:id="col_pesel" prefWidth="136.0" text="pesel" />
           </columns>
       </TableView>
     </children>

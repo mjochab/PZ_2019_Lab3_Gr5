@@ -41,11 +41,6 @@
                      <font>
                         <Font size="13.0" />
                      </font></Button>
-                  <Button layoutX="537.0" layoutY="4.0" mnemonicParsing="false" onAction="#klik" prefHeight="29.0" prefWidth="89.0" text="Uzupełnij">
-                     <font>
-                        <Font size="13.0" />
-                     </font>
-                  </Button>
                     </children>
                 </AnchorPane>
             </bottom>
