@@ -4,11 +4,15 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -183,12 +187,11 @@ public class LoginController implements Initializable {
 
     }
 
-    public void logIn(ActionEvent event) {
+    public void logIn(ActionEvent actionEvent) {
 
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
-        String permission = "";
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -201,27 +204,64 @@ public class LoginController implements Initializable {
                 rs = ps.executeQuery();
 
                     if (rs.next()) {
-                        AnchorPane pane = null;
                         if(rs.getString("rodzaj").equals("klient")) {
-                            try {
-                                pane = FXMLLoader.load(getClass().getResource("../fxml/menuKlient.fxml"));
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
+                            FXMLLoader Loader = new FXMLLoader();
+                            Loader.setLocation(getClass().getResource("../fxml/menuKlient.fxml"));
+                                try {
+                                    Loader.load();
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                            MenuKlientController display = Loader.getController();
+                            display.displayName(rs.getString("imie"));
+
+                            Node source = (Node) actionEvent.getSource();
+                            Stage stage1 = (Stage) source.getScene().getWindow();
+                            stage1.close();
+
+                            Parent p = Loader.getRoot();
+                            Stage stage = new Stage();
+                            stage.setScene(new Scene(p));
+                            stage.show();
                         }else if(rs.getString("rodzaj").equals("admin")){
-                            try {
-                                pane = FXMLLoader.load(getClass().getResource("../fxml/menuAdmin.fxml"));
-                            } catch (IOException e) {
+                            FXMLLoader Loader = new FXMLLoader();
+                            Loader.setLocation(getClass().getResource("../fxml/menuAdmin.fxml"));
+                                try {
+                                    Loader.load();
+                                } catch (IOException e) {
                                 e.printStackTrace();
-                            }
+                                }
+                            MenuAdminController display = Loader.getController();
+                            display.displayName(rs.getString("imie"));
+
+                            Node source = (Node) actionEvent.getSource();
+                            Stage stage1 = (Stage) source.getScene().getWindow();
+                            stage1.close();
+
+                            Parent p = Loader.getRoot();
+                            Stage stage = new Stage();
+                            stage.setScene(new Scene(p));
+                            stage.show();
                         }else if(rs.getString("rodzaj").equals("worker")) {
-                            try {
-                                pane = FXMLLoader.load(getClass().getResource("../fxml/menuPracownik.fxml"));
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
+                            FXMLLoader Loader = new FXMLLoader();
+                            Loader.setLocation(getClass().getResource("../fxml/menuPracownik.fxml"));
+                                try {
+                                    Loader.load();
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                            MenuPracownikController display = Loader.getController();
+                            display.displayName(rs.getString("imie"));
+
+                            Node source = (Node) actionEvent.getSource();
+                            Stage stage1 = (Stage) source.getScene().getWindow();
+                            stage1.close();
+
+                            Parent p = Loader.getRoot();
+                            Stage stage = new Stage();
+                            stage.setScene(new Scene(p));
+                            stage.show();
                         }
-                        rootPane.getChildren().setAll(pane);
                     } else {
                         notyfikacja_lbl.setVisible(true);
                         notyfikacja_lbl.setText("NIEPOPRAWNY LOGIN LUB HASŁO!");
