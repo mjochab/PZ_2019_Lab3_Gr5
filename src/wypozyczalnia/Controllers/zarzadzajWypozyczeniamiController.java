@@ -29,12 +29,12 @@ public class zarzadzajWypozyczeniamiController {
     @FXML private TextField model;
 
     public void logOut(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/login.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/login.fxml"));
         pracownikPane.getChildren().setAll(pane);
     }
 
     public void menuPracownik(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/menuPracownik.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/menuPracownik.fxml"));
         pracownikPane.getChildren().setAll(pane);
     }
 

@@ -47,17 +47,17 @@ public class LoginController implements Initializable {
     }
 
     public void loadMenuAdmin(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/menuAdmin.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/menuAdmin.fxml"));
         rootPane.getChildren().setAll(pane);
     }
 
     public void loadMenuPracownik(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/menuPracownik.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/menuPracownik.fxml"));
         rootPane.getChildren().setAll(pane);
     }
 
     public void loadMenuKlient(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/menuKlient.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/menuKlient.fxml"));
         rootPane.getChildren().setAll(pane);
     }
 
@@ -218,7 +218,7 @@ public class LoginController implements Initializable {
                 if (rs.next()) {
                     AnchorPane pane = null;
                     try {
-                        pane = FXMLLoader.load(getClass().getResource("../Fxml/menuKlient.fxml"));
+                        pane = FXMLLoader.load(getClass().getResource("../fxml/menuKlient.fxml"));
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -236,7 +236,7 @@ public class LoginController implements Initializable {
                 if (rs.next()) {
                     AnchorPane pane = null;
                     try {
-                        pane = FXMLLoader.load(getClass().getResource("../Fxml/menuAdmin.fxml"));
+                        pane = FXMLLoader.load(getClass().getResource("../fxml/menuAdmin.fxml"));
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -254,7 +254,7 @@ public class LoginController implements Initializable {
                 if (rs.next()) {
                     AnchorPane pane = null;
                     try {
-                        pane = FXMLLoader.load(getClass().getResource("../Fxml/menuPracownik.fxml"));
+                        pane = FXMLLoader.load(getClass().getResource("../fxml/menuPracownik.fxml"));
                     } catch (IOException e) {
                         e.printStackTrace();
                     }

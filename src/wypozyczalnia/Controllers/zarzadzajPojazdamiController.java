@@ -144,7 +144,7 @@ public class zarzadzajPojazdamiController implements Initializable {
         {
             System.out.println(e);
         };
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/zarzadzajPojazdami.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajPojazdami.fxml"));
         pracownikPane.getChildren().setAll(pane);
 
     tabelka_pojazdy.refresh();
@@ -196,7 +196,7 @@ public class zarzadzajPojazdamiController implements Initializable {
     {
         System.out.println(e);
     }
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/zarzadzajPojazdami.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajPojazdami.fxml"));
         pracownikPane.getChildren().setAll(pane);
         
     }
@@ -258,12 +258,12 @@ public class zarzadzajPojazdamiController implements Initializable {
     }
 
     public void logOut(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/login.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/login.fxml"));
         pracownikPane.getChildren().setAll(pane);
     }
 
     public void menuPracownik(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/menuPracownik.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/menuPracownik.fxml"));
         pracownikPane.getChildren().setAll(pane);
     }
 

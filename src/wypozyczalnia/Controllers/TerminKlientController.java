@@ -13,12 +13,12 @@ public class TerminKlientController {
     private AnchorPane klientPane;
 
     public void menuKlient(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/menuKlient.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/menuKlient.fxml"));
         klientPane.getChildren().setAll(pane);
     }
 
     public void wypozyczenieKlient(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/wypozyczenieKlient.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/wypozyczenieKlient.fxml"));
         klientPane.getChildren().setAll(pane);
     }
 

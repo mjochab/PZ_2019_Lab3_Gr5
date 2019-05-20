@@ -51,12 +51,12 @@ public class zarzadzajPojazdamiAdminController implements Initializable {
     @FXML private TextField autoPrzebieg;
     @FXML private TextField autoCena;
     public void logOut(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/login.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/login.fxml"));
         adminPane.getChildren().setAll(pane);
     }
 
     public void menuAdmin(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/menuAdmin.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/menuAdmin.fxml"));
         adminPane.getChildren().setAll(pane);
     }
 
@@ -149,7 +149,7 @@ public class zarzadzajPojazdamiAdminController implements Initializable {
         {
             System.out.println(e);
         };
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/zarzadzajPojazdamiAdmin.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajPojazdamiAdmin.fxml"));
         adminPane.getChildren().setAll(pane);
 
         tabelka_pojazdy.refresh();
@@ -201,7 +201,7 @@ public class zarzadzajPojazdamiAdminController implements Initializable {
         {
             System.out.println(e);
         }
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/zarzadzajPojazdamiAdmin.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajPojazdamiAdmin.fxml"));
         adminPane.getChildren().setAll(pane);
     }
 

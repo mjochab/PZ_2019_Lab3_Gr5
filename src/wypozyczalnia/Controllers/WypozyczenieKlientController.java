@@ -14,17 +14,17 @@ public class WypozyczenieKlientController {
 
 
     public void openMenu(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/menuKlient.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/menuKlient.fxml"));
         klientPane.getChildren().setAll(pane);
     }
 
     public void podWyn(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/podWyn.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/podWyn.fxml"));
         klientPane.getChildren().setAll(pane);
     }
 
     public void terminKlient(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/terminKlient.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/terminKlient.fxml"));
         klientPane.getChildren().setAll(pane);
     }
 

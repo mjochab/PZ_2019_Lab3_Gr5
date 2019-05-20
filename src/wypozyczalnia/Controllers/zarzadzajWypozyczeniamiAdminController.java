@@ -28,12 +28,12 @@ public class zarzadzajWypozyczeniamiAdminController {
     @FXML private TextField model;
 
     public void logOut(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/login.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/login.fxml"));
         adminPane.getChildren().setAll(pane);
     }
 
     public void menuAdmin(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/menuAdmin.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/menuAdmin.fxml"));
         adminPane.getChildren().setAll(pane);
     }
     public void dodajWypozyczenie(ActionEvent event) throws IOException {

@@ -12,32 +12,32 @@ public class MenuAdminController {
 
 
     public void logOut(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/login.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/login.fxml"));
         adminPane.getChildren().setAll(pane);
     }
 
     public void menuAdmin(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/menuAdmin.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/menuAdmin.fxml"));
         adminPane.getChildren().setAll(pane);
     }
 
     public void zarzadzajUzytkownikamiAdmin(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/zarzadzajUzytkownikamiAdmin.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajUzytkownikamiAdmin.fxml"));
         adminPane.getChildren().setAll(pane);
     }
 
     public void zarzadzajPojazdamiAdmin(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/zarzadzajPojazdamiAdmin.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajPojazdamiAdmin.fxml"));
         adminPane.getChildren().setAll(pane);
     }
 
     public void zarzadzajWypozyczeniamiAdmin(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/zarzadzajWypozyczeniamiAdmin.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajWypozyczeniamiAdmin.fxml"));
         adminPane.getChildren().setAll(pane);
     }
 
     public void zarzadzajPracownikami(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../Fxml/zarzadzajPracownikami.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajPracownikami.fxml"));
         adminPane.getChildren().setAll(pane);
     }
 
