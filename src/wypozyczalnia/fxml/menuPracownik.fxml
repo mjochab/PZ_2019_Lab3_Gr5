@@ -2,39 +2,248 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="pracownikPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.MenuPracownikController">
+<AnchorPane fx:id="pracownikPane" prefHeight="614.0" prefWidth="800.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.MenuPracownikController">
    <children>
-      <MenuBar maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="800.0">
-         <menus>
-            <Menu mnemonicParsing="false" text="Powrót">
-               <items>
-                  <MenuItem fx:id="logout_btn" mnemonicParsing="false" onAction="#logOut" text="Do logowania" />
-                  <MenuItem fx:id="menuPracownik_btn" mnemonicParsing="false" onAction="#menuPracownik" text="Panel pracownik" />
-               </items>
-            </Menu>
-         </menus>
-      </MenuBar>
-      <AnchorPane layoutX="266.0" layoutY="100.0" prefHeight="286.0" prefWidth="269.0" style="-fx-background-color: #6d0303;">
+      <AnchorPane layoutX="14.0" layoutY="131.0" prefHeight="409.0" prefWidth="791.0">
          <children>
-            <Button fx:id="zarzadzajPojazdami_btn" layoutX="29.0" layoutY="56.0" mnemonicParsing="false" onAction="#zarzadzajPojazdami" prefHeight="25.0" prefWidth="200.0" text="Zarządzaj pojazdami" translateX="7.0" />
-            <Button fx:id="zarzadzajUzytkownikami_btn" layoutX="31.0" layoutY="19.0" mnemonicParsing="false" onAction="#zarzadzajUzytkownikami" prefHeight="25.0" prefWidth="200.0" text="Zarządzaj klientami" translateX="5.0" />
-            <Button fx:id="zarzadzajWypozyczeniami_btn" layoutX="31.0" layoutY="92.0" mnemonicParsing="false" onAction="#zarzadzajWypozyczeniami" prefHeight="25.0" prefWidth="200.0" text="Zarządzaj wypożyczeniami" translateX="5.0" />
-            <Button fx:id="mojeWypozyczenia" layoutX="36.0" layoutY="128.0" mnemonicParsing="false" onAction="#mojeWypozyczenia" prefHeight="25.0" prefWidth="200.0" text="Moje wypożyczenia" />
-            <Button fx:id="wypozyczeniePracownik" layoutX="31.0" layoutY="164.0" mnemonicParsing="false" onAction="#terminPracownik" prefHeight="25.0" prefWidth="200.0" text="Wypożycz Samochód" translateX="5.0" />
-            <Button fx:id="udostepnijPojazd" layoutX="36.0" layoutY="200.0" mnemonicParsing="false" onAction="#udostepnijPojazd" prefHeight="25.0" prefWidth="200.0" text="Udostępnij samochód" />
-            <Button fx:id="historiaWypozyczen" layoutX="36.0" layoutY="236.0" mnemonicParsing="false" onAction="#historiaWypozyczen" prefHeight="25.0" prefWidth="200.0" text="Historia wypożyczeń" />
+            <Button fx:id="zarzadzajUzytkownikami_btn" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#zarzadzajUzytkownikami" prefHeight="99.0" prefWidth="242.0" style="-fx-background-color: #e27171;" text="ZARZĄDZAJ KLIENTAMI">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Button>
+            <Button fx:id="zarzadzajPojazdami_btn" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="275.0" layoutY="14.0" mnemonicParsing="false" onAction="#zarzadzajPojazdami" prefHeight="99.0" prefWidth="242.0" style="-fx-background-color: #e27171;" text="ZARZĄDZAJ POJAZDAMI">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Button>
+            <Button fx:id="zarzadzajWypozyczeniami_btn" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="535.0" layoutY="14.0" mnemonicParsing="false" onAction="#zarzadzajWypozyczeniami" prefHeight="99.0" prefWidth="242.0" style="-fx-background-color: #e27171;" text="ZARZĄDZAJ WYPOŻYCZENIAMI">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="mojeWypozyczenia" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="14.0" layoutY="155.0" mnemonicParsing="false" onAction="#mojeWypozyczenia" prefHeight="99.0" prefWidth="242.0" style="-fx-background-color: #e27171;" text="MOJE WYPOŻYCZENIA">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Button>
+            <Button fx:id="wypozyczeniePracownik" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="275.0" layoutY="155.0" mnemonicParsing="false" onAction="#terminPracownik" prefHeight="99.0" prefWidth="242.0" style="-fx-background-color: #e27171;" text="WYPOŻYCZ SAMOCHÓD">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Button>
+            <Button fx:id="udostepnijPojazd" alignment="TOP_CENTER" layoutX="535.0" layoutY="155.0" mnemonicParsing="false" onAction="#udostepnijPojazd" prefHeight="99.0" prefWidth="242.0" style="-fx-background-color: #e27171;" text="UDOSTĘPNIJ SAMOCHÓD">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Button>
+            <Button fx:id="historiaWypozyczen" alignment="TOP_CENTER" layoutX="275.0" layoutY="296.0" mnemonicParsing="false" onAction="#historiaWypozyczen" prefHeight="99.0" prefWidth="242.0" style="-fx-background-color: #e27171;" text="HISTORIA WYPOŻYCZEŃ">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="52.0" fitWidth="55.0" layoutX="366.0" layoutY="338.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/history.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="57.0" fitWidth="65.0" layoutX="107.0" layoutY="197.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/cars.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="47.0" fitWidth="42.0" layoutX="633.0" layoutY="206.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/share.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="57.0" fitWidth="94.0" layoutX="368.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/car.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="57.0" fitWidth="94.0" layoutX="100.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/users.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="57.0" fitWidth="94.0" layoutX="368.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/car.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="60.0" fitWidth="68.0" layoutX="625.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/rent.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
-      <Label alignment="CENTER" layoutX="299.0" layoutY="54.0" prefHeight="27.0" prefWidth="203.0" text="Witaj Pracowniku!" textFill="WHITE">
+      <Label fx:id="usernamedisplay_lbl" layoutX="378.0" layoutY="87.0" prefHeight="21.0" prefWidth="238.0" text="pracowniku" textFill="#eeadad">
+         <font>
+            <Font size="25.0" />
+         </font>
+         <effect>
+            <Bloom />
+         </effect>
+      </Label>
+      <Label layoutX="311.0" layoutY="87.0" prefHeight="36.0" prefWidth="57.0" text="Witaj" textFill="#eeadad">
+         <font>
+            <Font size="25.0" />
+         </font>
+         <effect>
+            <Bloom />
+         </effect>
+      </Label>
+      <GridPane layoutX="3.0" prefHeight="68.0" prefWidth="810.0" style="-fx-background-color: #6d0707;">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <ImageView fitHeight="87.0" fitWidth="97.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@../Icons/Cars/4.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="87.0" fitWidth="99.0" layoutX="10.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@../Icons/Cars/2.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="87.0" fitWidth="88.0" layoutX="98.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@../Icons/Cars/1.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="87.0" fitWidth="99.0" layoutX="98.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@../Icons/Cars/3.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="87.0" fitWidth="99.0" layoutX="10.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@../Icons/Cars/5.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="87.0" fitWidth="99.0" layoutX="365.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@../Icons/Cars/6.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="87.0" fitWidth="99.0" layoutX="10.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@../Icons/Cars/2.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="87.0" fitWidth="99.0" layoutX="98.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@../Icons/Cars/3.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="87.0" fitWidth="99.0" layoutX="632.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@../Icons/Cars/1.png" />
+               </image>
+            </ImageView>
+         </children>
+      </GridPane>
+      <GridPane layoutX="3.0" layoutY="546.0" prefHeight="68.0" prefWidth="810.0" style="-fx-background-color: #6d0707;">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <ImageView fitHeight="87.0" fitWidth="99.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@../Icons/Cars/4.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="87.0" fitWidth="99.0" layoutX="10.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@../Icons/Cars/2.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="87.0" fitWidth="88.0" layoutX="98.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@../Icons/Cars/1.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="87.0" fitWidth="99.0" layoutX="98.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@../Icons/Cars/3.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="87.0" fitWidth="99.0" layoutX="10.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@../Icons/Cars/5.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="87.0" fitWidth="99.0" layoutX="365.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@../Icons/Cars/6.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="87.0" fitWidth="99.0" layoutX="10.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@../Icons/Cars/2.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="87.0" fitWidth="99.0" layoutX="98.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@../Icons/Cars/3.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="87.0" fitWidth="99.0" layoutX="632.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@../Icons/Cars/1.png" />
+               </image>
+            </ImageView>
+         </children>
+      </GridPane>
+      <Button layoutX="646.0" layoutY="75.0" mnemonicParsing="false" onAction="#logOut" prefHeight="30.0" prefWidth="153.0" style="-fx-background-color: #e27171;" text="WYLOGUJ">
+         <graphic>
+            <ImageView fitHeight="36.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/logout.png" />
+               </image>
+            </ImageView>
+         </graphic>
          <font>
             <Font size="18.0" />
          </font>
-      </Label>
+      </Button>
    </children>
 </AnchorPane>
