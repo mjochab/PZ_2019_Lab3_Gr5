@@ -1,15 +1,44 @@
 package wypozyczalnia.Controllers;
 
-        import javafx.event.ActionEvent;
-        import javafx.fxml.FXML;
-        import javafx.fxml.FXMLLoader;
-        import javafx.scene.layout.AnchorPane;
+        import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.layout.AnchorPane;
 
-        import java.io.IOException;
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class WypozyczeniePracownikController {
+public class WypozyczeniePracownikController implements Initializable {
     @FXML
     private AnchorPane pracownikPane;
+
+    @FXML
+    private TableView<ModelTablePojazdy> tabelka_pojazdy;
+    @FXML
+    private TableColumn<ModelTablePojazdy, String> col_marka;
+    @FXML
+    private TableColumn<ModelTablePojazdy, String> col_model;
+    @FXML
+    private TableColumn<ModelTablePojazdy, String> col_rodzaj;
+    @FXML
+    private TableColumn<ModelTablePojazdy, String> col_rocznik;
+    @FXML
+    private TableColumn<ModelTablePojazdy, String> col_paliwo;
+    @FXML
+    private TableColumn<ModelTablePojazdy, String> col_przebieg;
+    @FXML
+    private TableColumn<ModelTablePojazdy, Double> col_cena;
+    @FXML
+    private TableColumn<ModelTablePojazdy, String> col_dostep;
+
+
+    ObservableList<ModelTablePojazdy> oblist1 = FXCollections.observableArrayList();
 
 
 
@@ -33,6 +62,10 @@ public class WypozyczeniePracownikController {
     }
 
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+    }
 
 
 }

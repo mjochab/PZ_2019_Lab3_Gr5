@@ -15,12 +15,13 @@
         <TextField layoutX="11.0" layoutY="143.0" prefHeight="31.0" prefWidth="147.0" promptText="Model" />
         <TextField layoutX="11.0" layoutY="185.0" prefHeight="31.0" prefWidth="147.0" promptText="Data początkowa" />
         <TextField layoutX="11.0" layoutY="230.0" prefHeight="31.0" prefWidth="147.0" promptText="Data końcowa" />
-        <TableView layoutX="178.0" layoutY="77.0" prefHeight="294.0" prefWidth="597.0">
+        <TableView fx:id="tabelka_moje_wypozyczenia" layoutX="167.0" layoutY="71.0" prefHeight="318.0" prefWidth="625.0">
             <columns>
-                <TableColumn fx:id="col_marka" prefWidth="120.0" text="Marka" />
-                <TableColumn fx:id="col_model" prefWidth="130.0" text="Model" />
-                <TableColumn fx:id="col_dataStart" prefWidth="161.0" text="Data początkowa" />
-                <TableColumn fx:id="col_dataStop" prefWidth="185.0" text="Data końcowa" />
+                <TableColumn fx:id="col_marka" prefWidth="149.0" text="Marka" />
+                <TableColumn fx:id="col_model" prefWidth="176.0" text="Model" />
+                <TableColumn fx:id="col_odkiery" prefWidth="123.0" text="Od kiedy" />
+                <TableColumn fx:id="col_dokiedy" prefWidth="176.0" text="Do kiedy" />
+
             </columns>
         </TableView>
       <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#menuPracownik" prefHeight="30.0" prefWidth="153.0" style="-fx-background-color: #e27171;" text="POWRÓT">
@@ -47,12 +48,12 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="602.0" layoutY="395.0" mnemonicParsing="false" onAction="#logOut" prefHeight="48.0" prefWidth="173.0" style="-fx-background-color: #e27171;" text=" POTWIERDŹ">
+      <Button layoutX="598.0" layoutY="396.0" mnemonicParsing="false" onAction="#logOut" prefHeight="48.0" prefWidth="173.0" style="-fx-background-color: #e27171;" text=" POTWIERDŹ">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="406.0" layoutY="396.0" mnemonicParsing="false" onAction="#logOut" prefHeight="48.0" prefWidth="173.0" style="-fx-background-color: #e27171;" text="EDYTUJ">
+      <Button layoutX="400.0" layoutY="396.0" mnemonicParsing="false" onAction="#logOut" prefHeight="48.0" prefWidth="173.0" style="-fx-background-color: #e27171;" text="EDYTUJ">
          <font>
             <Font size="18.0" />
          </font>

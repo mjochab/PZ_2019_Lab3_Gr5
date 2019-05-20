@@ -4,17 +4,54 @@ public class ModelTable {
 
     String imie;
     String nazwisko;
+    String login;
     String data_urodzenia;
     String miejscowosc;
-    String pesel;
 
-    public ModelTable(String imie, String nazwisko, String data_urodzenia, String miejscowosc, String pesel)
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+    public String getTelefon() {
+        return telefon;
+    }
+
+    public void setTelefon(String telefon) {
+        this.telefon = telefon;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmial(String email) {
+        this.email = email;
+    }
+
+
+    public String getPesel() { return pesel; }
+
+    public void setPesel(String pesel) {
+        this.pesel = pesel;
+    }
+
+    String pesel;
+    String telefon;
+    String email;
+
+    public ModelTable(String imie, String nazwisko, String data_urodzenia, String miejscowosc, String pesel, String telefon, String login, String email)
     {
         this.imie=imie;
         this.nazwisko=nazwisko;
         this.data_urodzenia=data_urodzenia;
         this.miejscowosc=miejscowosc;
         this.pesel=pesel;
+        this.login=login;
+        this.email=email;
+        this.telefon=telefon;
     }
 
     public String getImie() {
@@ -49,11 +86,6 @@ public class ModelTable {
         this.miejscowosc = miejscowosc;
     }
 
-    public String getPesel() { return pesel; }
-
-    public void setPesel(String pesel) {
-        this.pesel = pesel;
-    }
 
 
 }
