@@ -52,6 +52,7 @@
         <TextField fx:id="autoPaliwo" layoutX="20.0" layoutY="228.0" promptText="Paliwo" />
         <TextField fx:id="autoPrzebieg" layoutX="20.0" layoutY="263.0" promptText="Przebieg" />
         <TextField fx:id="autoCena" layoutX="20.0" layoutY="298.0" promptText="Cena" />
+      <TextField fx:id="autoDostepnosc" layoutX="20.0" layoutY="334.0" promptText="Dostepnosc" />
         <TableView fx:id="tabelka_pojazdy" layoutX="227.0" layoutY="73.0" prefHeight="314.0" prefWidth="553.0">
             <columns>
                 <TableColumn fx:id="col_marka" prefWidth="67.0" text="Marka" />
@@ -61,6 +62,7 @@
                 <TableColumn fx:id="col_paliwo" prefWidth="121.0" text="Paliwo" />
                 <TableColumn fx:id="col_przebieg" prefWidth="74.0" text="Przebieg" />
                 <TableColumn fx:id="col_cena" prefWidth="76.0" text="Cena" />
+            <TableColumn fx:id="col_dostepnosc" prefWidth="76.0" text="Dostepnosc" />
             </columns>
         </TableView>
     </children>
