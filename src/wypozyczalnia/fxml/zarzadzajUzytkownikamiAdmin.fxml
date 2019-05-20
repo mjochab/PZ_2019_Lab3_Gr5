@@ -51,10 +51,13 @@
          </center>
         </BorderPane>
         <TextField fx:id="userImie" layoutX="18.0" layoutY="96.0" promptText="Imie" />
-        <TextField fx:id="userNazwisko" layoutX="18.0" layoutY="142.0" promptText="Nazwisko" />
-        <TextField fx:id="userData" layoutX="18.0" layoutY="185.0" promptText="Data Urodzenia" />
-        <TextField fx:id="userMiejscowosc" layoutX="18.0" layoutY="230.0" promptText="Miejscowość" />
-        <TextField fx:id="userPesel" layoutX="18.0" layoutY="276.0" promptText="Pesel" />
+        <TextField fx:id="userNazwisko" layoutX="18.0" layoutY="133.0" promptText="Nazwisko" />
+        <TextField fx:id="userData" layoutX="18.0" layoutY="169.0" promptText="Data Urodzenia" />
+        <TextField fx:id="userMiejscowosc" layoutX="18.0" layoutY="205.0" promptText="Miejscowość" />
+        <TextField fx:id="userPesel" layoutX="18.0" layoutY="241.0" promptText="Pesel" />
+      <TextField fx:id="userLogin" layoutX="18.0" layoutY="277.0" promptText="Login" />
+      <TextField fx:id="userTelefon" layoutX="18.0" layoutY="315.0" promptText="Telefon" />
+      <TextField fx:id="userEmail" layoutX="18.0" layoutY="353.0" promptText="Email" />
         <TableView fx:id="tabelka" layoutX="226.0" layoutY="89.0" prefHeight="282.0" prefWidth="544.0">
             <columns>
                 <TableColumn fx:id="col_imie" prefWidth="64.0" text="imie" />
