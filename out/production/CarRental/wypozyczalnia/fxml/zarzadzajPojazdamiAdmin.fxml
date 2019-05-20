@@ -62,6 +62,7 @@
                 <TableColumn fx:id="col_marka" prefWidth="77.0" text="Marka" />
                 <TableColumn fx:id="col_model" prefWidth="96.0" text="Model" />
                 <TableColumn fx:id="col_rodzaj" prefWidth="87.0" text="Rodzaj" />
+            <TableColumn fx:id="col_rocznik" prefWidth="87.0" text="Rocznik" />
                 <TableColumn fx:id="col_paliwo" prefWidth="63.0" text="Paliwo" />
                 <TableColumn fx:id="col_przebieg" prefWidth="83.0" text="Przebieg" />
                 <TableColumn fx:id="col_cena" prefWidth="57.0" text="Cena" />

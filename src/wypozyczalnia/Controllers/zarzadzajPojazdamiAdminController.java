@@ -50,7 +50,6 @@ public class zarzadzajPojazdamiAdminController implements Initializable {
     @FXML private TextField autoPaliwo;
     @FXML private TextField autoPrzebieg;
     @FXML private TextField autoCena;
-
     public void logOut(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/login.fxml"));
         adminPane.getChildren().setAll(pane);

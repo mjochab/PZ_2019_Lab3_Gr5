@@ -57,9 +57,10 @@
                 <TableColumn fx:id="col_marka" prefWidth="67.0" text="Marka" />
                 <TableColumn fx:id="col_model" prefWidth="66.0" text="Model" />
                 <TableColumn fx:id="col_rodzaj" prefWidth="84.0" text="Rodzaj" />
-                <TableColumn fx:id="col_paliwo" prefWidth="91.0" text="Paliwo" />
-                <TableColumn fx:id="col_przebieg" prefWidth="142.0" text="Przebieg" />
-                <TableColumn fx:id="col_cena" prefWidth="102.0" text="Cena" />
+                <TableColumn fx:id="col_rocznik" prefWidth="64.0" text="Rocznik" />
+                <TableColumn fx:id="col_paliwo" prefWidth="121.0" text="Paliwo" />
+                <TableColumn fx:id="col_przebieg" prefWidth="74.0" text="Przebieg" />
+                <TableColumn fx:id="col_cena" prefWidth="76.0" text="Cena" />
             </columns>
         </TableView>
     </children>
