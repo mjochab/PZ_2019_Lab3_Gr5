@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="klientPane" prefHeight="386.0" prefWidth="559.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.WypozyczenieKlientController">
+<AnchorPane fx:id="klientPane" prefHeight="393.0" prefWidth="800.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.WypozyczenieKlientController">
    <children>
       <BorderPane prefHeight="72.0" prefWidth="700.0">
          <top>
@@ -27,22 +27,26 @@
             </MenuBar>
          </top>
          <center>
-            <Label alignment="CENTER" prefHeight="27.0" prefWidth="640.0" text="Dostępne samochody" textAlignment="CENTER" textFill="WHITE" BorderPane.alignment="CENTER">
+            <Label alignment="CENTER" prefHeight="27.0" prefWidth="640.0" text="Samochody do wynajęcia" textAlignment="CENTER" textFill="WHITE" BorderPane.alignment="CENTER">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
          </center>
       </BorderPane>
-      <TableView layoutX="80.0" layoutY="82.0" prefHeight="238.0" prefWidth="640.0">
-          <columns>
-              <TableColumn fx:id="col_Marka" prefWidth="144.0" text="Marka" />
-              <TableColumn fx:id="col_Model" prefWidth="148.0" text="Model" />
-              <TableColumn fx:id="col_Rodzaj" prefWidth="127.0" text="Rodzaj" />
-              <TableColumn fx:id="col_rokProdukcji" prefWidth="132.0" text="Rok produkcji" />
-              <TableColumn fx:id="col_cena" prefWidth="88.0" text="Cena" />
-          </columns>
-      </TableView>
-      <Button layoutX="360.0" layoutY="330.0" mnemonicParsing="false" onAction="#podWyn" prefHeight="15.0" prefWidth="83.0" text="Dalej" />
+       <TableView fx:id="tabelka_pojazdy" layoutX="28.0" layoutY="72.0" prefHeight="268.0" prefWidth="740.0">
+           <columns>
+               <TableColumn fx:id="col_marka" prefWidth="84.0" text="Marka" />
+               <TableColumn fx:id="col_model" prefWidth="81.0" text="Model" />
+               <TableColumn fx:id="col_rodzaj" prefWidth="79.0" text="Rodzaj" />
+               <TableColumn fx:id="col_rocznik" prefWidth="101.0" text="Rocznik" />
+               <TableColumn fx:id="col_paliwo" minWidth="0.0" prefWidth="110.0" text="Paliwo" />
+               <TableColumn fx:id="col_przebieg" prefWidth="94.0" text="Przebieg" />
+               <TableColumn fx:id="col_cena" prefWidth="103.0" text="Cena" />
+               <TableColumn fx:id="col_dostepnosc" prefWidth="87.0" text="Dostęp" />
+
+           </columns>
+       </TableView>
+      <Button layoutX="349.0" layoutY="348.0" mnemonicParsing="false" onAction="#podWyn" prefHeight="15.0" prefWidth="83.0" text="Dalej" />
    </children>
 </AnchorPane>
