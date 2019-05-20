@@ -88,6 +88,98 @@ public class zarzadzajPracownikamiController implements Initializable {
         adminPane.getChildren().setAll(pane);
     }
 
+    public void edytujPracownika(ActionEvent event) throws  IOException{
+        System.out.println("-");
+
+        TablePosition pozycja = tabelka_pracownicy.getSelectionModel().getSelectedCells().get(0);
+        int index = pozycja.getRow();
+
+        String imie = String.valueOf(imiePracownik.getCharacters());
+        String nazwisko = String.valueOf(nazwiskoPracownik.getCharacters());
+        String login = String.valueOf(loginPracownik.getCharacters());
+        String pesel = String.valueOf(peselPracownik.getText());
+        String data_urodzenia = String.valueOf(dataPracownik.getCharacters());
+        String miejscowosc = String.valueOf(miejscowoscPracownik.getCharacters());
+        String telefon = String.valueOf(telefonPracownik.getCharacters());
+        String email = String.valueOf(emailPracownik.getCharacters());
+
+        try {
+            index++;
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+
+            PreparedStatement stmt = con.prepareStatement("SELECT * FROM user");
+            String zapytanie = "Select * FROM user ORDER BY user_id LIMIT " + index;
+            ResultSet rs = stmt.executeQuery(zapytanie);
+            String a = "0";
+            int i=0;
+            while(rs.next()) {
+                a = rs.getString(1);
+                i++;
+            }
+            int numer = Integer.parseInt(a);
+            System.out.println(numer);
+            PreparedStatement stmt2 = con.prepareStatement("UPDATE `user` SET `imie`=(?),`nazwisko`=(?),`login`=(?),`pesel`=(?),`data_urodzenia`=(?),`miejscowosc`=(?),`telefon`=(?),`email`=(?), WHERE user_id=(?)");
+            stmt2.setString(1, imie);
+            stmt2.setString(2, nazwisko);
+            stmt2.setString(3, login);
+            stmt2.setString(4, pesel);
+            stmt2.setString(5, data_urodzenia);
+            stmt2.setString(6, miejscowosc);
+            stmt2.setString(7, telefon);
+            stmt2.setString(8, email);
+            stmt2.setInt(9, numer);
+            stmt2.executeUpdate();
+            tabelka_pracownicy.refresh();
+
+
+        }catch (Exception e)
+        {
+            System.out.println(e);
+        }
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajPracownikami.fxml"));
+        adminPane.getChildren().setAll(pane);
+        tabelka_pracownicy.refresh();
+
+    }
+
+    public void usunPracownika(ActionEvent event) throws IOException {
+
+        TablePosition pozycja = tabelka_pracownicy.getSelectionModel().getSelectedCells().get(0);
+        int index = pozycja.getRow();
+
+        try {
+            index++;
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+
+            PreparedStatement stmt = con.prepareStatement("SELECT * FROM user");
+            String zapytanie = "Select * FROM user ORDER BY user_id LIMIT " + index;
+            ResultSet rs = stmt.executeQuery(zapytanie);
+            String a = "0";
+            int i=0;
+            while(rs.next()) {
+                a = rs.getString(1);
+                i++;
+            }
+            int numer = Integer.parseInt(a);
+            System.out.println(numer);
+
+            PreparedStatement stmt2 = con.prepareStatement("DELETE FROM user WHERE user_id = (?)");
+            stmt2.setInt(1, numer);
+            stmt2.executeUpdate();
+
+
+        }catch (Exception e)
+        {
+            System.out.println(e);
+        };
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajPracownikami.fxml"));
+        adminPane.getChildren().setAll(pane);
+
+        tabelka_pracownicy.refresh();
+    }
+
 
     public void dodajPracownika(ActionEvent event) throws IOException{
         String imie = String.valueOf(imiePracownik.getCharacters());
