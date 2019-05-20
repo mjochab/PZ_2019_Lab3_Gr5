@@ -36,7 +36,7 @@
                 <TableColumn fx:id="col_paliwo" minWidth="0.0" prefWidth="110.0" text="Paliwo" />
                 <TableColumn fx:id="col_przebieg" prefWidth="94.0" text="Przebieg" />
                 <TableColumn fx:id="col_cena" prefWidth="103.0" text="Cena" />
-                <TableColumn fx:id="col_dostep" prefWidth="87.0" text="Dostęp" />
+                <TableColumn fx:id="col_dostepnosc" prefWidth="87.0" text="Dostęp" />
 
             </columns>
         </TableView>

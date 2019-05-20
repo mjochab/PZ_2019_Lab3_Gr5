@@ -42,7 +42,7 @@ public class WypozyczeniePracownikController implements Initializable {
     @FXML
     private TableColumn<ModelTablePojazdy, Double> col_cena;
     @FXML
-    private TableColumn<ModelTablePojazdy, String> col_dostep;
+    private TableColumn<ModelTablePojazdy, String> col_dostepnosc;
 
 
     ObservableList<ModelTablePojazdy> oblist1 = FXCollections.observableArrayList();
@@ -72,6 +72,7 @@ public class WypozyczeniePracownikController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+
         try {
             Connection con = DBConnector.getConnection();
 
@@ -79,8 +80,8 @@ public class WypozyczeniePracownikController implements Initializable {
 
             while (rs.next()) {
                 //oblist1.add(new ModelTablePojazdy(rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7)));
-                oblist1.add(new ModelTablePojazdy(rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),rs.getString(9)));            }
-
+                oblist1.add(new ModelTablePojazdy(rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7), rs.getString(8),rs.getString(9)));
+            }
 
 
         } catch (SQLException ex) {
@@ -94,9 +95,11 @@ public class WypozyczeniePracownikController implements Initializable {
         col_rocznik.setCellValueFactory(new PropertyValueFactory<>("rocznik"));
         col_paliwo.setCellValueFactory(new PropertyValueFactory<>("paliwo"));
         col_przebieg.setCellValueFactory(new PropertyValueFactory<>("przebieg"));
-        col_cena.setCellValueFactory(new PropertyValueFactory<>("Cena"));
+        col_cena.setCellValueFactory(new PropertyValueFactory<>("cena"));
+        col_dostepnosc.setCellValueFactory(new PropertyValueFactory<>("dostepnosc"));
 
         tabelka_pojazdy.setItems(oblist1);
+
 
 
     }

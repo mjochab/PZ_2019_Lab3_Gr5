@@ -66,7 +66,7 @@
                 <TableColumn fx:id="col_paliwo" prefWidth="83.0" text="Paliwo" />
                 <TableColumn fx:id="col_przebieg" prefWidth="81.0" text="Przebieg" />
                 <TableColumn fx:id="col_cena" prefWidth="57.0" text="Cena" />
-            <TableColumn fx:id="col_dostepnosc" prefWidth="84.0" text="Dostęp" />
+                <TableColumn fx:id="col_dostepnosc" prefWidth="84.0" text="Dostęp" />
             </columns>
         </TableView>
       <TextField fx:id="autoDostepnosc" layoutX="20.0" layoutY="336.0" promptText="Dostepnosc" />

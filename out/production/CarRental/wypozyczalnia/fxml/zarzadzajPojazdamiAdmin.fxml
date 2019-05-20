@@ -58,7 +58,7 @@
         <TextField fx:id="autoPrzebieg" layoutX="20.0" layoutY="262.0" promptText="Przebieg" />
         <TextField fx:id="autoCena" layoutX="20.0" layoutY="297.0" promptText="Cena" />
       <TextField fx:id="autoDostepnosc" layoutX="20.0" layoutY="332.0" promptText="Dostepnosc" />
-        <TableView fx:id="tabelka_pojazdy" layoutX="185.0" layoutY="75.0" prefHeight="312.0" prefWidth="606.0">
+        <TableView fx:id="tabelka_pojazdy" layoutX="200.0" layoutY="71.0" prefHeight="312.0" prefWidth="606.0">
             <columns>
                 <TableColumn fx:id="col_marka" prefWidth="77.0" text="Marka" />
                 <TableColumn fx:id="col_model" prefWidth="96.0" text="Model" />
