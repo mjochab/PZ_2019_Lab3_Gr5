@@ -88,7 +88,7 @@ public class zarzadzajPojazdamiAdminController implements Initializable {
             System.out.println(numer);
 
 
-            String model, rodzaj, rocznik, paliwo, przebieg, cena;
+            String model, rodzaj, paliwo, przebieg, cena;
             zapytanie = "Select * FROM samochod where samochod_id = " + numer;
             ResultSet rs2 = stmt.executeQuery(zapytanie);
             System.out.println(rs2);
@@ -99,15 +99,14 @@ public class zarzadzajPojazdamiAdminController implements Initializable {
                 dane.add(rs2.getString("paliwo"));
                 int wartosc = rs2.getInt("przebieg");
                 dane.add(String.valueOf(wartosc));
-                double wartosc2 = rs2.getDouble("Cena");
-                dane.add(String.valueOf(wartosc));
+                long wartosc2 = rs2.getLong("Cena");
+                dane.add(String.valueOf(wartosc2));
                 autoMarka.setText(String.valueOf(dane.get(0)));
                 autoModel.setText(String.valueOf(dane.get(1)));
                 autoRodzaj.setText(String.valueOf(dane.get(2)));
-                autoRocznik.setText(String.valueOf(dane.get(3)));
-                autoPaliwo.setText(String.valueOf(dane.get(4)));
-                autoPrzebieg.setText(String.valueOf(dane.get(5)));
-                autoCena.setText(String.valueOf(dane.get(6)));
+                autoPaliwo.setText(String.valueOf(dane.get(3)));
+                autoPrzebieg.setText(String.valueOf(dane.get(4)));
+                autoCena.setText(String.valueOf(dane.get(5)));
             }
 
 
@@ -164,7 +163,6 @@ public class zarzadzajPojazdamiAdminController implements Initializable {
         String marka = String.valueOf(autoMarka.getCharacters());
         String model = String.valueOf(autoModel.getCharacters());
         String Rodzaj = String.valueOf(autoRodzaj.getCharacters());
-        String Rocznik = String.valueOf(autoRocznik.getCharacters());
         String Paliwo = String.valueOf(autoPaliwo.getCharacters());
         String przebieg = String.valueOf(autoPrzebieg.getCharacters());
         String cena = String.valueOf(autoCena.getCharacters());
@@ -203,6 +201,8 @@ public class zarzadzajPojazdamiAdminController implements Initializable {
         }
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajPojazdamiAdmin.fxml"));
         adminPane.getChildren().setAll(pane);
+        tabelka_pojazdy.refresh();
+
     }
 
     public void dodajAuto(ActionEvent event) throws IOException{

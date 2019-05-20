@@ -211,6 +211,42 @@ public class zarzadzajUzytkownikamiAdminController implements Initializable  {
 
     }
 
+    public void usunKlient(ActionEvent event) throws  IOException{
+        TablePosition pozycja = tabelka.getSelectionModel().getSelectedCells().get(0);
+        int index = pozycja.getRow();
+
+        try {
+            index++;
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+
+            PreparedStatement stmt = con.prepareStatement("SELECT * FROM klient");
+            String zapytanie = "Select * FROM klient ORDER BY klient_id LIMIT " + index;
+            ResultSet rs = stmt.executeQuery(zapytanie);
+            String a = "0";
+            int i=0;
+            while(rs.next()) {
+                a = rs.getString(1);
+                i++;
+            }
+            int numer = Integer.parseInt(a);
+            System.out.println(numer);
+
+            PreparedStatement stmt2 = con.prepareStatement("DELETE FROM klient WHERE klient_id = (?)");
+            stmt2.setInt(1, numer);
+            stmt2.executeUpdate();
+
+
+        }catch (Exception e)
+        {
+            System.out.println(e);
+        };
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajUzytkownikamiAdmin.fxml"));
+        adminPane.getChildren().setAll(pane);
+
+        tabelka.refresh();
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 

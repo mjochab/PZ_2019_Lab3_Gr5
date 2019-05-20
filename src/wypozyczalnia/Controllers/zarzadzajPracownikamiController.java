@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TablePosition;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -16,6 +17,7 @@ import wypozyczalnia.DBConnector;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -34,13 +36,11 @@ public class zarzadzajPracownikamiController implements Initializable {
     @FXML
     private TableColumn<ModelTablePracownicy, String> col_pesel;
 
-    @FXML private TextField imie;
-    @FXML private TextField nazwisko;
-    @FXML private TextField dataUrodzenia;
-    @FXML private TextField miejscowosc;
-    @FXML private TextField nrTel;
-    @FXML private TextField eMail;
-    @FXML private TextField pesel;
+    @FXML private TextField imiePracownik;
+    @FXML private TextField nazwiskoPracownik;
+    @FXML private TextField loginPracownik;
+    @FXML private TextField peselPracownik;
+
 
     ObservableList<ModelTablePracownicy> oblist2 = FXCollections.observableArrayList();
 
@@ -75,6 +75,106 @@ public class zarzadzajPracownikamiController implements Initializable {
         adminPane.getChildren().setAll(pane);
     }
 
+
+    public void dodajPracownika(ActionEvent event) throws IOException{
+        String imie = String.valueOf(imiePracownik.getCharacters());
+        String nazwisko = String.valueOf(nazwiskoPracownik.getCharacters());
+        String login = String.valueOf(loginPracownik.getCharacters());
+        String pesel = String.valueOf(peselPracownik.getCharacters());
+
+
+
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+            PreparedStatement stmt2 = con.prepareStatement("Select MAX(samochod_id) FROM klient");
+            ResultSet rs = stmt2.executeQuery("Select * FROM pracownik");
+            int i=1;
+            int n=1;
+            while(rs.next()){
+                i++;
+            }
+            Integer puste= i+1;
+            String haslo= "haslo";
+
+            PreparedStatement stmt = con.prepareStatement("INSERT INTO pracownik VALUES(?,?,?,?,?,?,?)");
+            stmt.setInt(1, i);
+            stmt.setInt(2, puste);
+            stmt.setString(3, login);
+            stmt.setString(4, haslo);
+            stmt.setString(5, imie);
+            stmt.setString(6, nazwisko);
+            stmt.setString(7, pesel);
+            stmt.executeUpdate();
+
+            rs = stmt2.executeQuery("SELECT * FROM `pracownik` WHERE pracownik_id = (SELECT MAX(pracownik_id) FROM pracownik)");
+            if(rs.next()) {
+                System.out.println(rs.getString(2));
+                oblist2.add(new ModelTablePracownicy(rs.getString(5), rs.getString(6),rs.getString(3),""+rs.getLong(5)));
+            }
+
+        }catch (Exception e)
+        {
+            System.out.println(e);
+        }
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajPracownikami.fxml"));
+        adminPane.getChildren().setAll(pane);
+        tabelka_pracownicy.refresh();
+
+    }
+
+    public void klik(ActionEvent event) throws  IOException{        //funkcja przenosi dane do tabelki po lewej stronie, jak tyknie sie wiersz w tabeli to przenosi
+        //TablePosition pozycja = tabelka_pojazdy.getSelectionModel().getSelectedCells().get(0);
+        //int index = pozycja.getRow();
+        String abc;
+        abc = tabelka_pracownicy.toString();
+        System.out.println(abc);
+        ArrayList<String> dane = new ArrayList<String>();
+        try {
+            TablePosition pozycja = tabelka_pracownicy.getSelectionModel().getSelectedCells().get(0);
+            int index = pozycja.getRow();
+
+            index++;
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+
+            PreparedStatement stmt = con.prepareStatement("SELECT * FROM pracownik");
+            String zapytanie = "Select * FROM pracownik ORDER BY pracownik_id LIMIT " + index;
+            ResultSet rs = stmt.executeQuery(zapytanie);
+            String a = "0";
+            int i=0;
+            while(rs.next()) {
+                a = rs.getString(1);
+                i++;
+            }
+            int numer = Integer.parseInt(a);
+            System.out.println(numer);
+
+
+            zapytanie = "Select * FROM pracownik where pracownik_id = " + numer;
+            ResultSet rs2 = stmt.executeQuery(zapytanie);
+            System.out.println(rs2);
+            if(rs2.next()) {
+                dane.add(rs2.getString("imie"));
+                dane.add(rs2.getString("nazwisko"));
+                dane.add(rs2.getString("login"));
+                dane.add(rs2.getString("pesel"));
+                imiePracownik.setText(String.valueOf(dane.get(0)));
+                nazwiskoPracownik.setText(String.valueOf(dane.get(1)));
+                loginPracownik.setText(String.valueOf(dane.get(2)));
+                peselPracownik.setText(String.valueOf(dane.get(3)));
+            }
+
+
+        }catch (Exception e)
+        {
+            System.out.println(e);
+        };
+
+    }
+
+
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -84,7 +184,7 @@ public class zarzadzajPracownikamiController implements Initializable {
             ResultSet rs = con.createStatement().executeQuery("select * from pracownik");
 
             while (rs.next()){
-                oblist2.add(new ModelTablePracownicy( rs.getString(5),rs.getString(6),rs.getString(3),rs.getString(7)));
+                oblist2.add(new ModelTablePracownicy( rs.getString(5),rs.getString(6),rs.getString(3),""+ rs.getLong(7)));
             }
 
 
