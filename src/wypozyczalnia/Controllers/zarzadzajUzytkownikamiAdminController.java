@@ -28,18 +28,28 @@ public class zarzadzajUzytkownikamiAdminController implements Initializable  {
 
 
     @FXML
-    private TableView<ModelTable> tabelka;
+    private TableView<ModelTableUser> tabelka;
     @FXML
-    private TableColumn<ModelTable, String> col_imie;
+    private TableColumn<ModelTableUser, String> col_login;
     @FXML
-    private TableColumn<ModelTable, String> col_nazwisko;
+    private TableColumn<ModelTableUser, String> col_haslo;
     @FXML
-    private TableColumn<ModelTable, Date> col_data;
+    private TableColumn<ModelTableUser, String> col_imie;
     @FXML
-    private TableColumn<ModelTable, String> col_miejscowosc;
+    private TableColumn<ModelTableUser, String> col_nazwisko;
     @FXML
-    private TableColumn<ModelTable, Long> col_pesel;
+    private TableColumn<ModelTableUser, Date> col_data;
+    @FXML
+    private TableColumn<ModelTableUser, String> col_miejscowosc;
+    @FXML
+    private TableColumn<ModelTableUser, String> col_tel;
+    @FXML
+    private TableColumn<ModelTableUser, String> col_mail;
+    @FXML
+    private TableColumn<ModelTableUser, Long> col_pesel;
 
+    @FXML private TextField userLogin;
+    @FXML private TextField userHaslo;
     @FXML private TextField userImie;
     @FXML private TextField userNazwisko;
     @FXML private TextField userData;
@@ -47,13 +57,15 @@ public class zarzadzajUzytkownikamiAdminController implements Initializable  {
     @FXML private TextField userTelefon;
     @FXML private TextField userMail;
     @FXML private TextField userPesel;
-    ObservableList<ModelTable> oblist = FXCollections.observableArrayList();
+    ObservableList<ModelTableUser> oblist = FXCollections.observableArrayList();
 
     public void dodajUsera(ActionEvent event) throws IOException{
+
+        String login = String.valueOf(userLogin.getCharacters());
+        String haslo = String.valueOf(userHaslo.getCharacters());
         String imie = String.valueOf(userImie.getCharacters());
         String nazwisko = String.valueOf(userNazwisko.getCharacters());
-        String data = String.valueOf(userImie.getCharacters());
-        String rocznik = String.valueOf(userData.getCharacters());
+        String data = String.valueOf(userData.getCharacters());
         String miejscowosc = String.valueOf(userMiejscowosc.getCharacters());
         String telefon = String.valueOf(userTelefon.getCharacters());
         String mail = String.valueOf(userMail.getCharacters());
@@ -63,29 +75,31 @@ public class zarzadzajUzytkownikamiAdminController implements Initializable  {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
-            PreparedStatement stmt2 = con.prepareStatement("Select MAX(samochod_id) FROM klient");
-            ResultSet rs = stmt2.executeQuery("Select * FROM klient");
+            PreparedStatement stmt2 = con.prepareStatement("Select MAX(samochod_id) FROM user");
+            ResultSet rs = stmt2.executeQuery("Select * FROM user");
             int i=1;
             while(rs.next()){
                 i++;
             }
             String puste= " ";
 
-            PreparedStatement stmt = con.prepareStatement("INSERT INTO klient VALUES(?,?,?,?,?,?,?,?)");
+            PreparedStatement stmt = con.prepareStatement("INSERT INTO user VALUES(?,?,?,?,?,?,?,?,?,?)");
             stmt.setInt(1, i);
-            stmt.setString(2, puste);
-            stmt.setString(3, puste);
+            stmt.setString(2, login);
+            stmt.setString(3, haslo);
             stmt.setString(4, imie);
             stmt.setString(5, nazwisko);
-            stmt.setString(6, rocznik);
+            stmt.setString(6, data);
             stmt.setString(7, miejscowosc);
-            stmt.setString(8, pesel);
+            stmt.setString(8, telefon);
+            stmt.setString(9, mail);
+            stmt.setString(10, pesel);
             stmt.executeUpdate();
 
-            rs = stmt2.executeQuery("SELECT * FROM `klient` WHERE klient_id = (SELECT MAX(klient_id) FROM klient)");
+            rs = stmt2.executeQuery("SELECT * FROM `user` WHERE user_id = (SELECT MAX(user_id) FROM user)");
             if(rs.next()) {
                 System.out.println(rs.getString(2));
-                oblist.add(new ModelTable( rs.getString(4), rs.getString(5),rs.getString(6), rs.getString(7),""+ rs.getLong(8)));
+              //  oblist.add(new ModelTableUser( rs.getString(2), rs.getString(3),rs.getString(4), rs.getString(5),rs.getString(6)));
             }
 
         }catch (Exception e)
@@ -111,10 +125,10 @@ public class zarzadzajUzytkownikamiAdminController implements Initializable  {
         try {
             Connection con = DBConnector.getConnection();
 
-            ResultSet rs = con.createStatement().executeQuery("select * from klient");
+            ResultSet rs = con.createStatement().executeQuery("select * from user where Rodzaj = 'klient'");
 
             while (rs.next()){
-                oblist.add(new ModelTable( rs.getString(4), rs.getString(5),rs.getString(6), rs.getString(7),""+ rs.getLong(8)));
+                oblist.add(new ModelTableUser( rs.getString(2), rs.getString(3),rs.getString(4), rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),rs.getString(9),rs.getString(10)));
             }
 
 
@@ -123,11 +137,14 @@ public class zarzadzajUzytkownikamiAdminController implements Initializable  {
         }
 
 
-
+        col_login.setCellValueFactory(new PropertyValueFactory<>("login"));
+        col_haslo.setCellValueFactory(new PropertyValueFactory<>("haslo"));
         col_imie.setCellValueFactory(new PropertyValueFactory<>("imie"));
         col_nazwisko.setCellValueFactory(new PropertyValueFactory<>("nazwisko"));
         col_data.setCellValueFactory(new PropertyValueFactory<>("data_urodzenia"));
         col_miejscowosc.setCellValueFactory(new PropertyValueFactory<>("miejscowosc"));
+        col_tel.setCellValueFactory(new PropertyValueFactory<>("tel"));
+        col_mail.setCellValueFactory(new PropertyValueFactory<>("mail"));
         col_pesel.setCellValueFactory(new PropertyValueFactory<>("pesel"));
 
         tabelka.setItems(oblist);
