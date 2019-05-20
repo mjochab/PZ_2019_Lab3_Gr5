@@ -13,9 +13,9 @@
 
 <AnchorPane fx:id="pracownikPane" prefHeight="450.0" prefWidth="961.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.zarzadzajUzytkownikamiController">
     <children>
-        <BorderPane prefHeight="30.0" prefWidth="700.0">
+        <BorderPane layoutY="2.0" prefHeight="65.0" prefWidth="967.0">
             <top>
-                <MenuBar maxWidth="-Infinity" minWidth="-Infinity" prefHeight="32.0" prefWidth="863.0" BorderPane.alignment="CENTER">
+                <MenuBar maxWidth="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="1033.0" BorderPane.alignment="CENTER">
                     <menus>
                         <Menu mnemonicParsing="false" text="Powrót">
                             <items>
@@ -27,21 +27,21 @@
                 </MenuBar>
             </top>
             <bottom>
-                <AnchorPane prefHeight="37.0" prefWidth="700.0" style="-fx-background-color: #6d0303;" BorderPane.alignment="CENTER">
+                <AnchorPane prefHeight="35.0" prefWidth="970.0" style="-fx-background-color: #6d0303;" BorderPane.alignment="CENTER">
                     <children>
-                        <Button layoutX="5.0" layoutY="3.0" mnemonicParsing="false" onAction="#dodajUsera" prefHeight="25.0" prefWidth="162.0" text="Dodaj Uzytkownika" translateX="7.0">
+                        <Button layoutX="5.0" layoutY="3.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Dodaj Uzytkownika" translateX="7.0">
                      <font>
                         <Font size="13.0" />
                      </font></Button>
-                        <Button layoutX="179.0" layoutY="3.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Edytuj Uzytkownika" translateX="5.0">
+                        <Button layoutX="179.0" layoutY="3.0" mnemonicParsing="false" onAction="#modujUser" prefHeight="25.0" prefWidth="162.0" text="Edytuj Uzytkownika" translateX="5.0">
                      <font>
                         <Font size="13.0" />
                      </font></Button>
-                        <Button layoutX="350.0" layoutY="3.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Uzupełnij" translateX="5.0">
+                        <Button layoutX="350.0" layoutY="3.0" mnemonicParsing="false" onAction="#klik" prefHeight="25.0" prefWidth="162.0" text="Uzupełnij" translateX="5.0">
                      <font>
                         <Font size="13.0" />
                      </font></Button>
-                  <Button layoutX="526.0" layoutY="4.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Usuń Uzytkownika">
+                  <Button layoutX="526.0" layoutY="4.0" mnemonicParsing="false" onAction="#usunKlient" prefHeight="25.0" prefWidth="162.0" text="Usuń Uzytkownika">
                      <font>
                         <Font size="13.0" />
                      </font>
@@ -50,25 +50,26 @@
                 </AnchorPane>
             </bottom>
         </BorderPane>
-      <TextField fx:id="userImie" layoutX="14.0" layoutY="84.0" promptText="Login" />
-      <TextField fx:id="userNazwisko" layoutX="14.0" layoutY="123.0" promptText="Hasło" />
+      <TextField fx:id="userLogin" layoutX="14.0" layoutY="84.0" promptText="Login" />
+      <TextField fx:id="userHaslo" layoutX="14.0" layoutY="123.0" promptText="Hasło" />
+      <TextField fx:id="userImie" layoutX="14.0" layoutY="161.0" promptText="Imie" />
+      <TextField fx:id="userNazwisko" layoutX="14.0" layoutY="202.0" promptText="Nazwisko" />
       <TextField fx:id="userData" layoutX="14.0" layoutY="240.0" promptText="Data Urodzenia" />
       <TextField fx:id="userMiejscowosc" layoutX="14.0" layoutY="278.0" promptText="Miejscowość" />
       <TextField fx:id="userTelefon" layoutX="14.0" layoutY="316.0" promptText="Numer Telefonu" />
-      <TextField fx:id="userMail" layoutX="14.0" layoutY="356.0" promptText="Email" />
+      <TextField fx:id="userEmail" layoutX="14.0" layoutY="356.0" promptText="Email" />
       <TextField fx:id="userPesel" layoutX="14.0" layoutY="397.0" promptText="Pesel" />
-      <TableView fx:id="tabelka" layoutX="226.0" layoutY="73.0" prefHeight="365.0" prefWidth="637.0">
+      <TableView fx:id="tabelka" layoutX="226.0" layoutY="75.0" prefHeight="367.0" prefWidth="741.0">
           <columns>
-              <TableColumn fx:id="col_imie" prefWidth="46.0" text="Imie" />
-              <TableColumn fx:id="col_nazwisko" prefWidth="117.0" text="Nazwisko" />
-              <TableColumn fx:id="col_data" prefWidth="81.0" text="Data ur" />
-              <TableColumn fx:id="col_miejscowosc" prefWidth="124.0" text="Miejscowość" />
-              <TableColumn fx:id="col_pesel" prefWidth="82.0" text="Telefon" />
-            <TableColumn fx:id="col_pesel1" prefWidth="82.0" text="Email" />
-            <TableColumn fx:id="col_pesel11" prefWidth="104.0" text="Pesel" />
+              <TableColumn fx:id="col_imie" prefWidth="61.0" text="Imię" />
+              <TableColumn fx:id="col_nazwisko" prefWidth="84.0" text="Nazwisko" />
+              <TableColumn fx:id="col_login" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="100.0" text="Login" />
+              <TableColumn fx:id="col_telefon" minWidth="100.0" prefWidth="0.0" text="Telefon" />
+              <TableColumn fx:id="col_data" prefWidth="88.0" text="Data_ur" />
+              <TableColumn fx:id="col_miejscowosc" prefWidth="114.0" text="Miejscowość" />
+              <TableColumn fx:id="col_email" prefWidth="88.0" text="Email" />
+              <TableColumn fx:id="col_pesel" prefWidth="100.0" text="Pesel" />
           </columns>
       </TableView>
-      <TextField fx:id="userNazwisko1" layoutX="14.0" layoutY="161.0" promptText="Login" />
-      <TextField fx:id="userNazwisko11" layoutX="14.0" layoutY="202.0" promptText="Hasło" />
     </children>
 </AnchorPane>

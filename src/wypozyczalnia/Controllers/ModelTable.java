@@ -5,7 +5,6 @@ public class ModelTable {
     String imie;
     String nazwisko;
     String login;
-    String haslo;
     String data_urodzenia;
     String miejscowosc;
 
@@ -16,45 +15,34 @@ public class ModelTable {
     public void setLogin(String login) {
         this.login = login;
     }
-
-    public String getHaslo() {
-        return haslo;
+    public String getTelefon() {
+        return telefon;
     }
 
-    public void setHaslo(String haslo) {
-        this.haslo = haslo;
+    public void setTelefon(String telefon) {
+        this.telefon = telefon;
     }
 
-    public String getTel() {
-        return tel;
+    public String getEmail() {
+        return email;
     }
 
-    public void setTel(String tel) {
-        this.tel = tel;
+    public void setEmial(String email) {
+        this.email = email;
     }
 
-    public String getEmial() {
-        return emial;
-    }
 
-    public void setEmial(String emial) {
-        this.emial = emial;
-    }
+    public String getPesel() { return pesel; }
 
-    public String getRodzaj() {
-        return rodzaj;
-    }
-
-    public void setRodzaj(String rodzaj) {
-        this.rodzaj = rodzaj;
+    public void setPesel(String pesel) {
+        this.pesel = pesel;
     }
 
     String pesel;
-    String tel;
-    String emial;
-    String rodzaj;
+    String telefon;
+    String email;
 
-    public ModelTable(String imie, String nazwisko, String data_urodzenia, String miejscowosc, String pesel, String tel, String login, String haslo, String rodzaj, String emial)
+    public ModelTable(String imie, String nazwisko, String data_urodzenia, String miejscowosc, String pesel, String telefon, String login, String email)
     {
         this.imie=imie;
         this.nazwisko=nazwisko;
@@ -62,10 +50,8 @@ public class ModelTable {
         this.miejscowosc=miejscowosc;
         this.pesel=pesel;
         this.login=login;
-        this.haslo=haslo;
-        this.emial=emial;
-        this.rodzaj=rodzaj;
-        this.tel=tel;
+        this.email=email;
+        this.telefon=telefon;
     }
 
     public String getImie() {
@@ -100,11 +86,6 @@ public class ModelTable {
         this.miejscowosc = miejscowosc;
     }
 
-    public String getPesel() { return pesel; }
-
-    public void setPesel(String pesel) {
-        this.pesel = pesel;
-    }
 
 
 }

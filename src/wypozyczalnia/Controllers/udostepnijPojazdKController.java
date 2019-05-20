@@ -248,7 +248,7 @@ public class udostepnijPojazdKController implements Initializable {
             rs = stmt2.executeQuery("SELECT * FROM `samochod` WHERE samochod_id = (SELECT MAX(samochod_id) FROM samochod)");
             if(rs.next()) {
                 System.out.println(rs.getString(2));
-                oblist1.add(new ModelTablePojazdy(rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7)));
+                oblist1.add(new ModelTablePojazdy(rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7),rs.getString(8),rs.getString(9)));
             }
 
         }catch (Exception e)
@@ -266,7 +266,7 @@ public class udostepnijPojazdKController implements Initializable {
             ResultSet rs = con.createStatement().executeQuery("select * from samochod");
 
             while (rs.next()) {
-                oblist1.add(new ModelTablePojazdy(rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7)));
+                oblist1.add(new ModelTablePojazdy(rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7),rs.getString(8),rs.getString(9)));
             }
 
 

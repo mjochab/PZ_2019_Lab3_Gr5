@@ -83,7 +83,6 @@ public class ModelTableUser {
         this.miejscowosc = miejscowosc;
         this.tel = tel;
         this.mail = mail;
-        this.login = login;
         this.pesel = pesel;
     }
 
