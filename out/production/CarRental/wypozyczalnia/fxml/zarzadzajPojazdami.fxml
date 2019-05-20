@@ -30,17 +30,22 @@
                 <AnchorPane prefHeight="37.0" prefWidth="700.0" style="-fx-background-color: #6d0303;" BorderPane.alignment="CENTER">
                     <children>
                         <Button layoutX="16.0" layoutY="4.0" mnemonicParsing="false" onAction="#dodajAuto" prefHeight="25.0" prefWidth="162.0" text="Dodaj Pojazd" translateX="7.0">
-                     <font>
-                        <Font size="13.0" />
-                     </font></Button>
+                            <font>
+                                <Font size="13.0" />
+                            </font></Button>
                         <Button layoutX="190.0" layoutY="4.0" mnemonicParsing="false" onAction="#modujAuto" prefHeight="25.0" prefWidth="162.0" text="Edytuj Pojazd" translateX="5.0">
-                     <font>
-                        <Font size="13.0" />
-                     </font></Button>
+                            <font>
+                                <Font size="13.0" />
+                            </font></Button>
                         <Button layoutX="361.0" layoutY="4.0" mnemonicParsing="false" onAction="#usunAuto" prefHeight="25.0" prefWidth="162.0" text="Usuń Pojazd" translateX="5.0">
-                     <font>
-                        <Font size="13.0" />
-                     </font></Button>
+                            <font>
+                                <Font size="13.0" />
+                            </font></Button>
+                        <Button layoutX="537.0" layoutY="4.0" mnemonicParsing="false" onAction="#klik" prefHeight="29.0" prefWidth="89.0" text="Uzupełnij">
+                            <font>
+                                <Font size="13.0" />
+                            </font>
+                        </Button>
                     </children>
                 </AnchorPane>
             </bottom>
@@ -52,7 +57,8 @@
         <TextField fx:id="autoPaliwo" layoutX="20.0" layoutY="228.0" promptText="Paliwo" />
         <TextField fx:id="autoPrzebieg" layoutX="20.0" layoutY="263.0" promptText="Przebieg" />
         <TextField fx:id="autoCena" layoutX="20.0" layoutY="298.0" promptText="Cena" />
-        <TableView fx:id="tabelka_pojazdy" layoutX="227.0" layoutY="73.0" prefHeight="314.0" prefWidth="553.0">
+      <TextField fx:id="autoDostepnosc" layoutX="20.0" layoutY="335.0" promptText="Dostępność" />
+        <TableView fx:id="tabelka_pojazdy" layoutX="186.0" layoutY="73.0" prefHeight="314.0" prefWidth="607.0">
             <columns>
                 <TableColumn fx:id="col_marka" prefWidth="67.0" text="Marka" />
                 <TableColumn fx:id="col_model" prefWidth="66.0" text="Model" />
@@ -60,7 +66,8 @@
                 <TableColumn fx:id="col_rocznik" prefWidth="64.0" text="Rocznik" />
                 <TableColumn fx:id="col_paliwo" prefWidth="121.0" text="Paliwo" />
                 <TableColumn fx:id="col_przebieg" prefWidth="74.0" text="Przebieg" />
-                <TableColumn fx:id="col_cena" prefWidth="76.0" text="Cena" />
+                <TableColumn fx:id="col_cena" prefWidth="50.0" text="Cena" />
+            <TableColumn fx:id="col_dostepnosc" text="Dostępność" />
             </columns>
         </TableView>
     </children>
