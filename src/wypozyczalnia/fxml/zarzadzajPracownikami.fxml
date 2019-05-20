@@ -51,16 +51,51 @@
                 </AnchorPane>
             </bottom>
         </BorderPane>
-        <TextField fx:id="imiePracownik" layoutX="20.0" layoutY="89.0" promptText="Imie" />
-        <TextField fx:id="nazwiskoPracownik" layoutX="20.0" layoutY="130.0" promptText="Nazwisko" />
-        <TextField fx:id="loginPracownik" layoutX="20.0" layoutY="169.0" promptText="Login" />
-        <TextField fx:id="peselPracownik" layoutX="20.0" layoutY="210.0" promptText="Pesel" />
+        <TextField fx:id="imiePracownik" layoutX="20.0" layoutY="89.0" prefHeight="30.0" prefWidth="190.0" promptText="Imie">
+         <font>
+            <Font size="13.0" />
+         </font></TextField>
+        <TextField fx:id="nazwiskoPracownik" layoutX="20.0" layoutY="130.0" prefHeight="30.0" prefWidth="190.0" promptText="Nazwisko">
+         <font>
+            <Font size="13.0" />
+         </font></TextField>
+        <TextField fx:id="loginPracownik" layoutX="20.0" layoutY="169.0" prefHeight="30.0" prefWidth="190.0" promptText="Login">
+         <font>
+            <Font size="13.0" />
+         </font></TextField>
+        <TextField fx:id="peselPracownik" layoutX="20.0" layoutY="210.0" prefHeight="30.0" prefWidth="190.0" promptText="Pesel">
+         <font>
+            <Font size="13.0" />
+         </font></TextField>
+      <TextField fx:id="dataPracownik" layoutX="20.0" layoutY="249.0" prefHeight="29.0" prefWidth="190.0" promptText="Data urodzenia (rrrr-mm-dd)">
+         <font>
+            <Font size="13.0" />
+         </font></TextField>
+      <TextField fx:id="miejscowoscPracownik" layoutX="19.0" layoutY="290.0" prefHeight="29.0" prefWidth="190.0" promptText="Miejscowosc">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="telefonPracownik" layoutX="19.0" layoutY="331.0" prefHeight="29.0" prefWidth="190.0" promptText="Telefon">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="emailPracownik" layoutX="19.0" layoutY="372.0" prefHeight="19.0" prefWidth="190.0" promptText="Email">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </TextField>
         <TableView fx:id="tabelka_pracownicy" layoutX="224.0" layoutY="79.0" prefHeight="292.0" prefWidth="560.0">
             <columns>
                 <TableColumn fx:id="col_imie" prefWidth="117.0" text="Imie" />
                 <TableColumn fx:id="col_nazwisko" prefWidth="134.0" text="Nazwisko" />
                 <TableColumn fx:id="col_login" prefWidth="160.0" text="Login" />
                 <TableColumn fx:id="col_pesel" prefWidth="148.0" text="Pesel" />
+            <TableColumn fx:id="col_data" prefWidth="117.0" text="Data urodzenia" />
+            <TableColumn fx:id="col_miejscowosc" prefWidth="117.0" text="Miejscowosc" />
+            <TableColumn fx:id="col_telefon" prefWidth="117.0" text="Telefon" />
+            <TableColumn fx:id="col_email" prefWidth="117.0" text="Email" />
             </columns>
         </TableView>
     </children>
