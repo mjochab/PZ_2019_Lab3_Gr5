@@ -2,7 +2,6 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
@@ -25,7 +24,7 @@
                   <Image url="@../Icons/user.png" />
                </image></ImageView>
             <PasswordField fx:id="password_tf" layoutX="14.0" layoutY="140.0" prefHeight="25.0" prefWidth="241.0" promptText="Hasło" />
-            <Button alignment="CENTER" layoutX="85.0" layoutY="190.0" mnemonicParsing="false" onAction="#logIn" prefHeight="17.0" prefWidth="117.0" style="-fx-background-color: #e27171;" text="ZALOGUJ" textFill="#fffefe">
+            <Button alignment="CENTER" layoutX="134.0" layoutY="180.0" mnemonicParsing="false" onAction="#logIn" prefHeight="17.0" prefWidth="117.0" style="-fx-background-color: #e27171;" text="ZALOGUJ" textFill="#fffefe">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -36,13 +35,12 @@
                      </image>
                   </ImageView>
                </graphic></Button>
-            <Label layoutX="38.0" layoutY="22.0" text="PANEL LOGOWANIA" textFill="#eeadad">
+            <Label layoutX="42.0" layoutY="22.0" text="PANEL LOGOWANIA" textFill="#eeadad">
                <font>
                   <Font name="System Bold" size="19.0" />
                </font>
             </Label>
-            <ChoiceBox fx:id="role_cb" layoutX="126.0" layoutY="71.0" prefHeight="25.0" prefWidth="128.0" />
-            <Label layoutX="14.0" layoutY="73.0" prefHeight="21.0" prefWidth="111.0" text="ZALOGUJ JAKO:" textFill="#eeadad">
+            <Label layoutX="18.0" layoutY="64.0" prefHeight="21.0" prefWidth="234.0" text="WPROWADŹ DANE LOGOWANIA" textFill="#eeadad">
                <font>
                   <Font size="15.0" />
                </font>
@@ -55,6 +53,14 @@
                   <Image url="@../Icons/password.png" />
                </image>
             </ImageView>
+            <Label fx:id="notyfikacja_lbl" layoutX="17.0" layoutY="240.0" prefHeight="21.0" prefWidth="252.0" text="WPROWADŹ DANE LOGOWANIA" textFill="#b98484" visible="false">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <effect>
+                  <Bloom />
+               </effect>
+            </Label>
          </children>
          <opaqueInsets>
             <Insets />

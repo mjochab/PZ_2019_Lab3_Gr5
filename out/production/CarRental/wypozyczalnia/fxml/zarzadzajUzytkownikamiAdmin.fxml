@@ -26,45 +26,42 @@
                     </menus>
                 </MenuBar>
             </top>
-            <bottom>
+         <center>
                 <AnchorPane prefHeight="37.0" prefWidth="700.0" style="-fx-background-color: #6d0303;" BorderPane.alignment="CENTER">
                     <children>
                         <Button layoutX="13.0" layoutY="3.0" mnemonicParsing="false" onAction="#dodajUsera" prefHeight="25.0" prefWidth="162.0" text="Dodaj Uzytkownika" translateX="7.0">
                      <font>
                         <Font size="13.0" />
                      </font></Button>
-                        <Button layoutX="187.0" layoutY="3.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Edytuj Uzytkownika" translateX="5.0">
+                        <Button layoutX="187.0" layoutY="3.0" mnemonicParsing="false" onAction="#modujKlient" prefHeight="25.0" prefWidth="162.0" text="Edytuj Uzytkownika" translateX="5.0">
                      <font>
                         <Font size="13.0" />
                      </font></Button>
-                        <Button layoutX="358.0" layoutY="3.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Usuń Uzytkownika" translateX="5.0">
+                        <Button layoutX="532.0" layoutY="2.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Usuń Uzytkownika" translateX="5.0">
                      <font>
                         <Font size="13.0" />
                      </font></Button>
+                  <Button layoutX="364.0" layoutY="3.0" mnemonicParsing="false" onAction="#klik" prefHeight="25.0" prefWidth="162.0" text="Uzupełnij">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Button>
                     </children>
                 </AnchorPane>
-            </bottom>
+         </center>
         </BorderPane>
-      <TextField fx:id="userLogin" layoutX="14.0" layoutY="77.0" promptText="Login" />
-      <TextField fx:id="userHaslo" layoutX="14.0" layoutY="111.0" promptText="Hasło" />
-        <TextField fx:id="userImie" layoutX="14.0" layoutY="143.0" promptText="Imie" />
-        <TextField fx:id="userNazwisko" layoutX="14.0" layoutY="178.0" promptText="Nazwisko" />
-        <TextField fx:id="userData" layoutX="14.0" layoutY="213.0" promptText="Data Urodzenia" />
-        <TextField fx:id="userMiejscowosc" layoutX="14.0" layoutY="248.0" promptText="Miejscowość" />
-        <TextField fx:id="userTelefon" layoutX="14.0" layoutY="283.0" promptText="Numer Telefonu" />
-        <TextField fx:id="userMail" layoutX="14.0" layoutY="318.0" promptText="Email" />
-        <TextField fx:id="userPesel" layoutX="14.0" layoutY="353.0" promptText="Pesel" />
-        <TableView fx:id="tabelka" layoutX="182.0" layoutY="89.0" prefHeight="282.0" prefWidth="613.0">
+        <TextField fx:id="userImie" layoutX="18.0" layoutY="96.0" promptText="Imie" />
+        <TextField fx:id="userNazwisko" layoutX="18.0" layoutY="142.0" promptText="Nazwisko" />
+        <TextField fx:id="userData" layoutX="18.0" layoutY="185.0" promptText="Data Urodzenia" />
+        <TextField fx:id="userMiejscowosc" layoutX="18.0" layoutY="230.0" promptText="Miejscowość" />
+        <TextField fx:id="userPesel" layoutX="18.0" layoutY="276.0" promptText="Pesel" />
+        <TableView fx:id="tabelka" layoutX="226.0" layoutY="89.0" prefHeight="282.0" prefWidth="544.0">
             <columns>
-            <TableColumn fx:id="col_login" prefWidth="41.0" text="Login" />
-            <TableColumn fx:id="col_haslo" prefWidth="51.0" text="Haslo" />
-                <TableColumn fx:id="col_imie" prefWidth="69.0" text="Imie" />
-                <TableColumn fx:id="col_nazwisko" prefWidth="70.0" text="Nazwisko" />
-                <TableColumn fx:id="col_data" prefWidth="67.0" text="Data urodzenia" />
-                <TableColumn fx:id="col_miejscowosc" prefWidth="77.0" text="Miejscowość" />
-                <TableColumn fx:id="col_tel" prefWidth="63.0" text="Numer tel" />
-                <TableColumn fx:id="col_mail" text="Email" />
-                <TableColumn fx:id="col_pesel" prefWidth="94.0" text="Pesel" />
+                <TableColumn fx:id="col_imie" prefWidth="64.0" text="imie" />
+                <TableColumn fx:id="col_nazwisko" prefWidth="112.0" text="nazwisko" />
+                <TableColumn fx:id="col_data" prefWidth="135.0" text="data urodzenia" />
+                <TableColumn fx:id="col_miejscowosc" prefWidth="105.0" text="miejscowosc" />
+                <TableColumn fx:id="col_pesel" prefWidth="127.0" text="pesel" />
             </columns>
         </TableView>
     </children>

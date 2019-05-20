@@ -1,15 +1,18 @@
 package wypozyczalnia.Controllers;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ChoiceBox;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -19,7 +22,7 @@ import java.util.ResourceBundle;
 public class LoginController implements Initializable {
 
     @FXML
-    private ChoiceBox<String> role_cb;
+    private Label notyfikacja_lbl;
 
     @FXML
     private PasswordField password_tf;
@@ -30,20 +33,10 @@ public class LoginController implements Initializable {
     @FXML
     private AnchorPane rootPane;
 
-    ObservableList list = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        loadDataToCheckBox();
-    }
-
-    private void loadDataToCheckBox(){
-        list.removeAll(list);
-        String k = "Klient";
-        String p = "Pracownik";
-        String a = "Admin";
-        list.addAll(k, p, a);
-        role_cb.getItems().addAll(list);
+        notyfikacja_lbl.setVisible(false);
     }
 
     public void loadMenuAdmin(ActionEvent event) throws IOException {
@@ -192,13 +185,9 @@ public class LoginController implements Initializable {
         System.out.println(e);
     };
 
-
-
     }
 
-    public void logIn(ActionEvent event) {
-
-        String role = role_cb.getValue();
+    public void logIn(ActionEvent actionEvent) {
 
         Connection con = null;
         PreparedStatement ps = null;
@@ -208,63 +197,82 @@ public class LoginController implements Initializable {
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "" );
 
-            if(role == "Klient") {
-                ps = con.prepareStatement("SELECT * FROM klient WHERE login = ? and haslo = ?");
+                ps = con.prepareStatement("SELECT * FROM user WHERE login = ? AND haslo = ?");
 
                 ps.setString(1, login_tf.getText());
                 ps.setString(2, password_tf.getText());
                 rs = ps.executeQuery();
 
-                if (rs.next()) {
-                    AnchorPane pane = null;
-                    try {
-                        pane = FXMLLoader.load(getClass().getResource("../fxml/menuKlient.fxml"));
-                    } catch (IOException e) {
-                        e.printStackTrace();
+                    if (rs.next()) {
+                        if(rs.getString("rodzaj").equals("klient")) {
+                            FXMLLoader Loader = new FXMLLoader();
+                            Loader.setLocation(getClass().getResource("../fxml/menuKlient.fxml"));
+                                try {
+                                    Loader.load();
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                            MenuKlientController display = Loader.getController();
+                            display.displayName(rs.getString("imie"));
+
+                            Node source = (Node) actionEvent.getSource();
+                            Stage stage1 = (Stage) source.getScene().getWindow();
+                            stage1.close();
+
+                            Parent p = Loader.getRoot();
+                            Stage stage = new Stage();
+                            stage.setScene(new Scene(p));
+                            stage.show();
+                        }else if(rs.getString("rodzaj").equals("admin")){
+                            FXMLLoader Loader = new FXMLLoader();
+                            Loader.setLocation(getClass().getResource("../fxml/menuAdmin.fxml"));
+                                try {
+                                    Loader.load();
+                                } catch (IOException e) {
+                                e.printStackTrace();
+                                }
+                            MenuAdminController display = Loader.getController();
+                            display.displayName(rs.getString("imie"));
+
+                            Node source = (Node) actionEvent.getSource();
+                            Stage stage1 = (Stage) source.getScene().getWindow();
+                            stage1.close();
+
+                            Parent p = Loader.getRoot();
+                            Stage stage = new Stage();
+                            stage.setScene(new Scene(p));
+                            stage.show();
+                        }else if(rs.getString("rodzaj").equals("worker")) {
+                            FXMLLoader Loader = new FXMLLoader();
+                            Loader.setLocation(getClass().getResource("../fxml/menuPracownik.fxml"));
+                                try {
+                                    Loader.load();
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                            MenuPracownikController display = Loader.getController();
+                            display.displayName(rs.getString("imie"));
+
+                            Node source = (Node) actionEvent.getSource();
+                            Stage stage1 = (Stage) source.getScene().getWindow();
+                            stage1.close();
+
+                            Parent p = Loader.getRoot();
+                            Stage stage = new Stage();
+                            stage.setScene(new Scene(p));
+                            stage.show();
+                        }
+                    } else {
+                        notyfikacja_lbl.setVisible(true);
+                        notyfikacja_lbl.setText("NIEPOPRAWNY LOGIN LUB HASŁO!");
+                        Alert alert = new Alert(Alert.AlertType.ERROR);
+                        alert.setTitle("Błąd logowania");
+                        alert.setHeaderText("Niepoprawny login lub hasło");
+                        alert.setContentText("Proszę spróbować ponownie!");
+                        alert.showAndWait();
                     }
-                    rootPane.getChildren().setAll(pane);
-                } else {
-                    System.out.println("Niepoprawny login lub hasło klienta!");
-                }
-            }else if(role == "Admin"){
-                ps = con.prepareStatement("SELECT * FROM administrator WHERE login = ? and haslo = ?");
 
-                ps.setString(1, login_tf.getText());
-                ps.setString(2, password_tf.getText());
-                rs = ps.executeQuery();
 
-                if (rs.next()) {
-                    AnchorPane pane = null;
-                    try {
-                        pane = FXMLLoader.load(getClass().getResource("../fxml/menuAdmin.fxml"));
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                    rootPane.getChildren().setAll(pane);
-                } else {
-                    System.out.println("Niepoprawny login lub hasło administratora!");
-                }
-            }else if(role == "Pracownik"){
-                ps = con.prepareStatement("SELECT * FROM pracownik WHERE login = ? and haslo = ?");
-
-                ps.setString(1, login_tf.getText());
-                ps.setString(2, password_tf.getText());
-                rs = ps.executeQuery();
-
-                if (rs.next()) {
-                    AnchorPane pane = null;
-                    try {
-                        pane = FXMLLoader.load(getClass().getResource("../fxml/menuPracownik.fxml"));
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                    rootPane.getChildren().setAll(pane);
-                } else {
-                    System.out.println("Niepoprawny login lub hasło pracownika!");
-                }
-            }else if(role == null){
-                System.out.println("Nie wybrano roli!");
-            }
 
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
