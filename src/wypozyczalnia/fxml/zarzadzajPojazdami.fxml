@@ -11,11 +11,11 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="pracownikPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.zarzadzajPojazdamiController">
+<AnchorPane fx:id="pracownikPane" prefHeight="412.0" prefWidth="835.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.zarzadzajPojazdamiController">
     <children>
         <BorderPane prefHeight="30.0" prefWidth="700.0">
             <top>
-                <MenuBar maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+                <MenuBar maxWidth="-Infinity" minWidth="-Infinity" prefHeight="32.0" prefWidth="836.0" BorderPane.alignment="CENTER">
                     <menus>
                         <Menu mnemonicParsing="false" text="Powrót">
                             <items>
@@ -37,10 +37,15 @@
                      <font>
                         <Font size="13.0" />
                      </font></Button>
-                        <Button layoutX="361.0" layoutY="4.0" mnemonicParsing="false" onAction="#usunAuto" prefHeight="25.0" prefWidth="162.0" text="Usuń Pojazd" translateX="5.0">
+                        <Button layoutX="361.0" layoutY="4.0" mnemonicParsing="false" onAction="#klik" prefHeight="25.0" prefWidth="162.0" text="Uzupełnij" translateX="5.0">
                      <font>
                         <Font size="13.0" />
                      </font></Button>
+                  <Button layoutX="536.0" layoutY="4.0" mnemonicParsing="false" onAction="#usunAuto" prefHeight="25.0" prefWidth="162.0" text="Usuń Pojazd">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Button>
                     </children>
                 </AnchorPane>
             </bottom>
@@ -52,16 +57,18 @@
         <TextField fx:id="autoPaliwo" layoutX="20.0" layoutY="228.0" promptText="Paliwo" />
         <TextField fx:id="autoPrzebieg" layoutX="20.0" layoutY="263.0" promptText="Przebieg" />
         <TextField fx:id="autoCena" layoutX="20.0" layoutY="298.0" promptText="Cena" />
-        <TableView fx:id="tabelka_pojazdy" layoutX="227.0" layoutY="73.0" prefHeight="314.0" prefWidth="553.0">
+        <TableView fx:id="tabelka_pojazdy" layoutX="227.0" layoutY="73.0" prefHeight="321.0" prefWidth="587.0">
             <columns>
-                <TableColumn fx:id="col_marka" prefWidth="67.0" text="Marka" />
-                <TableColumn fx:id="col_model" prefWidth="66.0" text="Model" />
+                <TableColumn fx:id="col_marka" prefWidth="56.0" text="Marka" />
+                <TableColumn fx:id="col_model" prefWidth="77.0" text="Model" />
                 <TableColumn fx:id="col_rodzaj" prefWidth="84.0" text="Rodzaj" />
                 <TableColumn fx:id="col_rocznik" prefWidth="64.0" text="Rocznik" />
-                <TableColumn fx:id="col_paliwo" prefWidth="121.0" text="Paliwo" />
-                <TableColumn fx:id="col_przebieg" prefWidth="74.0" text="Przebieg" />
-                <TableColumn fx:id="col_cena" prefWidth="76.0" text="Cena" />
+                <TableColumn fx:id="col_paliwo" prefWidth="83.0" text="Paliwo" />
+                <TableColumn fx:id="col_przebieg" prefWidth="81.0" text="Przebieg" />
+                <TableColumn fx:id="col_cena" prefWidth="57.0" text="Cena" />
+            <TableColumn fx:id="col_dostepnosc" prefWidth="84.0" text="Dostęp" />
             </columns>
         </TableView>
+      <TextField fx:id="autoDostepnosc" layoutX="20.0" layoutY="336.0" promptText="Dostepnosc" />
     </children>
 </AnchorPane>

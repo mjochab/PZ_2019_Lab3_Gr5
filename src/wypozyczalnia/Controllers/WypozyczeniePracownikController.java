@@ -8,11 +8,18 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.layout.AnchorPane;
+        import javafx.scene.control.cell.PropertyValueFactory;
+        import javafx.scene.layout.AnchorPane;
+        import wypozyczalnia.DBConnector;
 
-import java.io.IOException;
+        import java.io.IOException;
 import java.net.URL;
-import java.util.ResourceBundle;
+        import java.sql.Connection;
+        import java.sql.ResultSet;
+        import java.sql.SQLException;
+        import java.util.ResourceBundle;
+        import java.util.logging.Level;
+        import java.util.logging.Logger;
 
 public class WypozyczeniePracownikController implements Initializable {
     @FXML
@@ -65,7 +72,33 @@ public class WypozyczeniePracownikController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-    }
+        try {
+            Connection con = DBConnector.getConnection();
 
+            ResultSet rs = con.createStatement().executeQuery("select * from samochod");
+
+            while (rs.next()) {
+                //oblist1.add(new ModelTablePojazdy(rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7)));
+                oblist1.add(new ModelTablePojazdy(rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),rs.getString(9)));            }
+
+
+
+        } catch (SQLException ex) {
+            Logger.getLogger(zarzadzajUzytkownikamiAdminController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
+        col_marka.setCellValueFactory(new PropertyValueFactory<>("marka"));
+        col_model.setCellValueFactory(new PropertyValueFactory<>("model"));
+        col_rodzaj.setCellValueFactory(new PropertyValueFactory<>("rodzaj"));
+        col_rocznik.setCellValueFactory(new PropertyValueFactory<>("rocznik"));
+        col_paliwo.setCellValueFactory(new PropertyValueFactory<>("paliwo"));
+        col_przebieg.setCellValueFactory(new PropertyValueFactory<>("przebieg"));
+        col_cena.setCellValueFactory(new PropertyValueFactory<>("Cena"));
+
+        tabelka_pojazdy.setItems(oblist1);
+
+
+    }
 
 }
