@@ -45,7 +45,7 @@
         <TextField layoutX="16.0" layoutY="127.0" prefHeight="31.0" prefWidth="132.0" promptText="Model" />
         <TextField layoutX="16.0" layoutY="162.0" prefHeight="31.0" prefWidth="132.0" promptText="Data początkowa" />
         <TextField layoutX="16.0" layoutY="197.0" prefHeight="31.0" prefWidth="132.0" promptText="Data końcowa" />
-        <TableView layoutX="178.0" layoutY="77.0" prefHeight="294.0" prefWidth="492.0">
+        <TableView layoutX="178.0" layoutY="77.0" prefHeight="294.0" prefWidth="608.0">
             <columns>
                 <TableColumn fx:id="col_marka" prefWidth="120.0" text="Marka" />
                 <TableColumn fx:id="col_model" prefWidth="73.0" text="Model" />

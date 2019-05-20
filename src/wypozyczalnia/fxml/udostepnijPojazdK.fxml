@@ -57,16 +57,16 @@
         <TextField layoutX="22.0" layoutY="274.0" prefHeight="31.0" prefWidth="145.0" promptText="Cena" />
         <TextField layoutX="22.0" layoutY="309.0" prefHeight="31.0" prefWidth="145.0" promptText="Data od" />
         <TextField layoutX="22.0" layoutY="344.0" prefHeight="31.0" prefWidth="145.0" promptText="Data do" />
-        <TableView layoutX="189.0" layoutY="78.0" prefHeight="306.0" prefWidth="500.0">
+        <TableView layoutX="189.0" layoutY="78.0" prefHeight="306.0" prefWidth="600.0">
             <columns>
-                <TableColumn fx:id="col_Marka" prefWidth="61.0" text="Marka" />
-                <TableColumn fx:id="col_Model" prefWidth="69.0" text="Model" />
-                <TableColumn fx:id="col_Rocznik" prefWidth="67.0" text="Rocznik" />
-                <TableColumn fx:id="col_Paliwo" prefWidth="68.0" text="Paliwo" />
-                <TableColumn fx:id="col_przebieg" prefWidth="71.0" text="Przebieg" />
-                <TableColumn fx:id="col_cena" prefWidth="44.0" text="Cena" />
-                <TableColumn fx:id="col_dataStart" prefWidth="61.0" text="Data od" />
-                <TableColumn fx:id="col_dataStop" prefWidth="56.0" text="Data do" />
+                <TableColumn fx:id="col_Marka" prefWidth="92.0" text="Marka" />
+                <TableColumn fx:id="col_Model" prefWidth="62.0" text="Model" />
+                <TableColumn fx:id="col_Rocznik" prefWidth="93.0" text="Rocznik" />
+                <TableColumn fx:id="col_Paliwo" prefWidth="66.0" text="Paliwo" />
+                <TableColumn fx:id="col_przebieg" prefWidth="73.0" text="Przebieg" />
+                <TableColumn fx:id="col_cena" prefWidth="66.0" text="Cena" />
+                <TableColumn fx:id="col_dataStart" prefWidth="65.0" text="Data od" />
+                <TableColumn fx:id="col_dataStop" prefWidth="82.0" text="Data do" />
             </columns>
         </TableView>
     </children>

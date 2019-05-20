@@ -20,7 +20,7 @@
             </Menu>
          </menus>
       </MenuBar>
-      <AnchorPane layoutX="216.0" layoutY="100.0" prefHeight="286.0" prefWidth="269.0" style="-fx-background-color: #6d0303;">
+      <AnchorPane layoutX="266.0" layoutY="100.0" prefHeight="286.0" prefWidth="269.0" style="-fx-background-color: #6d0303;">
          <children>
             <Button fx:id="zarzadzajPojazdami_btn" layoutX="29.0" layoutY="56.0" mnemonicParsing="false" onAction="#zarzadzajPojazdami" prefHeight="25.0" prefWidth="200.0" text="Zarządzaj pojazdami" translateX="7.0" />
             <Button fx:id="zarzadzajUzytkownikami_btn" layoutX="31.0" layoutY="19.0" mnemonicParsing="false" onAction="#zarzadzajUzytkownikami" prefHeight="25.0" prefWidth="200.0" text="Zarządzaj klientami" translateX="5.0" />
@@ -31,7 +31,7 @@
             <Button fx:id="historiaWypozyczen" layoutX="36.0" layoutY="236.0" mnemonicParsing="false" onAction="#historiaWypozyczen" prefHeight="25.0" prefWidth="200.0" text="Historia wypożyczeń" />
          </children>
       </AnchorPane>
-      <Label alignment="CENTER" layoutX="249.0" layoutY="53.0" prefHeight="27.0" prefWidth="203.0" text="Witaj Pracowniku!" textFill="WHITE">
+      <Label alignment="CENTER" layoutX="299.0" layoutY="54.0" prefHeight="27.0" prefWidth="203.0" text="Witaj Pracowniku!" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>

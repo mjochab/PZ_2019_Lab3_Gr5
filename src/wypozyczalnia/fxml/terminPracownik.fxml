@@ -21,19 +21,19 @@
                 </Menu>
             </menus>
         </MenuBar>
-        <DatePicker layoutX="242.0" layoutY="212.0" />
-        <Label alignment="CENTER" layoutX="263.0" layoutY="177.0" prefHeight="21.0" prefWidth="174.0" text="Data oddania" textFill="WHITE">
+        <DatePicker layoutX="303.0" layoutY="213.0" />
+        <Label alignment="CENTER" layoutX="324.0" layoutY="178.0" prefHeight="21.0" prefWidth="174.0" text="Data oddania" textFill="WHITE">
             <font>
                 <Font size="15.0" />
             </font>
         </Label>
-        <DatePicker layoutX="241.0" layoutY="109.0" />
-        <Label alignment="CENTER" layoutX="263.0" layoutY="77.0" prefHeight="21.0" prefWidth="174.0" text="Data wypożyczenia" textFill="WHITE">
+        <DatePicker layoutX="302.0" layoutY="110.0" />
+        <Label alignment="CENTER" layoutX="324.0" layoutY="78.0" prefHeight="21.0" prefWidth="174.0" text="Data wypożyczenia" textFill="WHITE">
             <font>
                 <Font size="15.0" />
             </font>
         </Label>
-        <Button layoutX="310.0" layoutY="281.0" mnemonicParsing="false" onAction="#wypozyczeniePracownik" prefHeight="25.0" prefWidth="81.0" text="Dalej" />
+        <Button layoutX="371.0" layoutY="282.0" mnemonicParsing="false" onAction="#wypozyczeniePracownik" prefHeight="25.0" prefWidth="81.0" text="Dalej" />
         <BorderPane layoutY="61.0" prefHeight="0.0" prefWidth="700.0" />
     </children>
 </AnchorPane>

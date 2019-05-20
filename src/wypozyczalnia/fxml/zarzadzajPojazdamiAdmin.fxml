@@ -37,11 +37,11 @@
                      <font>
                         <Font size="13.0" />
                      </font></Button>
-                        <Button layoutX="356.0" layoutY="4.0" mnemonicParsing="false" onAction="#usunAuto" prefHeight="25.0" prefWidth="162.0" text="Usuń Pojazd" translateX="5.0">
+                        <Button layoutX="532.0" layoutY="4.0" mnemonicParsing="false" onAction="#usunAuto" prefHeight="25.0" prefWidth="162.0" text="Usuń Pojazd" translateX="5.0">
                      <font>
                         <Font size="13.0" />
                      </font></Button>
-                        <Button layoutX="539.0" layoutY="4.0" mnemonicParsing="false" onAction="#klik" prefHeight="29.0" prefWidth="87.0" text="Uzupełnij">
+                        <Button layoutX="363.0" layoutY="4.0" mnemonicParsing="false" onAction="#klik" prefHeight="25.0" prefWidth="162.0" text="Uzupełnij">
                             <font>
                                 <Font size="13.0" />
                             </font>
@@ -57,7 +57,7 @@
         <TextField fx:id="autoPaliwo" layoutX="20.0" layoutY="227.0" promptText="Paliwo" />
         <TextField fx:id="autoPrzebieg" layoutX="20.0" layoutY="262.0" promptText="Przebieg" />
         <TextField fx:id="autoCena" layoutX="20.0" layoutY="297.0" promptText="Cena" />
-        <TableView fx:id="tabelka_pojazdy" layoutX="222.0" layoutY="75.0" prefHeight="312.0" prefWidth="464.0">
+        <TableView fx:id="tabelka_pojazdy" layoutX="222.0" layoutY="75.0" prefHeight="312.0" prefWidth="549.0">
             <columns>
                 <TableColumn fx:id="col_marka" prefWidth="77.0" text="Marka" />
                 <TableColumn fx:id="col_model" prefWidth="96.0" text="Model" />

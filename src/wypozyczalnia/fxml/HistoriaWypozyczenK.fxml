@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<AnchorPane fx:id="klientPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.MenuKlientController">
+<AnchorPane fx:id="klientPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.MenuKlientController">
     <children>
         <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="800.0">
             <top>
@@ -25,7 +25,7 @@
                 </MenuBar>
             </top>
         </BorderPane>
-        <TableView layoutX="28.0" layoutY="35.0" prefHeight="283.0" prefWidth="644.0">
+        <TableView layoutX="28.0" layoutY="35.0" prefHeight="283.0" prefWidth="743.0">
             <columns>
                 <TableColumn fx:id="col_Marka" prefWidth="145.0" text="Marka" />
                 <TableColumn fx:id="col_Model" prefWidth="152.0" text="Model" />
@@ -34,6 +34,6 @@
                 <TableColumn fx:id="col_Cena" prefWidth="78.0" text="Cena" />
             </columns>
         </TableView>
-        <Button layoutX="537.0" layoutY="335.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="130.0" text="Generuj raport" />
+        <Button layoutX="641.0" layoutY="335.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="130.0" text="Generuj raport" />
     </children>
 </AnchorPane>

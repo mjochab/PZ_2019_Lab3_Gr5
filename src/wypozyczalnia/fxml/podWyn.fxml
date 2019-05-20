@@ -24,22 +24,22 @@
             </MenuBar>
          </top>
       </BorderPane>
-      <Label layoutX="229.0" layoutY="51.0" text="Podsumowanie wypożyczenia" textFill="WHITE">
+      <Label layoutX="288.0" layoutY="51.0" text="Podsumowanie wypożyczenia" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="201.0" layoutY="128.0" text="Koszt wypożyczenia:" textFill="WHITE">
+      <Label layoutX="260.0" layoutY="128.0" text="Koszt wypożyczenia:" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="201.0" layoutY="148.0" text="Nazwa pojazdu:" textFill="WHITE">
+      <Label layoutX="260.0" layoutY="148.0" text="Nazwa pojazdu:" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="202.0" layoutY="108.0" text="Ilość dni:" textFill="WHITE">
+      <Label layoutX="261.0" layoutY="108.0" text="Ilość dni:" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>

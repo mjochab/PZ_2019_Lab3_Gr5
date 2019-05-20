@@ -26,8 +26,15 @@
               </menus>
             </MenuBar>
          </top>
+         <center>
+            <Label alignment="CENTER" prefHeight="27.0" prefWidth="640.0" text="Dostępne samochody" textAlignment="CENTER" textFill="WHITE" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </center>
       </BorderPane>
-      <TableView layoutX="29.0" layoutY="83.0" prefHeight="238.0" prefWidth="640.0">
+      <TableView layoutX="80.0" layoutY="82.0" prefHeight="238.0" prefWidth="640.0">
           <columns>
               <TableColumn fx:id="col_Marka" prefWidth="144.0" text="Marka" />
               <TableColumn fx:id="col_Model" prefWidth="148.0" text="Model" />
@@ -36,11 +43,6 @@
               <TableColumn fx:id="col_cena" prefWidth="88.0" text="Cena" />
           </columns>
       </TableView>
-      <Label alignment="CENTER" layoutX="28.0" layoutY="33.0" prefHeight="27.0" prefWidth="640.0" text="Dostępne samochody" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="28.0" AnchorPane.rightAnchor="32.0">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
-      <Button layoutX="309.0" layoutY="331.0" mnemonicParsing="false" onAction="#podWyn" prefHeight="15.0" prefWidth="83.0" text="Dalej" />
+      <Button layoutX="360.0" layoutY="330.0" mnemonicParsing="false" onAction="#podWyn" prefHeight="15.0" prefWidth="83.0" text="Dalej" />
    </children>
 </AnchorPane>

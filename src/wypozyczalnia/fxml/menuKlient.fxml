@@ -24,7 +24,7 @@
             </MenuBar>
          </top>
       </BorderPane>
-      <AnchorPane layoutX="220.0" layoutY="134.0" prefHeight="191.0" prefWidth="260.0">
+      <AnchorPane layoutX="270.0" layoutY="149.0" prefHeight="191.0" prefWidth="260.0">
          <children>
             <Button layoutX="25.0" layoutY="20.0" mnemonicParsing="false" onAction="#mojeWypozyczeniaK" prefHeight="25.0" prefWidth="200.0" text="Moje wypożyczenia" translateX="5.0" />
             <Button layoutX="23.0" layoutY="100.0" mnemonicParsing="false" onAction="#terminKlient" prefHeight="25.0" prefWidth="200.0" text="Wypożycz samochód" translateX="7.0" />
@@ -32,7 +32,7 @@
             <Button layoutX="25.0" layoutY="140.0" mnemonicParsing="false" onAction="#historiaWypozyczenK" prefHeight="25.0" prefWidth="200.0" text="Historia wypożyczeń" translateX="5.0" />
          </children>
       </AnchorPane>
-      <Label alignment="CENTER" layoutX="250.0" layoutY="82.0" prefHeight="30.0" prefWidth="190.0" text="Witaj Kliencie!" textAlignment="CENTER" textFill="WHITE">
+      <Label alignment="CENTER" layoutX="305.0" layoutY="82.0" prefHeight="30.0" prefWidth="190.0" text="Witaj Kliencie!" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
