@@ -15,16 +15,12 @@
         <TextField layoutX="11.0" layoutY="143.0" prefHeight="31.0" prefWidth="147.0" promptText="Model" />
         <TextField layoutX="11.0" layoutY="185.0" prefHeight="31.0" prefWidth="147.0" promptText="Data początkowa" />
         <TextField layoutX="11.0" layoutY="230.0" prefHeight="31.0" prefWidth="147.0" promptText="Data końcowa" />
-        <TableView fx:id="tabelka_pojazdy" layoutX="167.0" layoutY="71.0" prefHeight="318.0" prefWidth="625.0">
+        <TableView fx:id="tabelka_moje_wypozyczenia" layoutX="167.0" layoutY="71.0" prefHeight="318.0" prefWidth="625.0">
             <columns>
-                <TableColumn fx:id="col_marka" prefWidth="84.0" text="Marka" />
-                <TableColumn fx:id="col_model" prefWidth="64.0" text="Model" />
-                <TableColumn fx:id="col_rodzaj" prefWidth="72.0" text="Rodzaj" />
-                <TableColumn fx:id="col_rocznik" prefWidth="89.0" text="Rocznik" />
-                <TableColumn fx:id="col_paliwo" minWidth="0.0" prefWidth="76.0" text="Paliwo" />
-                <TableColumn fx:id="col_przebieg" prefWidth="88.0" text="Przebieg" />
-                <TableColumn fx:id="col_cena" prefWidth="69.0" text="Cena" />
-                <TableColumn fx:id="col_dostep" prefWidth="91.0" text="Dostęp" />
+                <TableColumn fx:id="col_marka" prefWidth="149.0" text="Marka" />
+                <TableColumn fx:id="col_model" prefWidth="176.0" text="Model" />
+                <TableColumn fx:id="col_odkiery" prefWidth="123.0" text="Od kiedy" />
+                <TableColumn fx:id="col_dokiedy" prefWidth="176.0" text="Do kiedy" />
 
             </columns>
         </TableView>
@@ -52,12 +48,12 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="602.0" layoutY="395.0" mnemonicParsing="false" onAction="#logOut" prefHeight="48.0" prefWidth="173.0" style="-fx-background-color: #e27171;" text=" POTWIERDŹ">
+      <Button layoutX="598.0" layoutY="396.0" mnemonicParsing="false" onAction="#logOut" prefHeight="48.0" prefWidth="173.0" style="-fx-background-color: #e27171;" text=" POTWIERDŹ">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="406.0" layoutY="396.0" mnemonicParsing="false" onAction="#logOut" prefHeight="48.0" prefWidth="173.0" style="-fx-background-color: #e27171;" text="EDYTUJ">
+      <Button layoutX="400.0" layoutY="396.0" mnemonicParsing="false" onAction="#logOut" prefHeight="48.0" prefWidth="173.0" style="-fx-background-color: #e27171;" text="EDYTUJ">
          <font>
             <Font size="18.0" />
          </font>

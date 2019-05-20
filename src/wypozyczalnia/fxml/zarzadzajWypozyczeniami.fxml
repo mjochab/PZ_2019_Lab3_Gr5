@@ -48,8 +48,8 @@
         <TextField fx:id="pesel" layoutX="14.0" layoutY="95.0" prefHeight="31.0" prefWidth="140.0" promptText="Pesel" />
         <TextField fx:id="marka" layoutX="14.0" layoutY="130.0" prefHeight="31.0" prefWidth="140.0" promptText="Marka" />
         <TextField fx:id="cena" layoutX="14.0" layoutY="270.0" prefHeight="31.0" prefWidth="140.0" promptText="Cena" />
-        <TextField fx:id="data-start" layoutX="14.0" layoutY="200.0" prefHeight="31.0" prefWidth="140.0" promptText="Data poczatkowa" />
-        <TextField fx:id="data-koniec" layoutX="14.0" layoutY="235.0" prefHeight="31.0" prefWidth="140.0" promptText="Data końcowa" />
+        <TextField fx:id="data_start" layoutX="14.0" layoutY="200.0" prefHeight="31.0" prefWidth="140.0" promptText="Data poczatkowa" />
+        <TextField fx:id="data_koniec" layoutX="14.0" layoutY="235.0" prefHeight="31.0" prefWidth="140.0" promptText="Data końcowa" />
         <TextField fx:id="model" layoutX="14.0" layoutY="165.0" prefHeight="31.0" prefWidth="140.0" promptText="Model" />
         <TableView layoutX="178.0" layoutY="77.0" prefHeight="294.0" prefWidth="492.0">
             <columns>

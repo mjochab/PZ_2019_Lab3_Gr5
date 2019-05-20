@@ -8,7 +8,6 @@ package wypozyczalnia.Controllers;
         import javafx.fxml.Initializable;
         import javafx.scene.control.TableColumn;
         import javafx.scene.control.TableView;
-        import javafx.scene.control.TextField;
         import javafx.scene.control.cell.PropertyValueFactory;
         import javafx.scene.layout.AnchorPane;
         import wypozyczalnia.DBConnector;
@@ -46,17 +45,7 @@ public class WypozyczeniePracownikController implements Initializable {
     private TableColumn<ModelTablePojazdy, String> col_dostep;
 
 
-    @FXML private TextField autoMarka;
-    @FXML private TextField autoModel;
-    @FXML private TextField autoRodzaj;
-    @FXML private TextField autoRocznik;
-    @FXML private TextField autoPaliwo;
-    @FXML private TextField autoPrzebieg;
-    @FXML private TextField autoCena;
-    @FXML private TextField autoDostep;
-
     ObservableList<ModelTablePojazdy> oblist1 = FXCollections.observableArrayList();
-
 
 
 
@@ -78,6 +67,7 @@ public class WypozyczeniePracownikController implements Initializable {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/podWynP.fxml"));
         pracownikPane.getChildren().setAll(pane);
     }
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -112,8 +102,6 @@ public class WypozyczeniePracownikController implements Initializable {
 
 
     }
-
-
 
 
 }
