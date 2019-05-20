@@ -54,19 +54,11 @@ public class ModelTablePojazdy {
         return cena;
     }
 
-    public String getDostepnosc() {
-        return dostepnosc;
-    }
-
-    public void setDostepnosc(String dostepnosc) {
-        this.dostepnosc = dostepnosc;
-    }
-
     public void setCena(String cena) {
         this.cena = cena;
     }
 
-    public ModelTablePojazdy(String marka, String model, String rodzaj, String rocznik, String paliwo, String przebieg, String cena, String dostepnosc) {
+    public ModelTablePojazdy(String marka, String model, String rodzaj, String rocznik, String paliwo, String przebieg, String cena) {
         this.marka = marka;
         this.model = model;
         this.rodzaj = rodzaj;
@@ -74,10 +66,8 @@ public class ModelTablePojazdy {
         this.paliwo = paliwo;
         this.przebieg = przebieg;
         this.cena = cena;
-        this.dostepnosc = dostepnosc;
-
     }
 
-    String marka,model,rodzaj,rocznik,paliwo,przebieg,cena,dostepnosc;
+    String marka,model,rodzaj,rocznik,paliwo,przebieg,cena;
 
 }

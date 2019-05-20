@@ -30,18 +30,18 @@
                 <AnchorPane prefHeight="37.0" prefWidth="700.0" style="-fx-background-color: #6d0303;" BorderPane.alignment="CENTER">
                     <children>
                         <Button layoutX="11.0" layoutY="4.0" mnemonicParsing="false" onAction="#dodajAuto" prefHeight="25.0" prefWidth="162.0" text="Dodaj Pojazd" translateX="7.0">
-                     <font>
-                        <Font size="13.0" />
-                     </font></Button>
+                            <font>
+                                <Font size="13.0" />
+                            </font></Button>
                         <Button layoutX="185.0" layoutY="4.0" mnemonicParsing="false" onAction="#modujAuto" prefHeight="25.0" prefWidth="162.0" text="Edytuj Pojazd" translateX="5.0">
-                     <font>
-                        <Font size="13.0" />
-                     </font></Button>
+                            <font>
+                                <Font size="13.0" />
+                            </font></Button>
                         <Button layoutX="532.0" layoutY="4.0" mnemonicParsing="false" onAction="#usunAuto" prefHeight="25.0" prefWidth="162.0" text="Usuń Pojazd" translateX="5.0">
-                     <font>
-                        <Font size="13.0" />
-                     </font></Button>
-                        <Button layoutX="363.0" layoutY="4.0" mnemonicParsing="false" onAction="#klik" prefHeight="25.0" prefWidth="162.0" text="Uzupełnij">
+                            <font>
+                                <Font size="13.0" />
+                            </font></Button>
+                        <Button layoutX="363.0" layoutY="4.0" mnemonicParsing="false" onAction="#klik" prefHeight="25.0" prefWidth="162.0" text="Uzupełnij Dane">
                             <font>
                                 <Font size="13.0" />
                             </font>
@@ -53,17 +53,21 @@
         <TextField fx:id="autoMarka" layoutX="20.0" layoutY="87.0" promptText="Marka" />
         <TextField fx:id="autoModel" layoutX="20.0" layoutY="122.0" promptText="Model" />
         <TextField fx:id="autoRodzaj" layoutX="20.0" layoutY="157.0" promptText="Rodzaj" />
-        <TextField fx:id="autoPaliwo" layoutX="20.0" layoutY="200.0" promptText="Paliwo" />
-        <TextField fx:id="autoPrzebieg" layoutX="20.0" layoutY="242.0" promptText="Przebieg" />
-        <TextField fx:id="autoCena" layoutX="20.0" layoutY="282.0" promptText="Cena" />
-        <TableView fx:id="tabelka_pojazdy" layoutX="222.0" layoutY="75.0" prefHeight="312.0" prefWidth="549.0">
+        <TextField fx:id="autoRocznik" layoutX="20.0" layoutY="192.0" promptText="Rocznik" />
+        <TextField fx:id="autoPaliwo" layoutX="20.0" layoutY="227.0" promptText="Paliwo" />
+        <TextField fx:id="autoPrzebieg" layoutX="20.0" layoutY="262.0" promptText="Przebieg" />
+        <TextField fx:id="autoCena" layoutX="20.0" layoutY="297.0" promptText="Cena" />
+      <TextField fx:id="autoDostepnosc" layoutX="20.0" layoutY="332.0" promptText="Dostepnosc" />
+        <TableView fx:id="tabelka_pojazdy" layoutX="185.0" layoutY="75.0" prefHeight="312.0" prefWidth="606.0">
             <columns>
                 <TableColumn fx:id="col_marka" prefWidth="77.0" text="Marka" />
                 <TableColumn fx:id="col_model" prefWidth="96.0" text="Model" />
                 <TableColumn fx:id="col_rodzaj" prefWidth="87.0" text="Rodzaj" />
-                <TableColumn fx:id="col_paliwo" prefWidth="85.0" text="Paliwo" />
-                <TableColumn fx:id="col_przebieg" prefWidth="96.0" text="Przebieg" />
-                <TableColumn fx:id="col_cena" prefWidth="107.0" text="Cena" />
+                <TableColumn fx:id="col_rocznik" prefWidth="87.0" text="Rocznik" />
+                <TableColumn fx:id="col_paliwo" prefWidth="63.0" text="Paliwo" />
+                <TableColumn fx:id="col_przebieg" prefWidth="59.0" text="Przebieg" />
+                <TableColumn fx:id="col_cena" prefWidth="56.0" text="Cena" />
+            <TableColumn fx:id="col_dostepnosc" text="Dostępność" />
             </columns>
         </TableView>
     </children>
