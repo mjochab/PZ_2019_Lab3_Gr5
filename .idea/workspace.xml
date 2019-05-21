@@ -3,7 +3,31 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="naprawa formularzy">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarRental.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CarRental.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wypozyczalnia/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wypozyczalnia/fxml/HistoriaWypozyczenK.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/fxml/HistoriaWypozyczenK.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wypozyczalnia/fxml/historiaWypozyczen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/fxml/historiaWypozyczen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wypozyczalnia/fxml/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/fxml/login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wypozyczalnia/fxml/menuAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/fxml/menuAdmin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wypozyczalnia/fxml/menuKlient.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/fxml/menuKlient.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wypozyczalnia/fxml/menuPracownik.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/fxml/menuPracownik.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wypozyczalnia/fxml/mojeWypozyczenia.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/fxml/mojeWypozyczenia.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wypozyczalnia/fxml/mojeWypozyczeniaK.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/fxml/mojeWypozyczeniaK.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wypozyczalnia/fxml/podWyn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/fxml/podWyn.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wypozyczalnia/fxml/podWynP.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/fxml/podWynP.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wypozyczalnia/fxml/terminKlient.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/fxml/terminKlient.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wypozyczalnia/fxml/terminPracownik.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/fxml/terminPracownik.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wypozyczalnia/fxml/udostepnijPojazd.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/fxml/udostepnijPojazd.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wypozyczalnia/fxml/udostepnijPojazdK.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/fxml/udostepnijPojazdK.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wypozyczalnia/fxml/wypozyczenieKlient.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/fxml/wypozyczenieKlient.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wypozyczalnia/fxml/wypozyczeniePracownik.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/fxml/wypozyczeniePracownik.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajPojazdami.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajPojazdami.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajPojazdamiAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajPojazdamiAdmin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajPracownikami.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajPracownikami.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajUzytkownikami.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajUzytkownikami.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajUzytkownikamiAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajUzytkownikamiAdmin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajWypozyczeniami.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajWypozyczeniami.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajWypozyczeniamiAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajWypozyczeniamiAdmin.fxml" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -67,61 +91,51 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/WypozyczeniePracownikController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="98" selection-start-line="98" selection-end-line="98" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajPracownikami.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-365">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="527">
               <caret line="31" column="83" selection-start-line="31" selection-start-column="83" selection-end-line="31" selection-end-column="83" />
             </state>
           </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajUzytkownikamiController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="225" column="5" selection-start-line="168" selection-start-column="8" selection-end-line="225" selection-end-column="5" />
-              <folding>
-                <element signature="e#3846#3854#0" expanded="true" />
-              </folding>
+        <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajUzytkownikami.fxml">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="550">
+              <caret line="64" column="78" selection-start-line="64" selection-start-column="78" selection-end-line="64" selection-end-column="78" />
             </state>
           </provider>
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajPracownikamiController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="149" column="95" selection-start-line="149" selection-start-column="95" selection-end-line="149" selection-end-column="95" />
-              <folding>
-                <element signature="e#10321#10329#0" expanded="true" />
-              </folding>
+        <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajUzytkownikamiAdmin.fxml">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="94">
+              <caret line="52" column="6" lean-forward="true" selection-start-line="52" selection-start-column="6" selection-end-line="72" selection-end-column="20" />
             </state>
           </provider>
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajPojazdamiController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="61" column="40" selection-start-line="61" selection-end-line="62" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajWypozyczeniamiAdmin.fxml">
+          <provider editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajWypozyczeniami.fxml">
+          <provider editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajPojazdami.fxml">
           <provider editor-type-id="text-editor">
-            <state relative-caret-position="219">
+            <state relative-caret-position="553">
               <caret line="68" column="16" selection-start-line="68" selection-start-column="16" selection-end-line="68" selection-end-column="16" />
             </state>
           </provider>
@@ -129,31 +143,38 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/WypozyczenieKlientController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-544">
-              <caret line="48" selection-start-line="48" selection-end-line="48" />
+        <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajPojazdamiAdmin.fxml">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="60" column="2" selection-start-line="60" selection-start-column="2" selection-end-line="71" selection-end-column="20" />
             </state>
           </provider>
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/wypozyczeniePracownik.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="553">
               <caret line="41" column="20" selection-start-line="29" selection-start-column="8" selection-end-line="41" selection-end-column="20" />
             </state>
           </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/wypozyczenieKlient.fxml">
           <provider editor-type-id="text-editor">
-            <state relative-caret-position="340">
+            <state relative-caret-position="553">
               <caret line="48" column="19" selection-start-line="48" selection-start-column="19" selection-end-line="48" selection-end-column="19" />
             </state>
           </provider>
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/udostepnijPojazdK.fxml">
+          <provider editor-type-id="text-editor" />
           <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
@@ -205,8 +226,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/sample/Generate_PDF_Wypozyczenia.java" />
-        <option value="$PROJECT_DIR$/src/sample/Generate_PDF_Samochody.java" />
         <option value="$PROJECT_DIR$/src/sample/Generate_auta.java" />
         <option value="$PROJECT_DIR$/src/sample/Fxml/menuAdmin.fxml" />
         <option value="$PROJECT_DIR$/src/sample/Fxml/menuKlient.fxml" />
@@ -219,43 +238,45 @@
         <option value="$PROJECT_DIR$/Test/wypozyczalnia/UnitTest1Test.java" />
         <option value="$PROJECT_DIR$/src/wypozyczalnia/Fxml/zarzadzajPracownikami.fxml" />
         <option value="$PROJECT_DIR$/src/wypozyczalnia/Fxml/zarzadzajPojazdami.fxml" />
-        <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/mojeWypozyczeniaK.fxml" />
-        <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/podWynP.fxml" />
-        <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/terminKlient.fxml" />
-        <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/udostepnijPojazd.fxml" />
-        <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/udostepnijPojazdK.fxml" />
-        <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajUzytkownikami.fxml" />
-        <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajWypozyczeniamiAdmin.fxml" />
-        <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/podWyn.fxml" />
-        <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/HistoriaWypozyczenK.fxml" />
-        <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/mojeWypozyczenia.fxml" />
-        <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/login.fxml" />
-        <option value="$PROJECT_DIR$/src/wypozyczalnia/Main.java" />
-        <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/menuKlient.fxml" />
         <option value="$PROJECT_DIR$/src/wypozyczalnia/Controllers/MenuAdminController.java" />
         <option value="$PROJECT_DIR$/src/wypozyczalnia/Controllers/MenuPracownikController.java" />
         <option value="$PROJECT_DIR$/src/wypozyczalnia/Controllers/LoginController.java" />
         <option value="$PROJECT_DIR$/src/wypozyczalnia/Controllers/MenuKlientController.java" />
-        <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/menuAdmin.fxml" />
-        <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/terminPracownik.fxml" />
-        <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/menuPracownik.fxml" />
         <option value="$PROJECT_DIR$/src/wypozyczalnia/Controllers/ModelTableUser.java" />
         <option value="$PROJECT_DIR$/src/wypozyczalnia/Controllers/ModelTablePojazdy.java" />
         <option value="$PROJECT_DIR$/src/wypozyczalnia/Controllers/udostepnijPojazdController.java" />
         <option value="$PROJECT_DIR$/src/wypozyczalnia/Controllers/udostepnijPojazdKController.java" />
         <option value="$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajPojazdamiController.java" />
         <option value="$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajPojazdamiAdminController.java" />
-        <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajPojazdami.fxml" />
-        <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajPojazdamiAdmin.fxml" />
         <option value="$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajUzytkownikamiAdminController.java" />
-        <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajUzytkownikamiAdmin.fxml" />
-        <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajPracownikami.fxml" />
         <option value="$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajUzytkownikamiController.java" />
         <option value="$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajPracownikamiController.java" />
         <option value="$PROJECT_DIR$/src/wypozyczalnia/Controllers/WypozyczeniePracownikController.java" />
-        <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/wypozyczeniePracownik.fxml" />
-        <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/wypozyczenieKlient.fxml" />
         <option value="$PROJECT_DIR$/src/wypozyczalnia/Controllers/WypozyczenieKlientController.java" />
+        <option value="$PROJECT_DIR$/src/wypozyczalnia/Main.java" />
+        <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/historiaWypozyczen.fxml" />
+        <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/HistoriaWypozyczenK.fxml" />
+        <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/login.fxml" />
+        <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/menuAdmin.fxml" />
+        <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/menuKlient.fxml" />
+        <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/menuPracownik.fxml" />
+        <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/mojeWypozyczenia.fxml" />
+        <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/mojeWypozyczeniaK.fxml" />
+        <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/podWyn.fxml" />
+        <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/podWynP.fxml" />
+        <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/terminKlient.fxml" />
+        <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/terminPracownik.fxml" />
+        <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/udostepnijPojazd.fxml" />
+        <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/udostepnijPojazdK.fxml" />
+        <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/wypozyczenieKlient.fxml" />
+        <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/wypozyczeniePracownik.fxml" />
+        <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajPojazdami.fxml" />
+        <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajPojazdamiAdmin.fxml" />
+        <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajPracownikami.fxml" />
+        <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajUzytkownikami.fxml" />
+        <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajUzytkownikamiAdmin.fxml" />
+        <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajWypozyczeniamiAdmin.fxml" />
+        <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajWypozyczeniami.fxml" />
       </list>
     </option>
   </component>
@@ -298,34 +319,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="wypozyczalnia" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="PZ_2019_Lab3_Gr5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PZ_2019_Lab3_Gr5" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="wypozyczalnia" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PZ_2019_Lab3_Gr5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PZ_2019_Lab3_Gr5" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="wypozyczalnia" type="462c0819:PsiDirectoryNode" />
-              <item name="fxml" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PZ_2019_Lab3_Gr5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PZ_2019_Lab3_Gr5" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="wypozyczalnia" type="462c0819:PsiDirectoryNode" />
-              <item name="Icons" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PZ_2019_Lab3_Gr5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PZ_2019_Lab3_Gr5" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="wypozyczalnia" type="462c0819:PsiDirectoryNode" />
-              <item name="Table_Models" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -352,7 +345,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/wypozyczalnia/Icons" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
@@ -773,10 +766,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-8" y="-8" width="2576" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.21610738" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.21780604" />
       <window_info id="Structure" order="1" weight="0.24966443" />
       <window_info id="Favorites" order="2" weight="0.3295302" />
       <window_info id="Designer" order="3" />
@@ -785,7 +778,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3101983" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.30985916" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.398017" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -795,7 +788,7 @@
       <window_info anchor="bottom" id="Problems" order="9" />
       <window_info anchor="bottom" id="Changes" order="10" />
       <window_info anchor="bottom" id="Profiler" order="11" />
-      <window_info anchor="bottom" id="Event Log" order="12" weight="0.3243626" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="12" visible="true" weight="0.32394367" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.31586403" />
       <window_info anchor="bottom" id="Terminal" order="14" weight="0.32932165" />
       <window_info anchor="bottom" id="GitHub Pull Requests" order="15" weight="0.33694476" />
@@ -876,33 +869,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Icons/Cars/2.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Icons/Cars/1.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Icons/back.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/HistoriaWypozyczenK.fxml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/mojeWypozyczeniaK.fxml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/src.zip!/java/net/URLClassLoader.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/javafx-src.zip!/javafx/fxml/FXMLLoader.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/src.zip!/java/lang/String.java" />
-    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/PodWynPController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajWypozyczeniamiController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-493">
@@ -929,10 +895,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Icons/car.png">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/historiaWypozyczen.fxml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Generate_PDF_Klienci.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -967,54 +929,6 @@
           <caret line="253" column="70" selection-start-line="253" selection-start-column="70" selection-end-line="253" selection-end-column="70" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/login.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="59" column="23" selection-start-line="59" selection-start-column="23" selection-end-line="59" selection-end-column="23" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/terminPracownik.fxml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/menuAdmin.fxml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/menuKlient.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="839">
-          <caret line="65" column="43" selection-start-line="65" selection-start-column="43" selection-end-line="65" selection-end-column="43" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/menuPracownik.fxml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/mojeWypozyczenia.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="254" selection-start-line="11" selection-start-column="231" selection-end-line="11" selection-end-column="254" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="21" lean-forward="true" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#571#572#0" expanded="true" />
-            <element signature="e#599#600#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1085,14 +999,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajUzytkownikamiAdmin.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-79">
-          <caret line="52" column="6" lean-forward="true" selection-start-line="52" selection-start-column="6" selection-end-line="72" selection-end-column="20" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajUzytkownikamiAdminController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-155">
@@ -1118,14 +1024,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajUzytkownikami.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="64" column="79" selection-start-line="64" selection-start-column="79" selection-end-line="64" selection-end-column="79" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/ModelTableUser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="303">
@@ -1133,17 +1031,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajPojazdamiAdmin.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="60" column="2" selection-start-line="60" selection-start-column="2" selection-end-line="71" selection-end-column="20" />
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/WypozyczeniePracownikController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1343">
+          <caret line="98" selection-start-line="98" selection-end-line="98" />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajUzytkownikamiController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
+        <state relative-caret-position="3468">
           <caret line="225" column="5" selection-start-line="168" selection-start-column="8" selection-end-line="225" selection-end-column="5" />
           <folding>
             <element signature="e#3846#3854#0" expanded="true" />
@@ -1151,67 +1048,169 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajPracownikami.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-365">
-          <caret line="31" column="83" selection-start-line="31" selection-start-column="83" selection-end-line="31" selection-end-column="83" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/WypozyczeniePracownikController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="98" selection-start-line="98" selection-end-line="98" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/wypozyczeniePracownik.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="41" column="20" selection-start-line="29" selection-start-column="8" selection-end-line="41" selection-end-column="20" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/wypozyczenieKlient.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="48" column="19" selection-start-line="48" selection-start-column="19" selection-end-line="48" selection-end-column="19" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajPracownikamiController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
+        <state relative-caret-position="2176">
           <caret line="149" column="95" selection-start-line="149" selection-start-column="95" selection-end-line="149" selection-end-column="95" />
-          <folding>
-            <element signature="e#10321#10329#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajPojazdamiController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
+        <state relative-caret-position="697">
           <caret line="61" column="40" selection-start-line="61" selection-end-line="62" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/WypozyczenieKlientController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-544">
+        <state relative-caret-position="493">
           <caret line="48" selection-start-line="48" selection-end-line="48" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="54" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#571#572#0" expanded="true" />
+            <element signature="e#599#600#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/historiaWypozyczen.fxml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/HistoriaWypozyczenK.fxml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/login.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="553">
+          <caret line="59" column="23" selection-start-line="59" selection-start-column="23" selection-end-line="59" selection-end-column="23" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/menuAdmin.fxml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/menuKlient.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="553">
+          <caret line="65" column="43" selection-start-line="65" selection-start-column="43" selection-end-line="65" selection-end-column="43" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/menuPracownik.fxml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/mojeWypozyczenia.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="255" selection-start-line="11" selection-start-column="232" selection-end-line="11" selection-end-column="255" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/mojeWypozyczeniaK.fxml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/podWyn.fxml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/podWynP.fxml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/terminKlient.fxml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/terminPracownik.fxml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/udostepnijPojazd.fxml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/udostepnijPojazdK.fxml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/wypozyczenieKlient.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="553">
+          <caret line="48" column="19" selection-start-line="48" selection-start-column="19" selection-end-line="48" selection-end-column="19" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/wypozyczeniePracownik.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="553">
+          <caret line="41" column="20" selection-start-line="29" selection-start-column="8" selection-end-line="41" selection-end-column="20" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajPojazdami.fxml">
       <provider editor-type-id="text-editor">
-        <state relative-caret-position="219">
+        <state relative-caret-position="553">
           <caret line="68" column="16" selection-start-line="68" selection-start-column="16" selection-end-line="68" selection-end-column="16" />
         </state>
       </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajPojazdamiAdmin.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="60" column="2" selection-start-line="60" selection-start-column="2" selection-end-line="71" selection-end-column="20" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajPracownikami.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="83" selection-start-line="31" selection-start-column="83" selection-end-line="31" selection-end-column="83" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajUzytkownikami.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="64" column="78" selection-start-line="64" selection-start-column="78" selection-end-line="64" selection-end-column="78" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajUzytkownikamiAdmin.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret line="52" column="6" lean-forward="true" selection-start-line="52" selection-start-column="6" selection-end-line="72" selection-end-column="20" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajWypozyczeniamiAdmin.fxml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajWypozyczeniami.fxml">
+      <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
     </entry>
   </component>

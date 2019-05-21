@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="pracownikPane" prefHeight="408.0" prefWidth="893.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.udostepnijPojazdController">
+<AnchorPane fx:id="pracownikPane" prefHeight="900.0" prefWidth="1440.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.udostepnijPojazdController">
     <children>
         <BorderPane prefHeight="30.0" prefWidth="700.0">
             <top>
@@ -58,7 +58,7 @@
         <TextField fx:id="autoPrzebieg" layoutX="13.0" layoutY="263.0" prefHeight="31.0" prefWidth="151.0" promptText="Przebieg" />
         <TextField fx:id="autoCena" layoutX="13.0" layoutY="298.0" prefHeight="31.0" prefWidth="151.0" promptText="Cena" />
         <TextField fx:id="autoDostep" layoutX="13.0" layoutY="336.0" prefHeight="31.0" prefWidth="151.0" promptText="Dostęp" />
-        <TableView fx:id="tabelka_pojazdy" layoutX="169.0" layoutY="79.0" prefHeight="291.0" prefWidth="665.0">
+        <TableView fx:id="tabelka_pojazdy" layoutX="275.0" layoutY="83.0" prefHeight="291.0" prefWidth="665.0">
             <columns>
                 <TableColumn fx:id="col_marka" prefWidth="84.0" text="Marka" />
                 <TableColumn fx:id="col_model" prefWidth="64.0" text="Model" />

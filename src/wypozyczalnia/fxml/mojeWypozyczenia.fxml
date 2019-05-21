@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="pracownikPane" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.MenuPracownikController">
+<AnchorPane fx:id="pracownikPane" prefHeight="900.0" prefWidth="1440.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.MenuPracownikController">
     <children>
         <TextField layoutX="11.0" layoutY="103.0" prefHeight="31.0" prefWidth="147.0" promptText="Marka" />
         <TextField layoutX="11.0" layoutY="143.0" prefHeight="31.0" prefWidth="147.0" promptText="Model" />
