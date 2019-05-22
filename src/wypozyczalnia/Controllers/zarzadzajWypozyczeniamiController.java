@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TablePosition;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
@@ -25,12 +26,12 @@ public class zarzadzajWypozyczeniamiController {
 
     ObservableList<ModelTableWypozyczenie> oblist1 = FXCollections.observableArrayList();
     ObservableList<ModelTable> oblist2 = FXCollections.observableArrayList();
-    @FXML private TextField pesel;
-    @FXML private TextField marka;
-    @FXML private TextField cena;
-    @FXML private TextField dataStart;
-    @FXML private TextField dataKoniec;
-    @FXML private TextField model;
+    @FXML private TextField Tpesel;
+    @FXML private TextField Tmarka;
+    @FXML private TextField Tcena;
+    @FXML private TextField TdataStart;
+    @FXML private TextField TdataKoniec;
+    @FXML private TextField Tmodel;
 
    @FXML
     private TableView<ModelTableWypozyczenie> tabelka_wypozyczenie;
@@ -69,12 +70,12 @@ public class zarzadzajWypozyczeniamiController {
     }
     public void dodajWypo(ActionEvent event) throws IOException {
         System.out.println("2");
-        String pesel = String.valueOf(this.pesel.getCharacters());
-        String marka = String.valueOf(this.marka.getCharacters());
-        String cena = String.valueOf(this.cena.getCharacters());
-        String dataStart = String.valueOf(this.dataStart.getCharacters());
-        String dataKoniec = String.valueOf(this.dataKoniec.getCharacters());
-        String model = String.valueOf(this.model.getCharacters());
+        String pesel = String.valueOf(this.Tpesel.getCharacters());
+        String marka = String.valueOf(this.Tmarka.getCharacters());
+        String cena = String.valueOf(this.Tcena.getCharacters());
+        String dataStart = String.valueOf(this.TdataStart.getCharacters());
+        String dataKoniec = String.valueOf(this.TdataKoniec.getCharacters());
+        String model = String.valueOf(this.Tmodel.getCharacters());
 
         try {
             String idUser = "1";
@@ -129,17 +130,15 @@ public class zarzadzajWypozyczeniamiController {
 
     public void modujWypo(ActionEvent event) throws  IOException{
 
-        /*TablePosition pozycja = tabelka_pojazdy.getSelectionModel().getSelectedCells().get(0);
+        TablePosition pozycja = tabelka_wypozyczenie.getSelectionModel().getSelectedCells().get(0);
         int index = pozycja.getRow();
 
-        String marka = String.valueOf(autoMarka.getCharacters());
-        String model = String.valueOf(autoModel.getCharacters());
-        String Rodzaj = String.valueOf(autoRodzaj.getCharacters());
-        String Rocznik = String.valueOf(autoRocznik.getCharacters());
-        String Paliwo = String.valueOf(autoPaliwo.getCharacters());
-        String przebieg = String.valueOf(autoPrzebieg.getCharacters());
-        String cena = String.valueOf(autoCena.getCharacters());
-        String dostepnosc = String.valueOf(autoDostepnosc.getCharacters());
+        String pesel = String.valueOf(Tpesel.getCharacters());
+        String marka = String.valueOf(Tmarka.getCharacters());
+        String model = String.valueOf(Tmodel.getCharacters());
+        String cena = String.valueOf(Tcena.getCharacters());
+        String dataStart = String.valueOf(TdataStart.getCharacters());
+        String dataStop = String.valueOf(TdataStart.getCharacters());
 
         try {
             index++;
@@ -147,7 +146,7 @@ public class zarzadzajWypozyczeniamiController {
             Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
 
             PreparedStatement stmt = con.prepareStatement("SELECT * FROM samochod");
-            String zapytanie = "Select * FROM samochod ORDER BY samochod_id LIMIT " + index;
+            String zapytanie = "Select * FROM wypozyczenie ORDER BY wypozyczenie_id LIMIT " + index;
             ResultSet rs = stmt.executeQuery(zapytanie);
             String a = "0";
             int i=0;
@@ -157,18 +156,32 @@ public class zarzadzajWypozyczeniamiController {
             }
             int numer = Integer.parseInt(a);
             System.out.println(numer);
-            PreparedStatement stmt2 = con.prepareStatement("UPDATE `samochod` SET `marka`=(?),`model`=(?),`rodzaj`=(?),`rocznik`=(?),`paliwo`=(?),`przebieg`=(?),`Cena`=(?), `dostepnosc`=(?) WHERE samochod_id=(?)");
-            stmt2.setString(1, marka);
-            stmt2.setString(2, model);
-            stmt2.setString(3, Rodzaj);
-            stmt2.setString(4, Rocznik);
-            stmt2.setString(5, Paliwo);
-            stmt2.setString(6, przebieg);
-            stmt2.setString(7, cena);
-            stmt2.setString(8,dostepnosc);
-            stmt2.setInt(9, numer);
+
+            String czlowiekID = "1";
+
+            stmt = con.prepareStatement("SELECT * FROM samochod");
+            rs = stmt.executeQuery("select user_id from user where pesel = + + limit 1");
+            while(rs.next()) {
+                czlowiekID = rs.getString(1);
+                i++;
+            }
+
+            String autoID ="1";
+            rs = stmt.executeQuery("select samochod_id from samochod where pesel = + + limit 1");
+            while(rs.next()) {
+                autoID = rs.getString(1);
+                i++;
+            }
+
+
+
+            PreparedStatement stmt2 = con.prepareStatement("UPDATE `wypozyczenie` SET `user_id`=(?),`samochod_id`=(?),`data_od`=(?),`dataStop`=(?), wypozyczenie_id=(?)");
+            stmt2.setString(1, czlowiekID);
+            stmt2.setString(2, autoID);
+            stmt2.setString(3, dataStart);
+            stmt2.setString(4, dataStop);
+            stmt2.setInt(5, numer);
             stmt2.executeUpdate();
-            tabelka_pojazdy.refresh();
 
 
         }catch (Exception e)
@@ -176,8 +189,8 @@ public class zarzadzajWypozyczeniamiController {
             System.out.println(e);
         }
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajPojazdami.fxml"));
-        pracownikPane.getChildren().setAll(pane); */
-        
+        pracownikPane.getChildren().setAll(pane);
+
     }
 
 
