@@ -5,6 +5,8 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import wypozyczalnia.DBConnector;
@@ -21,16 +23,16 @@ public class zarzadzajWypozyczeniamiController {
     private AnchorPane pracownikPane;
     private AnchorPane zarzadzajPojazdamiPane;
 
-    ObservableList<ModelTablePojazdy> oblist1 = FXCollections.observableArrayList();
+    ObservableList<ModelTableWypozyczenie> oblist1 = FXCollections.observableArrayList();
     ObservableList<ModelTable> oblist2 = FXCollections.observableArrayList();
-    @FXML private TextField userId;
+    @FXML private TextField pesel;
     @FXML private TextField marka;
     @FXML private TextField cena;
     @FXML private TextField dataStart;
     @FXML private TextField dataKoniec;
     @FXML private TextField model;
 
-   /* @FXML
+   @FXML
     private TableView<ModelTableWypozyczenie> tabelka_wypozyczenie;
     @FXML
     private TableColumn<ModelTablePojazdy, String> col_user_id;
@@ -48,7 +50,7 @@ public class zarzadzajWypozyczeniamiController {
     private TableColumn<ModelTablePojazdy, String> col_cena;
     @FXML
     private TableColumn<ModelTablePojazdy, String> col_dostepnosc;
-*/
+
     public void logOut(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/login.fxml"));
         pracownikPane.getChildren().setAll(pane);
@@ -67,7 +69,7 @@ public class zarzadzajWypozyczeniamiController {
     }
     public void dodajWypo(ActionEvent event) throws IOException {
         System.out.println("2");
-  //      String pesel = String.valueOf(this.userPesel.getCharacters());
+        String pesel = String.valueOf(this.pesel.getCharacters());
         String marka = String.valueOf(this.marka.getCharacters());
         String cena = String.valueOf(this.cena.getCharacters());
         String dataStart = String.valueOf(this.dataStart.getCharacters());
@@ -88,9 +90,9 @@ public class zarzadzajWypozyczeniamiController {
             System.out.println(i);
 
             PreparedStatement stm2 = con.prepareStatement("select user_id from user where pesel = (?) limit 1");
-    //        stm2.setString(1, pesel);
+            stm2.setString(1, pesel);
             stm2.executeQuery();
-      //      String zapytanie = "select user_id from user where pesel = " + pesel +" limit 1";
+            String zapytanie = "select user_id from user where pesel = " + pesel +" limit 1";
             rs = stm2.executeQuery("select user_id from user where pesel = + + limit 1");
             while(rs.next()) {
                 idUser = rs.getString(1);
@@ -101,8 +103,8 @@ public class zarzadzajWypozyczeniamiController {
             stm.setString(1, marka);
             stm.setString(2, model);
             stm.executeQuery();                 //pobranie id auta
-        //    zapytanie = "select samochod_id from samochod where marka = "+ marka + " and model = "+ model +" limit 1";
-          //  rs = stm.executeQuery(zapytanie);
+            zapytanie = "select samochod_id from samochod where marka = "+ marka + " and model = "+ model +" limit 1";
+            rs = stm.executeQuery(zapytanie);
             while(rs.next()) {
                 idAuto = rs.getString(1);
                 i++;
@@ -175,7 +177,7 @@ public class zarzadzajWypozyczeniamiController {
         }
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajPojazdami.fxml"));
         pracownikPane.getChildren().setAll(pane); */
-
+        
     }
 
 
@@ -189,7 +191,7 @@ public class zarzadzajWypozyczeniamiController {
 
             while (rs.next()) {
                 //oblist1.add(new ModelTablePojazdy(rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7)));
-                oblist1.add(new ModelTablePojazdy(rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7), rs.getString(8),rs.getString(9)));
+                //oblist1.add(new ModelTablePojazdy(rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7), rs.getString(8),rs.getString(9)));
             }
 
 
