@@ -2,22 +2,30 @@ package wypozyczalnia.Table_Models;
 
 public class ModelTableWypozyczenia {
 
-    String user_id, samochod_id, odkiedy, dokiedy, wypozyczenie_id;
+    String pesel, marka, model, odkiedy, dokiedy, cena;
 
-    public String getUser_id() {
-        return user_id;
+    public String getPesel() {
+        return pesel;
     }
 
-    public void setUser_id(String user_id) {
-        this.user_id = user_id;
+    public void setPesel(String pesel) {
+        this.pesel = pesel;
     }
 
-    public String getSamochod_id() {
-        return samochod_id;
+    public String getMarka() {
+        return marka;
     }
 
-    public void setSamochod_id(String samochod_id) {
-        this.samochod_id = samochod_id;
+    public void setMarka(String marka) {
+        this.marka = marka;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
     }
 
     public String getOdkiedy() {
@@ -36,19 +44,20 @@ public class ModelTableWypozyczenia {
         this.dokiedy = dokiedy;
     }
 
-    public String getWypozyczenie_id() {
-        return wypozyczenie_id;
+    public String getCena() {
+        return cena;
     }
 
-    public void setWypozyczenie_id(String wypozyczenie_id) {
-        this.wypozyczenie_id = wypozyczenie_id;
+    public void setCena(String cena) {
+        this.cena = cena;
     }
 
-    public ModelTableWypozyczenia(String user_id, String samochod_id, String odkiedy, String dokiedy, String wypozyczenie_id) {
-        this.user_id = user_id;
-        this.samochod_id = samochod_id;
+    public ModelTableWypozyczenia(String pesel, String marka, String model, String odkiedy, String dokiedy, String cena) {
+        this.pesel = pesel;
+        this.marka = marka;
+        this.model = model;
         this.odkiedy = odkiedy;
         this.dokiedy = dokiedy;
-        this.wypozyczenie_id = wypozyczenie_id;
+        this.cena = cena;
     }
 }

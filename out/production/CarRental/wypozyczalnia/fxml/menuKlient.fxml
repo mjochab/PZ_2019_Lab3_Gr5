@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="klientPane" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.MenuKlientController">
+<AnchorPane fx:id="klientPane" prefHeight="900.0" prefWidth="1440.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.MenuKlientController">
    <children>
       <AnchorPane layoutX="117.0" layoutY="146.0" prefHeight="309.0" prefWidth="573.0">
          <children>

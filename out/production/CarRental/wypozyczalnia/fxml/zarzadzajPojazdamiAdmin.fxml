@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="adminPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.zarzadzajPojazdamiAdminController">
+<AnchorPane fx:id="adminPane" prefHeight="900.0" prefWidth="1440.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.zarzadzajPojazdamiAdminController">
     <children>
         <BorderPane prefHeight="30.0" prefWidth="700.0">
             <top>
@@ -58,16 +58,16 @@
         <TextField fx:id="autoPrzebieg" layoutX="20.0" layoutY="262.0" promptText="Przebieg" />
         <TextField fx:id="autoCena" layoutX="20.0" layoutY="297.0" promptText="Cena" />
       <TextField fx:id="autoDostepnosc" layoutX="20.0" layoutY="332.0" promptText="Dostepnosc" />
-        <TableView fx:id="tabelka_pojazdy" layoutX="200.0" layoutY="71.0" prefHeight="312.0" prefWidth="606.0">
+        <TableView fx:id="tabelka_pojazdy" layoutX="200.0" layoutY="71.0" prefHeight="411.0" prefWidth="1004.0">
             <columns>
-                <TableColumn fx:id="col_marka" prefWidth="77.0" text="Marka" />
-                <TableColumn fx:id="col_model" prefWidth="96.0" text="Model" />
-                <TableColumn fx:id="col_rodzaj" prefWidth="87.0" text="Rodzaj" />
-                <TableColumn fx:id="col_rocznik" prefWidth="87.0" text="Rocznik" />
-                <TableColumn fx:id="col_paliwo" prefWidth="63.0" text="Paliwo" />
-                <TableColumn fx:id="col_przebieg" prefWidth="59.0" text="Przebieg" />
-                <TableColumn fx:id="col_cena" prefWidth="56.0" text="Cena" />
-            <TableColumn fx:id="col_dostepnosc" text="Dostępność" />
+                <TableColumn fx:id="col_marka" prefWidth="120.00003051757812" text="Marka" />
+                <TableColumn fx:id="col_model" minWidth="8.0" prefWidth="126.0" text="Model" />
+                <TableColumn fx:id="col_rodzaj" prefWidth="124.0" text="Rodzaj" />
+                <TableColumn fx:id="col_rocznik" minWidth="0.0" prefWidth="118.0" text="Rocznik" />
+                <TableColumn fx:id="col_paliwo" minWidth="4.0" prefWidth="115.0" text="Paliwo" />
+                <TableColumn fx:id="col_przebieg" prefWidth="172.0" text="Przebieg" />
+                <TableColumn fx:id="col_cena" prefWidth="83.0" text="Cena" />
+            <TableColumn fx:id="col_dostepnosc" prefWidth="144.0" text="Dostępność" />
             </columns>
         </TableView>
     </children>

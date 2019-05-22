@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="adminPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.zarzadzajUzytkownikamiAdminController">
+<AnchorPane fx:id="adminPane" prefHeight="900.0" prefWidth="1440.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.zarzadzajUzytkownikamiAdminController">
     <children>
         <BorderPane prefHeight="30.0" prefWidth="700.0">
             <top>
@@ -59,16 +59,16 @@
         <TextField fx:id="userTelefon" layoutX="14.0" layoutY="316.0" promptText="Numer Telefonu" />
         <TextField fx:id="userEmail" layoutX="14.0" layoutY="356.0" promptText="Email" />
         <TextField fx:id="userPesel" layoutX="14.0" layoutY="397.0" promptText="Pesel" />
-        <TableView fx:id="tabelka" layoutX="226.0" layoutY="75.0" prefHeight="367.0" prefWidth="741.0">
+        <TableView fx:id="tabelka" layoutX="226.0" layoutY="75.0" prefHeight="454.0" prefWidth="1108.0">
             <columns>
-                <TableColumn fx:id="col_imie" prefWidth="61.0" text="Imię" />
-                <TableColumn fx:id="col_nazwisko" prefWidth="84.0" text="Nazwisko" />
-                <TableColumn fx:id="col_login" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="100.0" text="Login" />
-                <TableColumn fx:id="col_telefon" minWidth="100.0" prefWidth="0.0" text="Telefon" />
-                <TableColumn fx:id="col_data" prefWidth="88.0" text="Data_ur" />
-                <TableColumn fx:id="col_miejscowosc" prefWidth="114.0" text="Miejscowość" />
-                <TableColumn fx:id="col_email" prefWidth="88.0" text="Email" />
-                <TableColumn fx:id="col_pesel" prefWidth="100.0" text="Pesel" />
+                <TableColumn fx:id="col_imie" prefWidth="120.00003051757812" text="Imię" />
+                <TableColumn fx:id="col_nazwisko" prefWidth="79.0" text="Nazwisko" />
+                <TableColumn fx:id="col_login" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="136.0" text="Login" />
+                <TableColumn fx:id="col_telefon" minWidth="100.0" prefWidth="113.0" text="Telefon" />
+                <TableColumn fx:id="col_data" prefWidth="121.0" text="Data_ur" />
+                <TableColumn fx:id="col_miejscowosc" prefWidth="164.0" text="Miejscowość" />
+                <TableColumn fx:id="col_email" prefWidth="181.0" text="Email" />
+                <TableColumn fx:id="col_pesel" prefWidth="193.0" text="Pesel" />
             </columns>
         </TableView>
     </children>
