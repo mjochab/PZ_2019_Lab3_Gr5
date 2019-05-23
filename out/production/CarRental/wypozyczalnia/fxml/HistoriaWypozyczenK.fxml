@@ -166,7 +166,7 @@
             </ImageView>
          </children>
       </GridPane>
-      <Button layoutX="1118.0" layoutY="743.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="191.0" style="-fx-background-color: #e27171;" text="Generuj raport">
+      <Button layoutX="1078.0" layoutY="727.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="191.0" style="-fx-background-color: #e27171;" text="Generuj raport">
          <graphic>
             <ImageView fitHeight="36.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                <image>

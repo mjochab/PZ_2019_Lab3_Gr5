@@ -6,10 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TablePosition;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import wypozyczalnia.DBConnector;
@@ -55,6 +52,7 @@ public class zarzadzajPojazdamiAdminController implements Initializable {
     @FXML private TextField autoPrzebieg;
     @FXML private TextField autoCena;
     @FXML private TextField autoDostepnosc;
+    @FXML private ChoiceBox<String> autoDostep;
 
     public void logOut(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/login.fxml"));
@@ -310,6 +308,9 @@ public class zarzadzajPojazdamiAdminController implements Initializable {
         col_dostepnosc.setCellValueFactory(new PropertyValueFactory<>("dostepnosc"));
 
         tabelka_pojazdy.setItems(oblist1);
+
+        autoDostep.getItems().addAll("TAK","NIE");
+
 
     }
 

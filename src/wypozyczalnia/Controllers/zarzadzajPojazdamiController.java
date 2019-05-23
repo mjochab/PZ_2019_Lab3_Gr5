@@ -6,10 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TablePosition;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import wypozyczalnia.DBConnector;
@@ -42,24 +39,25 @@ public class zarzadzajPojazdamiController implements Initializable {
     @FXML
     private TableColumn<ModelTablePojazdy, String> col_przebieg;
     @FXML
-    private TableColumn<ModelTablePojazdy, String> col_cena;
+    private TableColumn<ModelTablePojazdy, Integer> col_cena;
     @FXML
     private TableColumn<ModelTablePojazdy, String> col_dostepnosc;
 
 
     @FXML private TextField autoMarka;
     @FXML private TextField autoModel;
-    @FXML private TextField autoRodzaj;
+    @FXML private ChoiceBox<String> autoRodzaj;
     @FXML private TextField autoRocznik;
-    @FXML private TextField autoPaliwo;
+    @FXML private ChoiceBox<String> autoPaliwo;
     @FXML private TextField autoPrzebieg;
     @FXML private TextField autoCena;
-    @FXML private TextField autoDostepnosc;
+    @FXML private ChoiceBox<String> autoDostep;
 
 
 
 
     ObservableList<ModelTablePojazdy> oblist1 = FXCollections.observableArrayList();
+    ObservableList<String> choiceBoxList = FXCollections.observableArrayList();
 
     public void klik(ActionEvent event) throws  IOException{        //funkcja przenosi dane do tabelki po lewej stronie, jak tyknie sie wiersz w tabeli to przenosi
         //TablePosition pozycja = tabelka_pojazdy.getSelectionModel().getSelectedCells().get(0);
@@ -69,6 +67,7 @@ public class zarzadzajPojazdamiController implements Initializable {
         System.out.println(abc);
         ArrayList<String> dane = new ArrayList<String>();
         try {
+
             TablePosition pozycja = tabelka_pojazdy.getSelectionModel().getSelectedCells().get(0);
             int index = pozycja.getRow();
 
@@ -105,12 +104,12 @@ public class zarzadzajPojazdamiController implements Initializable {
 
                 autoMarka.setText(String.valueOf(dane.get(0)));
                 autoModel.setText(String.valueOf(dane.get(1)));
-                autoRodzaj.setText(String.valueOf(dane.get(2)));
+                autoRodzaj.setValue(String.valueOf(dane.get(2)));
                 autoRocznik.setText(String.valueOf(dane.get(3)));
-                autoPaliwo.setText(String.valueOf(dane.get(4)));
+                autoPaliwo.setValue(String.valueOf(dane.get(4)));
                 autoPrzebieg.setText(String.valueOf(dane.get(5)));
                 autoCena.setText(String.valueOf(dane.get(6)));
-                autoDostepnosc.setText(String.valueOf(dane.get(7)));
+                autoDostep.setValue(String.valueOf(dane.get(7)));
             }
 
 
@@ -145,6 +144,14 @@ public class zarzadzajPojazdamiController implements Initializable {
 
             PreparedStatement stmt2 = con.prepareStatement("DELETE FROM samochod WHERE samochod_id = (?)");
             stmt2.setInt(1, numer);
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Informacja");
+            alert.setHeaderText(null);
+            alert.setContentText("Pomyślnie usunięto pojazd!");
+            alert.showAndWait();
+
+
             stmt2.executeUpdate();
 
 
@@ -166,12 +173,12 @@ public class zarzadzajPojazdamiController implements Initializable {
 
         String marka = String.valueOf(autoMarka.getCharacters());
         String model = String.valueOf(autoModel.getCharacters());
-        String Rodzaj = String.valueOf(autoRodzaj.getCharacters());
+        String Rodzaj = String.valueOf(autoRodzaj.getValue());
         String Rocznik = String.valueOf(autoRocznik.getCharacters());
-        String Paliwo = String.valueOf(autoPaliwo.getCharacters());
+        String Paliwo = String.valueOf(autoPaliwo.getValue());
         String przebieg = String.valueOf(autoPrzebieg.getCharacters());
         String cena = String.valueOf(autoCena.getCharacters());
-        String dostepnosc = String.valueOf(autoDostepnosc.getCharacters());
+        String dostepnosc = String.valueOf(autoDostep.getValue());
 
         try {
             index++;
@@ -199,6 +206,13 @@ public class zarzadzajPojazdamiController implements Initializable {
             stmt2.setString(7, cena);
             stmt2.setString(8,dostepnosc);
             stmt2.setInt(9, numer);
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Informacja");
+            alert.setHeaderText(null);
+            alert.setContentText("Dane pojazdu zostały zmodyfikowane pomyślnie!");
+            alert.showAndWait();
+
             stmt2.executeUpdate();
             tabelka_pojazdy.refresh();
 
@@ -216,13 +230,13 @@ public class zarzadzajPojazdamiController implements Initializable {
     public void dodajAuto(ActionEvent event) throws IOException{
         String marka = String.valueOf(autoMarka.getCharacters());
         String model = String.valueOf(autoModel.getCharacters());
-        String Rodzaj = String.valueOf(autoRodzaj.getCharacters());
+        String Rodzaj = String.valueOf(autoRodzaj.getValue());
         String rocznik = String.valueOf(autoRocznik.getCharacters());
-        String Paliwo = String.valueOf(autoPaliwo.getCharacters());
+        String Paliwo = String.valueOf(autoPaliwo.getValue());
         String przebieg = String.valueOf(autoPrzebieg.getCharacters());
         //int Przebieg = Integer.parseInt(przebieg);
         String cena = String.valueOf(autoCena.getCharacters());
-        String dostepnosc = String. valueOf(autoDostepnosc.getCharacters());
+        String dostepnosc = String.valueOf(autoDostep.getValue());
         //float Cena = Float.parseFloat(cena);
         /*System.out.println(marka);
         System.out.println(model);
@@ -251,12 +265,20 @@ public class zarzadzajPojazdamiController implements Initializable {
             stmt.setString(7, przebieg);
             stmt.setString(8, cena);
             stmt.setString(9, dostepnosc);
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Informacja");
+            alert.setHeaderText(null);
+            alert.setContentText("Nowy pojazd został dodany pomyślnie!");
+            alert.showAndWait();
+
+
             stmt.executeUpdate();
 
             rs = stmt2.executeQuery("SELECT * FROM `samochod` WHERE samochod_id = (SELECT MAX(samochod_id) FROM samochod)");
             if(rs.next()) {
                 System.out.println(rs.getString(2));
-                oblist1.add(new ModelTablePojazdy(rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7), rs.getString(8),rs.getString(9)));
+                oblist1.add(new ModelTablePojazdy(rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6) ,rs.getString(7) , rs.getString(8) ,rs.getString(9)));
             }
 
         }catch (Exception e)
@@ -264,6 +286,17 @@ public class zarzadzajPojazdamiController implements Initializable {
             System.out.println(e);
         };
 
+
+    }
+    public void czyscForm (){
+        autoMarka.clear();
+        autoDostep.setValue("");
+        autoPaliwo.setValue("");
+        autoCena.clear();
+        autoRodzaj.setValue("");
+        autoPrzebieg.clear();
+        autoModel.clear();
+        autoRocznik.clear();
 
     }
 
@@ -291,7 +324,7 @@ public class zarzadzajPojazdamiController implements Initializable {
 
             while (rs.next()) {
                 //oblist1.add(new ModelTablePojazdy(rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7)));
-                oblist1.add(new ModelTablePojazdy(rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7), rs.getString(8),rs.getString(9)));
+                oblist1.add(new ModelTablePojazdy(rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getInt(7) + " km", rs.getInt(8) + " zł/km",rs.getString(9)));
             }
 
 
@@ -311,6 +344,10 @@ public class zarzadzajPojazdamiController implements Initializable {
 
         tabelka_pojazdy.setItems(oblist1);
 
+
+        autoDostep.getItems().addAll("TAK","NIE");
+        autoPaliwo.getItems().addAll("Diesel","Benzyna","Gaz");
+        autoRodzaj.getItems().addAll("Sedan","Kombi","Hatchback","Coupe","Limuzyna","Suv","Kabriolet","Roadster");
     }
 
 }

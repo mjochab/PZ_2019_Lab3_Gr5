@@ -17,12 +17,10 @@
 
 <AnchorPane fx:id="pracownikPane" prefHeight="900.0" prefWidth="1400.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.zarzadzajPojazdamiController">
     <children>
-        <TextField fx:id="autoModel" layoutX="21.0" layoutY="265.0" prefHeight="25.0" prefWidth="206.0" promptText="Model" />
-        <TextField fx:id="autoRodzaj" layoutX="21.0" layoutY="306.0" prefHeight="25.0" prefWidth="206.0" promptText="Rodzaj" />
-        <TextField fx:id="autoRocznik" layoutX="21.0" layoutY="381.0" prefHeight="25.0" prefWidth="206.0" promptText="Rocznik" />
-        <TextField fx:id="autoPaliwo" layoutX="21.0" layoutY="418.0" prefHeight="25.0" prefWidth="206.0" promptText="Paliwo" />
-        <TextField fx:id="autoPrzebieg" layoutX="21.0" layoutY="457.0" prefHeight="25.0" prefWidth="206.0" promptText="Przebieg" />
-        <TextField fx:id="autoCena" layoutX="21.0" layoutY="497.0" prefHeight="29.0" prefWidth="206.0" promptText="Cena" />
+        <TextField fx:id="autoModel" layoutX="12.0" layoutY="265.0" prefHeight="31.0" prefWidth="215.0" promptText="Model" />
+        <TextField fx:id="autoRocznik" layoutX="12.0" layoutY="381.0" prefHeight="31.0" prefWidth="215.0" promptText="Rocznik" />
+        <TextField fx:id="autoPrzebieg" layoutX="12.0" layoutY="457.0" prefHeight="31.0" prefWidth="215.0" promptText="Przebieg" />
+        <TextField fx:id="autoCena" layoutX="12.0" layoutY="497.0" prefHeight="31.0" prefWidth="215.0" promptText="Cena" />
         <TableView fx:id="tabelka_pojazdy" layoutX="251.0" layoutY="208.0" prefHeight="523.0" prefWidth="1008.0">
             <columns>
                 <TableColumn fx:id="col_marka" prefWidth="80.99996948242188" text="Marka" />
@@ -30,8 +28,8 @@
                 <TableColumn fx:id="col_rodzaj" prefWidth="110.0" text="Rodzaj" />
                 <TableColumn fx:id="col_rocznik" prefWidth="130.0" text="Rocznik" />
                 <TableColumn fx:id="col_paliwo" prefWidth="140.0" text="Paliwo" />
-                <TableColumn fx:id="col_przebieg" prefWidth="190.0" text="Przebieg" />
-                <TableColumn fx:id="col_cena" prefWidth="86.0" text="Cena" />
+                <TableColumn fx:id="col_przebieg" prefWidth="150.0" text="Przebieg" />
+                <TableColumn fx:id="col_cena" prefWidth="126.0" text="Cena" />
                 <TableColumn fx:id="col_dostepnosc" prefWidth="120.0" text="Dostęp" />
             </columns>
         </TableView>
@@ -177,8 +175,8 @@
             </ImageView>
          </children>
       </GridPane>
-      <TextField fx:id="autoMarka" layoutX="21.0" layoutY="343.0" prefHeight="23.0" prefWidth="206.0" promptText="Marka" />
-      <Label layoutX="21.0" layoutY="541.0" text="Dostępność (tak/nie):" textFill="#ddc4c4">
+      <TextField fx:id="autoMarka" layoutX="12.0" layoutY="343.0" prefHeight="31.0" prefWidth="215.0" promptText="Marka" />
+      <Label layoutX="10.0" layoutY="541.0" prefHeight="20.0" prefWidth="153.0" text="Dostępność (tak/nie):" textFill="#ddc4c4">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -256,6 +254,18 @@
          <effect>
             <Bloom />
          </effect>
+      </Label>
+      <Label layoutX="13.0" layoutY="423.0" prefHeight="20.0" prefWidth="104.0" text="Rodzaj paliwa:" textFill="#ddc4c4">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="autoPaliwo" layoutX="115.0" layoutY="418.0" prefHeight="31.0" prefWidth="112.0" />
+      <ChoiceBox fx:id="autoRodzaj" layoutX="131.0" layoutY="304.0" prefHeight="31.0" prefWidth="96.0" />
+      <Label layoutX="11.0" layoutY="310.0" prefHeight="20.0" prefWidth="122.0" text="Rodzaj nadwozia:" textFill="#ddc4c4">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
       </Label>
     </children>
 </AnchorPane>
