@@ -447,7 +447,7 @@ public class zarzadzajPojazdamiController implements Initializable {
 
             while (rs.next()) {
                 //oblist1.add(new ModelTablePojazdy(rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7)));
-                oblist1.add(new ModelTablePojazdy(rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getInt(7) + " km", rs.getInt(8) + " zł/km",rs.getString(9)));
+                oblist1.add(new ModelTablePojazdy(rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getInt(7) + " km", rs.getInt(8) + " zł/dzień",rs.getString(9)));
             }
 
 
