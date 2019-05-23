@@ -58,7 +58,7 @@ public class MenuKlientController implements Initializable {
 
     public void displayName (String usernamedisplay){
 
-        this.usernamedisplay_lbl.setText(usernamedisplay);
+        this.usernamedisplay_lbl.setText(usernamedisplay+"!");
 
     }
 }
