@@ -38,9 +38,9 @@ public class zarzadzajPojazdamiAdminController implements Initializable {
     @FXML
     private TableColumn<ModelTablePojazdy, String> col_przebieg;
     @FXML
-    private TableColumn<ModelTablePojazdy, Double> col_cena;
+    private TableColumn<ModelTablePojazdy, Integer> col_cena;
     @FXML
-    private TableColumn<ModelTablePojazdy, Double> col_rocznik;
+    private TableColumn<ModelTablePojazdy, Integer> col_rocznik;
     @FXML
     private TableColumn<ModelTablePojazdy, Double> col_dostepnosc;
 
