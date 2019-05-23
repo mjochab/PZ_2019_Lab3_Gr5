@@ -9,6 +9,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TablePosition;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import wypozyczalnia.DBConnector;
 
@@ -36,21 +37,18 @@ public class zarzadzajWypozyczeniamiController {
    @FXML
     private TableView<ModelTableWypozyczenie> tabelka_wypozyczenie;
     @FXML
-    private TableColumn<ModelTablePojazdy, String> col_user_id;
+    private TableColumn<ModelTableWypozyczenie, String> col_pesel;
     @FXML
-    private TableColumn<ModelTablePojazdy, String> samochod_id;
+    private TableColumn<ModelTableWypozyczenie, String> col_marka;
     @FXML
-    private TableColumn<ModelTablePojazdy, String> col_odkiedy;
+    private TableColumn<ModelTableWypozyczenie, String> col_model;
     @FXML
-    private TableColumn<ModelTablePojazdy, String> col_dokiedy;
+    private TableColumn<ModelTableWypozyczenie, String> col_odkiedy;
     @FXML
-    private TableColumn<ModelTablePojazdy, String> col_wypozyczenie_id;
+    private TableColumn<ModelTableWypozyczenie, String> col_dokiedy;
     @FXML
-    private TableColumn<ModelTablePojazdy, String> col_przebieg;
+    private TableColumn<ModelTableWypozyczenie, String> col_cena;
     @FXML
-    private TableColumn<ModelTablePojazdy, String> col_cena;
-    @FXML
-    private TableColumn<ModelTablePojazdy, String> col_dostepnosc;
 
     public void logOut(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/login.fxml"));
@@ -175,12 +173,14 @@ public class zarzadzajWypozyczeniamiController {
 
 
 
-            PreparedStatement stmt2 = con.prepareStatement("UPDATE `wypozyczenie` SET `user_id`=(?),`samochod_id`=(?),`data_od`=(?),`dataStop`=(?), wypozyczenie_id=(?)");
+            PreparedStatement stmt2 = con.prepareStatement("UPDATE `wypozyczenie` SET `user_id`=(?),`samochod_id`=(?),`data_od`=(?),`dataStop`=(?), wypozyczenie_id=(?); UPDATE samochod Set cena=(?) where samochod_id=(?)");
             stmt2.setString(1, czlowiekID);
             stmt2.setString(2, autoID);
             stmt2.setString(3, dataStart);
             stmt2.setString(4, dataStop);
             stmt2.setInt(5, numer);
+            stmt2.setString(6, cena);
+            stmt2.setString(7, autoID);
             stmt2.executeUpdate();
 
 
@@ -193,18 +193,50 @@ public class zarzadzajWypozyczeniamiController {
 
     }
 
+    public void usunWYpo(ActionEvent event) throws  IOException{
+        TablePosition pozycja = tabelka_wypozyczenie.getSelectionModel().getSelectedCells().get(0);
+        int index = pozycja.getRow();
 
-    //@Override
+        try {
+            index++;
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+
+            PreparedStatement stmt = con.prepareStatement("SELECT * FROM wypozyczenie");
+            String zapytanie = "Select * FROM wypozyczenie ORDER BY wypozyczenie_id LIMIT " + index;
+            ResultSet rs = stmt.executeQuery(zapytanie);
+            String a = "0";
+            int i=0;
+            while(rs.next()) {
+                a = rs.getString(1);
+                i++;
+            }
+            int numer = Integer.parseInt(a);
+            System.out.println(numer);
+
+            PreparedStatement stmt2 = con.prepareStatement("DELETE FROM samochod WHERE samochod_id = (?)");
+            stmt2.setInt(1, numer);
+            stmt2.executeUpdate();
+
+
+        }catch (Exception e)
+        {
+            System.out.println(e);
+        };
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajPojazdami.fxml"));
+        pracownikPane.getChildren().setAll(pane);
+    }
+
+    @Override
     public void initialize(URL location, ResourceBundle resources) {
 
         try {
             Connection con = DBConnector.getConnection();
 
-            ResultSet rs = con.createStatement().executeQuery("select * from wypozyczenie");
+            ResultSet rs = con.createStatement().executeQuery("Select user.pesel, samochod.marka, samochod.model, wypozyczenie.data_od, wypozyczenie.data_do, samochod.cena from wypozyczenie inner join user on user.user_id = wypozyczenie.user_id inner join samochod on samochod.samochod_id = wypozyczenie.samochod_id;");
 
             while (rs.next()) {
-                //oblist1.add(new ModelTablePojazdy(rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7)));
-                //oblist1.add(new ModelTablePojazdy(rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7), rs.getString(8),rs.getString(9)));
+                oblist1.add(new ModelTableWypozyczenie(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6)));
             }
 
 
@@ -213,16 +245,14 @@ public class zarzadzajWypozyczeniamiController {
         }
 
 
-        //col_marka.setCellValueFactory(new PropertyValueFactory<>("marka"));
-        //col_model.setCellValueFactory(new PropertyValueFactory<>("model"));
-        //col_rodzaj.setCellValueFactory(new PropertyValueFactory<>("rodzaj"));
-        //col_rocznik.setCellValueFactory(new PropertyValueFactory<>("rocznik"));
-        //col_paliwo.setCellValueFactory(new PropertyValueFactory<>("paliwo"));
-        //col_przebieg.setCellValueFactory(new PropertyValueFactory<>("przebieg"));
-        //col_cena.setCellValueFactory(new PropertyValueFactory<>("cena"));
-        //col_dostepnosc.setCellValueFactory(new PropertyValueFactory<>("dostepnosc"));
+        col_pesel.setCellValueFactory(new PropertyValueFactory<>("pesel"));
+        col_marka.setCellValueFactory(new PropertyValueFactory<>("marka"));
+        col_model.setCellValueFactory(new PropertyValueFactory<>("model"));
+        col_odkiedy.setCellValueFactory(new PropertyValueFactory<>("data_poczatkowa"));
+        col_dokiedy.setCellValueFactory(new PropertyValueFactory<>("data_koncowa"));
+        col_cena.setCellValueFactory(new PropertyValueFactory<>("cena"));
 
-        //tabelka_pojazdy.setItems(oblist1);
+        ModelTableWypozyczenie.setItems(oblist1);
 
     }
 
