@@ -207,8 +207,6 @@ public class zarzadzajPojazdamiController implements Initializable {
             int numer = Integer.parseInt(a);
             System.out.println(numer);
 
-
-            String model, rodzaj, rocznik, paliwo, przebieg, cena;
             zapytanie = "Select * FROM samochod where samochod_id = " + numer;
             ResultSet rs2 = stmt.executeQuery(zapytanie);
             System.out.println(rs2);
