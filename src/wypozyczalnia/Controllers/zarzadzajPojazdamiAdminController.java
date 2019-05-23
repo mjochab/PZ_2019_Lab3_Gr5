@@ -268,6 +268,14 @@ public class zarzadzajPojazdamiAdminController implements Initializable {
 
             PreparedStatement stmt2 = con.prepareStatement("DELETE FROM samochod WHERE samochod_id = (?)");
             stmt2.setInt(1, numer);
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Informacja");
+            alert.setHeaderText(null);
+            alert.setContentText("Pomyślnie usunięto pojazd!");
+            alert.showAndWait();
+
+
             stmt2.executeUpdate();
 
 
@@ -325,6 +333,14 @@ public class zarzadzajPojazdamiAdminController implements Initializable {
                 stmt2.setString(7, cena);
                 stmt2.setString(8, dostepnosc);
                 stmt2.setInt(9, numer);
+
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Informacja");
+                alert.setHeaderText(null);
+                alert.setContentText("Dane pojazdu zostały zmodyfikowane pomyślnie!");
+                alert.showAndWait();
+
                 stmt2.executeUpdate();
                 tabelka_pojazdy.refresh();
 
@@ -378,7 +394,17 @@ public class zarzadzajPojazdamiAdminController implements Initializable {
                 stmt.setString(7, przebieg);
                 stmt.setString(8, cena);
                 stmt.setString(9, dostepnosc);
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Informacja");
+                alert.setHeaderText(null);
+                alert.setContentText("Nowy pojazd został dodany pomyślnie!");
+                alert.showAndWait();
+
+
                 stmt.executeUpdate();
+                tabelka_pojazdy.refresh();
+
 
                 rs = stmt2.executeQuery("SELECT * FROM `samochod` WHERE samochod_id = (SELECT MAX(samochod_id) FROM samochod)");
                 if (rs.next()) {
