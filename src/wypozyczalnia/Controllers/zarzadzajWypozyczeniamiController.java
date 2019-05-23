@@ -5,6 +5,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TablePosition;
 import javafx.scene.control.TableView;
@@ -20,20 +21,22 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class zarzadzajWypozyczeniamiController {
+public class zarzadzajWypozyczeniamiController implements Initializable {
     @FXML
     private AnchorPane pracownikPane;
     private AnchorPane zarzadzajPojazdamiPane;
 
+
+
     ObservableList<ModelTableWypozyczenie> oblist1 = FXCollections.observableArrayList();
-    ObservableList<ModelTable> oblist2 = FXCollections.observableArrayList();
+    ObservableList<ModelTableWypozyczenie> oblist2 = FXCollections.observableArrayList();
+
     @FXML private TextField Tpesel;
     @FXML private TextField Tmarka;
     @FXML private TextField Tcena;
     @FXML private TextField TdataStart;
     @FXML private TextField TdataKoniec;
     @FXML private TextField Tmodel;
-
    @FXML
     private TableView<ModelTableWypozyczenie> tabelka_wypozyczenie;
     @FXML
@@ -128,6 +131,8 @@ public class zarzadzajWypozyczeniamiController {
 
     public void modujWypo(ActionEvent event) throws  IOException{
 
+        System.out.println("2");
+
         TablePosition pozycja = tabelka_wypozyczenie.getSelectionModel().getSelectedCells().get(0);
         int index = pozycja.getRow();
 
@@ -194,6 +199,9 @@ public class zarzadzajWypozyczeniamiController {
     }
 
     public void usunWYpo(ActionEvent event) throws  IOException{
+
+        System.out.println("2");
+
         TablePosition pozycja = tabelka_wypozyczenie.getSelectionModel().getSelectedCells().get(0);
         int index = pozycja.getRow();
 
@@ -232,18 +240,18 @@ public class zarzadzajWypozyczeniamiController {
 
         try {
             Connection con = DBConnector.getConnection();
-
+            System.out.println("1");
             ResultSet rs = con.createStatement().executeQuery("Select user.pesel, samochod.marka, samochod.model, wypozyczenie.data_od, wypozyczenie.data_do, samochod.cena from wypozyczenie inner join user on user.user_id = wypozyczenie.user_id inner join samochod on samochod.samochod_id = wypozyczenie.samochod_id;");
-
+            System.out.println(rs);
             while (rs.next()) {
                 oblist1.add(new ModelTableWypozyczenie(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6)));
             }
+            System.out.println(oblist1);
 
 
         } catch (SQLException ex) {
             Logger.getLogger(zarzadzajUzytkownikamiAdminController.class.getName()).log(Level.SEVERE, null, ex);
         }
-
 
         col_pesel.setCellValueFactory(new PropertyValueFactory<>("pesel"));
         col_marka.setCellValueFactory(new PropertyValueFactory<>("marka"));
@@ -252,7 +260,9 @@ public class zarzadzajWypozyczeniamiController {
         col_dokiedy.setCellValueFactory(new PropertyValueFactory<>("data_koncowa"));
         col_cena.setCellValueFactory(new PropertyValueFactory<>("cena"));
 
-        ModelTableWypozyczenie.setItems(oblist1);
+        System.out.println(col_cena);
+
+        tabelka_wypozyczenie.setItems(oblist1);
 
     }
 

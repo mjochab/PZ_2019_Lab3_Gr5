@@ -56,7 +56,7 @@
         <TextField fx:id="Tdata_start" layoutX="14.0" layoutY="200.0" prefHeight="31.0" prefWidth="140.0" promptText="Data poczatkowa" />
         <TextField fx:id="Tdata_koniec" layoutX="14.0" layoutY="235.0" prefHeight="31.0" prefWidth="140.0" promptText="Data końcowa" />
         <TextField fx:id="Tmodel" layoutX="14.0" layoutY="165.0" prefHeight="31.0" prefWidth="140.0" promptText="Model" />
-        <TableView layoutX="178.0" layoutY="77.0" prefHeight="294.0" prefWidth="492.0">
+        <TableView fx:id="tabelka_wypozyczenie" layoutX="178.0" layoutY="77.0" prefHeight="294.0" prefWidth="492.0">
             <columns>
                 <TableColumn fx:id="col_Pesel" prefWidth="90.0" text="Pesel" />
                 <TableColumn fx:id="col_Marka" prefWidth="86.0" text="Marka" />
