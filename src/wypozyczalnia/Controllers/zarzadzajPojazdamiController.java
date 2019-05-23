@@ -10,14 +10,16 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import wypozyczalnia.DBConnector;
-import java.util.ArrayList;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class zarzadzajPojazdamiController implements Initializable {
     @FXML
@@ -33,11 +35,11 @@ public class zarzadzajPojazdamiController implements Initializable {
     @FXML
     private TableColumn<ModelTablePojazdy, String> col_rodzaj;
     @FXML
-    private TableColumn<ModelTablePojazdy, String> col_rocznik;
+    private TableColumn<ModelTablePojazdy, Integer> col_rocznik;
     @FXML
     private TableColumn<ModelTablePojazdy, String> col_paliwo;
     @FXML
-    private TableColumn<ModelTablePojazdy, String> col_przebieg;
+    private TableColumn<ModelTablePojazdy, Integer> col_przebieg;
     @FXML
     private TableColumn<ModelTablePojazdy, Integer> col_cena;
     @FXML
@@ -59,12 +61,123 @@ public class zarzadzajPojazdamiController implements Initializable {
     ObservableList<ModelTablePojazdy> oblist1 = FXCollections.observableArrayList();
     ObservableList<String> choiceBoxList = FXCollections.observableArrayList();
 
-    /*private boolean walidacjaPol(){
-        if(autoModel.getText().isEmpty() | autoModel.getText().isEmpty() | autoRocznik.getText().isEmpty()
-        | autoPrzebieg.getText().isEmpty() | autoCena.getText().isEmpty()){
-            Alert alert = new Alert(Alert.AlertType.WARNING)
+    private boolean walidacjaPol() {
+        if (autoModel.getText().isEmpty() | autoModel.getText().isEmpty() | autoRocznik.getText().isEmpty()
+                | autoPrzebieg.getText().isEmpty() | autoCena.getText().isEmpty()) {
+
+           Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Informacja");
+            alert.setHeaderText(null);
+            alert.setContentText("Uzupełnij wszystkie pola");
+            alert.showAndWait();
+
+
+            return false;
         }
-    }*/
+        if (autoRodzaj.getValue().isEmpty() | autoPaliwo.getValue().isEmpty() | autoDostep.getValue().isEmpty()){
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Informacja");
+            alert.setHeaderText(null);
+            alert.setContentText("Uzupełnij wszystkie pola");
+            alert.showAndWait();
+
+            return false;
+        }
+            return true;
+    }
+
+    private boolean walidacjaCena(){
+        Pattern p = Pattern.compile("-?([1-9][0-9]*)?");
+        Matcher m = p.matcher(autoCena.getText());
+
+        if(m.find() && m.group().equals(autoCena.getText())){
+            return true;
+        }else
+        {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Informacja");
+            alert.setHeaderText(null);
+            alert.setContentText("Wpisz koszt pojazdu w cyfrach");
+            alert.showAndWait();
+
+            return false;
+        }
+
+    }
+    private boolean walidacjaMarka(){
+        Pattern p = Pattern.compile("([A-za-z0-9-/\"]+)");
+        Matcher m = p.matcher(autoMarka.getText());
+
+        if(m.find() && m.group().equals(autoMarka.getText())){
+            return true;
+        }else
+        {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Informacja");
+            alert.setHeaderText(null);
+            alert.setContentText("Znaki specjalne w nazwie marki nie są obsługiwane");
+            alert.showAndWait();
+
+            return false;
+        }
+
+    }
+    private boolean walidacjaModel(){
+        Pattern p = Pattern.compile("([A-za-z0-9-/\"]+)");
+        Matcher m = p.matcher(autoModel.getText());
+
+        if(m.find() && m.group().equals(autoModel.getText())){
+            return true;
+        }else
+        {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Informacja");
+            alert.setHeaderText(null);
+            alert.setContentText("Znaki specjalne w nazwie modelu nie są obsługiwane");
+            alert.showAndWait();
+
+            return false;
+        }
+
+    }
+    private boolean walidacajaRok(){
+        Pattern p = Pattern.compile("-?([1-9][0-9]*)?");
+        Matcher m = p.matcher(autoRocznik.getText());
+
+        if(m.find() && m.group().equals(autoRocznik.getText())){
+            return true;
+        }else
+        {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Informacja");
+            alert.setHeaderText(null);
+            alert.setContentText("Wpisz rocznik pojazdu w cyfrach");
+            alert.showAndWait();
+
+            return false;
+        }
+
+    }
+
+    private boolean walidacjaPrzebieg(){
+        Pattern p = Pattern.compile("-?([1-9][0-9]*)?");
+        Matcher m = p.matcher(autoPrzebieg.getText());
+
+        if(m.find() && m.group().equals(autoPrzebieg.getText())){
+            return true;
+        }else
+        {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Informacja");
+            alert.setHeaderText(null);
+            alert.setContentText("Wpisz przebieg pojazdu w cyfrach");
+            alert.showAndWait();
+
+            return false;
+        }
+
+    }
+
 
     public void klik(ActionEvent event) throws  IOException{        //funkcja przenosi dane do tabelki po lewej stronie, jak tyknie sie wiersz w tabeli to przenosi
         //TablePosition pozycja = tabelka_pojazdy.getSelectionModel().getSelectedCells().get(0);
@@ -172,7 +285,7 @@ public class zarzadzajPojazdamiController implements Initializable {
     tabelka_pojazdy.refresh();
     }
 
-    public void modujAuto(ActionEvent event) throws  IOException{
+    public void modujAuto(ActionEvent event) throws  IOException {
         System.out.println("-");
 
         TablePosition pozycja = tabelka_pojazdy.getSelectionModel().getSelectedCells().get(0);
@@ -187,51 +300,52 @@ public class zarzadzajPojazdamiController implements Initializable {
         String cena = String.valueOf(autoCena.getCharacters());
         String dostepnosc = String.valueOf(autoDostep.getValue());
 
-        try {
-            index++;
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+        if (walidacjaPol() & walidacjaCena() & walidacajaRok() & walidacjaPrzebieg() & walidacjaMarka() & walidacjaModel())
+            try {
+                index++;
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
 
-            PreparedStatement stmt = con.prepareStatement("SELECT * FROM samochod");
-            String zapytanie = "Select * FROM samochod ORDER BY samochod_id LIMIT " + index;
-            ResultSet rs = stmt.executeQuery(zapytanie);
-            String a = "0";
-            int i=0;
-            while(rs.next()) {
-                a = rs.getString(1);
-                i++;
+                PreparedStatement stmt = con.prepareStatement("SELECT * FROM samochod");
+                String zapytanie = "Select * FROM samochod ORDER BY samochod_id LIMIT " + index;
+                ResultSet rs = stmt.executeQuery(zapytanie);
+                String a = "0";
+                int i = 0;
+                while (rs.next()) {
+                    a = rs.getString(1);
+                    i++;
+                }
+                int numer = Integer.parseInt(a);
+                System.out.println(numer);
+                PreparedStatement stmt2 = con.prepareStatement("UPDATE `samochod` SET `marka`=(?),`model`=(?),`rodzaj`=(?),`rocznik`=(?),`paliwo`=(?),`przebieg`=(?),`Cena`=(?), `dostepnosc`=(?) WHERE samochod_id=(?)");
+                stmt2.setString(1, marka);
+                stmt2.setString(2, model);
+                stmt2.setString(3, Rodzaj);
+                stmt2.setString(4, Rocznik);
+                stmt2.setString(5, Paliwo);
+                stmt2.setString(6, przebieg);
+                stmt2.setString(7, cena);
+                stmt2.setString(8, dostepnosc);
+                stmt2.setInt(9, numer);
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Informacja");
+                alert.setHeaderText(null);
+                alert.setContentText("Dane pojazdu zostały zmodyfikowane pomyślnie!");
+                alert.showAndWait();
+
+                stmt2.executeUpdate();
+                tabelka_pojazdy.refresh();
+
+
+            } catch (Exception e) {
+                System.out.println(e);
             }
-            int numer = Integer.parseInt(a);
-            System.out.println(numer);
-            PreparedStatement stmt2 = con.prepareStatement("UPDATE `samochod` SET `marka`=(?),`model`=(?),`rodzaj`=(?),`rocznik`=(?),`paliwo`=(?),`przebieg`=(?),`Cena`=(?), `dostepnosc`=(?) WHERE samochod_id=(?)");
-            stmt2.setString(1, marka);
-            stmt2.setString(2, model);
-            stmt2.setString(3, Rodzaj);
-            stmt2.setString(4, Rocznik);
-            stmt2.setString(5, Paliwo);
-            stmt2.setString(6, przebieg);
-            stmt2.setString(7, cena);
-            stmt2.setString(8,dostepnosc);
-            stmt2.setInt(9, numer);
-
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Informacja");
-            alert.setHeaderText(null);
-            alert.setContentText("Dane pojazdu zostały zmodyfikowane pomyślnie!");
-            alert.showAndWait();
-
-            stmt2.executeUpdate();
-            tabelka_pojazdy.refresh();
-
-
-        }catch (Exception e)
-    {
-        System.out.println(e);
-    }
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajPojazdami.fxml"));
         pracownikPane.getChildren().setAll(pane);
-        
-    }
+
+        }
+
 
 
     public void dodajAuto(ActionEvent event) throws IOException{
@@ -252,48 +366,52 @@ public class zarzadzajPojazdamiController implements Initializable {
         System.out.println(Paliwo);
         System.out.println(przebieg);*/
 
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
-            PreparedStatement stmt2 = con.prepareStatement("Select MAX(samochod_id) FROM samochod");
-            ResultSet rs = stmt2.executeQuery("Select * FROM samochod");
-            int i=1;
-            while(rs.next()){
-                i++;
+        if (walidacjaPol() & walidacjaCena() & walidacajaRok() & walidacjaPrzebieg() & walidacjaMarka() & walidacjaModel()){
+
+            try {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+                PreparedStatement stmt2 = con.prepareStatement("Select MAX(samochod_id) FROM samochod");
+                ResultSet rs = stmt2.executeQuery("Select * FROM samochod");
+                int i = 1;
+                while (rs.next()) {
+                    i++;
+                }
+
+                PreparedStatement stmt = con.prepareStatement("INSERT INTO samochod VALUES(?,?,?,?,?,?,?,?,?)");
+                stmt.setInt(1, i);
+                stmt.setString(2, marka);
+                stmt.setString(3, model);
+                stmt.setString(4, Rodzaj);
+                stmt.setString(5, rocznik);
+                stmt.setString(6, Paliwo);
+                stmt.setString(7, przebieg);
+                stmt.setString(8, cena);
+                stmt.setString(9, dostepnosc);
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Informacja");
+                alert.setHeaderText(null);
+                alert.setContentText("Nowy pojazd został dodany pomyślnie!");
+                alert.showAndWait();
+
+
+                stmt.executeUpdate();
+                tabelka_pojazdy.refresh();
+
+                rs = stmt2.executeQuery("SELECT * FROM `samochod` WHERE samochod_id = (SELECT MAX(samochod_id) FROM samochod)");
+                if (rs.next()) {
+                    System.out.println(rs.getString(2));
+                    oblist1.add(new ModelTablePojazdy(rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9)));
+                }
+
+            } catch (Exception e) {
+                System.out.println(e);
             }
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajPojazdami.fxml"));
+            pracownikPane.getChildren().setAll(pane);
 
-            PreparedStatement stmt = con.prepareStatement("INSERT INTO samochod VALUES(?,?,?,?,?,?,?,?,?)");
-            stmt.setInt(1, i);
-            stmt.setString(2, marka);
-            stmt.setString(3, model);
-            stmt.setString(4, Rodzaj);
-            stmt.setString(5, rocznik);
-            stmt.setString(6, Paliwo);
-            stmt.setString(7, przebieg);
-            stmt.setString(8, cena);
-            stmt.setString(9, dostepnosc);
-
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Informacja");
-            alert.setHeaderText(null);
-            alert.setContentText("Nowy pojazd został dodany pomyślnie!");
-            alert.showAndWait();
-
-
-            stmt.executeUpdate();
-
-            rs = stmt2.executeQuery("SELECT * FROM `samochod` WHERE samochod_id = (SELECT MAX(samochod_id) FROM samochod)");
-            if(rs.next()) {
-                System.out.println(rs.getString(2));
-                oblist1.add(new ModelTablePojazdy(rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6) ,rs.getString(7) , rs.getString(8) ,rs.getString(9)));
-            }
-
-        }catch (Exception e)
-        {
-            System.out.println(e);
-        };
-
-
+        }
     }
     public void czyscForm (){
         autoMarka.clear();
