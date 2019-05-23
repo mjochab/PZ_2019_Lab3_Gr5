@@ -59,6 +59,13 @@ public class zarzadzajPojazdamiController implements Initializable {
     ObservableList<ModelTablePojazdy> oblist1 = FXCollections.observableArrayList();
     ObservableList<String> choiceBoxList = FXCollections.observableArrayList();
 
+    /*private boolean walidacjaPol(){
+        if(autoModel.getText().isEmpty() | autoModel.getText().isEmpty() | autoRocznik.getText().isEmpty()
+        | autoPrzebieg.getText().isEmpty() | autoCena.getText().isEmpty()){
+            Alert alert = new Alert(Alert.AlertType.WARNING)
+        }
+    }*/
+
     public void klik(ActionEvent event) throws  IOException{        //funkcja przenosi dane do tabelki po lewej stronie, jak tyknie sie wiersz w tabeli to przenosi
         //TablePosition pozycja = tabelka_pojazdy.getSelectionModel().getSelectedCells().get(0);
         //int index = pozycja.getRow();
