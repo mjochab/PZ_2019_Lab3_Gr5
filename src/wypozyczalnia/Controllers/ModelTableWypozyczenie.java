@@ -8,8 +8,9 @@ public class ModelTableWypozyczenie {
     String data_koncowa;
     String pesel;
     String cena;
+    String user_id;
 
-    public ModelTableWypozyczenie(String pesel, String marka, String model, String data_poczatkowa, String data_koncowa, String cena)
+    public ModelTableWypozyczenie(String pesel, String marka, String model, String data_poczatkowa, String data_koncowa, String cena, String user_id)
     {
         this.pesel=pesel;
         this.marka=marka;
@@ -17,6 +18,7 @@ public class ModelTableWypozyczenie {
         this.data_poczatkowa=data_poczatkowa;
         this.data_koncowa=data_koncowa;
         this.cena=cena;
+        this.user_id=user_id;
 
     }
 
@@ -64,6 +66,15 @@ public class ModelTableWypozyczenie {
     public void setCena(String cena) {
         this.cena = cena;
     }
+
+    public String getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(String user_id) {
+        this.user_id = user_id;
+    }
+
 
 
 

@@ -244,14 +244,14 @@ public class LoginController implements Initializable {
                             stage.show();
                         }else if(rs.getString("rodzaj").equals("worker")) {
                             FXMLLoader Loader = new FXMLLoader();
-                            Loader.setLocation(getClass().getResource("../fxml/menuPracownik.fxml"));
+                            Loader.setLocation(getClass().getResource("../fxml/historiaWypozyczen.fxml"));
                                 try {
                                     Loader.load();
                                 } catch (IOException e) {
                                     e.printStackTrace();
                                 }
-                            MenuPracownikController display = Loader.getController();
-                            display.displayName(rs.getString("imie"));
+                            historiaWypozyczenController display = Loader.getController();
+                            display.displayName(rs.getString("user_id"));
 
                             Node source = (Node) actionEvent.getSource();
                             Stage stage1 = (Stage) source.getScene().getWindow();

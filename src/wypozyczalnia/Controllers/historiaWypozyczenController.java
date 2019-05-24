@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -40,9 +41,17 @@ public class historiaWypozyczenController implements Initializable {
     @FXML
     private TableColumn<ModelTableWypozyczenia, String> col_cena;
 
+    @FXML
+    public Label usernamedisplay_lbl;
+
 
     ObservableList<ModelTableWypozyczenia> oblist5 = FXCollections.observableArrayList();
 
+    public void displayName (String usernamedisplay){
+
+        this.usernamedisplay_lbl.setText(usernamedisplay);
+
+    }
 
     public void logOut(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/login.fxml"));
@@ -60,13 +69,16 @@ public class historiaWypozyczenController implements Initializable {
         try {
             Connection con = DBConnector.getConnection();
 
-            ResultSet rs = con.createStatement().executeQuery("SELECT samochod.marka, samochod.model, wypozyczenie.data_od, wypozyczenie.data_do, samochod.cena \n" +
+            ResultSet rs = con.createStatement().executeQuery("SELECT samochod.marka, samochod.model, wypozyczenie.data_od, wypozyczenie.data_do, samochod.cena, user.user_id\n" +
                     "FROM samochod\n" +
                     "JOIN wypozyczenie\n" +
-                    "ON samochod.samochod_id = wypozyczenie.samochod_id ");
+                    "ON samochod.samochod_id = wypozyczenie.samochod_id\n" +
+                    "JOIN user\n" +
+                    "ON wypozyczenie.user_id = user.user_id\n" +
+                    "WHERE user.user_id= 47 ");
 
             while (rs.next()) {
-                oblist5.add(new ModelTableWypozyczenia(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5)+ " zł/dzień"));
+                oblist5.add(new ModelTableWypozyczenia(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5)+ " zł/dzień", rs.getString(6)));
             }
 
 

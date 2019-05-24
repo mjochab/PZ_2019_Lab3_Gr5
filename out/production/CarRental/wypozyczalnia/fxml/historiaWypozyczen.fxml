@@ -209,5 +209,13 @@
             <Bloom />
          </effect>
       </Label>
+      <Label fx:id="usernamedisplay_lbl" layoutX="227.0" layoutY="89.0" prefHeight="36.0" prefWidth="282.0" textFill="#eeadad">
+         <font>
+            <Font size="25.0" />
+         </font>
+         <effect>
+            <Bloom />
+         </effect>
+      </Label>
     </children>
 </AnchorPane>

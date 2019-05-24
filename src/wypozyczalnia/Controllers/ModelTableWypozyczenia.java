@@ -8,7 +8,7 @@ public class ModelTableWypozyczenia {
     String data_od;
     String data_do;
     String cena;
-
+    String user_id;
 
 
     public String getMarka() {
@@ -51,15 +51,25 @@ public class ModelTableWypozyczenia {
         this.cena = cena;
     }
 
+    public String getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(String user_id) {
+        this.user_id = user_id;
+    }
 
 
-    public ModelTableWypozyczenia(    String marka, String model, String data_od, String data_do, String cena)
+
+
+    public ModelTableWypozyczenia(    String marka, String model, String data_od, String data_do, String cena, String user_id)
     {
         this.marka=marka;
         this.model=model;
         this.data_do=data_do;
         this.data_od=data_od;
         this.cena=cena;
+        this.user_id=user_id;
 
 
     }
