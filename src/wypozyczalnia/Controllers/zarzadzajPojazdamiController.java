@@ -62,7 +62,7 @@ public class zarzadzajPojazdamiController implements Initializable {
     ObservableList<String> choiceBoxList = FXCollections.observableArrayList();
 
     private boolean walidacjaPol() {
-        if (autoModel.getText().isEmpty() | autoModel.getText().isEmpty() | autoRocznik.getText().isEmpty()
+        if (autoModel.getText().isEmpty() | autoMarka.getText().isEmpty() | autoRocznik.getText().isEmpty()
                 | autoPrzebieg.getText().isEmpty() | autoCena.getText().isEmpty()) {
 
            Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -356,6 +356,7 @@ public class zarzadzajPojazdamiController implements Initializable {
         //int Przebieg = Integer.parseInt(przebieg);
         String cena = String.valueOf(autoCena.getCharacters());
         String dostepnosc = String.valueOf(autoDostep.getValue());
+        Integer user_id = 37;
         //float Cena = Float.parseFloat(cena);
         /*System.out.println(marka);
         System.out.println(model);
@@ -376,7 +377,7 @@ public class zarzadzajPojazdamiController implements Initializable {
                     i++;
                 }
 
-                PreparedStatement stmt = con.prepareStatement("INSERT INTO samochod VALUES(?,?,?,?,?,?,?,?,?)");
+                PreparedStatement stmt = con.prepareStatement("INSERT INTO samochod VALUES(?,?,?,?,?,?,?,?,?,?)");
                 stmt.setInt(1, i);
                 stmt.setString(2, marka);
                 stmt.setString(3, model);
@@ -386,6 +387,7 @@ public class zarzadzajPojazdamiController implements Initializable {
                 stmt.setString(7, przebieg);
                 stmt.setString(8, cena);
                 stmt.setString(9, dostepnosc);
+                stmt.setInt(10, user_id);
 
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Informacja");

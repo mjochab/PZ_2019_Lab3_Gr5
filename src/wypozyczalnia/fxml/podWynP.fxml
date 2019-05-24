@@ -163,7 +163,7 @@
       </GridPane>
       <AnchorPane layoutX="448.0" layoutY="278.0" opacity="0.95" prefHeight="345.0" prefWidth="504.0" style="-fx-background-color: #6d0707;">
          <children>
-            <Button alignment="CENTER" layoutX="335.0" layoutY="278.0" mnemonicParsing="false" onAction="#logIn" prefHeight="46.0" prefWidth="131.0" style="-fx-background-color: #e27171;" text="ZATWIERDŹ" textFill="#fffefe">
+            <Button alignment="CENTER" layoutX="335.0" layoutY="278.0" mnemonicParsing="false" onAction="#menuPracownik" prefHeight="46.0" prefWidth="131.0" style="-fx-background-color: #e27171;" text="ZATWIERDŹ" textFill="#fffefe">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>

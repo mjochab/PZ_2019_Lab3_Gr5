@@ -6,10 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TablePosition;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import wypozyczalnia.DBConnector;
@@ -36,25 +33,26 @@ public class udostepnijPojazdController implements Initializable {
     @FXML
     private TableColumn<ModelTablePojazdy, String> col_rodzaj;
     @FXML
-    private TableColumn<ModelTablePojazdy, String> col_rocznik;
+    private TableColumn<ModelTablePojazdy, Integer> col_rocznik;
     @FXML
     private TableColumn<ModelTablePojazdy, String> col_paliwo;
     @FXML
-    private TableColumn<ModelTablePojazdy, String> col_przebieg;
+    private TableColumn<ModelTablePojazdy, Integer> col_przebieg;
     @FXML
-    private TableColumn<ModelTablePojazdy, Double> col_cena;
+    private TableColumn<ModelTablePojazdy, Integer> col_cena;
     @FXML
-    private TableColumn<ModelTablePojazdy, String> col_dostep;
+    private TableColumn<ModelTablePojazdy, String> col_dostepnosc;
 
 
     @FXML private TextField autoMarka;
     @FXML private TextField autoModel;
-    @FXML private TextField autoRodzaj;
+    @FXML private ChoiceBox<String> autoRodzaj;
     @FXML private TextField autoRocznik;
-    @FXML private TextField autoPaliwo;
+    @FXML private ChoiceBox<String> autoPaliwo;
     @FXML private TextField autoPrzebieg;
     @FXML private TextField autoCena;
-    @FXML private TextField autoDostep;
+    @FXML private ChoiceBox<String> autoDostep;
+
 
 
 
@@ -106,12 +104,12 @@ public class udostepnijPojazdController implements Initializable {
 
                 autoMarka.setText(String.valueOf(dane.get(0)));
                 autoModel.setText(String.valueOf(dane.get(1)));
-                autoRodzaj.setText(String.valueOf(dane.get(2)));
+                autoRodzaj.setValue(String.valueOf(dane.get(2)));
                 autoRocznik.setText(String.valueOf(dane.get(3)));
-                autoPaliwo.setText(String.valueOf(dane.get(4)));
+                autoPaliwo.setValue(String.valueOf(dane.get(4)));
                 autoPrzebieg.setText(String.valueOf(dane.get(5)));
                 autoCena.setText(String.valueOf(dane.get(6)));
-                autoDostep.setText(String.valueOf(dane.get(7)));
+                autoDostep.setValue(String.valueOf(dane.get(7)));
 
             }
 
@@ -168,12 +166,12 @@ public class udostepnijPojazdController implements Initializable {
 
         String marka = String.valueOf(autoMarka.getCharacters());
         String model = String.valueOf(autoModel.getCharacters());
-        String Rodzaj = String.valueOf(autoRodzaj.getCharacters());
+        String Rodzaj = String.valueOf(autoRodzaj.getValue());
         String Rocznik = String.valueOf(autoRocznik.getCharacters());
-        String Paliwo = String.valueOf(autoPaliwo.getCharacters());
+        String Paliwo = String.valueOf(autoPaliwo.getValue());
         String przebieg = String.valueOf(autoPrzebieg.getCharacters());
         String cena = String.valueOf(autoCena.getCharacters());
-        String dostep = String.valueOf(autoDostep.getCharacters());
+        String dostep = String.valueOf(autoDostep.getValue());
 
 
         try {
@@ -219,13 +217,13 @@ public class udostepnijPojazdController implements Initializable {
     public void dodajAuto(ActionEvent event) throws IOException{
         String marka = String.valueOf(autoMarka.getCharacters());
         String model = String.valueOf(autoModel.getCharacters());
-        String Rodzaj = String.valueOf(autoRodzaj.getCharacters());
+        String Rodzaj = String.valueOf(autoRodzaj.getValue());
         String Rocznik = String.valueOf(autoRocznik.getCharacters());
-        String Paliwo = String.valueOf(autoPaliwo.getCharacters());
+        String Paliwo = String.valueOf(autoPaliwo.getValue());
         String przebieg = String.valueOf(autoPrzebieg.getCharacters());
         //int Przebieg = Integer.parseInt(przebieg);
         String cena = String.valueOf(autoCena.getCharacters());
-        String dostep = String.valueOf(autoDostep.getCharacters());
+        String dostep = String.valueOf(autoDostep.getValue());
         //float Cena = Float.parseFloat(cena);
         /*System.out.println(marka);
         System.out.println(model);
@@ -284,10 +282,12 @@ public class udostepnijPojazdController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+
+
         try {
             Connection con = DBConnector.getConnection();
 
-            ResultSet rs = con.createStatement().executeQuery("SELECT * FROM `samochod`");
+            ResultSet rs = con.createStatement().executeQuery("SELECT * FROM `samochod` WHERE `user_id` = '37'");
 
             while (rs.next()) {
                 //oblist1.add(new ModelTablePojazdy(rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7)));
@@ -307,11 +307,16 @@ public class udostepnijPojazdController implements Initializable {
         col_paliwo.setCellValueFactory(new PropertyValueFactory<>("paliwo"));
         col_przebieg.setCellValueFactory(new PropertyValueFactory<>("przebieg"));
         col_cena.setCellValueFactory(new PropertyValueFactory<>("cena"));
-        col_dostep.setCellValueFactory(new PropertyValueFactory<>("dostepnosc"));
+        col_dostepnosc.setCellValueFactory(new PropertyValueFactory<>("dostepnosc"));
 
 
         tabelka_pojazdy.setItems(oblist1);
 
+
+
+        autoDostep.getItems().addAll("TAK","NIE");
+        autoPaliwo.getItems().addAll("Diesel","Benzyna","Gaz");
+        autoRodzaj.getItems().addAll("Sedan","Kombi","Hatchback","Coupe","Limuzyna","Suv","Kabriolet","Roadster");
 
     }
 

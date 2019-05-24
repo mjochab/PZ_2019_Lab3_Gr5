@@ -16,68 +16,23 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="pracownikPane" prefHeight="900.0" prefWidth="1400.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.udostepnijPojazdController">
-    <children>
-        <TextField fx:id="autoMarka" layoutX="55.0" layoutY="225.0" prefHeight="31.0" prefWidth="206.0" promptText="Marka" />
-        <TextField fx:id="autoModel" layoutX="55.0" layoutY="270.0" prefHeight="31.0" prefWidth="206.0" promptText="Model" />
-        <TextField fx:id="autoRodzaj" layoutX="55.0" layoutY="312.0" prefHeight="31.0" prefWidth="206.0" promptText="Rodzaj" />
-        <TextField fx:id="autoRocznik" layoutX="55.0" layoutY="353.0" prefHeight="31.0" prefWidth="206.0" promptText="Rocznik" />
-        <TextField fx:id="autoPaliwo" layoutX="55.0" layoutY="393.0" prefHeight="31.0" prefWidth="206.0" promptText="Paliwo" />
-        <TextField fx:id="autoPrzebieg" layoutX="55.0" layoutY="434.0" prefHeight="31.0" prefWidth="206.0" promptText="Przebieg" />
-        <TextField fx:id="autoCena" layoutX="55.0" layoutY="476.0" prefHeight="31.0" prefWidth="206.0" promptText="Cena" />
-        <TableView fx:id="tabelka_pojazdy" layoutX="275.0" layoutY="177.0" prefHeight="527.0" prefWidth="921.0">
-            <columns>
-                <TableColumn fx:id="col_marka" prefWidth="117.99996948242188" text="Marka" />
-                <TableColumn fx:id="col_model" prefWidth="92.0" text="Model" />
-                <TableColumn fx:id="col_rodzaj" prefWidth="90.0" text="Rodzaj" />
-                <TableColumn fx:id="col_rocznik" prefWidth="130.0" text="Rocznik" />
-                <TableColumn fx:id="col_paliwo" minWidth="0.0" prefWidth="133.0" text="Paliwo" />
-                <TableColumn fx:id="col_przebieg" prefWidth="135.0" text="Przebieg" />
-                <TableColumn fx:id="col_cena" prefWidth="77.0" text="Cena" />
-                <TableColumn fx:id="col_dostep" prefWidth="178.0" text="Dostęp" />
-
-            </columns>
-        </TableView>
-      <Button layoutX="139.0" layoutY="568.0" mnemonicParsing="false" onAction="#dodajAuto" prefHeight="48.0" prefWidth="122.0" style="-fx-background-color: #e27171;" text="DODAJ">
-         <graphic>
-            <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Icons/confirm.png" />
-               </image>
-            </ImageView>
-         </graphic>
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <Button layoutX="450.0" layoutY="718.0" mnemonicParsing="false" onAction="#edytujAuto" prefHeight="48.0" prefWidth="156.0" style="-fx-background-color: #e27171;" text="EDYTUJ">
-         <graphic>
-            <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Icons/edit.png" />
-               </image>
-            </ImageView>
-         </graphic>
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <Button layoutX="275.0" layoutY="718.0" mnemonicParsing="false" onAction="#usunAuto" prefHeight="48.0" prefWidth="156.0" style="-fx-background-color: #e27171;" text="USUŃ">
-         <graphic>
-            <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Icons/back.png" />
-               </image>
-            </ImageView>
-         </graphic>
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <Button layoutX="80.0" layoutY="176.0" mnemonicParsing="false" onAction="#klik" prefHeight="29.0" prefWidth="156.0" text="Uzupełnij pola poniżej">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </Button>
+   <children>
+      <TextField fx:id="autoModel" layoutX="12.0" layoutY="265.0" prefHeight="31.0" prefWidth="215.0" promptText="Model" />
+      <TextField fx:id="autoRocznik" layoutX="12.0" layoutY="381.0" prefHeight="31.0" prefWidth="215.0" promptText="Rocznik" />
+      <TextField fx:id="autoPrzebieg" layoutX="12.0" layoutY="457.0" prefHeight="31.0" prefWidth="215.0" promptText="Przebieg" />
+      <TextField fx:id="autoCena" layoutX="12.0" layoutY="497.0" prefHeight="31.0" prefWidth="215.0" promptText="Cena" />
+      <TableView fx:id="tabelka_pojazdy" layoutX="251.0" layoutY="208.0" prefHeight="523.0" prefWidth="1008.0">
+         <columns>
+            <TableColumn fx:id="col_marka" prefWidth="80.99996948242188" text="Marka" />
+            <TableColumn fx:id="col_model" prefWidth="145.00003051757812" text="Model" />
+            <TableColumn fx:id="col_rodzaj" prefWidth="110.0" text="Rodzaj" />
+            <TableColumn fx:id="col_rocznik" prefWidth="130.0" text="Rocznik" />
+            <TableColumn fx:id="col_paliwo" prefWidth="140.0" text="Paliwo" />
+            <TableColumn fx:id="col_przebieg" prefWidth="150.0" text="Przebieg" />
+            <TableColumn fx:id="col_cena" prefWidth="126.0" text="Cena" />
+            <TableColumn fx:id="col_dostepnosc" prefWidth="120.0" text="Dostęp" />
+         </columns>
+      </TableView>
       <GridPane prefHeight="68.0" prefWidth="1400.0" style="-fx-background-color: #6d0707;">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
@@ -220,17 +175,18 @@
             </ImageView>
          </children>
       </GridPane>
-      <ChoiceBox fx:id="autoDostep" layoutX="200.0" layoutY="518.0" prefHeight="31.0" prefWidth="61.0" />
-      <Label layoutX="55.0" layoutY="524.0" text="Dostępność (tak/nie):" textFill="#ddc4c4">
+      <TextField fx:id="autoMarka" layoutX="12.0" layoutY="303.0" prefHeight="31.0" prefWidth="215.0" promptText="Marka" />
+      <Label layoutX="10.0" layoutY="541.0" prefHeight="20.0" prefWidth="153.0" text="Dostępność (tak/nie):" textFill="#ddc4c4">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Button layoutX="1229.0" layoutY="80.0" mnemonicParsing="false" onAction="#logOut" prefHeight="30.0" prefWidth="153.0" style="-fx-background-color: #e27171;" text="WYLOGUJ">
+      <ChoiceBox fx:id="autoDostep" layoutX="166.0" layoutY="536.0" prefHeight="31.0" prefWidth="61.0" />
+      <Button layoutX="105.0" layoutY="583.0" mnemonicParsing="false" onAction="#dodajAuto" prefHeight="48.0" prefWidth="122.0" style="-fx-background-color: #e27171;" text="DODAJ">
          <graphic>
-            <ImageView fitHeight="36.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Icons/logout.png" />
+                  <Image url="@../Icons/confirm.png" />
                </image>
             </ImageView>
          </graphic>
@@ -238,7 +194,36 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="24.0" layoutY="80.0" mnemonicParsing="false" onAction="#menuPracownik" prefHeight="30.0" prefWidth="153.0" style="-fx-background-color: #e27171;" text="POWRÓT">
+      <Button layoutX="251.0" layoutY="747.0" mnemonicParsing="false" onAction="#usunAuto" prefHeight="48.0" prefWidth="156.0" style="-fx-background-color: #e27171;" text="USUŃ">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/back.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="43.0" layoutY="220.0" mnemonicParsing="false" onAction="#klik" prefHeight="25.0" prefWidth="162.0" text="Uzupełnij pola poniżej">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="426.0" layoutY="747.0" mnemonicParsing="false" onAction="#modujAuto" prefHeight="48.0" prefWidth="156.0" style="-fx-background-color: #e27171;" text="EDYTUJ">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/edit.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="35.0" layoutY="91.0" mnemonicParsing="false" onAction="#menuPracownik" prefHeight="30.0" prefWidth="153.0" style="-fx-background-color: #e27171;" text="POWRÓT">
          <graphic>
             <ImageView fitHeight="36.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -250,7 +235,19 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Label layoutX="579.0" layoutY="92.0" prefHeight="36.0" prefWidth="313.0" text="UDOSTĘPNIANIE POJAZDU" textFill="#eeadad">
+      <Button layoutX="1209.0" layoutY="91.0" mnemonicParsing="false" onAction="#logOut" prefHeight="30.0" prefWidth="153.0" style="-fx-background-color: #e27171;" text="WYLOGUJ">
+         <graphic>
+            <ImageView fitHeight="36.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/logout.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Label layoutX="599.0" layoutY="121.0" prefHeight="36.0" prefWidth="313.0" text="ZARZĄDZANIE POJAZDAMI" textFill="#eeadad">
          <font>
             <Font size="25.0" />
          </font>
@@ -258,5 +255,17 @@
             <Bloom />
          </effect>
       </Label>
-    </children>
+      <Label layoutX="13.0" layoutY="423.0" prefHeight="20.0" prefWidth="104.0" text="Rodzaj paliwa:" textFill="#ddc4c4">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="autoPaliwo" layoutX="115.0" layoutY="418.0" prefHeight="31.0" prefWidth="112.0" />
+      <ChoiceBox fx:id="autoRodzaj" layoutX="134.0" layoutY="343.0" prefHeight="31.0" prefWidth="96.0" />
+      <Label layoutX="12.0" layoutY="348.0" prefHeight="20.0" prefWidth="122.0" text="Rodzaj nadwozia:" textFill="#ddc4c4">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+   </children>
 </AnchorPane>

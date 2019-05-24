@@ -40,7 +40,7 @@
                   <Font name="System Bold" size="17.0" />
                </font>
             </Button>
-            <Button fx:id="udostepnijPojazd" alignment="TOP_CENTER" layoutX="535.0" layoutY="155.0" mnemonicParsing="false" onAction="#udostepnijPojazd" prefHeight="99.0" prefWidth="242.0" style="-fx-background-color: #e27171;" text="UDOSTĘPNIJ SAMOCHÓD">
+            <Button fx:id="udostepnijPojazd" alignment="TOP_CENTER" layoutX="535.0" layoutY="155.0" mnemonicParsing="false" onAction="#udostepnijPojazd" prefHeight="99.0" prefWidth="242.0" style="-fx-background-color: #e27171;" text="TWOJE SAMOCHODY">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>
