@@ -17,11 +17,11 @@
     <children>
       <TableView fx:id="tabela_wypozyczenia" layoutX="117.0" layoutY="169.0" prefHeight="538.0" prefWidth="1182.0">
           <columns>
-              <TableColumn fx:id="col_wypozyczenie_id" prefWidth="240.99999237060547" text="Marka" />
-              <TableColumn fx:id="col_user_id" prefWidth="221.0" text="Model" />
+              <TableColumn fx:id="col_marka" prefWidth="240.99999237060547" text="Marka" />
+              <TableColumn fx:id="col_model" prefWidth="221.0" text="Model" />
               <TableColumn fx:id="col_data_do" prefWidth="241.0" text="Data początkowa" />
               <TableColumn fx:id="col_data_od" prefWidth="253.0" text="Data końcowa" />
-              <TableColumn fx:id="col_samochod_id" prefWidth="225.0" text="Cena" />
+              <TableColumn fx:id="col_cena" prefWidth="225.0" text="Cena" />
           </columns>
       </TableView>
       <Button layoutX="1108.0" layoutY="732.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="191.0" style="-fx-background-color: #e27171;" text="Generuj raport">

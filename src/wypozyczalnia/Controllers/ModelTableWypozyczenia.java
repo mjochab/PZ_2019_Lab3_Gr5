@@ -3,34 +3,28 @@ package wypozyczalnia.Controllers;
 public class ModelTableWypozyczenia {
 
 
-    String wypozyczenie_id;
-    String user_id;
-    String samochod_id;
+    String marka;
+    String model;
     String data_od;
     String data_do;
+    String cena;
 
-    public String getWypozyczenie_id() {
-        return wypozyczenie_id;
+
+
+    public String getMarka() {
+        return marka;
     }
 
-    public void setWypozyczenie_id(String wypozyczenie_id) {
-        this.wypozyczenie_id = wypozyczenie_id;
+    public void setMarka(String wypozyczenie_id) {
+        this.marka = marka;
     }
 
-    public String getUser_id() {
-        return wypozyczenie_id;
+    public String getModel() {
+        return model;
     }
 
-    public void setUser_id(String user_id) {
-        this.user_id = user_id;
-    }
-
-    public String getSamochod_id() {
-        return samochod_id;
-    }
-
-    public void setSamochod_id(String samochod_id) {
-        this.samochod_id = samochod_id;
+    public void setModel(String model) {
+        this.model = model;
     }
 
     public String getData_od() {
@@ -49,15 +43,23 @@ public class ModelTableWypozyczenia {
         this.data_do = data_do;
     }
 
+    public String getCena() {
+        return cena;
+    }
+
+    public void setCena(String cena) {
+        this.cena = cena;
+    }
 
 
-    public ModelTableWypozyczenia(String wypozyczenie_id, String user_id, String samochod_id, String data_od, String data_do)
+
+    public ModelTableWypozyczenia(    String marka, String model, String data_od, String data_do, String cena)
     {
-        this.wypozyczenie_id=wypozyczenie_id;
-        this.user_id=user_id;
-        this.samochod_id=samochod_id;
+        this.marka=marka;
+        this.model=model;
         this.data_do=data_do;
-        this.data_od=data_do;
+        this.data_od=data_od;
+        this.cena=cena;
 
 
     }
