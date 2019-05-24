@@ -254,14 +254,14 @@ public class zarzadzajWypozyczeniamiController implements Initializable {
         } catch (SQLException ex) {
             Logger.getLogger(zarzadzajUzytkownikamiController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        System.out.println("dupa");
+        System.out.println("jeden");
         col_pesel.setCellValueFactory(new PropertyValueFactory<>("pesel"));
         col_marka.setCellValueFactory(new PropertyValueFactory<>("marka"));
         col_model.setCellValueFactory(new PropertyValueFactory<>("model"));
         col_odkiedy.setCellValueFactory(new PropertyValueFactory<>("data_poczatkowa"));
         col_dokiedy.setCellValueFactory(new PropertyValueFactory<>("data_koncowa"));
         col_cena.setCellValueFactory(new PropertyValueFactory<>("cena"));
-        System.out.println("dupa");
+        System.out.println("jeden");
         System.out.println(col_cena);
 
         tabelka_wypozyczenie.setItems(oblist1);
