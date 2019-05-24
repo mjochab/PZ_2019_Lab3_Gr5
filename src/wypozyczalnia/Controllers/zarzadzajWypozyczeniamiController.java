@@ -6,10 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TablePosition;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import wypozyczalnia.DBConnector;
@@ -34,8 +31,8 @@ public class zarzadzajWypozyczeniamiController implements Initializable {
     @FXML private TextField Tpesel;
     @FXML private TextField Tmarka;
     @FXML private TextField Tcena;
-    @FXML private TextField TdataStart;
-    @FXML private TextField TdataKoniec;
+    @FXML private DatePicker TdataStart;
+    @FXML private DatePicker TdataKoniec;
     @FXML private TextField Tmodel;
    @FXML
     private TableView<ModelTableWypozyczenie> tabelka_wypozyczenie;
@@ -51,6 +48,11 @@ public class zarzadzajWypozyczeniamiController implements Initializable {
     private TableColumn<ModelTableWypozyczenie, String> col_dokiedy;
     @FXML
     private TableColumn<ModelTableWypozyczenie, String> col_cena;
+
+    public static void alamakota(){
+        System.out.println("Ala ma kot");
+    }
+
     @FXML
 
     public void logOut(ActionEvent event) throws IOException {
@@ -67,15 +69,15 @@ public class zarzadzajWypozyczeniamiController implements Initializable {
     }
 
     public void alamakota(ActionEvent event) throws  IOException{
-
+        System.out.println("x");
     }
     public void dodajWypo(ActionEvent event) throws IOException {
         System.out.println("2");
         String pesel = String.valueOf(this.Tpesel.getCharacters());
         String marka = String.valueOf(this.Tmarka.getCharacters());
         String cena = String.valueOf(this.Tcena.getCharacters());
-        String dataStart = String.valueOf(this.TdataStart.getCharacters());
-        String dataKoniec = String.valueOf(this.TdataKoniec.getCharacters());
+        String dataStart = String.valueOf(this.TdataStart.getValue());
+        String dataKoniec = String.valueOf(this.TdataKoniec.getValue());
         String model = String.valueOf(this.Tmodel.getCharacters());
 
         try {
@@ -140,8 +142,8 @@ public class zarzadzajWypozyczeniamiController implements Initializable {
         String marka = String.valueOf(Tmarka.getCharacters());
         String model = String.valueOf(Tmodel.getCharacters());
         String cena = String.valueOf(Tcena.getCharacters());
-        String dataStart = String.valueOf(TdataStart.getCharacters());
-        String dataStop = String.valueOf(TdataStart.getCharacters());
+        String dataStart = String.valueOf(TdataStart.getValue());
+        String dataStop = String.valueOf(TdataStart.getValue());
 
         try {
             index++;
@@ -198,7 +200,7 @@ public class zarzadzajWypozyczeniamiController implements Initializable {
 
     }
 
-    public void usunWYpo(ActionEvent event) throws  IOException{
+    public void usunWypo(ActionEvent event) throws  IOException{
 
         System.out.println("2");
 
@@ -250,16 +252,16 @@ public class zarzadzajWypozyczeniamiController implements Initializable {
 
 
         } catch (SQLException ex) {
-            Logger.getLogger(zarzadzajUzytkownikamiAdminController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(zarzadzajUzytkownikamiController.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        System.out.println("dupa");
         col_pesel.setCellValueFactory(new PropertyValueFactory<>("pesel"));
         col_marka.setCellValueFactory(new PropertyValueFactory<>("marka"));
         col_model.setCellValueFactory(new PropertyValueFactory<>("model"));
         col_odkiedy.setCellValueFactory(new PropertyValueFactory<>("data_poczatkowa"));
         col_dokiedy.setCellValueFactory(new PropertyValueFactory<>("data_koncowa"));
         col_cena.setCellValueFactory(new PropertyValueFactory<>("cena"));
-
+        System.out.println("dupa");
         System.out.println(col_cena);
 
         tabelka_wypozyczenie.setItems(oblist1);

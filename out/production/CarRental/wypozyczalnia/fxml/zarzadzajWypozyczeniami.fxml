@@ -15,7 +15,8 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="pracownikPane" prefHeight="900.0" prefWidth="1400.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.MenuPracownikController">
+
+<AnchorPane fx:id="pracownikPane" prefHeight="900.0" prefWidth="1400.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.zarzadzajWypozyczeniamiController">
     <children>
         <TextField fx:id="Tpesel" layoutX="36.0" layoutY="279.0" prefHeight="31.0" prefWidth="183.0" promptText="Pesel" />
         <TextField fx:id="Tmarka" layoutX="35.0" layoutY="329.0" prefHeight="31.0" prefWidth="183.0" promptText="Marka" />
@@ -31,222 +32,222 @@
                 <TableColumn fx:id="col_cena" prefWidth="152.0" text="Cena" />
             </columns>
         </TableView>
-      <GridPane prefHeight="68.0" prefWidth="1400.0" style="-fx-background-color: #6d0707;">
-         <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
-         </columnConstraints>
-         <rowConstraints>
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-         </rowConstraints>
-         <children>
-            <ImageView fitHeight="87.0" fitWidth="99.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
-               <image>
-                  <Image url="@../Icons/Cars/4.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="87.0" fitWidth="99.0" layoutX="10.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
-               <image>
-                  <Image url="@../Icons/Cars/2.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="87.0" fitWidth="88.0" layoutX="98.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
-               <image>
-                  <Image url="@../Icons/Cars/1.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="87.0" fitWidth="99.0" layoutX="98.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
-               <image>
-                  <Image url="@../Icons/Cars/3.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="87.0" fitWidth="99.0" layoutX="10.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="1">
-               <image>
-                  <Image url="@../Icons/Cars/5.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="87.0" fitWidth="99.0" layoutX="365.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="1">
-               <image>
-                  <Image url="@../Icons/Cars/6.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="87.0" fitWidth="99.0" layoutX="10.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="1">
-               <image>
-                  <Image url="@../Icons/Cars/2.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="87.0" fitWidth="99.0" layoutX="98.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="1">
-               <image>
-                  <Image url="@../Icons/Cars/3.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="87.0" fitWidth="99.0" layoutX="632.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="1">
-               <image>
-                  <Image url="@../Icons/Cars/1.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="87.0" fitWidth="99.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" GridPane.rowIndex="1">
-               <image>
-                  <Image url="@../Icons/Cars/5.png" />
-               </image>
-            </ImageView>
-         </children>
-      </GridPane>
-      <Button layoutX="51.0" layoutY="229.0" mnemonicParsing="false" onAction="#dodajWypo" prefHeight="29.0" prefWidth="153.0" text="Uzupelnij pola poniżej">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </Button>
-      <DatePicker fx:id="Tdata_start" layoutX="36.0" layoutY="428.0" prefHeight="31.0" prefWidth="183.0" promptText="Data początkowa" />
-      <DatePicker fx:id="Tdata_koniec" layoutX="36.0" layoutY="480.0" prefHeight="31.0" prefWidth="183.0" promptText="Data końcowa" />
-      <Button layoutX="97.0" layoutY="584.0" mnemonicParsing="false" onAction="#dodajWypo" prefHeight="48.0" prefWidth="122.0" style="-fx-background-color: #e27171;" text="DODAJ">
-         <graphic>
-            <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Icons/confirm.png" />
-               </image>
-            </ImageView>
-         </graphic>
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <Button layoutX="246.0" layoutY="721.0" mnemonicParsing="false" onAction="#usunWypo" prefHeight="48.0" prefWidth="156.0" style="-fx-background-color: #e27171;" text="USUŃ">
-         <graphic>
-            <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Icons/back.png" />
-               </image>
-            </ImageView>
-         </graphic>
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <Button layoutX="422.0" layoutY="721.0" mnemonicParsing="false" onAction="#modujWypo" prefHeight="48.0" prefWidth="156.0" style="-fx-background-color: #e27171;" text="EDYTUJ">
-         <graphic>
-            <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Icons/edit.png" />
-               </image>
-            </ImageView>
-         </graphic>
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <GridPane layoutY="832.0" prefHeight="68.0" prefWidth="1400.0" style="-fx-background-color: #6d0707;">
-         <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
-         </columnConstraints>
-         <rowConstraints>
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-         </rowConstraints>
-         <children>
-            <ImageView fitHeight="87.0" fitWidth="99.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
-               <image>
-                  <Image url="@../Icons/Cars/4.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="87.0" fitWidth="99.0" layoutX="10.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
-               <image>
-                  <Image url="@../Icons/Cars/2.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="87.0" fitWidth="88.0" layoutX="98.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
-               <image>
-                  <Image url="@../Icons/Cars/1.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="87.0" fitWidth="99.0" layoutX="98.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
-               <image>
-                  <Image url="@../Icons/Cars/3.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="87.0" fitWidth="99.0" layoutX="10.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="1">
-               <image>
-                  <Image url="@../Icons/Cars/5.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="87.0" fitWidth="99.0" layoutX="365.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="1">
-               <image>
-                  <Image url="@../Icons/Cars/6.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="87.0" fitWidth="99.0" layoutX="10.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="1">
-               <image>
-                  <Image url="@../Icons/Cars/2.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="87.0" fitWidth="99.0" layoutX="98.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="1">
-               <image>
-                  <Image url="@../Icons/Cars/3.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="87.0" fitWidth="99.0" layoutX="632.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="1">
-               <image>
-                  <Image url="@../Icons/Cars/1.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="87.0" fitWidth="99.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" GridPane.rowIndex="1">
-               <image>
-                  <Image url="@../Icons/Cars/5.png" />
-               </image>
-            </ImageView>
-         </children>
-      </GridPane>
-      <Button layoutX="21.0" layoutY="89.0" mnemonicParsing="false" onAction="#menuPracownik" prefHeight="30.0" prefWidth="153.0" style="-fx-background-color: #e27171;" text="POWRÓT">
-         <graphic>
-            <ImageView fitHeight="36.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Icons/back.png" />
-               </image>
-            </ImageView>
-         </graphic>
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <Button layoutX="1225.0" layoutY="89.0" mnemonicParsing="false" onAction="#logOut" prefHeight="30.0" prefWidth="153.0" style="-fx-background-color: #e27171;" text="WYLOGUJ">
-         <graphic>
-            <ImageView fitHeight="36.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Icons/logout.png" />
-               </image>
-            </ImageView>
-         </graphic>
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <Label layoutX="549.0" layoutY="101.0" prefHeight="36.0" prefWidth="387.0" text="ZARZĄDZANIE WYPOŻYCZENIAMI" textFill="#eeadad">
-         <font>
-            <Font size="25.0" />
-         </font>
-         <effect>
-            <Bloom />
-         </effect>
-      </Label>
+        <GridPane prefHeight="68.0" prefWidth="1400.0" style="-fx-background-color: #6d0707;">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <ImageView fitHeight="87.0" fitWidth="99.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+                    <image>
+                        <Image url="@../Icons/Cars/4.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="87.0" fitWidth="99.0" layoutX="10.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <image>
+                        <Image url="@../Icons/Cars/2.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="87.0" fitWidth="88.0" layoutX="98.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                    <image>
+                        <Image url="@../Icons/Cars/1.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="87.0" fitWidth="99.0" layoutX="98.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                    <image>
+                        <Image url="@../Icons/Cars/3.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="87.0" fitWidth="99.0" layoutX="10.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                    <image>
+                        <Image url="@../Icons/Cars/5.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="87.0" fitWidth="99.0" layoutX="365.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                    <image>
+                        <Image url="@../Icons/Cars/6.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="87.0" fitWidth="99.0" layoutX="10.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="1">
+                    <image>
+                        <Image url="@../Icons/Cars/2.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="87.0" fitWidth="99.0" layoutX="98.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="1">
+                    <image>
+                        <Image url="@../Icons/Cars/3.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="87.0" fitWidth="99.0" layoutX="632.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="1">
+                    <image>
+                        <Image url="@../Icons/Cars/1.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="87.0" fitWidth="99.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" GridPane.rowIndex="1">
+                    <image>
+                        <Image url="@../Icons/Cars/5.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </GridPane>
+        <Button layoutX="51.0" layoutY="229.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="153.0" text="Uzupelnij pola poniżej">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </Button>
+        <DatePicker fx:id="Tdata_start" layoutX="36.0" layoutY="428.0" prefHeight="31.0" prefWidth="183.0" promptText="Data początkowa" />
+        <DatePicker fx:id="Tdata_koniec" layoutX="36.0" layoutY="480.0" prefHeight="31.0" prefWidth="183.0" promptText="Data końcowa" />
+        <Button layoutX="97.0" layoutY="584.0" mnemonicParsing="false" onAction="#dodajWypo" prefHeight="48.0" prefWidth="122.0" style="-fx-background-color: #e27171;" text="DODAJ">
+            <graphic>
+                <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../Icons/confirm.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Button layoutX="246.0" layoutY="721.0" mnemonicParsing="false" onAction="#usunWypo" prefHeight="48.0" prefWidth="156.0" style="-fx-background-color: #e27171;" text="USUŃ">
+            <graphic>
+                <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../Icons/back.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Button layoutX="422.0" layoutY="721.0" mnemonicParsing="false" onAction="#modujWypo" prefHeight="48.0" prefWidth="156.0" style="-fx-background-color: #e27171;" text="EDYTUJ">
+            <graphic>
+                <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../Icons/edit.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <GridPane layoutY="832.0" prefHeight="68.0" prefWidth="1400.0" style="-fx-background-color: #6d0707;">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <ImageView fitHeight="87.0" fitWidth="99.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+                    <image>
+                        <Image url="@../Icons/Cars/4.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="87.0" fitWidth="99.0" layoutX="10.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <image>
+                        <Image url="@../Icons/Cars/2.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="87.0" fitWidth="88.0" layoutX="98.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                    <image>
+                        <Image url="@../Icons/Cars/1.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="87.0" fitWidth="99.0" layoutX="98.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                    <image>
+                        <Image url="@../Icons/Cars/3.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="87.0" fitWidth="99.0" layoutX="10.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                    <image>
+                        <Image url="@../Icons/Cars/5.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="87.0" fitWidth="99.0" layoutX="365.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                    <image>
+                        <Image url="@../Icons/Cars/6.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="87.0" fitWidth="99.0" layoutX="10.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="1">
+                    <image>
+                        <Image url="@../Icons/Cars/2.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="87.0" fitWidth="99.0" layoutX="98.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="1">
+                    <image>
+                        <Image url="@../Icons/Cars/3.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="87.0" fitWidth="99.0" layoutX="632.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="1">
+                    <image>
+                        <Image url="@../Icons/Cars/1.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="87.0" fitWidth="99.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" GridPane.rowIndex="1">
+                    <image>
+                        <Image url="@../Icons/Cars/5.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </GridPane>
+        <Button layoutX="21.0" layoutY="89.0" mnemonicParsing="false" onAction="#menuPracownik" prefHeight="30.0" prefWidth="153.0" style="-fx-background-color: #e27171;" text="POWRÓT">
+            <graphic>
+                <ImageView fitHeight="36.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../Icons/back.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Button layoutX="1225.0" layoutY="89.0" mnemonicParsing="false" onAction="#logOut" prefHeight="30.0" prefWidth="153.0" style="-fx-background-color: #e27171;" text="WYLOGUJ">
+            <graphic>
+                <ImageView fitHeight="36.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../Icons/logout.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Label layoutX="549.0" layoutY="101.0" prefHeight="36.0" prefWidth="387.0" text="ZARZĄDZANIE WYPOŻYCZENIAMI" textFill="#eeadad">
+            <font>
+                <Font size="25.0" />
+            </font>
+            <effect>
+                <Bloom />
+            </effect>
+        </Label>
     </children>
 </AnchorPane>
