@@ -87,7 +87,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <Label fx:id="usernamedisplay_lbl" layoutX="668.0" layoutY="207.0" prefHeight="21.0" prefWidth="238.0" text="pracowniku" textFill="#eeadad">
+      <Label fx:id="usernamedisplay_lbl" layoutX="670.0" layoutY="207.0" prefHeight="21.0" prefWidth="238.0" text="pracowniku" textFill="#eeadad">
          <font>
             <Font size="25.0" />
          </font>
@@ -95,7 +95,7 @@
             <Bloom />
          </effect>
       </Label>
-      <Label layoutX="601.0" layoutY="207.0" prefHeight="36.0" prefWidth="57.0" text="Witaj" textFill="#eeadad">
+      <Label layoutX="601.0" layoutY="207.0" prefHeight="36.0" prefWidth="87.0" text="Witaj," textFill="#eeadad">
          <font>
             <Font size="25.0" />
          </font>

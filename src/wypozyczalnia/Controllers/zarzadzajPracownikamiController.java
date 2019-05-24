@@ -6,10 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TablePosition;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import wypozyczalnia.DBConnector;
@@ -17,11 +14,14 @@ import wypozyczalnia.DBConnector;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class zarzadzajPracownikamiController implements Initializable {
     @FXML
@@ -49,7 +49,7 @@ public class zarzadzajPracownikamiController implements Initializable {
 
     @FXML private TextField userImie;
     @FXML private TextField userNazwisko;
-    @FXML private TextField userData;
+    @FXML private DatePicker userData;
     @FXML private TextField userMiejscowosc;
     @FXML private TextField userPesel;
     @FXML private TextField userEmail;
@@ -92,69 +92,206 @@ public class zarzadzajPracownikamiController implements Initializable {
         adminPane.getChildren().setAll(pane);
     }
 
-    public void edytujPracownika(ActionEvent event) throws  IOException{
+    private boolean walidacjaPol() {
+        if (userImie.getText().isEmpty() | userNazwisko.getText().isEmpty() | userLogin.getText().isEmpty()
+                | userEmail.getText().isEmpty() | userTelefon.getText().isEmpty()) {
+
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Informacja");
+            alert.setHeaderText(null);
+            alert.setContentText("Uzupełnij wszystkie pola");
+            alert.showAndWait();
+
+
+            return false;
+        }
+        if (userMiejscowosc.getText().isEmpty() | userPesel.getText().isEmpty()){
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Informacja");
+            alert.setHeaderText(null);
+            alert.setContentText("Uzupełnij wszystkie pola");
+            alert.showAndWait();
+
+            return false;
+        }
+        return true;
+    }
+
+    private boolean walidacjaDaty() {
+        if (userData.getValue().equals(null)) {
+
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Informacja");
+            alert.setHeaderText(null);
+            alert.setContentText("Uzupełnij wszystkie pola");
+            alert.showAndWait();
+
+
+            return false;
+        }
+        return true;
+    }
+
+    private boolean walidacjaImie(){
+        Pattern p = Pattern.compile("[a-zA-Z]+");
+        Matcher m = p.matcher(userImie.getText());
+
+        if(m.find() && m.group().equals(userImie.getText())){
+            return true;
+        }else
+        {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Informacja");
+            alert.setHeaderText(null);
+            alert.setContentText("Znaki specjalne w imieniu nie są obsługiwane");
+            alert.showAndWait();
+
+            return false;
+        }
+
+    }
+
+    private boolean walidacjaNazwisko(){
+        Pattern p = Pattern.compile("[a-zA-Z]+");
+        Matcher m = p.matcher(userNazwisko.getText());
+
+        if(m.find() && m.group().equals(userNazwisko.getText())){
+            return true;
+        }else
+        {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Informacja");
+            alert.setHeaderText(null);
+            alert.setContentText("Znaki specjalne w nazwisku nie są obsługiwane");
+            alert.showAndWait();
+
+            return false;
+        }
+
+    }
+
+    private boolean walidacjaMiejscowosc(){
+        Pattern p = Pattern.compile("[a-zA-Z]+");
+        Matcher m = p.matcher(userMiejscowosc.getText());
+
+        if(m.find() && m.group().equals(userMiejscowosc.getText())){
+            return true;
+        }else
+        {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Informacja");
+            alert.setHeaderText(null);
+            alert.setContentText("Znaki specjalne w nazwie miejscowości nie są obsługiwane");
+            alert.showAndWait();
+
+            return false;
+        }
+
+    }
+
+    private boolean walidacjaEmail(){
+        Pattern p = Pattern.compile("^(.+)@(.+)$");
+        Matcher m = p.matcher(userEmail.getText());
+
+        if(m.find() && m.group().equals(userEmail.getText())){
+            return true;
+        }else
+        {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Informacja");
+            alert.setHeaderText(null);
+            alert.setContentText("Email niepoprawny");
+            alert.showAndWait();
+
+            return false;
+        }
+
+    }
+
+    private boolean walidacjaPesel(){
+        Pattern p = Pattern.compile("^[0-9]{11}$");
+        Matcher m = p.matcher(userPesel.getText());
+
+        if(m.find() && m.group().equals(userPesel.getText())){
+            return true;
+        }else
+        {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Informacja");
+            alert.setHeaderText(null);
+            alert.setContentText("PESEL niepoprawny");
+            alert.showAndWait();
+
+            return false;
+        }
+
+    }
+
+    public void edytujPracownika(ActionEvent event) throws  IOException {
         System.out.println("-");
+        String imie = String.valueOf(userImie.getCharacters());
+        String nazwisko = String.valueOf(userNazwisko.getCharacters());
+        String login = String.valueOf(userLogin.getCharacters());
+        String pesel = String.valueOf(userPesel.getText());
+        String data_urodzenia = userData.getValue().toString();
+        String miejscowosc = String.valueOf(userMiejscowosc.getCharacters());
+        String telefon = String.valueOf(userTelefon.getCharacters());
+        String email = String.valueOf(userEmail.getCharacters());
+        String haslo = String.valueOf(userHaslo.getCharacters());
+
 
         TablePosition pozycja = tabelka.getSelectionModel().getSelectedCells().get(0);
         int index = pozycja.getRow();
 
-        String login = String.valueOf(userLogin.getCharacters());
-        String haslo = String.valueOf(userHaslo.getCharacters());
-        String imie = String.valueOf(userImie.getCharacters());
-        String nazwisko = String.valueOf(userNazwisko.getCharacters());
-        String data = String.valueOf(userData.getCharacters());
-        String miejscowosc = String.valueOf(userMiejscowosc.getCharacters());
-        String tel = String.valueOf(userTelefon.getCharacters());
-        String mail = String.valueOf(userEmail.getCharacters());
-        String pesel = String.valueOf(userPesel.getCharacters());
-        String rodzaj = "rodzaj";
+        if (walidacjaPol() & walidacjaImie() & walidacjaNazwisko() & walidacjaMiejscowosc() & walidacjaEmail() & walidacjaPesel() & walidacjaDaty())
+            try {
+                index++;
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+
+                PreparedStatement stmt = con.prepareStatement("SELECT * FROM user");
+                String zapytanie = "Select * FROM user ORDER BY user_id LIMIT " + index;
+                ResultSet rs = stmt.executeQuery(zapytanie);
+                String a = "0";
+                int i = 0;
+                while (rs.next()) {
+                    a = rs.getString(1);
+                    i++;
+                }
+                int numer = Integer.parseInt(a);
+
+                System.out.println(numer);
+                PreparedStatement stmt2 = con.prepareStatement("UPDATE `user` SET `imie`=(?),`nazwisko`=(?),`login`=(?),`haslo`=(?),`pesel`=(?),`data_urodzenia`=(?),`miejscowosc`=(?),`tel`=(?), `email`=(?) WHERE user_id=(?)");
+                stmt2.setString(1, imie);
+                stmt2.setString(2, nazwisko);
+                stmt2.setString(3, login);
+                stmt2.setString(4, haslo);
+                stmt2.setString(5, pesel);
+                stmt2.setString(6, data_urodzenia);
+                stmt2.setString(7, miejscowosc);
+                stmt2.setString(8, telefon);
+                stmt2.setString(9, email);
+                stmt2.setInt(10, numer);
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Informacja");
+                alert.setHeaderText(null);
+                alert.setContentText("Dane pracownika zostały zmodyfikowane pomyślnie!");
+                alert.showAndWait();
+
+                stmt2.executeUpdate();
+                tabelka.refresh();
 
 
-
-        try {
-            index++;
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
-
-            PreparedStatement stmt = con.prepareStatement("SELECT * FROM user");
-            String zapytanie = "Select * FROM user ORDER BY user_id LIMIT " + index;
-            ResultSet rs = stmt.executeQuery(zapytanie);
-            String a = "0";
-            int i=0;
-            while(rs.next()) {
-                a = rs.getString(1);
-                i++;
+            } catch (Exception e) {
+                System.out.println(e);
             }
-            int numer = Integer.parseInt(a);
-            System.out.println(numer);
-            PreparedStatement stmt2 = con.prepareStatement("UPDATE `user` SET `login`=(?),`haslo`=(?),`imie`=(?),`nazwisko`=(?),`data_urodzenia`=(?),`miejscowosc`=(?),`tel`=(?), `email`=(?), `pesel`=(?), `rodzaj`=(?) WHERE user_id=(?)");
-            stmt2.setString(1, login);
-            stmt2.setString(2, haslo);
-            stmt2.setString(3, imie);
-            stmt2.setString(4, nazwisko);
-            stmt2.setString(5, data);
-            stmt2.setString(6, miejscowosc);
-            stmt2.setString(7, tel);
-            stmt2.setString(8, mail);
-            stmt2.setString(9, pesel);
-            stmt2.setString(10, rodzaj);
-            stmt2.setInt(11, numer);
-            stmt2.executeUpdate();
-            tabelka.refresh();
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajPracownikami.fxml"));
+            adminPane.getChildren().setAll(pane);
 
-
-        }catch (Exception e)
-        {
-            System.out.println(e);
         }
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajPracownikami.fxml"));
-        adminPane.getChildren().setAll(pane);
-        tabelka.refresh();
-
-    }
 
     public void usunPracownika(ActionEvent event) throws IOException {
-
         TablePosition pozycja = tabelka.getSelectionModel().getSelectedCells().get(0);
         int index = pozycja.getRow();
 
@@ -177,6 +314,14 @@ public class zarzadzajPracownikamiController implements Initializable {
 
             PreparedStatement stmt2 = con.prepareStatement("DELETE FROM user WHERE user_id = (?)");
             stmt2.setInt(1, numer);
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Informacja");
+            alert.setHeaderText(null);
+            alert.setContentText("Pomyślnie usunięto pracownika!");
+            alert.showAndWait();
+
+
             stmt2.executeUpdate();
 
 
@@ -191,61 +336,58 @@ public class zarzadzajPracownikamiController implements Initializable {
     }
 
 
- /*   public void dodajPracownika(ActionEvent event) throws IOException{
-        String imie = String.valueOf(imiePracownik.getCharacters());
-        String nazwisko = String.valueOf(nazwiskoPracownik.getCharacters());
-        String login = String.valueOf(loginPracownik.getCharacters());
-        String pesel = String.valueOf(peselPracownik.getText());
-        String data_urodzenia = String.valueOf(dataPracownik.getCharacters());
-        String miejscowosc = String.valueOf(miejscowoscPracownik.getCharacters());
-        String telefon = String.valueOf(telefonPracownik.getCharacters());
-        String email = String.valueOf(emailPracownik.getCharacters());
+    public void dodajPracownika(ActionEvent event) throws IOException{
+        String imie = String.valueOf(userImie.getCharacters());
+        String nazwisko = String.valueOf(userNazwisko.getCharacters());
+        String login = String.valueOf(userLogin.getCharacters());
+        String pesel = String.valueOf(userPesel.getText());
+        String data_urodzenia = userData.getValue().toString();
+        String miejscowosc = String.valueOf(userMiejscowosc.getCharacters());
+        String telefon = String.valueOf(userTelefon.getCharacters());
+        String email = String.valueOf(userEmail.getCharacters());
 
+        if (walidacjaPol() & walidacjaImie() & walidacjaNazwisko() & walidacjaMiejscowosc() & walidacjaEmail() & walidacjaPesel() & walidacjaDaty())
+             try {
+                 Class.forName("com.mysql.cj.jdbc.Driver");
+                 Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+                 PreparedStatement stmt2 = con.prepareStatement("Select MAX(user_id) FROM `user` WHERE `rodzaj` = 'worker'");
+                 ResultSet rs = stmt2.executeQuery("SELECT * FROM `user` WHERE `rodzaj` = 'worker'");
+                 int i=1;
+                 int n=1;
+                 while(rs.next()){
+                     i++;
+                 }
+                 Integer puste= i+1;
+                 String haslo= "haslo";
+                 String rodzaj = "worker";
 
+                 PreparedStatement stmt = con.prepareStatement("INSERT INTO user VALUES(?,?,?,?,?,?,?,?,?,?,?)");
+                 stmt.setInt(1, i);
+                 stmt.setString(2, login);
+                 stmt.setString(3, haslo);
+                 stmt.setString(4, imie);
+                 stmt.setString(5, nazwisko);stmt.setString(6, data_urodzenia);
+                 stmt.setString(7, miejscowosc);
+                 stmt.setString(8, telefon);
+                 stmt.setString(9, email);
+                 stmt.setString(10, pesel);
+                 stmt.setString(11,rodzaj);
+                 stmt.executeUpdate();
 
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
-            PreparedStatement stmt2 = con.prepareStatement("Select MAX(user_id) FROM `user` WHERE `rodzaj` = 'worker'");
-            ResultSet rs = stmt2.executeQuery("SELECT * FROM `user` WHERE `rodzaj` = 'worker'");
-            int i=1;
-            int n=1;
-            while(rs.next()){
-                i++;
-            }
-            Integer puste= i+1;
-            String haslo= "haslo";
-            String rodzaj = "worker";
+                 rs = stmt2.executeQuery("SELECT * FROM `user` WHERE user_id = (SELECT MAX(user_id) FROM user)");
+                 if(rs.next()) {
+                       System.out.println(rs.getString(2));
+                       oblist2.add(new ModelTable( rs.getString(4),rs.getString(5),rs.getString(6), rs.getString(7), rs.getString(10), rs.getString(8), rs.getString(2), rs.getString(9)));
+                 }
 
-            PreparedStatement stmt = con.prepareStatement("INSERT INTO user VALUES(?,?,?,?,?,?,?,?,?,?,?)");
-            stmt.setInt(1, i);
-            stmt.setString(2, login);
-            stmt.setString(3, haslo);
-            stmt.setString(4, imie);
-            stmt.setString(5, nazwisko);
-            stmt.setString(6, data_urodzenia);
-            stmt.setString(7, miejscowosc);
-            stmt.setString(8, telefon);
-            stmt.setString(9, email);
-            stmt.setString(10, pesel);
-            stmt.setString(11,rodzaj);
-            stmt.executeUpdate();
-
-            rs = stmt2.executeQuery("SELECT * FROM `user` WHERE user_id = (SELECT MAX(user_id) FROM user)");
-            if(rs.next()) {
-                System.out.println(rs.getString(2));
-                oblist2.add(new ModelTableUser(rs.getString(4), rs.getString(5),rs.getString(2), rs.getString(10), rs.getString(6), rs.getString(7), rs.getString(9), rs.getString(8)));
-            }
-
-        }catch (Exception e)
-        {
-            System.out.println(e);
-        }
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajPracownikami.fxml"));
-        adminPane.getChildren().setAll(pane);
-        tabelka_pracownicy.refresh();
-
-    }*/
+                 }catch (Exception e)
+                 {
+                    System.out.println(e);
+                 }
+                 AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajPracownikami.fxml"));
+                 adminPane.getChildren().setAll(pane);
+                 tabelka.refresh();
+    }
 
     public void klik(ActionEvent event) throws  IOException{        //funkcja przenosi dane do tabelki po lewej stronie, jak tyknie sie wiersz w tabeli to przenosi
         //TablePosition pozycja = tabelka_pojazdy.getSelectionModel().getSelectedCells().get(0);
@@ -295,7 +437,7 @@ public class zarzadzajPracownikamiController implements Initializable {
                 userHaslo.setText(String.valueOf(dane.get(1)));
                 userImie.setText(String.valueOf(dane.get(2)));
                 userNazwisko.setText(String.valueOf(dane.get(3)));
-                userData.setText(String.valueOf(dane.get(4)));
+                userData.setValue(LocalDate.parse(dane.get(4)));
                 userMiejscowosc.setText(String.valueOf(dane.get(5)));
                 userTelefon.setText(String.valueOf(dane.get(6)));
                 userEmail.setText(String.valueOf(dane.get(7)));
