@@ -104,6 +104,7 @@ public class zarzadzajPojazdamiController implements Initializable {
         }
 
     }
+
     private boolean walidacjaMarka(){
         Pattern p = Pattern.compile("([A-za-z0-9-/\"]+)");
         Matcher m = p.matcher(autoMarka.getText());
@@ -122,6 +123,7 @@ public class zarzadzajPojazdamiController implements Initializable {
         }
 
     }
+
     private boolean walidacjaModel(){
         Pattern p = Pattern.compile("([A-za-z0-9-/\"]+)");
         Matcher m = p.matcher(autoModel.getText());
@@ -140,6 +142,7 @@ public class zarzadzajPojazdamiController implements Initializable {
         }
 
     }
+
     private boolean walidacajaRok(){
         Pattern p = Pattern.compile("-?([1-9][0-9]*)?");
         Matcher m = p.matcher(autoRocznik.getText());
@@ -179,7 +182,8 @@ public class zarzadzajPojazdamiController implements Initializable {
     }
 
 
-    public void klik(ActionEvent event) throws  IOException{        //funkcja przenosi dane do tabelki po lewej stronie, jak tyknie sie wiersz w tabeli to przenosi
+    public void klik(ActionEvent event) throws  IOException{
+        //funkcja przenosi dane do tabelki po lewej stronie, jak tyknie sie wiersz w tabeli to przenosi
         //TablePosition pozycja = tabelka_pojazdy.getSelectionModel().getSelectedCells().get(0);
         //int index = pozycja.getRow();
         String abc;
@@ -344,8 +348,6 @@ public class zarzadzajPojazdamiController implements Initializable {
 
         }
 
-
-
     public void dodajAuto(ActionEvent event) throws IOException{
         String marka = String.valueOf(autoMarka.getCharacters());
         String model = String.valueOf(autoModel.getCharacters());
@@ -411,6 +413,7 @@ public class zarzadzajPojazdamiController implements Initializable {
 
         }
     }
+
     public void czyscForm (){
         autoMarka.clear();
         autoDostep.setValue("");

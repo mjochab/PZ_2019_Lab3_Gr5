@@ -66,4 +66,7 @@ public class MenuPracownikController {
     public void dodajWypo(ActionEvent actionEvent) {
         //zarzadzajWypozyczeniami(dodajWypo());
     }
+
+
+
 }
