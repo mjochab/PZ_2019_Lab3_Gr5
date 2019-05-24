@@ -22,6 +22,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class zarzadzajPojazdamiController implements Initializable {
+
     @FXML
     private AnchorPane pracownikPane;
     private AnchorPane zarzadzajPojazdamiPane;
@@ -54,7 +55,6 @@ public class zarzadzajPojazdamiController implements Initializable {
     @FXML private TextField autoPrzebieg;
     @FXML private TextField autoCena;
     @FXML private ChoiceBox<String> autoDostep;
-
 
 
 
@@ -439,17 +439,14 @@ public class zarzadzajPojazdamiController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
         try {
             Connection con = DBConnector.getConnection();
-
             ResultSet rs = con.createStatement().executeQuery("select * from samochod");
 
             while (rs.next()) {
                 //oblist1.add(new ModelTablePojazdy(rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7)));
                 oblist1.add(new ModelTablePojazdy(rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getInt(7) + " km", rs.getInt(8) + " zł/dzień",rs.getString(9)));
             }
-
 
         } catch (SQLException ex) {
             Logger.getLogger(zarzadzajUzytkownikamiAdminController.class.getName()).log(Level.SEVERE, null, ex);
@@ -464,13 +461,13 @@ public class zarzadzajPojazdamiController implements Initializable {
         col_przebieg.setCellValueFactory(new PropertyValueFactory<>("przebieg"));
         col_cena.setCellValueFactory(new PropertyValueFactory<>("cena"));
         col_dostepnosc.setCellValueFactory(new PropertyValueFactory<>("dostepnosc"));
-
         tabelka_pojazdy.setItems(oblist1);
 
 
         autoDostep.getItems().addAll("TAK","NIE");
         autoPaliwo.getItems().addAll("Diesel","Benzyna","Gaz");
         autoRodzaj.getItems().addAll("Sedan","Kombi","Hatchback","Coupe","Limuzyna","Suv","Kabriolet","Roadster");
+        System.out.println(tabelka_pojazdy);
     }
 
 }

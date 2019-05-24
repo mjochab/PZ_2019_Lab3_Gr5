@@ -21,12 +21,10 @@ import java.util.logging.Logger;
 public class zarzadzajWypozyczeniamiController implements Initializable {
     @FXML
     private AnchorPane pracownikPane;
-    private AnchorPane zarzadzajPojazdamiPane;
+    private AnchorPane zarzadzajWypozyczeniamiPane;
 
 
 
-    ObservableList<ModelTableWypozyczenie> oblist1 = FXCollections.observableArrayList();
-    ObservableList<ModelTableWypozyczenie> oblist2 = FXCollections.observableArrayList();
 
     @FXML private TextField Tpesel;
     @FXML private TextField Tmarka;
@@ -37,17 +35,21 @@ public class zarzadzajWypozyczeniamiController implements Initializable {
    @FXML
     private TableView<ModelTableWypozyczenie> tabelka_wypozyczenie;
     @FXML
-    private TableColumn<ModelTableWypozyczenie, String> col_pesel;
+    private TableColumn<ModelTableWypozyczenie, String> col_Pesel;
     @FXML
-    private TableColumn<ModelTableWypozyczenie, String> col_marka;
+    private TableColumn<ModelTableWypozyczenie, String> col_Marka;
     @FXML
-    private TableColumn<ModelTableWypozyczenie, String> col_model;
+    private TableColumn<ModelTableWypozyczenie, String> col_Model;
     @FXML
-    private TableColumn<ModelTableWypozyczenie, String> col_odkiedy;
+    private TableColumn<ModelTableWypozyczenie, String> col_DataPoczatkowa;
     @FXML
-    private TableColumn<ModelTableWypozyczenie, String> col_dokiedy;
+    private TableColumn<ModelTableWypozyczenie, String> col_DataKoncowa;
     @FXML
     private TableColumn<ModelTableWypozyczenie, String> col_cena;
+
+
+    ObservableList<ModelTableWypozyczenie> oblist1 = FXCollections.observableArrayList();
+    //ObservableList<ModelTableWypozyczenie> oblist2 = FXCollections.observableArrayList();
 
     public static void alamakota(){
         System.out.println("Ala ma kot");
@@ -239,14 +241,14 @@ public class zarzadzajWypozyczeniamiController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
         try {
             Connection con = DBConnector.getConnection();
-            System.out.println("1");
             ResultSet rs = con.createStatement().executeQuery("Select user.pesel, samochod.marka, samochod.model, wypozyczenie.data_od, wypozyczenie.data_do, samochod.cena from wypozyczenie inner join user on user.user_id = wypozyczenie.user_id inner join samochod on samochod.samochod_id = wypozyczenie.samochod_id;");
-            System.out.println(rs);
+
             while (rs.next()) {
+
                 oblist1.add(new ModelTableWypozyczenie(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6)));
+
             }
             System.out.println(oblist1);
 
@@ -254,15 +256,20 @@ public class zarzadzajWypozyczeniamiController implements Initializable {
         } catch (SQLException ex) {
             Logger.getLogger(zarzadzajUzytkownikamiController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        System.out.println("jeden");
-        col_pesel.setCellValueFactory(new PropertyValueFactory<>("pesel"));
-        col_marka.setCellValueFactory(new PropertyValueFactory<>("marka"));
-        col_model.setCellValueFactory(new PropertyValueFactory<>("model"));
-        col_odkiedy.setCellValueFactory(new PropertyValueFactory<>("data_poczatkowa"));
-        col_dokiedy.setCellValueFactory(new PropertyValueFactory<>("data_koncowa"));
+
+        col_Pesel.setCellValueFactory(new PropertyValueFactory<>("Pesel"));
+
+        col_Marka.setCellValueFactory(new PropertyValueFactory<>("Marka"));
+
+        col_Model.setCellValueFactory(new PropertyValueFactory<>("Model"));
+
+        col_DataPoczatkowa.setCellValueFactory(new PropertyValueFactory<>("data_poczatkowa"));
+
+        col_DataKoncowa.setCellValueFactory(new PropertyValueFactory<>("data_koncowa"));
+
         col_cena.setCellValueFactory(new PropertyValueFactory<>("cena"));
-        System.out.println("jeden");
-        System.out.println(col_cena);
+
+        System.out.println(tabelka_wypozyczenie);
 
         tabelka_wypozyczenie.setItems(oblist1);
 
