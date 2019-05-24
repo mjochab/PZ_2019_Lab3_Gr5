@@ -197,7 +197,7 @@ public class zarzadzajWypozyczeniamiController implements Initializable {
         {
             System.out.println(e);
         }
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajPojazdami.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajWypozyczeniami.fxml"));
         pracownikPane.getChildren().setAll(pane);
 
     }
@@ -235,7 +235,7 @@ public class zarzadzajWypozyczeniamiController implements Initializable {
         {
             System.out.println(e);
         };
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajPojazdami.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajWypozyczeniami.fxml"));
         pracownikPane.getChildren().setAll(pane);
     }
 

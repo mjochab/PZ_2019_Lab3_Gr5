@@ -51,10 +51,5 @@ public class MenuAdminController {
 
     }
 
-    public void dodajWypo(ActionEvent actionEvent) {
 
-    }
-
-    public void usunWypo(ActionEvent actionEvent) {
-    }
 }

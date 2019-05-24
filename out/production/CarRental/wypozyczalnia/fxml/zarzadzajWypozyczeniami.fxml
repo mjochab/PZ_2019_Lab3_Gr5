@@ -22,7 +22,7 @@
         <TextField fx:id="Tmarka" layoutX="35.0" layoutY="329.0" prefHeight="31.0" prefWidth="183.0" promptText="Marka" />
         <TextField fx:id="Tcena" layoutX="35.0" layoutY="531.0" prefHeight="31.0" prefWidth="183.0" promptText="Cena" />
         <TextField fx:id="Tmodel" layoutX="35.0" layoutY="378.0" prefHeight="31.0" prefWidth="183.0" promptText="Model" />
-        <TableView layoutX="246.0" layoutY="188.0" prefHeight="511.0" prefWidth="993.0">
+        <TableView fx:id="tabelka_wypozyczenie" layoutX="246.0" layoutY="188.0" prefHeight="511.0" prefWidth="993.0">
             <columns>
                 <TableColumn fx:id="col_Pesel" prefWidth="90.0" text="Pesel" />
                 <TableColumn fx:id="col_Marka" prefWidth="135.0" text="Marka" />
