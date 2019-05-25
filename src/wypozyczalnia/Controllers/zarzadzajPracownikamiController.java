@@ -132,6 +132,22 @@ public class zarzadzajPracownikamiController implements Initializable {
         return true;
     }
 
+   /* private boolean walidacjaZaznaczenia) {
+        int index = pozycja.getRow();
+        if (TablePosition pozycja = tabelka.getSelectionModel().getSelectedCells().get(0);) {
+
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Informacja");
+            alert.setHeaderText(null);
+            alert.setContentText("Uzupełnij wszystkie pola");
+            alert.showAndWait();
+
+
+            return false;
+        }
+        return true;
+    }
+*/
     private boolean walidacjaImie(){
         Pattern p = Pattern.compile("[a-zA-Z]+");
         Matcher m = p.matcher(userImie.getText());
@@ -366,7 +382,8 @@ public class zarzadzajPracownikamiController implements Initializable {
                  stmt.setString(2, login);
                  stmt.setString(3, haslo);
                  stmt.setString(4, imie);
-                 stmt.setString(5, nazwisko);stmt.setString(6, data_urodzenia);
+                 stmt.setString(5, nazwisko);
+                 stmt.setString(6, data_urodzenia);
                  stmt.setString(7, miejscowosc);
                  stmt.setString(8, telefon);
                  stmt.setString(9, email);
@@ -449,7 +466,11 @@ public class zarzadzajPracownikamiController implements Initializable {
 
         }catch (Exception e)
         {
-            System.out.println(e);
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Informacja");
+            alert.setHeaderText(null);
+            alert.setContentText("Zaznacz linie!");
+            alert.showAndWait();
         };
 
 
@@ -469,7 +490,7 @@ public class zarzadzajPracownikamiController implements Initializable {
 
 
             while (rs.next()){
-                oblist2.add(new ModelTable( rs.getString(4), rs.getString(5),rs.getString(6), rs.getString(7), rs.getString(10), rs.getString(8), rs.getString(3),rs.getString(9)));
+                oblist2.add(new ModelTable(rs.getString(4), rs.getString(5),rs.getString(6), rs.getString(7), rs.getString(10), rs.getString(8), rs.getString(2),rs.getString(9)));
             }
 
 
