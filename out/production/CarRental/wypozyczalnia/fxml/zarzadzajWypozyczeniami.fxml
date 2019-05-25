@@ -103,7 +103,7 @@
                 </ImageView>
             </children>
         </GridPane>
-        <Button layoutX="51.0" layoutY="229.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="153.0" text="Uzupelnij pola poniżej">
+        <Button layoutX="51.0" layoutY="229.0" onAction="#klik" mnemonicParsing="false" prefHeight="29.0" prefWidth="153.0" text="Uzupelnij pola poniżej">
             <font>
                 <Font size="13.0" />
             </font>

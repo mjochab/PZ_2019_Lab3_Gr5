@@ -78,8 +78,10 @@ public class zarzadzajWypozyczeniamiController implements Initializable {
         String pesel = String.valueOf(this.Tpesel.getCharacters());
         String marka = String.valueOf(this.Tmarka.getCharacters());
         String cena = String.valueOf(this.Tcena.getCharacters());
+
         String dataStart = String.valueOf(this.TdataStart.getValue());
         String dataKoniec = String.valueOf(this.TdataKoniec.getValue());
+
         String model = String.valueOf(this.Tmodel.getCharacters());
 
         try {
@@ -89,6 +91,8 @@ public class zarzadzajWypozyczeniamiController implements Initializable {
             Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
             PreparedStatement stmt2 = con.prepareStatement("Select MAX(wypozyczenie_id) FROM wypozyczenie");
             ResultSet rs = stmt2.executeQuery("Select * FROM wypozyczenia");
+
+            
 
             int i;
             for (i = 1; rs.next(); ++i) {
@@ -104,6 +108,7 @@ public class zarzadzajWypozyczeniamiController implements Initializable {
                 idUser = rs.getString(1);
                 i++;
             } //pobranie id usera
+
 
             PreparedStatement stm = con.prepareStatement("select samochod_id from samochod where marka = (?) and model = (?) limit 1");
             stm.setString(1, marka);
@@ -132,8 +137,66 @@ public class zarzadzajWypozyczeniamiController implements Initializable {
         }
 
     }
+    /*public void klik(ActionEvent event) throws  IOException{
+        String abc;
+        abc = tabelka_wypozyczenie.toString();
+        System.out.println(abc);
+        ArrayList<String> dane = new ArrayList<String>();
+        try {
 
-    public void modujWypo(ActionEvent event) throws  IOException{
+            TablePosition pozycja = tabelka_wypozyczenie.getSelectionModel().getSelectedCells().get(0);
+            int index = pozycja.getRow();
+
+            index++;
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+
+            PreparedStatement stmt = con.prepareStatement("SELECT * FROM wypozyczenie");
+            String zapytanie = "Select * FROM wypozyczenie ORDER BY wypozyczenie_id LIMIT " + index;
+            ResultSet rs = stmt.executeQuery(zapytanie);
+            String a = "0";
+            int i=0;
+            while(rs.next()) {
+                a = rs.getString(1);
+                i++;
+            }
+            int numer = Integer.parseInt(a);
+            System.out.println(numer);
+
+            zapytanie = "Select * FROM wypozyczenie where wypozyczenie_id = " + numer;
+            ResultSet rs2 = stmt.executeQuery(zapytanie);
+            System.out.println(rs2);
+            if(rs2.next()) {
+                dane.add(rs2.getString("marka"));
+                dane.add(rs2.getString("model"));
+                dane.add(rs2.getString("rodzaj"));
+                dane.add(rs2.getString("rocznik"));
+                dane.add(rs2.getString("paliwo"));
+                dane.add(rs2.getString("przebieg"));
+                dane.add(rs2.getString("cena"));
+                dane.add(rs2.getString("dostepnosc"));
+
+                autoMarka.setText(String.valueOf(dane.get(0)));
+                autoModel.setText(String.valueOf(dane.get(1)));
+                autoRodzaj.setValue(String.valueOf(dane.get(2)));
+                autoRocznik.setText(String.valueOf(dane.get(3)));
+                autoPaliwo.setValue(String.valueOf(dane.get(4)));
+                autoPrzebieg.setText(String.valueOf(dane.get(5)));
+                autoCena.setText(String.valueOf(dane.get(6)));
+                autoDostep.setValue(String.valueOf(dane.get(7)));
+            }
+
+
+        }catch (Exception e)
+        {
+            System.out.println(e);
+        };
+    }*/
+        public void klik(ActionEvent event) throws IOException{
+            System.out.println("klik");
+        }
+
+        public void modujWypo(ActionEvent event) throws  IOException{
 
         System.out.println("2");
 

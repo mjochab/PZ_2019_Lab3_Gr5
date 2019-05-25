@@ -36,7 +36,7 @@ public class zarzadzajWypozyczeniamiAdminController {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/menuAdmin.fxml"));
         adminPane.getChildren().setAll(pane);
     }
-    public void dodajWypozyczenie(ActionEvent event) throws IOException {
+    public void dodajWypo(ActionEvent event) throws IOException {
         System.out.println("2");
         String pesel = String.valueOf(this.userPesel.getCharacters());
         String marka = String.valueOf(this.marka.getCharacters());
