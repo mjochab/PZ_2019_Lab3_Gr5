@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Walidacja pol w formularzu - końcowy etap pracy nad okienkeim zarzadzania pojazdami u pracownika">
-      <change beforePath="$PROJECT_DIR$/src/wypozyczalnia/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/wypozyczalnia/Controllers/ModelTableWypozyczenia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Controllers/ModelTableWypozyczenia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/wypozyczalnia/Controllers/ModelTableWypozyczenie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Controllers/ModelTableWypozyczenie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/wypozyczalnia/Controllers/historiaWypozyczenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Controllers/historiaWypozyczenController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/wypozyczalnia/fxml/historiaWypozyczen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/fxml/historiaWypozyczen.fxml" afterDir="false" />
     </list>
@@ -86,7 +83,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajWypozyczeniamiController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
+            <state relative-caret-position="390">
               <caret line="95" column="17" lean-forward="true" selection-start-line="95" selection-start-column="17" selection-end-line="95" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -118,32 +115,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/historiaWypozyczenController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1207">
-              <caret line="77" column="54" selection-start-line="77" selection-start-column="54" selection-end-line="77" selection-end-column="54" />
+            <state relative-caret-position="233">
+              <caret line="52" column="30" selection-start-line="52" selection-start-column="15" selection-end-line="52" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#logOut#0;class#historiaWypozyczenController#0" />
                 <element signature="method#menuPracownik#0;class#historiaWypozyczenController#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/MenuPracownikController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="66" column="47" lean-forward="true" selection-start-line="66" selection-start-column="47" selection-end-line="66" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/login.fxml">
-          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="554">
-              <caret line="59" column="22" selection-start-line="59" selection-start-column="22" selection-end-line="59" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -208,8 +186,8 @@
       <find>initialize</find>
       <find>location</find>
       <find>controll</find>
-      <find>cont</find>
       <find>zapytanie</find>
+      <find>cont</find>
       <find>usernamedisplay_lbl</find>
     </findStrings>
   </component>
@@ -286,8 +264,8 @@
         <option value="$PROJECT_DIR$/src/wypozyczalnia/Controllers/ModelTableWypozyczenia.java" />
         <option value="$PROJECT_DIR$/src/wypozyczalnia/Controllers/MenuPracownikController.java" />
         <option value="$PROJECT_DIR$/src/wypozyczalnia/Controllers/LoginController.java" />
-        <option value="$PROJECT_DIR$/src/wypozyczalnia/Controllers/historiaWypozyczenController.java" />
         <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/historiaWypozyczen.fxml" />
+        <option value="$PROJECT_DIR$/src/wypozyczalnia/Controllers/historiaWypozyczenController.java" />
       </list>
     </option>
   </component>
@@ -300,7 +278,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
+    <option name="x" value="1273" />
     <option name="width" value="1294" />
     <option name="height" value="1047" />
   </component>
@@ -371,7 +349,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558739346941" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558744696306" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="dynamic.classpath" value="false" />
@@ -821,7 +799,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1294" height="1047" extended-state="0" />
+    <frame x="1273" y="0" width="1294" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.26418152" />
@@ -844,7 +822,7 @@
       <window_info anchor="bottom" id="Changes" order="10" />
       <window_info anchor="bottom" id="Profiler" order="11" />
       <window_info anchor="bottom" id="Event Log" order="12" weight="0.3243626" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.31527627" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.31509846" />
       <window_info anchor="bottom" id="Terminal" order="14" weight="0.32932165" />
       <window_info anchor="bottom" id="GitHub Pull Requests" order="15" weight="0.33694476" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -1154,13 +1132,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/ModelTableWypozyczenie.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="45" lean-forward="true" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/menuKlient.fxml">
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
       <provider editor-type-id="text-editor">
@@ -1177,17 +1148,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/ModelTableWypozyczenia.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="71" column="29" selection-start-line="71" selection-start-column="29" selection-end-line="71" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/menuPracownik.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
@@ -1195,32 +1155,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#printHello#0;class#LoginController#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/historiaWypozyczen.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="258" selection-start-line="15" selection-start-column="258" selection-end-line="15" selection-end-column="258" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajPracownikami.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="26" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajWypozyczeniamiController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="95" column="17" lean-forward="true" selection-start-line="95" selection-start-column="17" selection-end-line="95" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1237,17 +1171,61 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajWypozyczeniamiController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="95" column="17" lean-forward="true" selection-start-line="95" selection-start-column="17" selection-end-line="95" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajPracownikami.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="26" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/ModelTableWypozyczenie.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="45" lean-forward="true" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/ModelTableWypozyczenia.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="71" column="29" selection-start-line="71" selection-start-column="29" selection-end-line="71" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/MenuPracownikController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
+        <state relative-caret-position="712">
           <caret line="66" column="47" lean-forward="true" selection-start-line="66" selection-start-column="47" selection-end-line="66" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/menuPracownik.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/historiaWypozyczen.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="258" selection-start-line="15" selection-start-column="258" selection-end-line="15" selection-end-column="258" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/historiaWypozyczenController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1207">
-          <caret line="77" column="54" selection-start-line="77" selection-start-column="54" selection-end-line="77" selection-end-column="54" />
+        <state relative-caret-position="233">
+          <caret line="52" column="30" selection-start-line="52" selection-start-column="15" selection-end-line="52" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#logOut#0;class#historiaWypozyczenController#0" />

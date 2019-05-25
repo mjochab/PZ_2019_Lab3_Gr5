@@ -44,12 +44,13 @@ public class historiaWypozyczenController implements Initializable {
     @FXML
     public Label usernamedisplay_lbl;
 
-
     ObservableList<ModelTableWypozyczenia> oblist5 = FXCollections.observableArrayList();
 
+    String user;
     public void displayName (String usernamedisplay){
 
         this.usernamedisplay_lbl.setText(usernamedisplay);
+        user = usernamedisplay;
 
     }
 
@@ -66,8 +67,13 @@ public class historiaWypozyczenController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+
+        String user = usernamedisplay_lbl.getText();
+        int userid = Integer.parseInt(user);
+
         try {
             Connection con = DBConnector.getConnection();
+
 
             ResultSet rs = con.createStatement().executeQuery("SELECT samochod.marka, samochod.model, wypozyczenie.data_od, wypozyczenie.data_do, samochod.cena, user.user_id\n" +
                     "FROM samochod\n" +
@@ -75,7 +81,7 @@ public class historiaWypozyczenController implements Initializable {
                     "ON samochod.samochod_id = wypozyczenie.samochod_id\n" +
                     "JOIN user\n" +
                     "ON wypozyczenie.user_id = user.user_id\n" +
-                    "WHERE user.user_id= 47 ");
+                    "WHERE user.user_id=" + userid);
 
             while (rs.next()) {
                 oblist5.add(new ModelTableWypozyczenia(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5)+ " zł/dzień", rs.getString(6)));
