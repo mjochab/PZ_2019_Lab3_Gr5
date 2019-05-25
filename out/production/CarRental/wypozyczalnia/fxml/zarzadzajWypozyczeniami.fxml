@@ -108,8 +108,8 @@
                 <Font size="13.0" />
             </font>
         </Button>
-        <DatePicker fx:id="Tdata_start" layoutX="36.0" layoutY="428.0" prefHeight="31.0" prefWidth="183.0" promptText="Data początkowa" />
-        <DatePicker fx:id="Tdata_koniec" layoutX="36.0" layoutY="480.0" prefHeight="31.0" prefWidth="183.0" promptText="Data końcowa" />
+        <DatePicker fx:id="TdataStart" layoutX="36.0" layoutY="428.0" prefHeight="31.0" prefWidth="183.0" promptText="Data początkowa" />
+        <DatePicker fx:id="TdataKoniec" layoutX="36.0" layoutY="480.0" prefHeight="31.0" prefWidth="183.0" promptText="Data końcowa" />
         <Button layoutX="97.0" layoutY="584.0" mnemonicParsing="false" onAction="#dodajWypo" prefHeight="48.0" prefWidth="122.0" style="-fx-background-color: #e27171;" text="DODAJ">
             <graphic>
                 <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">

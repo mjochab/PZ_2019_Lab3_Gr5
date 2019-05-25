@@ -14,16 +14,15 @@ import wypozyczalnia.DBConnector;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.time.LocalDate;
 
 public class zarzadzajWypozyczeniamiController implements Initializable {
     @FXML
     private AnchorPane pracownikPane;
-    private AnchorPane zarzadzajWypozyczeniamiPane;
 
 
 
@@ -93,7 +92,7 @@ public class zarzadzajWypozyczeniamiController implements Initializable {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
             PreparedStatement stmt2 = con.prepareStatement("Select MAX(wypozyczenie_id) FROM wypozyczenie");
-            ResultSet rs = stmt2.executeQuery("Select * FROM wypozyczenia");
+            ResultSet rs = stmt2.executeQuery("Select * FROM wypozyczenie");
 
 
 
@@ -167,15 +166,9 @@ public class zarzadzajWypozyczeniamiController implements Initializable {
             zapytanie = "Select data_od, data_do, user_id FROM wypozyczenie ORDER BY wypozyczenie_id LIMIT " + index;
             rs = stmt.executeQuery(zapytanie);
             if(rs.next()){
-                String jeden, dwa;
-                jeden = rs.getString(1);
-                dwa = rs.getString(2);
-                System.out.println(jeden);
-                System.out.println(dwa);
 
-                TdataStart.setValue(LocalDate.parse(jeden));
-
-                TdataKoniec.setValue(LocalDate.parse(dwa));
+                TdataStart.setValue(LocalDate.parse(rs.getString(1)));
+                TdataKoniec.setValue(LocalDate.parse(rs.getString(2)));
 
             }
 
