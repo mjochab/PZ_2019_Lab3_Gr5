@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 25 Maj 2019, 12:24
+-- Czas generowania: 25 Maj 2019, 12:54
 -- Wersja serwera: 10.1.38-MariaDB
 -- Wersja PHP: 7.3.3
 
@@ -38,7 +38,7 @@ CREATE TABLE `samochod` (
   `przebieg` int(11) DEFAULT NULL,
   `cena` int(11) DEFAULT NULL,
   `dostepnosc` varchar(3) COLLATE utf32_polish_ci DEFAULT NULL,
-  `user_id` int(11) NOT NULL
+  `user_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_polish_ci;
 
 --
@@ -46,13 +46,13 @@ CREATE TABLE `samochod` (
 --
 
 INSERT INTO `samochod` (`samochod_id`, `marka`, `model`, `rodzaj`, `rocznik`, `paliwo`, `przebieg`, `cena`, `dostepnosc`, `user_id`) VALUES
-(1, 'Audi', 'A3', 'Suv', 1996, 'Benzyna', 195000, 1500, 'TAK', 0),
-(2, 'Audi', 'A3', 'Coupe', 1996, 'Benzyna', 250000, 130, 'NIE', 0),
-(3, 'Pegueot', '206', 'Hatchback', 2006, 'Diesel', 150000, 250, 'TAK', 0),
-(4, 'Renault', 'Laguna', 'Kombi', 1999, 'Gaz', 250000, 135, 'NIE', 0),
-(5, 'Renault', 'Megane', 'Kombi', 2009, 'Diesel', 250000, 125, 'TAK', 0),
-(6, 'Renault', 'Clio', 'Coupe', 2006, 'Gaz', 150000, 1500, 'NIE', 0),
-(7, 'Citroen', 'C4', 'Hatchback', 2006, 'Benzyna', 150000, 150, 'NIE', 37);
+(1, 'Audi', 'A3', 'Suv', 1996, 'Benzyna', 195000, 1500, 'TAK', 47),
+(2, 'Audi', 'A3', 'Coupe', 1996, 'Benzyna', 250000, 130, 'NIE', 46),
+(3, 'Pegueot', '206', 'Hatchback', 2006, 'Diesel', 150000, 250, 'TAK', 50),
+(4, 'Renault', 'Laguna', 'Kombi', 1999, 'Gaz', 250000, 135, 'NIE', 51),
+(5, 'Renault', 'Megane', 'Kombi', 2009, 'Diesel', 250000, 125, 'TAK', 48),
+(6, 'Renault', 'Clio', 'Coupe', 2006, 'Gaz', 150000, 1500, 'NIE', 45),
+(7, 'Citroen', 'C4', 'Hatchback', 2006, 'Benzyna', 150000, 150, 'NIE', 48);
 
 -- --------------------------------------------------------
 
@@ -101,9 +101,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `login`, `haslo`, `imie`, `nazwisko`, `data_urodzenia`, `miejscowosc`, `tel`, `email`, `pesel`, `rodzaj`) VALUES
-(38, 'kli', 'klient3', 'Jan', 'Nowak', '1993-12-12', 'Lancut', 535000535, 'email@email.pl', 2147483647, 'worker'),
+(38, 'klient1', 'klient1', 'Jan', 'Nowak', '1993-12-12', 'Lancut', 535000535, 'email@email.pl', 2147483647, 'worker'),
 (42, 'klient2', 'klient3', 'Jan', 'Nowak', '1993-12-12', 'Lancut', 535000535, 'email@email.pl', 2147483647, 'worker'),
-(43, 'kl', 'klient3', 'Jan', 'Nowak', '1993-12-12', '?a?cut', 535000535, 'email@email.pl', 2147483647, 'worker'),
+(43, 'klient3', 'klient3', 'Jan', 'Nowak', '1993-12-12', 'Łańcut', 535000535, 'email@email.pl', 2147483647, 'worker'),
 (45, 'klient5', 'klient5', 'Jan', 'Nowak', '1993-12-12', 'Łancut', 535000535, 'email@email.pl', 2147483647, 'klient'),
 (46, 'worker1', 'worker1', 'Paweł', 'Szybki', '1993-12-12', 'Rzeszów', 535000535, 'email@email.pl', 2147483647, 'worker'),
 (47, 'worker2', 'worker2', 'Paweł', 'Szybki', '1993-12-12', 'Rzeszów', 535000535, 'email@email.pl', 2147483647, 'worker'),
@@ -145,7 +145,8 @@ INSERT INTO `wypozyczenie` (`wypozyczenie_id`, `user_id`, `samochod_id`, `data_o
 -- Indeksy dla tabeli `samochod`
 --
 ALTER TABLE `samochod`
-  ADD PRIMARY KEY (`samochod_id`);
+  ADD PRIMARY KEY (`samochod_id`),
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- Indeksy dla tabeli `udostepnienie`
@@ -205,16 +206,24 @@ ALTER TABLE `wypozyczenie`
 --
 
 --
+-- Ograniczenia dla tabeli `samochod`
+--
+ALTER TABLE `samochod`
+  ADD CONSTRAINT `samochod_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
+
+--
 -- Ograniczenia dla tabeli `udostepnienie`
 --
 ALTER TABLE `udostepnienie`
-  ADD CONSTRAINT `udostepnienie_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `udostepnienie` (`user_id`);
+  ADD CONSTRAINT `udostepnienie_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `udostepnienie` (`user_id`),
+  ADD CONSTRAINT `udostepnienie_ibfk_2` FOREIGN KEY (`samochod_id`) REFERENCES `samochod` (`samochod_id`);
 
 --
 -- Ograniczenia dla tabeli `wypozyczenie`
 --
 ALTER TABLE `wypozyczenie`
-  ADD CONSTRAINT `wypozyczenie_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `udostepnienie` (`user_id`);
+  ADD CONSTRAINT `wypozyczenie_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `udostepnienie` (`user_id`),
+  ADD CONSTRAINT `wypozyczenie_ibfk_2` FOREIGN KEY (`samochod_id`) REFERENCES `samochod` (`samochod_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
