@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.time.LocalDate;
 
 public class zarzadzajWypozyczeniamiController implements Initializable {
     @FXML
@@ -81,11 +82,11 @@ public class zarzadzajWypozyczeniamiController implements Initializable {
         String cena = String.valueOf(this.Tcena.getCharacters());
         String dataStart = TdataStart.getValue().toString();
         System.out.println(dataStart);
-        System.out.println("dupa1");
+
         String dataKoniec = TdataKoniec.getValue().toString();
-        System.out.println("dupa1");
+
         String model = String.valueOf(this.Tmodel.getCharacters());
-        System.out.println("dupa1");
+
         try {
             String idUser = "1";
             String idAuto = "1";
@@ -172,21 +173,21 @@ public class zarzadzajWypozyczeniamiController implements Initializable {
                 System.out.println(jeden);
                 System.out.println(dwa);
 
-                //TdataStart.setValue(LocalDate.parse(jeden));
-                System.out.println("dupa");
-                //TdataKoniec.setValue(LocalDate.parse(dwa));
-                System.out.println("dupa");
+                TdataStart.setValue(LocalDate.parse(jeden));
+
+                TdataKoniec.setValue(LocalDate.parse(dwa));
+
             }
-            System.out.println("dupa");
+
             int numer = Integer.parseInt(a);
             System.out.println(numer);
 
             zapytanie = "Select * FROM wypozyczenie where wypozyczenie_id = " + numer;
-            System.out.println("dupa");
+
 
 
             ResultSet rs2 = stmt.executeQuery(zapytanie);
-            System.out.println("dupa");
+
 
             int j=0;
 
@@ -195,14 +196,14 @@ while(rs2.next()) {
     j = Integer.parseInt(rs2.getString(3));
 }
 
-            System.out.println("dupa");
+
             zapytanie = "Select pesel FROM user where user_id = " + i;
             rs2 = stmt.executeQuery(zapytanie);
             if(rs2.next())
             {
                 Tpesel.setText(rs2.getString(1));
             }
-            System.out.println("dupa");
+
 
             zapytanie = "Select marka, model, cena FROM samochod where samochod_id = " + j;
             rs2 = stmt.executeQuery(zapytanie);
@@ -212,7 +213,7 @@ while(rs2.next()) {
                 Tcena.setText(rs2.getString(3));
             }
 
-            System.out.println("dupa");
+
         }catch (Exception e)
         {
             System.out.println(e);
