@@ -83,7 +83,6 @@ public class zarzadzajWypozyczeniamiController implements Initializable {
         System.out.println(dataStart);
 
         String dataKoniec = TdataKoniec.getValue().toString();
-
         String model = String.valueOf(this.Tmodel.getCharacters());
 
         try {
@@ -105,19 +104,25 @@ public class zarzadzajWypozyczeniamiController implements Initializable {
             stm2.setString(1, pesel);
             stm2.executeQuery();
             String zapytanie = "select user_id from user where pesel = " + pesel +" limit 1";
-            rs = stm2.executeQuery("select user_id from user where pesel = + + limit 1");
+            rs = stm2.executeQuery(zapytanie);
+
             while(rs.next()) {
                 idUser = rs.getString(1);
                 i++;
             } //pobranie id usera
 
-
             PreparedStatement stm = con.prepareStatement("select samochod_id from samochod where marka = (?) and model = (?) limit 1");
+
             stm.setString(1, marka);
+
             stm.setString(2, model);
-            stm.executeQuery();                 //pobranie id auta
-            zapytanie = "select samochod_id from samochod where marka = "+ marka + " and model = "+ model +" limit 1";
+
+            stm.executeQuery();
+
+            zapytanie = "select samochod_id from samochod where marka = '"+ marka + "' and model = '"+ model +"' limit 1";
+
             rs = stm.executeQuery(zapytanie);
+
             while(rs.next()) {
                 idAuto = rs.getString(1);
                 i++;
@@ -247,14 +252,14 @@ while(rs2.next()) {
             String czlowiekID = "1";
 
             stmt = con.prepareStatement("SELECT * FROM samochod");
-            rs = stmt.executeQuery("select user_id from user where pesel = + + limit 1");
+            rs = stmt.executeQuery("select user_id from user where pesel = '"+ pesel +"'  limit 1");
             while(rs.next()) {
                 czlowiekID = rs.getString(1);
                 i++;
             }
 
             String autoID ="1";
-            rs = stmt.executeQuery("select samochod_id from samochod where pesel = + + limit 1");
+            rs = stmt.executeQuery("select samochod_id from samochod where marka = '"+ marka+"' and model='"+model+"' limit 1");
             while(rs.next()) {
                 autoID = rs.getString(1);
                 i++;
@@ -262,14 +267,12 @@ while(rs2.next()) {
 
 
 
-            PreparedStatement stmt2 = con.prepareStatement("UPDATE `wypozyczenie` SET `user_id`=(?),`samochod_id`=(?),`data_od`=(?),`dataStop`=(?), wypozyczenie_id=(?); UPDATE samochod Set cena=(?) where samochod_id=(?)");
+            PreparedStatement stmt2 = con.prepareStatement("UPDATE `wypozyczenie` SET `user_id`=(?),`samochod_id`=(?),`data_od`=(?),`data_do`=(?) where `wypozyczenie_id`=(?)");
             stmt2.setString(1, czlowiekID);
             stmt2.setString(2, autoID);
             stmt2.setString(3, dataStart);
             stmt2.setString(4, dataStop);
-            stmt2.setInt(5, numer);
-            stmt2.setString(6, cena);
-            stmt2.setString(7, autoID);
+            stmt2.setInt(5, index);
             stmt2.executeUpdate();
 
 
@@ -306,7 +309,7 @@ while(rs2.next()) {
             int numer = Integer.parseInt(a);
             System.out.println(numer);
 
-            PreparedStatement stmt2 = con.prepareStatement("DELETE FROM samochod WHERE samochod_id = (?)");
+            PreparedStatement stmt2 = con.prepareStatement("DELETE FROM wypozyczenie WHERE wypozyczenie_id = (?)");
             stmt2.setInt(1, numer);
             stmt2.executeUpdate();
 
