@@ -179,11 +179,6 @@
             </ImageView>
          </children>
       </GridPane>
-            <Button layoutX="38.0" layoutY="206.0" mnemonicParsing="false" onAction="#klik" prefHeight="25.0" prefWidth="162.0" text="Uzupełnij pola poniżej">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </Button>
       <Button layoutX="78.0" layoutY="642.0" mnemonicParsing="false" onAction="#dodajPracownika" prefHeight="48.0" prefWidth="122.0" style="-fx-background-color: #e27171;" text="DODAJ">
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
