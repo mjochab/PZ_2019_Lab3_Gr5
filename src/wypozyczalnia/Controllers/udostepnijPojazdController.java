@@ -279,6 +279,10 @@ public class udostepnijPojazdController implements Initializable {
         pracownikPane.getChildren().setAll(pane);
     }
 
+    public void getIDuser(){
+
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 

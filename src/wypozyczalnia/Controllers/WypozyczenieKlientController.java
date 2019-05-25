@@ -63,13 +63,18 @@ public class WypozyczenieKlientController implements Initializable {
         klientPane.getChildren().setAll(pane);
     }
 
+    public void logOut(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/login.fxml"));
+        klientPane.getChildren().setAll(pane);
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
         try {
             Connection con = DBConnector.getConnection();
 
-            ResultSet rs = con.createStatement().executeQuery("select * from samochod");
+            ResultSet rs = con.createStatement().executeQuery("SELECT * FROM `samochod` WHERE `dostepnosc` = 'TAK'");
 
             while (rs.next()) {
                 //oblist1.add(new ModelTablePojazdy(rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7)));
