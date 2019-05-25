@@ -14,6 +14,7 @@ import wypozyczalnia.DBConnector;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -74,16 +75,17 @@ public class zarzadzajWypozyczeniamiController implements Initializable {
         System.out.println("x");
     }
     public void dodajWypo(ActionEvent event) throws IOException {
-        System.out.println("2");
+
         String pesel = String.valueOf(this.Tpesel.getCharacters());
         String marka = String.valueOf(this.Tmarka.getCharacters());
         String cena = String.valueOf(this.Tcena.getCharacters());
-
-        String dataStart = String.valueOf(this.TdataStart.getValue());
-        String dataKoniec = String.valueOf(this.TdataKoniec.getValue());
-
+        String dataStart = TdataStart.getValue().toString();
+        System.out.println(dataStart);
+        System.out.println("dupa1");
+        String dataKoniec = TdataKoniec.getValue().toString();
+        System.out.println("dupa1");
         String model = String.valueOf(this.Tmodel.getCharacters());
-
+        System.out.println("dupa1");
         try {
             String idUser = "1";
             String idAuto = "1";
@@ -92,7 +94,7 @@ public class zarzadzajWypozyczeniamiController implements Initializable {
             PreparedStatement stmt2 = con.prepareStatement("Select MAX(wypozyczenie_id) FROM wypozyczenie");
             ResultSet rs = stmt2.executeQuery("Select * FROM wypozyczenia");
 
-            
+
 
             int i;
             for (i = 1; rs.next(); ++i) {
@@ -137,18 +139,18 @@ public class zarzadzajWypozyczeniamiController implements Initializable {
         }
 
     }
-    /*public void klik(ActionEvent event) throws  IOException{
+    public void klik(ActionEvent event) throws  IOException{
         String abc;
         abc = tabelka_wypozyczenie.toString();
         System.out.println(abc);
         ArrayList<String> dane = new ArrayList<String>();
         try {
-
             TablePosition pozycja = tabelka_wypozyczenie.getSelectionModel().getSelectedCells().get(0);
             int index = pozycja.getRow();
-
             index++;
             Class.forName("com.mysql.cj.jdbc.Driver");
+            System.out.println(index);
+
             Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
 
             PreparedStatement stmt = con.prepareStatement("SELECT * FROM wypozyczenie");
@@ -160,41 +162,62 @@ public class zarzadzajWypozyczeniamiController implements Initializable {
                 a = rs.getString(1);
                 i++;
             }
+
+            zapytanie = "Select data_od, data_do, user_id FROM wypozyczenie ORDER BY wypozyczenie_id LIMIT " + index;
+            rs = stmt.executeQuery(zapytanie);
+            if(rs.next()){
+                String jeden, dwa;
+                jeden = rs.getString(1);
+                dwa = rs.getString(2);
+                System.out.println(jeden);
+                System.out.println(dwa);
+
+                //TdataStart.setValue(LocalDate.parse(jeden));
+                System.out.println("dupa");
+                //TdataKoniec.setValue(LocalDate.parse(dwa));
+                System.out.println("dupa");
+            }
+            System.out.println("dupa");
             int numer = Integer.parseInt(a);
             System.out.println(numer);
 
             zapytanie = "Select * FROM wypozyczenie where wypozyczenie_id = " + numer;
-            ResultSet rs2 = stmt.executeQuery(zapytanie);
-            System.out.println(rs2);
-            if(rs2.next()) {
-                dane.add(rs2.getString("marka"));
-                dane.add(rs2.getString("model"));
-                dane.add(rs2.getString("rodzaj"));
-                dane.add(rs2.getString("rocznik"));
-                dane.add(rs2.getString("paliwo"));
-                dane.add(rs2.getString("przebieg"));
-                dane.add(rs2.getString("cena"));
-                dane.add(rs2.getString("dostepnosc"));
+            System.out.println("dupa");
 
-                autoMarka.setText(String.valueOf(dane.get(0)));
-                autoModel.setText(String.valueOf(dane.get(1)));
-                autoRodzaj.setValue(String.valueOf(dane.get(2)));
-                autoRocznik.setText(String.valueOf(dane.get(3)));
-                autoPaliwo.setValue(String.valueOf(dane.get(4)));
-                autoPrzebieg.setText(String.valueOf(dane.get(5)));
-                autoCena.setText(String.valueOf(dane.get(6)));
-                autoDostep.setValue(String.valueOf(dane.get(7)));
+
+            ResultSet rs2 = stmt.executeQuery(zapytanie);
+            System.out.println("dupa");
+
+            int j=0;
+
+while(rs2.next()) {
+    i = Integer.parseInt(rs2.getString(2));
+    j = Integer.parseInt(rs2.getString(3));
+}
+
+            System.out.println("dupa");
+            zapytanie = "Select pesel FROM user where user_id = " + i;
+            rs2 = stmt.executeQuery(zapytanie);
+            if(rs2.next())
+            {
+                Tpesel.setText(rs2.getString(1));
+            }
+            System.out.println("dupa");
+
+            zapytanie = "Select marka, model, cena FROM samochod where samochod_id = " + j;
+            rs2 = stmt.executeQuery(zapytanie);
+            if(rs2.next()) {
+                Tmarka.setText(rs2.getString(1));
+                Tmodel.setText(rs2.getString(2));
+                Tcena.setText(rs2.getString(3));
             }
 
-
+            System.out.println("dupa");
         }catch (Exception e)
         {
             System.out.println(e);
         };
-    }*/
-        public void klik(ActionEvent event) throws IOException{
-            System.out.println("klik");
-        }
+    }
 
         public void modujWypo(ActionEvent event) throws  IOException{
 
@@ -207,8 +230,8 @@ public class zarzadzajWypozyczeniamiController implements Initializable {
         String marka = String.valueOf(Tmarka.getCharacters());
         String model = String.valueOf(Tmodel.getCharacters());
         String cena = String.valueOf(Tcena.getCharacters());
-        String dataStart = String.valueOf(TdataStart.getValue());
-        String dataStop = String.valueOf(TdataStart.getValue());
+        String dataStart = TdataStart.getValue().toString();
+        String dataStop = TdataKoniec.getValue().toString();
 
         try {
             index++;

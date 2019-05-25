@@ -35,12 +35,12 @@
         </TableView>
       <DatePicker fx:id="Tdata_start" layoutX="50.0" layoutY="399.0" prefHeight="31.0" prefWidth="183.0" promptText="Data początkowa" />
       <DatePicker fx:id="Tdata_koniec" layoutX="50.0" layoutY="443.0" prefHeight="31.0" prefWidth="183.0" promptText="Data końcowa" />
-      <Button layoutX="65.0" layoutY="266.0" mnemonicParsing="false" onAction="#klik" prefHeight="29.0" prefWidth="153.0" text="Uzupelnij pola poniżej">
+      <Button layoutX="65.0" layoutY="266.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="153.0" text="Uzupelnij pola poniżej">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <Button layoutX="111.0" layoutY="575.0" mnemonicParsing="false" onAction="#dodajWypo" prefHeight="48.0" prefWidth="122.0" style="-fx-background-color: #e27171;" text="DODAJ">
+      <Button layoutX="111.0" layoutY="575.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="122.0" style="-fx-background-color: #e27171;" text="DODAJ">
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -52,7 +52,7 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="257.0" layoutY="729.0" mnemonicParsing="false" onAction="#usunWypo" prefHeight="48.0" prefWidth="156.0" style="-fx-background-color: #e27171;" text="USUŃ">
+      <Button layoutX="257.0" layoutY="729.0" mnemonicParsing="false"  prefHeight="48.0" prefWidth="156.0" style="-fx-background-color: #e27171;" text="USUŃ">
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -64,7 +64,7 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="434.0" layoutY="729.0" mnemonicParsing="false" onAction="#modujWypo" prefHeight="48.0" prefWidth="156.0" style="-fx-background-color: #e27171;" text="EDYTUJ">
+      <Button layoutX="434.0" layoutY="729.0" mnemonicParsing="false"  prefHeight="48.0" prefWidth="156.0" style="-fx-background-color: #e27171;" text="EDYTUJ">
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -155,7 +155,7 @@
             </ImageView>
          </children>
       </GridPane>
-      <Button layoutX="31.0" layoutY="99.0" mnemonicParsing="false" onAction="#menuPracownik" prefHeight="30.0" prefWidth="153.0" style="-fx-background-color: #e27171;" text="POWRÓT">
+      <Button layoutX="31.0" layoutY="99.0" mnemonicParsing="false" onAction="#menuAdmin" prefHeight="30.0" prefWidth="153.0" style="-fx-background-color: #e27171;" text="POWRÓT">
          <graphic>
             <ImageView fitHeight="36.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                <image>
