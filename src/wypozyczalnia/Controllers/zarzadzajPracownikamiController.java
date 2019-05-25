@@ -132,22 +132,7 @@ public class zarzadzajPracownikamiController implements Initializable {
         return true;
     }
 
-   /* private boolean walidacjaZaznaczenia) {
-        int index = pozycja.getRow();
-        if (TablePosition pozycja = tabelka.getSelectionModel().getSelectedCells().get(0);) {
 
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Informacja");
-            alert.setHeaderText(null);
-            alert.setContentText("Uzupełnij wszystkie pola");
-            alert.showAndWait();
-
-
-            return false;
-        }
-        return true;
-    }
-*/
     private boolean walidacjaImie(){
         Pattern p = Pattern.compile("[a-zA-Z]+");
         Matcher m = p.matcher(userImie.getText());
@@ -351,7 +336,6 @@ public class zarzadzajPracownikamiController implements Initializable {
         tabelka.refresh();
     }
 
-
     public void dodajPracownika(ActionEvent event) throws IOException{
         String imie = String.valueOf(userImie.getCharacters());
         String nazwisko = String.valueOf(userNazwisko.getCharacters());
@@ -433,8 +417,6 @@ public class zarzadzajPracownikamiController implements Initializable {
             int numer = Integer.parseInt(a);
             System.out.println(numer);
 
-
-
             zapytanie = "Select * FROM user where user_id = " + numer;
             ResultSet rs2 = stmt.executeQuery(zapytanie);
             System.out.println(rs2);
@@ -459,7 +441,6 @@ public class zarzadzajPracownikamiController implements Initializable {
                 userTelefon.setText(String.valueOf(dane.get(6)));
                 userEmail.setText(String.valueOf(dane.get(7)));
                 userPesel.setText(String.valueOf(dane.get(8)));
-
 
             }
 
