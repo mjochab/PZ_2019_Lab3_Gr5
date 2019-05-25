@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 20 Maj 2019, 11:54
+-- Czas generowania: 25 Maj 2019, 12:24
 -- Wersja serwera: 10.1.38-MariaDB
 -- Wersja PHP: 7.3.3
 
@@ -33,21 +33,26 @@ CREATE TABLE `samochod` (
   `marka` varchar(30) COLLATE utf32_polish_ci DEFAULT NULL,
   `model` varchar(30) COLLATE utf32_polish_ci DEFAULT NULL,
   `rodzaj` varchar(30) COLLATE utf32_polish_ci DEFAULT NULL,
-  `rocznik` varchar(4) COLLATE utf32_polish_ci DEFAULT NULL,
+  `rocznik` int(11) DEFAULT NULL,
   `paliwo` varchar(30) COLLATE utf32_polish_ci DEFAULT NULL,
   `przebieg` int(11) DEFAULT NULL,
-  `cena` float DEFAULT NULL,
-  `dostepnosc` varchar(3) COLLATE utf32_polish_ci DEFAULT NULL
+  `cena` int(11) DEFAULT NULL,
+  `dostepnosc` varchar(3) COLLATE utf32_polish_ci DEFAULT NULL,
+  `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_polish_ci;
 
 --
 -- Zrzut danych tabeli `samochod`
 --
 
-INSERT INTO `samochod` (`samochod_id`, `marka`, `model`, `rodzaj`, `rocznik`, `paliwo`, `przebieg`, `cena`, `dostepnosc`) VALUES
-(1, 'Audi', 'A3', 'Hatchback', '1996', 'Benzyna', 195000, 195000, 'TAK'),
-(2, 'Ford', 'Fiesta', 'Hatchback', '2003', 'Diesel', 125000, 250, 'TAK'),
-(3, 'Audi', 'A4', 'Sedan', '1996', 'Benzyna', 195000, 420, 'NIE');
+INSERT INTO `samochod` (`samochod_id`, `marka`, `model`, `rodzaj`, `rocznik`, `paliwo`, `przebieg`, `cena`, `dostepnosc`, `user_id`) VALUES
+(1, 'Audi', 'A3', 'Suv', 1996, 'Benzyna', 195000, 1500, 'TAK', 0),
+(2, 'Audi', 'A3', 'Coupe', 1996, 'Benzyna', 250000, 130, 'NIE', 0),
+(3, 'Pegueot', '206', 'Hatchback', 2006, 'Diesel', 150000, 250, 'TAK', 0),
+(4, 'Renault', 'Laguna', 'Kombi', 1999, 'Gaz', 250000, 135, 'NIE', 0),
+(5, 'Renault', 'Megane', 'Kombi', 2009, 'Diesel', 250000, 125, 'TAK', 0),
+(6, 'Renault', 'Clio', 'Coupe', 2006, 'Gaz', 150000, 1500, 'NIE', 0),
+(7, 'Citroen', 'C4', 'Hatchback', 2006, 'Benzyna', 150000, 150, 'NIE', 37);
 
 -- --------------------------------------------------------
 
@@ -68,7 +73,8 @@ CREATE TABLE `udostepnienie` (
 --
 
 INSERT INTO `udostepnienie` (`udostepnienie_id`, `user_id`, `samochod_id`, `data_od`, `data_do`) VALUES
-(1, 11, 1, '2019-05-01', '2019-05-03');
+(1, 49, 2, '2019-04-25', '2019-04-29'),
+(2, 47, 7, '2019-05-11', '2019-05-14');
 
 -- --------------------------------------------------------
 
@@ -95,21 +101,19 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `login`, `haslo`, `imie`, `nazwisko`, `data_urodzenia`, `miejscowosc`, `tel`, `email`, `pesel`, `rodzaj`) VALUES
-(36, 'tommy', 'tommy', 'Tomasz', 'Chudzik', '1993-12-12', 'Radymno', 535000535, 'email@email.pl', 2147483647, 'admin'),
-(37, 'luki', 'luki', 'Łukasz', 'Kowalski', '1993-12-12', 'Sanok', 535000535, 'email@email.pl', 2147483647, 'admin'),
-(38, 'fifi', 'fifi', 'Filip', 'Konior', '1993-12-12', 'Łancut', 535000535, 'email@email.pl', 2147483647, 'admin'),
-(39, 'pati', 'pati', 'Patryk', 'Krawiec', '1993-12-12', 'Rzeszów', 535000535, 'email@email.pl', 2147483647, 'admin'),
-(40, 'adi', 'adi', 'Adrian', 'Czupich', '1993-12-12', 'Łancut', 535000535, 'email@email.pl', 2147483647, 'admin'),
-(41, 'klient1', 'klient1', 'Jan', 'Nowak', '1993-12-12', 'Łancut', 535000535, 'email@email.pl', 2147483647, 'klient'),
-(42, 'klient2', 'klient2', 'Jan', 'Nowak', '1993-12-12', 'Łancut', 535000535, 'email@email.pl', 2147483647, 'klient'),
-(43, 'klient3', 'klient3', 'Jan', 'Nowak', '1993-12-12', 'Łancut', 535000535, 'email@email.pl', 2147483647, 'klient'),
-(44, 'klient4', 'klient4', 'Jan', 'Nowak', '1993-12-12', 'Łancut', 535000535, 'email@email.pl', 2147483647, 'klient'),
+(38, 'kli', 'klient3', 'Jan', 'Nowak', '1993-12-12', 'Lancut', 535000535, 'email@email.pl', 2147483647, 'worker'),
+(42, 'klient2', 'klient3', 'Jan', 'Nowak', '1993-12-12', 'Lancut', 535000535, 'email@email.pl', 2147483647, 'worker'),
+(43, 'kl', 'klient3', 'Jan', 'Nowak', '1993-12-12', '?a?cut', 535000535, 'email@email.pl', 2147483647, 'worker'),
 (45, 'klient5', 'klient5', 'Jan', 'Nowak', '1993-12-12', 'Łancut', 535000535, 'email@email.pl', 2147483647, 'klient'),
 (46, 'worker1', 'worker1', 'Paweł', 'Szybki', '1993-12-12', 'Rzeszów', 535000535, 'email@email.pl', 2147483647, 'worker'),
 (47, 'worker2', 'worker2', 'Paweł', 'Szybki', '1993-12-12', 'Rzeszów', 535000535, 'email@email.pl', 2147483647, 'worker'),
 (48, 'worker3', 'worker3', 'Paweł', 'Szybki', '1993-12-12', 'Rzeszów', 535000535, 'email@email.pl', 2147483647, 'worker'),
-(49, 'worker4', 'worker4', 'Paweł', 'Szybki', '1993-12-12', 'Rzeszów', 535000535, 'email@email.pl', 2147483647, 'worker'),
-(50, 'worker5', 'worker5', 'Paweł', 'Szybki', '1993-12-12', 'Rzeszów', 535000535, 'email@email.pl', 2147483647, 'worker');
+(49, 'pracownik', 'pracownik', 'Łukasz', 'Kowalski', '1996-01-02', 'Sanok', 123456789, 'kofcio0@vp.pl', 1234567891, 'worker'),
+(50, 'tommy', 'tommy', 'Tomasz', 'Chudzik', '1993-12-12', 'Radymno', 535000535, 'email@email.pl', 2147483647, 'admin'),
+(51, 'luki', 'luki', 'Łukasz', 'Kowalski', '1993-12-12', 'Sanok', 535000535, 'email@email.pl', 2147483647, 'admin'),
+(52, 'fifi', 'fifi', 'Filip', 'Konior', '1993-12-12', 'Łancut', 535000535, 'email@email.pl', 2147483647, 'admin'),
+(53, 'pati', 'pati', 'Patryk', 'Krawiec', '1993-12-12', 'Rzeszów', 535000535, 'email@email.pl', 2147483647, 'admin'),
+(54, 'adi', 'adi', 'Adrian', 'Czupich', '1993-12-12', 'Łancut', 535000535, 'email@email.pl', 2147483647, 'admin');
 
 -- --------------------------------------------------------
 
@@ -130,7 +134,8 @@ CREATE TABLE `wypozyczenie` (
 --
 
 INSERT INTO `wypozyczenie` (`wypozyczenie_id`, `user_id`, `samochod_id`, `data_od`, `data_do`) VALUES
-(1, 12, 2, '2019-05-01', '2019-05-07');
+(1, 49, 2, '2019-05-06', '2019-05-08'),
+(2, 47, 7, '2019-05-01', '2019-05-03');
 
 --
 -- Indeksy dla zrzutów tabel
@@ -175,25 +180,25 @@ ALTER TABLE `wypozyczenie`
 -- AUTO_INCREMENT dla tabeli `samochod`
 --
 ALTER TABLE `samochod`
-  MODIFY `samochod_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `samochod_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT dla tabeli `udostepnienie`
 --
 ALTER TABLE `udostepnienie`
-  MODIFY `udostepnienie_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `udostepnienie_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT dla tabeli `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT dla tabeli `wypozyczenie`
 --
 ALTER TABLE `wypozyczenie`
-  MODIFY `wypozyczenie_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `wypozyczenie_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Ograniczenia dla zrzutów tabel
@@ -203,15 +208,13 @@ ALTER TABLE `wypozyczenie`
 -- Ograniczenia dla tabeli `udostepnienie`
 --
 ALTER TABLE `udostepnienie`
-  ADD CONSTRAINT `udostepnienie_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`),
-  ADD CONSTRAINT `udostepnienie_ibfk_2` FOREIGN KEY (`samochod_id`) REFERENCES `samochod` (`samochod_id`);
+  ADD CONSTRAINT `udostepnienie_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `udostepnienie` (`user_id`);
 
 --
 -- Ograniczenia dla tabeli `wypozyczenie`
 --
 ALTER TABLE `wypozyczenie`
-  ADD CONSTRAINT `wypozyczenie_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`),
-  ADD CONSTRAINT `wypozyczenie_ibfk_2` FOREIGN KEY (`samochod_id`) REFERENCES `samochod` (`samochod_id`);
+  ADD CONSTRAINT `wypozyczenie_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `udostepnienie` (`user_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
