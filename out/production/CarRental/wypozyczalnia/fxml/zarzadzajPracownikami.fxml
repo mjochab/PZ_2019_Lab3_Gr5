@@ -21,7 +21,6 @@
         <TextField fx:id="userHaslo" accessibleRole="PASSWORD_FIELD" layoutX="38.0" layoutY="290.0" prefHeight="25.0" prefWidth="162.0" promptText="Hasło" />
         <TextField fx:id="userImie" layoutX="38.0" layoutY="328.0" prefHeight="25.0" prefWidth="162.0" promptText="Imie" />
         <TextField fx:id="userNazwisko" layoutX="38.0" layoutY="369.0" prefHeight="25.0" prefWidth="162.0" promptText="Nazwisko" />
-        <TextField fx:id="userData1" layoutX="258.0" layoutY="132.0" prefHeight="25.0" prefWidth="162.0" promptText="Data Urodzenia" />
         <TextField fx:id="userMiejscowosc" layoutX="38.0" layoutY="445.0" prefHeight="25.0" prefWidth="162.0" promptText="Miejscowość" />
         <TextField fx:id="userTelefon" layoutX="38.0" layoutY="483.0" prefHeight="25.0" prefWidth="162.0" promptText="Numer Telefonu" />
         <TextField fx:id="userEmail" layoutX="38.0" layoutY="523.0" prefHeight="25.0" prefWidth="162.0" promptText="Email" />

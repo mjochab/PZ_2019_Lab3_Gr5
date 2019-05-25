@@ -233,7 +233,11 @@ public class zarzadzajPojazdamiController implements Initializable {
 
         }catch (Exception e)
         {
-            System.out.println(e);
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Informacja");
+            alert.setHeaderText(null);
+            alert.setContentText("Zaznacz linie!");
+            alert.showAndWait();
         };
 
 
