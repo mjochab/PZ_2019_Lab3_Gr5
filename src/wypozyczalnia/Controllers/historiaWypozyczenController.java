@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -43,16 +44,12 @@ public class historiaWypozyczenController implements Initializable {
 
     @FXML
     public Label usernamedisplay_lbl;
+    @FXML
+    public Button baza;
 
     ObservableList<ModelTableWypozyczenia> oblist5 = FXCollections.observableArrayList();
 
-    String user;
-    public void displayName (String usernamedisplay){
 
-        this.usernamedisplay_lbl.setText(usernamedisplay);
-        user = usernamedisplay;
-
-    }
 
     public void logOut(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/login.fxml"));
@@ -64,12 +61,20 @@ public class historiaWypozyczenController implements Initializable {
         pracownikPane.getChildren().setAll(pane);
     }
 
+    String userid;
+        public void displayName (String usernamedisplay){
+
+            this.usernamedisplay_lbl.setText(usernamedisplay);
+            this.userid=usernamedisplay;
+            System.out.println(userid + " -> user id z displayname");
+        }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-
-        String user = usernamedisplay_lbl.getText();
-        int userid = Integer.parseInt(user);
+        //usernamedisplay_lbl.textProperty().setValue(userid);
+        //usernamedisplay_lbl.setText(userid);
+        System.out.println(userid + " -> user id z initialize");
 
         try {
             Connection con = DBConnector.getConnection();
@@ -81,7 +86,7 @@ public class historiaWypozyczenController implements Initializable {
                     "ON samochod.samochod_id = wypozyczenie.samochod_id\n" +
                     "JOIN user\n" +
                     "ON wypozyczenie.user_id = user.user_id\n" +
-                    "WHERE user.user_id=" + userid);
+                    "WHERE user.user_id="+userid);
 
             while (rs.next()) {
                 oblist5.add(new ModelTableWypozyczenia(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5)+ " zł/dzień", rs.getString(6)));
