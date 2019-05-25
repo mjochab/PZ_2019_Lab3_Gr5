@@ -188,7 +188,7 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="35.0" layoutY="83.0" mnemonicParsing="false" onAction="#menuPracownik" prefHeight="30.0" prefWidth="153.0" style="-fx-background-color: #e27171;" text="POWRÓT">
+      <Button layoutX="35.0" layoutY="83.0" mnemonicParsing="false" onAction="#menuKlient" prefHeight="30.0" prefWidth="153.0" style="-fx-background-color: #e27171;" text="POWRÓT">
          <graphic>
             <ImageView fitHeight="36.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -234,11 +234,6 @@
          </graphic>
          <font>
             <Font size="18.0" />
-         </font>
-      </Button>
-      <Button layoutX="60.0" layoutY="213.0" mnemonicParsing="false" onAction="#klik" prefHeight="25.0" prefWidth="149.0" text="Uzupełnij pola poniżej">
-         <font>
-            <Font size="13.0" />
          </font>
       </Button>
       <Label layoutX="619.0" layoutY="95.0" prefHeight="36.0" prefWidth="313.0" text="UDOSTĘPNIANIE POJAZDU" textFill="#eeadad">

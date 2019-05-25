@@ -3,11 +3,13 @@ package wypozyczalnia.Controllers;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import wypozyczalnia.DBConnector;
 
@@ -93,77 +95,6 @@ public class zarzadzajUzytkownikamiController implements Initializable {
         pracownikPane.getChildren().setAll(pane);
 
         tabelka.refresh();
-    }
-
-
-    public void klik(ActionEvent event) throws  IOException{        //funkcja przenosi dane do tabelki po lewej stronie, jak tyknie sie wiersz w tabeli to przenosi
-        //TablePosition pozycja = tabelka_pojazdy.getSelectionModel().getSelectedCells().get(0);
-        //int index = pozycja.getRow();
-        String abc;
-        abc = tabelka.toString();
-        System.out.println(abc);
-        ArrayList<String> dane = new ArrayList<String>();
-        try {
-            TablePosition pozycja = tabelka.getSelectionModel().getSelectedCells().get(0);
-            int index = pozycja.getRow();
-
-            index++;
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
-
-            PreparedStatement stmt = con.prepareStatement("SELECT * FROM user");
-            String zapytanie = "Select * FROM user ORDER BY user_id LIMIT " + index;
-            ResultSet rs = stmt.executeQuery(zapytanie);
-            String a = "0";
-            int i=0;
-            while(rs.next()) {
-                a = rs.getString(1);
-                i++;
-            }
-            int numer = Integer.parseInt(a);
-            System.out.println(numer);
-
-
-
-            zapytanie = "Select * FROM user where user_id = " + numer;
-            ResultSet rs2 = stmt.executeQuery(zapytanie);
-            System.out.println(rs2);
-            if(rs2.next()) {
-                dane.add(rs2.getString("login"));
-                dane.add(rs2.getString("haslo"));
-                dane.add(rs2.getString("imie"));
-                dane.add(rs2.getString("nazwisko"));
-                dane.add(rs2.getString("data_urodzenia"));
-                dane.add(rs2.getString("miejscowosc"));
-                dane.add(rs2.getString("tel"));
-                dane.add(rs2.getString("email"));
-                dane.add(rs2.getString("pesel"));
-
-
-                userLogin.setText(String.valueOf(dane.get(0)));
-                userHaslo.setText(String.valueOf(dane.get(1)));
-                userImie.setText(String.valueOf(dane.get(2)));
-                userNazwisko.setText(String.valueOf(dane.get(3)));
-                userData.setText(String.valueOf(dane.get(4)));
-                userMiejscowosc.setText(String.valueOf(dane.get(5)));
-                userTelefon.setText(String.valueOf(dane.get(6)));
-                userEmail.setText(String.valueOf(dane.get(7)));
-                userPesel.setText(String.valueOf(dane.get(8)));
-
-
-            }
-
-
-        }catch (Exception e)
-        {
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Informacja");
-            alert.setHeaderText(null);
-            alert.setContentText("Zaznacz linie!");
-            alert.showAndWait();
-        };
-
-
     }
 
     public void modujUser(ActionEvent event) throws  IOException{
@@ -269,7 +200,77 @@ public class zarzadzajUzytkownikamiController implements Initializable {
 
         tabelka.setItems(oblist);
 
+        tabelka.setOnMousePressed(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                String abc;
+                abc = tabelka.toString();
+                System.out.println(abc);
+                ArrayList<String> dane = new ArrayList<String>();
+                try {
+                    TablePosition pozycja = tabelka.getSelectionModel().getSelectedCells().get(0);
+                    int index = pozycja.getRow();
 
+                    index++;
+                    Class.forName("com.mysql.cj.jdbc.Driver");
+                    Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+
+                    PreparedStatement stmt = con.prepareStatement("SELECT * FROM user");
+                    String zapytanie = "Select * FROM user ORDER BY user_id LIMIT " + index;
+                    ResultSet rs = stmt.executeQuery(zapytanie);
+                    String a = "0";
+                    int i=0;
+                    while(rs.next()) {
+                        a = rs.getString(1);
+                        i++;
+                    }
+                    int numer = Integer.parseInt(a);
+                    System.out.println(numer);
+
+
+
+                    zapytanie = "Select * FROM user where user_id = " + numer;
+                    ResultSet rs2 = stmt.executeQuery(zapytanie);
+                    System.out.println(rs2);
+                    if(rs2.next()) {
+                        dane.add(rs2.getString("login"));
+                        dane.add(rs2.getString("haslo"));
+                        dane.add(rs2.getString("imie"));
+                        dane.add(rs2.getString("nazwisko"));
+                        dane.add(rs2.getString("data_urodzenia"));
+                        dane.add(rs2.getString("miejscowosc"));
+                        dane.add(rs2.getString("tel"));
+                        dane.add(rs2.getString("email"));
+                        dane.add(rs2.getString("pesel"));
+
+
+                        userLogin.setText(String.valueOf(dane.get(0)));
+                        userHaslo.setText(String.valueOf(dane.get(1)));
+                        userImie.setText(String.valueOf(dane.get(2)));
+                        userNazwisko.setText(String.valueOf(dane.get(3)));
+                        userData.setText(String.valueOf(dane.get(4)));
+                        userMiejscowosc.setText(String.valueOf(dane.get(5)));
+                        userTelefon.setText(String.valueOf(dane.get(6)));
+                        userEmail.setText(String.valueOf(dane.get(7)));
+                        userPesel.setText(String.valueOf(dane.get(8)));
+
+
+                    }
+
+
+                }catch (Exception e)
+                {
+                    Alert alert = new Alert(Alert.AlertType.WARNING);
+                    alert.setTitle("Informacja");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Zaznacz linie!");
+                    alert.showAndWait();
+                };
+
+
+            };
+
+        });
 
     }
 }

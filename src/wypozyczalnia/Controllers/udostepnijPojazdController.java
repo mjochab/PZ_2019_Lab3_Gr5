@@ -3,11 +3,13 @@ package wypozyczalnia.Controllers;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import wypozyczalnia.DBConnector;
 
@@ -60,71 +62,6 @@ public class udostepnijPojazdController implements Initializable {
 
     ObservableList<ModelTablePojazdy> oblist1 = FXCollections.observableArrayList();
 
-    public void klik(ActionEvent event) throws  IOException{        //funkcja przenosi dane do tabelki po lewej stronie, jak tyknie sie wiersz w tabeli to przenosi
-        //TablePosition pozycja = tabelka_pojazdy.getSelectionModel().getSelectedCells().get(0);
-        //int index = pozycja.getRow();
-        String abc;
-        abc = tabelka_pojazdy.toString();
-        System.out.println(abc);
-        ArrayList<String> dane = new ArrayList<String>();
-        try {
-            TablePosition pozycja = tabelka_pojazdy.getSelectionModel().getSelectedCells().get(0);
-            int index = pozycja.getRow();
-
-            index++;
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
-
-            PreparedStatement stmt = con.prepareStatement("SELECT * FROM samochod");
-            String zapytanie = "Select * FROM samochod ORDER BY samochod_id LIMIT " + index;
-            ResultSet rs = stmt.executeQuery(zapytanie);
-            String a = "0";
-            int i=0;
-            while(rs.next()) {
-                a = rs.getString(1);
-                i++;
-            }
-            int numer = Integer.parseInt(a);
-            System.out.println(numer);
-
-
-            String model, rodzaj, rocznik, paliwo, przebieg, cena;
-            zapytanie = "Select * FROM samochod where samochod_id = " + numer;
-            ResultSet rs2 = stmt.executeQuery(zapytanie);
-            System.out.println(rs2);
-            if(rs2.next()) {
-                dane.add(rs2.getString("marka"));
-                dane.add(rs2.getString("model"));
-                dane.add(rs2.getString("rodzaj"));
-                dane.add(rs2.getString("rocznik"));
-                dane.add(rs2.getString("paliwo"));
-                dane.add(rs2.getString("przebieg"));
-                dane.add(rs2.getString("cena"));
-                dane.add(rs2.getString("dostepnosc"));
-
-                autoMarka.setText(String.valueOf(dane.get(0)));
-                autoModel.setText(String.valueOf(dane.get(1)));
-                autoRodzaj.setValue(String.valueOf(dane.get(2)));
-                autoRocznik.setText(String.valueOf(dane.get(3)));
-                autoPaliwo.setValue(String.valueOf(dane.get(4)));
-                autoPrzebieg.setText(String.valueOf(dane.get(5)));
-                autoCena.setText(String.valueOf(dane.get(6)));
-                autoDostep.setValue(String.valueOf(dane.get(7)));
-
-            }
-
-
-        }catch (Exception e)
-        {
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Informacja");
-            alert.setHeaderText(null);
-            alert.setContentText("Zaznacz linie!");
-            alert.showAndWait();
-        };
-
-
-    }
 
     public void usunAuto(ActionEvent event) throws  IOException{
         TablePosition pozycja = tabelka_pojazdy.getSelectionModel().getSelectedCells().get(0);
@@ -322,6 +259,73 @@ public class udostepnijPojazdController implements Initializable {
         autoPaliwo.getItems().addAll("Diesel","Benzyna","Gaz");
         autoRodzaj.getItems().addAll("Sedan","Kombi","Hatchback","Coupe","Limuzyna","Suv","Kabriolet","Roadster");
 
+
+        tabelka_pojazdy.setOnMousePressed(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                String abc;
+                abc = tabelka_pojazdy.toString();
+                System.out.println(abc);
+                ArrayList<String> dane = new ArrayList<String>();
+                try {
+                    TablePosition pozycja = tabelka_pojazdy.getSelectionModel().getSelectedCells().get(0);
+                    int index = pozycja.getRow();
+
+                    index++;
+                    Class.forName("com.mysql.cj.jdbc.Driver");
+                    Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+
+                    PreparedStatement stmt = con.prepareStatement("SELECT * FROM samochod");
+                    String zapytanie = "Select * FROM samochod ORDER BY samochod_id LIMIT " + index;
+                    ResultSet rs = stmt.executeQuery(zapytanie);
+                    String a = "0";
+                    int i=0;
+                    while(rs.next()) {
+                        a = rs.getString(1);
+                        i++;
+                    }
+                    int numer = Integer.parseInt(a);
+                    System.out.println(numer);
+
+
+                    String model, rodzaj, rocznik, paliwo, przebieg, cena;
+                    zapytanie = "Select * FROM samochod where samochod_id = " + numer;
+                    ResultSet rs2 = stmt.executeQuery(zapytanie);
+                    System.out.println(rs2);
+                    if(rs2.next()) {
+                        dane.add(rs2.getString("marka"));
+                        dane.add(rs2.getString("model"));
+                        dane.add(rs2.getString("rodzaj"));
+                        dane.add(rs2.getString("rocznik"));
+                        dane.add(rs2.getString("paliwo"));
+                        dane.add(rs2.getString("przebieg"));
+                        dane.add(rs2.getString("cena"));
+                        dane.add(rs2.getString("dostepnosc"));
+
+                        autoMarka.setText(String.valueOf(dane.get(0)));
+                        autoModel.setText(String.valueOf(dane.get(1)));
+                        autoRodzaj.setValue(String.valueOf(dane.get(2)));
+                        autoRocznik.setText(String.valueOf(dane.get(3)));
+                        autoPaliwo.setValue(String.valueOf(dane.get(4)));
+                        autoPrzebieg.setText(String.valueOf(dane.get(5)));
+                        autoCena.setText(String.valueOf(dane.get(6)));
+                        autoDostep.setValue(String.valueOf(dane.get(7)));
+
+                    }
+
+
+                }catch (Exception e)
+                {
+                    Alert alert = new Alert(Alert.AlertType.WARNING);
+                    alert.setTitle("Informacja");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Zaznacz linie!");
+                    alert.showAndWait();
+                };
+
+            };
+
+        });
     }
 
 }

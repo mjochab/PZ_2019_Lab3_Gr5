@@ -206,11 +206,6 @@
             <Font size="18.0" />
          </font>
       </Button>
-            <Button layoutX="43.0" layoutY="220.0" mnemonicParsing="false" onAction="#klik" prefHeight="25.0" prefWidth="162.0" text="Uzupełnij pola poniżej">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </Button>
       <Button layoutX="426.0" layoutY="747.0" mnemonicParsing="false" onAction="#modujAuto" prefHeight="48.0" prefWidth="156.0" style="-fx-background-color: #e27171;" text="EDYTUJ">
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
