@@ -22,11 +22,11 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class historiaWypozyczenController implements Initializable {
+public class historiaWypozyczenKlientController implements Initializable {
 
     @FXML
-    private AnchorPane pracownikPane;
-    private AnchorPane zarzadzajPojazdamiPane;
+    private AnchorPane klientPane;
+
 
     @FXML
     private TableView<ModelTableWypozyczenia> tabela_wypozyczenia;
@@ -50,13 +50,14 @@ public class historiaWypozyczenController implements Initializable {
 
     public void logOut(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/login.fxml"));
-        pracownikPane.getChildren().setAll(pane);
+        klientPane.getChildren().setAll(pane);
     }
 
-    public void menuPracownik(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/menuPracownik.fxml"));
-        pracownikPane.getChildren().setAll(pane);
+    public void menuKlient(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/menuKlient.fxml"));
+        klientPane.getChildren().setAll(pane);
     }
+
 
     /*private void zaladujwypozyczenia() {
         nazwauzytkownika.setText(username);
@@ -109,8 +110,8 @@ public class historiaWypozyczenController implements Initializable {
                     "                    ON samochod.samochod_id = wypozyczenie.samochod_id\n" +
                     "                    JOIN user\n" +
                     "                    ON wypozyczenie.user_id = user.user_id\n" +
-                    "                    WHERE user.rodzaj = \"worker\"" );
-                 //   "WHERE user.user_id= 47");
+                    "                    WHERE user.rodzaj = \"klient\"" );
+            //   "WHERE user.user_id= 47");
 
 
             while (rs.next()) {

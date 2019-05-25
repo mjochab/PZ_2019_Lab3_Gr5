@@ -13,16 +13,16 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="pracownikPane" prefHeight="900.0" prefWidth="1400.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.MenuPracownikController">
-    <children>
-      <TableView layoutX="117.0" layoutY="169.0" prefHeight="538.0" prefWidth="1182.0">
-          <columns>
-              <TableColumn fx:id="col_Marka" prefWidth="240.99999237060547" text="Marka" />
-              <TableColumn fx:id="col_Model" prefWidth="221.0" text="Model" />
-              <TableColumn fx:id="col_DataStart" prefWidth="241.0" text="Data początkowa" />
-              <TableColumn fx:id="col_DataStop" prefWidth="253.0" text="Data końcowa" />
-              <TableColumn fx:id="col_Cena" prefWidth="225.0" text="Cena" />
-          </columns>
+<AnchorPane fx:id="pracownikPane" prefHeight="900.0" prefWidth="1400.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.historiaWypozyczenController">
+   <children>
+      <TableView fx:id="tabela_wypozyczenia" layoutX="117.0" layoutY="169.0" prefHeight="538.0" prefWidth="1182.0">
+         <columns>
+            <TableColumn fx:id="col_marka" prefWidth="240.99999237060547" text="Marka" />
+            <TableColumn fx:id="col_model" prefWidth="221.0" text="Model" />
+            <TableColumn fx:id="col_data_do" prefWidth="241.0" text="Data początkowa" />
+            <TableColumn fx:id="col_data_od" prefWidth="253.0" text="Data końcowa" />
+            <TableColumn fx:id="col_cena" prefWidth="225.0" text="Cena" />
+         </columns>
       </TableView>
       <Button layoutX="1108.0" layoutY="732.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="191.0" style="-fx-background-color: #e27171;" text="Generuj raport">
          <graphic>
@@ -119,6 +119,9 @@
          </font>
       </Button>
       <Button layoutX="41.0" layoutY="83.0" mnemonicParsing="false" onAction="#menuPracownik" prefHeight="30.0" prefWidth="153.0" style="-fx-background-color: #e27171;" text="POWRÓT">
+         <font>
+            <Font size="18.0" />
+         </font>
          <graphic>
             <ImageView fitHeight="36.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -126,9 +129,6 @@
                </image>
             </ImageView>
          </graphic>
-         <font>
-            <Font size="18.0" />
-         </font>
       </Button>
       <GridPane prefHeight="68.0" prefWidth="1400.0" style="-fx-background-color: #6d0707;">
          <columnConstraints>
@@ -209,5 +209,5 @@
             <Bloom />
          </effect>
       </Label>
-    </children>
+   </children>
 </AnchorPane>

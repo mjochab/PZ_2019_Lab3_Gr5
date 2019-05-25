@@ -13,17 +13,28 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="klientPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1400.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.MenuKlientController">
-    <children>
-        <TableView layoutX="132.0" layoutY="191.0" prefHeight="512.0" prefWidth="1137.0" AnchorPane.leftAnchor="132.0" AnchorPane.rightAnchor="131.0" AnchorPane.topAnchor="191.0">
-            <columns>
-                <TableColumn fx:id="col_Marka" prefWidth="234.0" text="Marka" />
-                <TableColumn fx:id="col_Model" prefWidth="205.0" text="Model" />
-                <TableColumn fx:id="col_DataStart" minWidth="0.0" prefWidth="224.0" text="Data początkowa" />
-                <TableColumn fx:id="col_DataStop" prefWidth="245.0" text="Data końcowa" />
-                <TableColumn fx:id="col_Cena" prefWidth="228.0" text="Cena" />
-            </columns>
-        </TableView>
+<AnchorPane fx:id="klientPane" prefHeight="900.0" prefWidth="1400.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.historiaWypozyczenKlientController">
+   <children>
+      <TableView fx:id="tabela_wypozyczenia" layoutX="117.0" layoutY="169.0" prefHeight="538.0" prefWidth="1182.0">
+         <columns>
+            <TableColumn fx:id="col_marka" prefWidth="240.99999237060547" text="Marka" />
+            <TableColumn fx:id="col_model" prefWidth="221.0" text="Model" />
+            <TableColumn fx:id="col_data_do" prefWidth="241.0" text="Data początkowa" />
+            <TableColumn fx:id="col_data_od" prefWidth="253.0" text="Data końcowa" />
+            <TableColumn fx:id="col_cena" prefWidth="225.0" text="Cena" />
+         </columns>
+      </TableView>
+      <Button layoutX="1108.0" layoutY="732.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="191.0" style="-fx-background-color: #e27171;" text="Generuj raport">
+         <graphic>
+            <ImageView fitHeight="36.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/users.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="18.0" />
+         </font></Button>
       <GridPane layoutY="832.0" prefHeight="68.0" prefWidth="1400.0" style="-fx-background-color: #6d0707;">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
@@ -95,6 +106,30 @@
             </ImageView>
          </children>
       </GridPane>
+      <Button layoutX="1204.0" layoutY="83.0" mnemonicParsing="false" onAction="#logOut" prefHeight="30.0" prefWidth="153.0" style="-fx-background-color: #e27171;" text="WYLOGUJ">
+         <graphic>
+            <ImageView fitHeight="36.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/logout.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="41.0" layoutY="83.0" mnemonicParsing="false" onAction="#menuKlient" prefHeight="30.0" prefWidth="153.0" style="-fx-background-color: #e27171;" text="POWRÓT">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="36.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/back.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
       <GridPane prefHeight="68.0" prefWidth="1400.0" style="-fx-background-color: #6d0707;">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
@@ -166,43 +201,7 @@
             </ImageView>
          </children>
       </GridPane>
-      <Button layoutX="1078.0" layoutY="727.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="191.0" style="-fx-background-color: #e27171;" text="Generuj raport">
-         <graphic>
-            <ImageView fitHeight="36.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Icons/users.png" />
-               </image>
-            </ImageView>
-         </graphic>
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <Button layoutX="56.0" layoutY="95.0" mnemonicParsing="false" onAction="#menuPracownik" prefHeight="30.0" prefWidth="153.0" style="-fx-background-color: #e27171;" text="POWRÓT">
-         <graphic>
-            <ImageView fitHeight="36.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Icons/back.png" />
-               </image>
-            </ImageView>
-         </graphic>
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <Button layoutX="1193.0" layoutY="95.0" mnemonicParsing="false" onAction="#logOut" prefHeight="30.0" prefWidth="153.0" style="-fx-background-color: #e27171;" text="WYLOGUJ">
-         <graphic>
-            <ImageView fitHeight="36.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Icons/logout.png" />
-               </image>
-            </ImageView>
-         </graphic>
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <Label layoutX="560.0" layoutY="101.0" prefHeight="36.0" prefWidth="282.0" text="HISTORIA WYPOŻYCZEŃ" textFill="#eeadad">
+      <Label layoutX="559.0" layoutY="89.0" prefHeight="36.0" prefWidth="282.0" text="HISTORIA WYPOŻYCZEŃ" textFill="#eeadad">
          <font>
             <Font size="25.0" />
          </font>
@@ -210,5 +209,5 @@
             <Bloom />
          </effect>
       </Label>
-    </children>
+   </children>
 </AnchorPane>

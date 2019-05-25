@@ -236,11 +236,6 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="60.0" layoutY="213.0" mnemonicParsing="false" onAction="#klik" prefHeight="25.0" prefWidth="149.0" text="Uzupełnij pola poniżej">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </Button>
       <Label layoutX="619.0" layoutY="95.0" prefHeight="36.0" prefWidth="313.0" text="UDOSTĘPNIANIE POJAZDU" textFill="#eeadad">
          <font>
             <Font size="25.0" />
