@@ -329,7 +329,7 @@ public class zarzadzajWypozyczeniamiAdminController implements Initializable {
 
 
         col_Pesel.setCellValueFactory(new PropertyValueFactory<>("Pesel"));
-       System.out.println("dupa");
+
         col_Marka.setCellValueFactory(new PropertyValueFactory<>("Marka"));
 
         col_Model.setCellValueFactory(new PropertyValueFactory<>("Model"));
