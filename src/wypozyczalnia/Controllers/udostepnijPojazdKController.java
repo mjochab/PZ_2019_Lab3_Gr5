@@ -50,6 +50,16 @@ public class udostepnijPojazdKController implements Initializable {
     @FXML private TextField autoPrzebieg;
     @FXML private TextField autoCena;
 
+    public void clearFields(ActionEvent event) throws IOException {
+        autoMarka.clear();
+        autoModel.clear();
+        autoCena.clear();
+        autoPaliwo.clear();
+        autoPrzebieg.clear();
+        autoRodzaj.clear();
+    }
+
+
     public void logOut(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/login.fxml"));
         klientPane.getChildren().setAll(pane);

@@ -51,6 +51,12 @@ public class MojeWypozyczeniaController implements Initializable {
 
     ObservableList<ModelTableWypozyczenia> oblist5 = FXCollections.observableArrayList();
 
+    public void clearFields(ActionEvent event) throws IOException {
+        dpDataDo.setValue(null);
+        dpDataOd.setValue(null);
+
+    }
+
 
     public void logOut(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/login.fxml"));

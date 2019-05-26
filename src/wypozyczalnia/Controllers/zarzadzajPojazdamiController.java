@@ -63,6 +63,18 @@ public class zarzadzajPojazdamiController implements Initializable {
     ObservableList<ModelTablePojazdy> oblist1 = FXCollections.observableArrayList();
     ObservableList<String> choiceBoxList = FXCollections.observableArrayList();
 
+    public void clearFields(ActionEvent event) throws IOException {
+        autoMarka.clear();
+        autoModel.clear();
+        autoCena.clear();
+        autoDostep.setValue(null);
+        autoPaliwo.setValue(null);
+        autoPrzebieg.clear();
+        autoRocznik.clear();
+        autoRodzaj.setValue(null);
+    }
+
+
     private boolean walidacjaPol() {
         if (autoModel.getText().isEmpty() | autoMarka.getText().isEmpty() | autoRocznik.getText().isEmpty()
                 | autoPrzebieg.getText().isEmpty() | autoCena.getText().isEmpty()) {

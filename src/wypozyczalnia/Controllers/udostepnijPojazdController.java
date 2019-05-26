@@ -56,6 +56,16 @@ public class udostepnijPojazdController implements Initializable {
     @FXML private ChoiceBox<String> autoDostep;
 
 
+    public void clearFields(ActionEvent event) throws IOException {
+        autoMarka.clear();
+        autoModel.clear();
+        autoCena.clear();
+        autoPaliwo.setValue(null);
+        autoPrzebieg.clear();
+        autoRodzaj.setValue(null);
+        autoDostep.setValue(null);
+        autoRocznik.clear();
+    }
 
 
 

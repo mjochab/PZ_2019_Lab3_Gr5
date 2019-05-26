@@ -57,6 +57,17 @@ public class zarzadzajPojazdamiAdminController implements Initializable {
     @FXML private TextField autoCena;
     @FXML private ChoiceBox<String> autoDostep;
 
+    public void clearFields(ActionEvent event) throws IOException {
+        autoMarka.clear();
+        autoModel.clear();
+        autoCena.clear();
+        autoDostep.setValue(null);
+        autoPaliwo.setValue(null);
+        autoPrzebieg.clear();
+        autoRocznik.clear();
+        autoRodzaj.setValue(null);
+    }
+
 
     public void logOut(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/login.fxml"));
