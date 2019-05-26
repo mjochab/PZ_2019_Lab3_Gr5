@@ -3,16 +3,17 @@ package wypozyczalnia.Controllers;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import wypozyczalnia.DBConnector;
 
+
+import javafx.event.EventHandler;
+import javafx.scene.input.MouseEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
@@ -57,7 +58,6 @@ public class zarzadzajWypozyczeniamiAdminController implements Initializable {
         adminPane.getChildren().setAll(pane);
     }
 
-
     public void modujWypo(ActionEvent event) throws  IOException{
 
 
@@ -83,7 +83,7 @@ public class zarzadzajWypozyczeniamiAdminController implements Initializable {
                     i++;
                 }
                 int numer = Integer.parseInt(a);
-                System.out.println(numer);
+
 
                 PreparedStatement stmt2 = con.prepareStatement("UPDATE `wypozyczenie` SET `data_od`=(?),`data_do`=(?) where `wypozyczenie_id`=(?)");
                 stmt2.setString(1, dataStart);
@@ -95,7 +95,7 @@ public class zarzadzajWypozyczeniamiAdminController implements Initializable {
             } catch (Exception e) {
                 System.out.println(e);
             }
-            AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajWypozyczeniamiAdmin.fxml"));
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajWypozyczeniami.fxml"));
             adminPane.getChildren().setAll(pane);
         }
 
@@ -123,7 +123,7 @@ public class zarzadzajWypozyczeniamiAdminController implements Initializable {
                 i++;
             }
             int numer = Integer.parseInt(a);
-            System.out.println(numer);
+
 
             PreparedStatement stmt2 = con.prepareStatement("DELETE FROM wypozyczenie WHERE wypozyczenie_id = (?)");
             stmt2.setInt(1, numer);
@@ -134,7 +134,7 @@ public class zarzadzajWypozyczeniamiAdminController implements Initializable {
         {
             System.out.println(e);
         };
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajWypozyczeniamiAdmin.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajWypozyczeniami.fxml"));
         adminPane.getChildren().setAll(pane);
     }
 
@@ -149,7 +149,7 @@ public class zarzadzajWypozyczeniamiAdminController implements Initializable {
                 oblist1.add(new ModelTableWypozyczenie(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5)));
 
             }
-            System.out.println(oblist1);
+
 
 
         } catch (SQLException ex) {
@@ -166,7 +166,7 @@ public class zarzadzajWypozyczeniamiAdminController implements Initializable {
 
         col_cena.setCellValueFactory(new PropertyValueFactory<>("cena"));
 
-        System.out.println(tabelka_wypozyczenie);
+
 
         tabelka_wypozyczenie.setItems(oblist1);
 
@@ -175,7 +175,7 @@ public class zarzadzajWypozyczeniamiAdminController implements Initializable {
             public void handle(MouseEvent event) {
                 String abc;
                 abc = tabelka_wypozyczenie.toString();
-                System.out.println(abc);
+
                 ArrayList<String> dane = new ArrayList<String>();
                 try {
 
@@ -197,12 +197,11 @@ public class zarzadzajWypozyczeniamiAdminController implements Initializable {
                         a = rs.getString(1);
                         i++;
                     }
-                    int numer = Integer.parseInt(a);
 
 
-                    zapytanie = "Select data_od, data_do, user_id FROM wypozyczenie WHERE wypozyczenie_id = " + numer;
+                    zapytanie = "Select data_od, data_do, user_id FROM wypozyczenie ORDER BY wypozyczenie_id LIMIT " + index;
                     ResultSet rs2 = stmt.executeQuery(zapytanie);
-                    System.out.println(rs2);
+
                     if(rs2.next()) {
                         dane.add(rs2.getString("data_od"));
                         dane.add(rs2.getString("data_do"));
@@ -210,7 +209,9 @@ public class zarzadzajWypozyczeniamiAdminController implements Initializable {
                         TdataStart.setValue(LocalDate.parse(dane.get(0)));
                         TdataKoniec.setValue(LocalDate.parse(dane.get(1)));
 
+
                     }
+
 
                 }catch (Exception e)
                 {
@@ -220,6 +221,7 @@ public class zarzadzajWypozyczeniamiAdminController implements Initializable {
                     alert.setContentText("Zaznacz linie!");
                     alert.showAndWait();
                 };
+
 
             };
 

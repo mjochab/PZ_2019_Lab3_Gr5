@@ -411,7 +411,7 @@ public class zarzadzajPojazdamiController implements Initializable {
         autoDostep.getItems().addAll("TAK","NIE");
         autoPaliwo.getItems().addAll("Diesel","Benzyna","Gaz");
         autoRodzaj.getItems().addAll("Sedan","Kombi","Hatchback","Coupe","Limuzyna","Suv","Kabriolet","Roadster");
-<<<<<<< HEAD
+
 
         tabelka_pojazdy.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
@@ -479,9 +479,9 @@ public class zarzadzajPojazdamiController implements Initializable {
 
             });
     };
-=======
-        System.out.println(tabelka_pojazdy);
->>>>>>> wypozyczenia
+
+
+
     }
 
 
