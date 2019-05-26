@@ -7,10 +7,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TablePosition;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -30,6 +27,12 @@ public class MojeWypozyczeniaController implements Initializable {
     @FXML
     private AnchorPane pracownikPane;
     private AnchorPane zarzadzajPojazdamiPane;
+
+    @FXML
+    private DatePicker dpDataStart;
+
+    @FXML
+    private DatePicker dpDataStop;
 
     @FXML
     private TableView<ModelTableWypozyczenia> tabelka_moje_wypozyczenia;
@@ -195,8 +198,8 @@ public class MojeWypozyczeniaController implements Initializable {
                         dane.add(rs2.getString("data_do"));
 
 
-                        col_data_od.setValue(LocalDate.parse(dane.get(4)));
-                        col_data_do.setValue(LocalDate.parse(dane.get(5)));
+                        dpDataStart.setValue(LocalDate.parse(dane.get(1)));
+                        dpDataStop.setValue(LocalDate.parse(dane.get(2)));
 
                     }
 

@@ -197,8 +197,8 @@
             </ImageView>
          </children>
       </GridPane>
-      <DatePicker layoutX="38.0" layoutY="221.0" prefHeight="31.0" prefWidth="234.0" promptText="Data początkowa" />
-      <DatePicker layoutX="38.0" layoutY="276.0" prefHeight="31.0" prefWidth="234.0" promptText="Data końcowa" />
+      <DatePicker fx:id="dpDataStart" layoutX="38.0" layoutY="221.0" prefHeight="31.0" prefWidth="234.0" promptText="Data początkowa" />
+      <DatePicker fx:id="dpDataStop" layoutX="38.0" layoutY="276.0" prefHeight="31.0" prefWidth="234.0" promptText="Data końcowa" />
       <Label layoutX="665.0" layoutY="96.0" prefHeight="21.0" prefWidth="257.0" text="MOJE WYPOŻYCZENIA" textFill="#eeadad">
          <font>
             <Font size="25.0" />
