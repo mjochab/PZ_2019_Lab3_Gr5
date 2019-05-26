@@ -4,9 +4,9 @@ public class SessionUser {
 
     private String userName;
     private String userType;
-    private String userId;
+    private int userId;
 
-    public SessionUser(String userName, String userType, String userId) {
+    public SessionUser(String userName, String userType, int userId) {
 
         this.userName = userName;
         this.userType = userType;
@@ -26,17 +26,30 @@ public class SessionUser {
 
     }
 
-    public String getUserId() {
+    public int getUserId() {
 
         return this.userId;
 
     }
 
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public void setUserType(String userType) {
+        this.userType = userType;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+
     public void logOut() {
 
-        this.userName = NULL;
-        this.userType = NULL;
-        this.userId = NULL;
+        this.userName = null;
+        this.userType = null;
+       // this.userId = null;
 
     }
 

@@ -189,6 +189,8 @@ public class LoginController implements Initializable {
 
     private SessionUser user;
 
+    public static int b;
+
     public void logIn(ActionEvent actionEvent) {
 
         Connection con = null;
@@ -205,65 +207,69 @@ public class LoginController implements Initializable {
                 ps.setString(2, password_tf.getText());
                 rs = ps.executeQuery();
 
-                    if (rs.next()) {
-                        if(rs.getString("rodzaj").equals("klient")) {
-                            FXMLLoader Loader = new FXMLLoader();
-                            Loader.setLocation(getClass().getResource("../fxml/menuKlient.fxml"));
-                                try {
-                                    Loader.load();
-                                } catch (IOException e) {
-                                    e.printStackTrace();
-                                }
-                            MenuKlientController display = Loader.getController();
-                            display.displayName(rs.getString("imie"));
+            if(rs.next()) {
+                user.setUserName(rs.getString("imie"));
+                user.setUserType(rs.getString("rodzaj"));
+                user.setUserId(rs.getInt("user_id"));
 
-                            Node source = (Node) actionEvent.getSource();
-                            Stage stage1 = (Stage) source.getScene().getWindow();
-                            stage1.close();
+                if(user.getUserName().equals("klient")) {
+                    FXMLLoader Loader = new FXMLLoader();
+                    Loader.setLocation(getClass().getResource("../fxml/menuKlient.fxml"));
+                    try {
+                        Loader.load();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    MenuKlientController display = Loader.getController();
+                    display.displayName(rs.getString("imie"));
 
-                            Parent p = Loader.getRoot();
-                            Stage stage = new Stage();
-                            stage.setScene(new Scene(p));
-                            stage.show();
-                        }else if(rs.getString("rodzaj").equals("admin")){
-                            FXMLLoader Loader = new FXMLLoader();
-                            Loader.setLocation(getClass().getResource("../fxml/menuAdmin.fxml"));
-                                try {
-                                    Loader.load();
-                                } catch (IOException e) {
-                                e.printStackTrace();
-                                }
-                            MenuAdminController display = Loader.getController();
-                            display.displayName(rs.getString("imie"));
+                    Node source = (Node) actionEvent.getSource();
+                    Stage stage1 = (Stage) source.getScene().getWindow();
+                    stage1.close();
 
-                            Node source = (Node) actionEvent.getSource();
-                            Stage stage1 = (Stage) source.getScene().getWindow();
-                            stage1.close();
+                    Parent p = Loader.getRoot();
+                    Stage stage = new Stage();
+                    stage.setScene(new Scene(p));
+                    stage.show();
+                }else if(user.getUserType().equals("admin")){
+                    FXMLLoader Loader = new FXMLLoader();
+                    Loader.setLocation(getClass().getResource("../fxml/menuAdmin.fxml"));
+                    try {
+                        Loader.load();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    MenuAdminController display = Loader.getController();
+                    display.displayName(rs.getString("imie"));
 
-                            Parent p = Loader.getRoot();
-                            Stage stage = new Stage();
-                            stage.setScene(new Scene(p));
-                            stage.show();
-                        }else if(rs.getString("rodzaj").equals("worker")) {
-                            FXMLLoader Loader = new FXMLLoader();
-                            Loader.setLocation(getClass().getResource("../fxml/menuPracownik.fxml"));
-                                try {
-                                    Loader.load();
-                                } catch (IOException e) {
-                                    e.printStackTrace();
-                                }
-                            MenuPracownikController display = Loader.getController();
-                            display.displayName(rs.getString("imie"));
+                    Node source = (Node) actionEvent.getSource();
+                    Stage stage1 = (Stage) source.getScene().getWindow();
+                    stage1.close();
 
-                            Node source = (Node) actionEvent.getSource();
-                            Stage stage1 = (Stage) source.getScene().getWindow();
-                            stage1.close();
+                    Parent p = Loader.getRoot();
+                    Stage stage = new Stage();
+                    stage.setScene(new Scene(p));
+                    stage.show();
+                }else if(user.getUserType().equals("worker")) {
+                    FXMLLoader Loader = new FXMLLoader();
+                    Loader.setLocation(getClass().getResource("../fxml/menuPracownik.fxml"));
+                    try {
+                        Loader.load();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    MenuPracownikController display = Loader.getController();
+                    display.displayName(rs.getString("imie"));
+                    //LoginController.b = rs.getInt("user_id");
+                    Node source = (Node) actionEvent.getSource();
+                    Stage stage1 = (Stage) source.getScene().getWindow();
+                    stage1.close();
 
-                            Parent p = Loader.getRoot();
-                            Stage stage = new Stage();
-                            stage.setScene(new Scene(p));
-                            stage.show();
-                        }
+                    Parent p = Loader.getRoot();
+                    Stage stage = new Stage();
+                    stage.setScene(new Scene(p));
+                    stage.show();
+                }
                     } else {
                         notyfikacja_lbl.setVisible(true);
                         notyfikacja_lbl.setText("NIEPOPRAWNY LOGIN LUB HASŁO!");
