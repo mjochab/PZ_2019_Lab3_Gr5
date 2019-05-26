@@ -225,6 +225,33 @@ public class zarzadzajPracownikamiController implements Initializable {
 
     }
 
+
+    public void datazpeselu (MouseEvent event) throws  IOException{
+
+        String pesel1 = String.valueOf(userPesel.getText());
+        Character data_r1 = pesel1.charAt(0);
+        Character data_r2 = pesel1.charAt(1);
+        Character data_m1 = pesel1.charAt(2);
+        Character data_m2 = pesel1.charAt(3);
+        Character data_d1 = pesel1.charAt(4);
+        Character data_d2 = pesel1.charAt(5);
+        String datarok = "";
+
+        String data_rok = data_r1.toString() + data_r2.toString();
+        int data_rok_int = Integer.parseInt(data_rok);
+        if(data_rok_int>10)
+        {
+            datarok = "19"+data_rok_int;
+        }
+
+        String data_msc = data_m1.toString() + data_m2.toString();
+        String data_dzien = data_d1.toString() + data_d2.toString();
+        String data_urodzenia = datarok +"-"+data_msc+"-"+data_dzien;
+        userData.setValue(LocalDate.parse(data_urodzenia));
+
+    }
+
+
     private boolean walidacjaPesel(){
         Pattern p = Pattern.compile("^[0-9]{11}$");
         Matcher m = p.matcher(userPesel.getText());
