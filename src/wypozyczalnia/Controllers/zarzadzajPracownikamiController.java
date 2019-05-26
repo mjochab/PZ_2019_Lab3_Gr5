@@ -65,6 +65,8 @@ public class zarzadzajPracownikamiController implements Initializable {
     ObservableList<ModelTable> oblist2 = FXCollections.observableArrayList();
 
     public void clearFields(ActionEvent event) throws IOException {
+        userPesel.setDisable(false);
+        userLogin.setDisable(false);
         userLogin.clear();
         userHaslo.clear();
         userData.setValue(null);
@@ -272,6 +274,8 @@ public class zarzadzajPracownikamiController implements Initializable {
 
     public void edytujPracownika(ActionEvent event) throws  IOException {
         System.out.println("-");
+        userPesel.setDisable(false);
+        userLogin.setDisable(false);
         String imie = String.valueOf(userImie.getCharacters());
         String nazwisko = String.valueOf(userNazwisko.getCharacters());
         String login = String.valueOf(userLogin.getCharacters());
@@ -335,6 +339,8 @@ public class zarzadzajPracownikamiController implements Initializable {
         }
 
     public void usunPracownika(ActionEvent event) throws IOException {
+        userPesel.setDisable(false);
+        userLogin.setDisable(false);
         TablePosition pozycja = tabelka.getSelectionModel().getSelectedCells().get(0);
         int index = pozycja.getRow();
 
@@ -388,7 +394,8 @@ public class zarzadzajPracownikamiController implements Initializable {
         String miejscowosc = String.valueOf(userMiejscowosc.getCharacters());
         String telefon = String.valueOf(userTelefon.getCharacters());
         String email = String.valueOf(userEmail.getCharacters());
-
+        userPesel.setDisable(false);
+        userLogin.setDisable(false);
         if (walidacjaPol() & walidacjaImie() & walidacjaNazwisko() & walidacjaMiejscowosc() & walidacjaEmail() & walidacjaPesel() & walidacjaDaty())
              try {
                  Class.forName("com.mysql.cj.jdbc.Driver");
