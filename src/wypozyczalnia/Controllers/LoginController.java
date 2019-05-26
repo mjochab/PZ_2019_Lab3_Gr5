@@ -187,9 +187,7 @@ public class LoginController implements Initializable {
 
     }
 
-    private SessionUser user;
-
-    public static int b;
+    public SessionUser user;
 
     public void logIn(ActionEvent actionEvent) {
 

@@ -49,7 +49,7 @@ public class SessionUser {
 
         this.userName = null;
         this.userType = null;
-       // this.userId = null;
+        this.userId = 0;
 
     }
 

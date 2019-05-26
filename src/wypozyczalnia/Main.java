@@ -10,11 +10,11 @@ import wypozyczalnia.Controllers.SessionUser;
 
 public class Main extends Application {
 
-    public static SessionUser user;
+    public SessionUser user;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        SessionUser user;
+
         Parent root = FXMLLoader.load(getClass().getResource("fxml/login.fxml"));
         primaryStage.setTitle("Wypożyczalnia samochodów");
         primaryStage.setScene(new Scene(root, 1400, 900));
@@ -23,6 +23,7 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
+
         launch(args);
     }
 }
