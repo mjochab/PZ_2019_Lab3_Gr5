@@ -19,7 +19,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="klientPane" prefHeight="900.0" prefWidth="1400.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.MenuKlientController">
+<AnchorPane fx:id="klientPane" prefHeight="900.0" prefWidth="1400.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.MenuKlientController">
     <children>
         <BorderPane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="800.0">
             <top>
@@ -49,8 +49,8 @@
                 </AnchorPane>
             </bottom>
         </BorderPane>
-        <TextField layoutX="24.0" layoutY="218.0" prefHeight="31.0" prefWidth="173.0" promptText="Marka" />
-        <TextField layoutX="24.0" layoutY="280.0" prefHeight="31.0" prefWidth="173.0" promptText="Model" />
+        <TextField layoutX="24.0" layoutY="282.0" prefHeight="31.0" prefWidth="173.0" promptText="Marka" />
+        <TextField layoutX="24.0" layoutY="344.0" prefHeight="31.0" prefWidth="173.0" promptText="Model" />
         <TableView layoutX="215.0" layoutY="186.0" prefHeight="506.0" prefWidth="1103.0">
             <columns>
                 <TableColumn fx:id="col_marka" prefWidth="235.99998474121094" text="Marka" />
@@ -221,8 +221,8 @@
             </ImageView>
          </children>
       </GridPane>
-      <DatePicker layoutX="24.0" layoutY="344.0" prefHeight="31.0" prefWidth="173.0" promptText="Data początkowa" />
-      <DatePicker layoutX="24.0" layoutY="408.0" prefHeight="31.0" prefWidth="173.0" promptText="Data końcowa" />
+      <DatePicker layoutX="24.0" layoutY="408.0" prefHeight="31.0" prefWidth="173.0" promptText="Data początkowa" />
+      <DatePicker layoutX="24.0" layoutY="472.0" prefHeight="31.0" prefWidth="173.0" promptText="Data końcowa" />
       <Button layoutX="1210.0" layoutY="100.0" mnemonicParsing="false" onAction="#logOut" prefHeight="30.0" prefWidth="153.0" style="-fx-background-color: #e27171;" text="WYLOGUJ">
          <graphic>
             <ImageView fitHeight="36.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
@@ -255,5 +255,6 @@
             <Bloom />
          </effect>
       </Label>
+      <Button layoutX="51.0" layoutY="237.0" mnemonicParsing="false" onAction="#clearFields" prefHeight="26.0" prefWidth="120.0" text="Wyczyść pola" />
     </children>
 </AnchorPane>
