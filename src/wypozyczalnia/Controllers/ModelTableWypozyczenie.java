@@ -42,7 +42,7 @@ public class ModelTableWypozyczenie {
     }
 
     public String getData_koncowa() {
-        return data_poczatkowa;
+        return data_koncowa;
     }
 
     public void setData_koncowa(String data_koncowa) {
