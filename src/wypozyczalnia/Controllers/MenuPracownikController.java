@@ -62,8 +62,4 @@ public class MenuPracownikController {
         this.usernamedisplay_lbl.setText(usernamedisplay+"!");
 
     }
-
-    public void dodajWypo(ActionEvent actionEvent) {
-        //zarzadzajWypozyczeniami(dodajWypo());
-    }
 }

@@ -2,44 +2,35 @@ package wypozyczalnia.Controllers;
 
 public class ModelTableWypozyczenie {
 
-    String marka;
-    String model;
+    String imie;
+    String nazwisko;
     String data_poczatkowa;
     String data_koncowa;
-    String pesel;
-    double cena;
+    String cena;
 
-    public ModelTableWypozyczenie(String pesel, String marka, String model, String data_poczatkowa, String data_koncowa, double cena)
+
+    public ModelTableWypozyczenie(String imie, String nazwisko, String data_poczatkowa, String data_koncowa, String cena)
     {
-        this.pesel=pesel;
-        this.marka=marka;
-        this.model=model;
+        this.imie=imie;
+        this.nazwisko=nazwisko;
         this.data_poczatkowa=data_poczatkowa;
         this.data_koncowa=data_koncowa;
-        this.cena=cena;
+        this.cena = cena;
 
     }
 
-    public String getPesel() { return pesel; }
+    public String getImie() { return imie; }
 
-    public void setPesel(String pesel) {
-        this.pesel = pesel;
+    public void setImie(String pesel) {
+        this.imie = imie;
     }
 
-    public String getMarka() {
-        return marka;
+    public String getNazwisko() {
+        return nazwisko;
     }
 
-    public void setMarka(String marka) {
-        this.marka = marka;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
+    public void setNazwisko(String marka) {
+        this.nazwisko = marka;
     }
 
     public String getData_poczatkowa() {
@@ -49,21 +40,22 @@ public class ModelTableWypozyczenie {
     public void setData_poczatkowa(String data_poczatkowa) {
         this.data_poczatkowa = data_poczatkowa;
     }
+
     public String getData_koncowa() {
-        return data_poczatkowa;
+        return data_koncowa;
     }
 
     public void setData_koncowa(String data_koncowa) {
         this.data_koncowa = data_koncowa;
     }
-    public double getCena() {
+
+    public String getCena() {
         return cena;
     }
 
-    public void setCena(double cena) {
+    public void setCena(String cena) {
         this.cena = cena;
     }
-
 
 
 

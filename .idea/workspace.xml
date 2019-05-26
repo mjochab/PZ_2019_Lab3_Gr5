@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Walidacja pol w formularzu - końcowy etap pracy nad okienkeim zarzadzania pojazdami u pracownika" />
+=======
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="modyfikacja obydwu okien">
+      <change beforePath="$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajWypozyczeniamiAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajWypozyczeniamiAdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajWypozyczeniamiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajWypozyczeniamiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajWypozyczeniamiAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajWypozyczeniamiAdmin.fxml" afterDir="false" />
+    </list>
+>>>>>>> wypozyczenia
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -64,27 +72,55 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/historiaWypozyczenController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1870">
               <caret line="130" selection-start-line="130" selection-end-line="130" />
+=======
+        <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajWypozyczeniamiController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="61" selection-start-line="61" selection-end-line="61" />
+              <folding>
+                <element signature="method#logOut#0;class#zarzadzajWypozyczeniamiController#0" />
+                <element signature="method#menuPracownik#0;class#zarzadzajWypozyczeniamiController#0" />
+                <element signature="method#initialize#0;class#zarzadzajWypozyczeniamiController#0" />
+                <element signature="method#walidacajaDataWypozyczenia#0;class#zarzadzajWypozyczeniamiController#0" />
+              </folding>
+>>>>>>> wypozyczenia
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajPracownikamiController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-47">
               <caret line="243" selection-start-line="243" selection-end-line="243" />
               <folding>
                 <element signature="imports" expanded="true" />
+=======
+        <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajWypozyczeniamiAdminController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="589">
+              <caret line="186" selection-start-line="186" selection-end-line="186" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#logOut#0;class#zarzadzajWypozyczeniamiAdminController#0" />
+                <element signature="method#menuAdmin#0;class#zarzadzajWypozyczeniamiAdminController#0" />
+                <element signature="method#modujWypo#0;class#zarzadzajWypozyczeniamiAdminController#0" />
+                <element signature="method#usunWypo#0;class#zarzadzajWypozyczeniamiAdminController#0" />
+                <element signature="method#walidacajaDataWypozyczenia#0;class#zarzadzajWypozyczeniamiAdminController#0" />
+>>>>>>> wypozyczenia
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajPracownikami.fxml">
           <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
           <provider editor-type-id="text-editor">
@@ -119,25 +155,50 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="442">
               <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
+=======
+        <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajWypozyczeniamiAdmin.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="159">
+              <caret line="195" column="90" selection-start-line="195" selection-start-column="90" selection-end-line="195" selection-end-column="90" />
+>>>>>>> wypozyczenia
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajPojazdami.fxml">
           <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
           <provider editor-type-id="text-editor">
             <state relative-caret-position="4403">
               <caret line="259" column="51" selection-start-line="259" selection-start-column="51" selection-end-line="259" selection-end-column="51" />
+=======
+        <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajWypozyczeniami.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="22" column="44" selection-end-line="229" />
+>>>>>>> wypozyczenia
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/MenuPracownikController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="833">
               <caret line="55" selection-start-line="55" selection-end-line="55" />
+=======
+        <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajPracownikamiController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3876">
+              <caret line="249" column="20" selection-start-line="249" selection-start-column="16" selection-end-line="249" selection-end-column="20" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+>>>>>>> wypozyczenia
             </state>
           </provider>
         </entry>
@@ -156,16 +217,23 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>pracownikpan</find>
-      <find>LoginController</find>
-      <find>mie</find>
-      <find>ini</find>
-      <find>klik</find>
-      <find>rocznik</find>
-      <find>oblist</find>
-      <find>notyfikacja</find>
-      <find>zł</find>
+      <find>model</find>
+      <find>tabelka</find>
+      <find>zarz</find>
+      <find>kli</find>
+      <find>uzupe;</find>
+      <find>automarka</find>
+      <find>TdataStart</find>
+      <find>datakoniec</find>
+      <find>system</find>
+      <find>TdataS</find>
+      <find>dupa</find>
+      <find>zarzadzaj</find>
+      <find>DatePicker</find>
+      <find>tmark</find>
+      <find>usun</find>
       <find>dodaj</find>
+<<<<<<< HEAD
       <find>setstr</find>
       <find>obl</find>
       <find>zarza</find>
@@ -184,6 +252,22 @@
       <find>setValue</find>
       <find>java.time</find>
       <find>ed</find>
+=======
+      <find>button</find>
+      <find>oblist1</find>
+      <find>tabelka_wypozyczenie</find>
+      <find>table</find>
+      <find>Tdata</find>
+      <find>tpesel</find>
+      <find>userpesep</find>
+      <find>pesel</find>
+      <find>moduj</find>
+      <find>data_koncowa</find>
+      <find>data_poczatkowa</find>
+      <find>data</find>
+      <find>ed</find>
+      <find>klik</find>
+>>>>>>> wypozyczenia
     </findStrings>
   </component>
   <component name="FindManager">
@@ -200,6 +284,7 @@
         <option value="pkrawiec" />
       </list>
     </option>
+    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -210,6 +295,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
+=======
+        <option value="$PROJECT_DIR$/src/sample/Fxml/menuPracownik.fxml" />
+>>>>>>> wypozyczenia
         <option value="$PROJECT_DIR$/Test/sample/UnitTest1Test.java" />
         <option value="$PROJECT_DIR$/out/production/CarRental/sample/Fxml/zarzadzajPojazdami.fxml" />
         <option value="$PROJECT_DIR$/src/sample/Controllers/zarzadzajPojazdamiController.java" />
@@ -224,11 +313,14 @@
         <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/udostepnijPojazd.fxml" />
         <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/udostepnijPojazdK.fxml" />
         <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajUzytkownikami.fxml" />
-        <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajWypozyczeniamiAdmin.fxml" />
         <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/podWyn.fxml" />
         <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/login.fxml" />
         <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/menuKlient.fxml" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/wypozyczalnia/Controllers/MenuAdminController.java" />
+=======
+        <option value="$PROJECT_DIR$/src/wypozyczalnia/Controllers/LoginController.java" />
+>>>>>>> wypozyczenia
         <option value="$PROJECT_DIR$/src/wypozyczalnia/Controllers/MenuKlientController.java" />
         <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/menuAdmin.fxml" />
         <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/terminPracownik.fxml" />
@@ -240,7 +332,6 @@
         <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajUzytkownikamiAdmin.fxml" />
         <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajPracownikami.fxml" />
         <option value="$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajUzytkownikamiController.java" />
-        <option value="$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajPracownikamiController.java" />
         <option value="$PROJECT_DIR$/src/wypozyczalnia/Controllers/WypozyczeniePracownikController.java" />
         <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/wypozyczeniePracownik.fxml" />
         <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/wypozyczenieKlient.fxml" />
@@ -249,6 +340,7 @@
         <option value="$PROJECT_DIR$/src/wypozyczalnia/Main.java" />
         <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajPojazdamiAdmin.fxml" />
         <option value="$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajPojazdamiAdminController.java" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajPojazdami.fxml" />
         <option value="$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajPojazdamiController.java" />
         <option value="$PROJECT_DIR$/src/wypozyczalnia/Controllers/ModelTableWypozyczenie.java" />
@@ -261,6 +353,19 @@
         <option value="$PROJECT_DIR$/src/wypozyczalnia/Controllers/historiaWypozyczenController.java" />
         <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/mojeWypozyczenia.fxml" />
         <option value="$PROJECT_DIR$/src/wypozyczalnia/Controllers/MojeWypozyczeniaController.java" />
+=======
+        <option value="$PROJECT_DIR$/src/wypozyczalnia/Controllers/MenuPracownikController.java" />
+        <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajPojazdami.fxml" />
+        <option value="$PROJECT_DIR$/src/wypozyczalnia/Table_Models/ModelTableWypozyczenia.java" />
+        <option value="$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajPojazdamiController.java" />
+        <option value="$PROJECT_DIR$/src/wypozyczalnia/Controllers/MenuAdminController.java" />
+        <option value="$PROJECT_DIR$/src/wypozyczalnia/Controllers/ModelTableWypozyczenie.java" />
+        <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajWypozyczeniami.fxml" />
+        <option value="$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajPracownikamiController.java" />
+        <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajWypozyczeniamiAdmin.fxml" />
+        <option value="$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajWypozyczeniamiAdminController.java" />
+        <option value="$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajWypozyczeniamiController.java" />
+>>>>>>> wypozyczenia
       </list>
     </option>
   </component>
@@ -273,9 +378,16 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
+<<<<<<< HEAD
     <option name="x" value="-7" />
     <option name="width" value="1294" />
     <option name="height" value="1047" />
+=======
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="2576" />
+    <option name="height" value="1056" />
+>>>>>>> wypozyczenia
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -283,7 +395,11 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
       <pane id="PackagesPane" />
+=======
+      <pane id="Scope" />
+>>>>>>> wypozyczenia
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -313,7 +429,11 @@
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD
       <pane id="Scope" />
+=======
+      <pane id="PackagesPane" />
+>>>>>>> wypozyczenia
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -330,12 +450,20 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+<<<<<<< HEAD
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558872371892" />
+=======
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558881116261" />
+>>>>>>> wypozyczenia
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/wypozyczalnia/Icons" />
+<<<<<<< HEAD
     <property name="project.structure.last.edited" value="Modules" />
+=======
+    <property name="project.structure.last.edited" value="Project" />
+>>>>>>> wypozyczenia
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
@@ -732,7 +860,116 @@
       <option name="project" value="LOCAL" />
       <updated>1558629878379</updated>
     </task>
+<<<<<<< HEAD
     <option name="localTasksCounter" value="28" />
+=======
+    <task id="LOCAL-00028" summary="Walidacja pol w formularzu - końcowy etap pracy nad okienkeim zarzadzania pojazdami u admina">
+      <created>1558630605453</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1558630605453</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Walidacja pol w formularzu - końcowy etap pracy nad okienkeim zarzadzania pojazdami u admina">
+      <created>1558630816238</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1558630816238</updated>
+    </task>
+    <task id="LOCAL-00030" summary="poprawa bledow">
+      <created>1558713997947</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1558713997947</updated>
+    </task>
+    <task id="LOCAL-00031" summary="poprawa bledow">
+      <created>1558714124775</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1558714124775</updated>
+    </task>
+    <task id="LOCAL-00032" summary="poprawa bledow">
+      <created>1558722273179</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1558722273179</updated>
+    </task>
+    <task id="LOCAL-00033" summary="poprawa bledow">
+      <created>1558735589229</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1558735589229</updated>
+    </task>
+    <task id="LOCAL-00034" summary="poprawa bledow">
+      <created>1558787867668</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1558787867668</updated>
+    </task>
+    <task id="LOCAL-00035" summary="poprawa bledow">
+      <created>1558809231286</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1558809231286</updated>
+    </task>
+    <task id="LOCAL-00036" summary="poprawa bledow">
+      <created>1558816751617</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1558816751617</updated>
+    </task>
+    <task id="LOCAL-00037" summary="panel pracownika gotowy">
+      <created>1558822593331</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1558822593331</updated>
+    </task>
+    <task id="LOCAL-00038" summary="panel administratora - wypozyczenia">
+      <created>1558827803175</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1558827803175</updated>
+    </task>
+    <task id="LOCAL-00039" summary="panel administratora - wypozyczenia - przed walidacja danych">
+      <created>1558867545681</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1558867545681</updated>
+    </task>
+    <task id="LOCAL-00040" summary="panel administratora - wypozyczenia - przed walidacja danych">
+      <created>1558867635861</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1558867635861</updated>
+    </task>
+    <task id="LOCAL-00041" summary="panel administratora - wypozyczenia - walidacja danych">
+      <created>1558872272424</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1558872272484</updated>
+    </task>
+    <task id="LOCAL-00042" summary="modyfikacja obydwu okien">
+      <created>1558874692648</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1558874692648</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
+>>>>>>> wypozyczenia
     <servers />
   </component>
   <component name="TestHistory">
@@ -783,7 +1020,11 @@
     <frame x="-8" y="-8" width="2576" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
+<<<<<<< HEAD
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.15620032" />
+=======
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.23410174" />
+>>>>>>> wypozyczenia
       <window_info id="Structure" order="1" weight="0.24966443" />
       <window_info id="Favorites" order="2" weight="0.3295302" />
       <window_info id="Designer" order="3" />
@@ -791,20 +1032,32 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.3286119" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.13001083" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39761648" />
+=======
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32733223" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.36836404" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39703903" />
+>>>>>>> wypozyczenia
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32827735" />
       <window_info anchor="bottom" id="Application Servers" order="7" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.19546743" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.19476268" />
       <window_info anchor="bottom" id="Problems" order="9" />
       <window_info anchor="bottom" id="Changes" order="10" />
       <window_info anchor="bottom" id="Profiler" order="11" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Event Log" order="12" weight="0.3243626" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.31419286" />
       <window_info anchor="bottom" id="Terminal" order="14" weight="0.32932165" />
+=======
+      <window_info anchor="bottom" id="Event Log" order="12" weight="0.31751227" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.31419286" />
+      <window_info anchor="bottom" id="Terminal" order="14" weight="0.3289689" />
+>>>>>>> wypozyczenia
       <window_info anchor="bottom" id="GitHub Pull Requests" order="15" weight="0.33694476" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24966443" />
@@ -818,42 +1071,22 @@
       <window_info anchor="right" id="Palette&#9;" order="9" />
       <window_info anchor="right" id="Theme Preview" order="10" />
     </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.22885907" />
-      <window_info id="Structure" order="1" weight="0.24966443" />
-      <window_info id="Favorites" order="2" weight="0.3295302" />
-      <window_info id="Designer" order="3" />
-      <window_info id="Image Layers" order="4" />
-      <window_info id="UI Designer" order="5" />
-      <window_info id="Capture Tool" order="6" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3101983" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.398017" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32827735" />
-      <window_info anchor="bottom" id="Application Servers" order="7" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.19546743" />
-      <window_info anchor="bottom" id="Problems" order="9" />
-      <window_info anchor="bottom" id="Changes" order="10" />
-      <window_info anchor="bottom" id="Profiler" order="11" />
-      <window_info anchor="bottom" id="Event Log" order="12" weight="0.3243626" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.31586403" />
-      <window_info anchor="bottom" id="Terminal" order="14" weight="0.32932165" />
-      <window_info anchor="bottom" id="GitHub Pull Requests" order="15" weight="0.33694476" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.24966443" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="JetGradle" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="right" id="Palette" order="5" />
-      <window_info anchor="right" id="Maven Projects" order="6" />
-      <window_info anchor="right" id="Maven" order="7" weight="0.50102043" />
-      <window_info anchor="right" id="Capture Analysis" order="8" />
-      <window_info anchor="right" id="Palette&#9;" order="9" />
-      <window_info anchor="right" id="Theme Preview" order="10" />
-    </layout-to-restore>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="RECENT_FILTERS">
@@ -873,9 +1106,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
-    <MESSAGE value="Dodaje projekt, trzy GUI okna" />
-    <MESSAGE value="Okna zarządzania admina" />
-    <MESSAGE value="Poprawki, implemenation of hibernate" />
     <MESSAGE value="testowe połączenie z bazą" />
     <MESSAGE value="testowy insert" />
     <MESSAGE value="Implementacja TableView" />
@@ -894,16 +1124,37 @@
     <MESSAGE value="Poprawki zarządzanie pojazdami - pracownik" />
     <MESSAGE value="Poprawki zarządzanie pojazdami - admin" />
     <MESSAGE value="Walidacja pol w formularzu - końcowy etap pracy nad okienkeim zarzadzania pojazdami u pracownika" />
+<<<<<<< HEAD
     <option name="LAST_COMMIT_MESSAGE" value="Walidacja pol w formularzu - końcowy etap pracy nad okienkeim zarzadzania pojazdami u pracownika" />
+=======
+    <MESSAGE value="Walidacja pol w formularzu - końcowy etap pracy nad okienkeim zarzadzania pojazdami u admina" />
+    <MESSAGE value="poprawa bledow" />
+    <MESSAGE value="panel pracownika gotowy" />
+    <MESSAGE value="panel administratora - wypozyczenia" />
+    <MESSAGE value="panel administratora - wypozyczenia - przed walidacja danych" />
+    <MESSAGE value="panel administratora - wypozyczenia - walidacja danych" />
+    <MESSAGE value="modyfikacja obydwu okien" />
+    <option name="LAST_COMMIT_MESSAGE" value="modyfikacja obydwu okien" />
+>>>>>>> wypozyczenia
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
+<<<<<<< HEAD
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajPojazdamiController.java</url>
           <line>91</line>
           <properties />
           <option name="timeStamp" value="2" />
+=======
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajWypozyczeniamiAdminController.java</url>
+          <line>141</line>
+          <properties class="wypozyczalnia.Controllers.zarzadzajWypozyczeniamiAdminController" method="initialize">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="5" />
+>>>>>>> wypozyczenia
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -913,6 +1164,7 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Icons/users.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -925,12 +1177,18 @@
       <provider editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Table_Models/ModelTablePojazdy.java">
+=======
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/javafx-src.zip!/javafx/fxml/FXMLLoader.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/src.zip!/java/lang/String.java" />
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/PodWynPController.java">
+>>>>>>> wypozyczenia
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-224">
           <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajWypozyczeniamiAdminController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
@@ -947,13 +1205,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajUzytkownikamiAdmin.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Table_Models/ModelTablePracownicy.java">
+>>>>>>> wypozyczenia
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-79">
           <caret line="52" column="6" lean-forward="true" selection-start-line="52" selection-start-column="6" selection-end-line="72" selection-end-column="20" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajUzytkownikamiAdminController.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Icons/cars.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Icons/car.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/historiaWypozyczen.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Generate_PDF_Klienci.java">
+>>>>>>> wypozyczenia
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
           <caret line="242" column="31" selection-start-line="242" selection-start-column="31" selection-end-line="242" selection-end-column="31" />
@@ -971,11 +1250,24 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/wypozyczenieKlient.fxml">
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
       <provider editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Icons/users.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/MenuKlientController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-167">
+          <caret line="28" column="30" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+>>>>>>> wypozyczenia
         </state>
       </provider>
     </entry>
@@ -1020,11 +1312,19 @@
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
       <provider editor-type-id="text-editor" />
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/wypozyczeniePracownik.fxml">
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
       <provider editor-type-id="text-editor">
         <state relative-caret-position="318">
           <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/mojeWypozyczenia.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="59" column="99" selection-start-line="59" selection-start-column="99" selection-end-line="59" selection-end-column="99" />
+>>>>>>> wypozyczenia
         </state>
       </provider>
     </entry>
@@ -1071,6 +1371,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/terminKlient.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
@@ -1087,6 +1388,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/WypozyczenieKlientController.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajUzytkownikamiAdmin.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+>>>>>>> wypozyczenia
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-69">
           <caret line="76" column="13" selection-start-line="76" selection-start-column="13" selection-end-line="76" selection-end-column="13" />
@@ -1095,8 +1400,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/PodWynPController.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="204">
           <caret line="17" column="21" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="21" />
+=======
+        <state relative-caret-position="2180">
+          <caret line="288" column="24" selection-start-line="288" selection-start-column="24" selection-end-line="288" selection-end-column="24" />
+>>>>>>> wypozyczenia
         </state>
       </provider>
     </entry>
@@ -1114,10 +1424,18 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/udostepnijPojazdKController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4233">
           <caret line="269" selection-start-line="269" selection-end-line="269" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajUzytkownikami.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="65" column="22" selection-start-line="65" selection-start-column="22" selection-end-line="65" selection-end-column="22" />
+>>>>>>> wypozyczenia
         </state>
       </provider>
     </entry>
@@ -1128,19 +1446,32 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/podWyn.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="175" column="107" selection-start-line="175" selection-start-column="107" selection-end-line="175" selection-end-column="107" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajPracownikami.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="3859">
+          <caret line="227" column="18" selection-start-line="227" selection-start-column="18" selection-end-line="227" selection-end-column="18" />
+>>>>>>> wypozyczenia
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/udostepnijPojazd.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="4420">
           <caret line="260" column="15" selection-start-line="260" selection-start-column="15" selection-end-line="260" selection-end-column="15" />
+=======
+        <state relative-caret-position="662">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
+>>>>>>> wypozyczenia
         </state>
       </provider>
     </entry>
@@ -1169,6 +1500,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -1206,6 +1538,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="422">
           <caret line="112" column="69" selection-start-line="112" selection-start-column="69" selection-end-line="112" selection-end-column="69" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajUzytkownikamiController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+          <folding>
+            <element signature="e#3846#3854#0" expanded="true" />
+          </folding>
+>>>>>>> wypozyczenia
         </state>
       </provider>
     </entry>
@@ -1227,6 +1568,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajPojazdami.fxml">
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
       <provider editor-type-id="text-editor">
@@ -1236,6 +1578,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/ModelTableWypozyczenia.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Main.java">
+>>>>>>> wypozyczenia
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
           <caret line="69" column="29" selection-start-line="69" selection-start-column="29" selection-end-line="69" selection-end-column="29" />
@@ -1268,6 +1613,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/MenuPracownikController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="833">
@@ -1280,11 +1626,65 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="3774">
           <caret line="222" column="18" selection-start-line="222" selection-start-column="18" selection-end-line="222" selection-end-column="18" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajPojazdamiAdminController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="44" column="47" selection-start-line="44" selection-start-column="47" selection-end-line="44" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajPojazdamiAdmin.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="659">
+          <caret line="57" column="110" selection-start-line="57" selection-start-column="110" selection-end-line="57" selection-end-column="110" />
+>>>>>>> wypozyczenia
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/MenuPracownikController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-102">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Table_Models/ModelTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-304">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/MenuAdminController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="17" column="50" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Table_Models/ModelTableWypozyczenia.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="38" column="18" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajPojazdami.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="4403">
+          <caret line="264" column="51" selection-start-line="264" selection-start-column="51" selection-end-line="264" selection-end-column="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajPojazdamiController.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="7451">
           <caret line="484" column="5" selection-start-line="484" selection-start-column="5" selection-end-line="484" selection-end-column="5" />
         </state>
@@ -1302,23 +1702,99 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
           <caret line="52" column="99" selection-start-line="52" selection-start-column="99" selection-end-line="52" selection-end-column="99" />
+=======
+        <state relative-caret-position="7213">
+          <caret line="470" column="5" selection-start-line="470" selection-start-column="5" selection-end-line="470" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Generate_PDF_Wypozyczenia.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/ModelTableWypozyczenie.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="564">
+          <caret line="48" column="10" lean-forward="true" selection-start-line="48" selection-start-column="10" selection-end-line="48" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/historiaWypozyczenController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="739">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
+>>>>>>> wypozyczenia
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajPracownikamiController.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="-47">
           <caret line="243" selection-start-line="243" selection-end-line="243" />
+          <folding>
+            <element signature="imports" expanded="true" />
+=======
+        <state relative-caret-position="3876">
+          <caret line="249" column="20" selection-start-line="249" selection-start-column="16" selection-end-line="249" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajWypozyczeniami.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="44" selection-end-line="229" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajWypozyczeniamiAdmin.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="195" column="90" selection-start-line="195" selection-start-column="90" selection-end-line="195" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajWypozyczeniamiAdminController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="186" selection-start-line="186" selection-end-line="186" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#logOut#0;class#zarzadzajWypozyczeniamiAdminController#0" />
+            <element signature="method#menuAdmin#0;class#zarzadzajWypozyczeniamiAdminController#0" />
+            <element signature="method#modujWypo#0;class#zarzadzajWypozyczeniamiAdminController#0" />
+            <element signature="method#usunWypo#0;class#zarzadzajWypozyczeniamiAdminController#0" />
+            <element signature="method#walidacajaDataWypozyczenia#0;class#zarzadzajWypozyczeniamiAdminController#0" />
+>>>>>>> wypozyczenia
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/MojeWypozyczeniaController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="94" column="146" selection-start-line="94" selection-start-column="146" selection-end-line="94" selection-end-column="146" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajWypozyczeniamiController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="61" selection-start-line="61" selection-end-line="61" />
+          <folding>
+            <element signature="method#logOut#0;class#zarzadzajWypozyczeniamiController#0" />
+            <element signature="method#menuPracownik#0;class#zarzadzajWypozyczeniamiController#0" />
+            <element signature="method#initialize#0;class#zarzadzajWypozyczeniamiController#0" />
+            <element signature="method#walidacajaDataWypozyczenia#0;class#zarzadzajWypozyczeniamiController#0" />
+          </folding>
+>>>>>>> wypozyczenia
         </state>
       </provider>
     </entry>
