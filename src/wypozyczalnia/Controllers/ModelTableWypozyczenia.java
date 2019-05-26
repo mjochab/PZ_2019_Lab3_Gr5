@@ -66,8 +66,8 @@ public class ModelTableWypozyczenia {
     {
         this.marka=marka;
         this.model=model;
-        this.data_do=data_do;
         this.data_od=data_od;
+        this.data_do=data_do;
         this.cena=cena;
         this.user_id=user_id;
 

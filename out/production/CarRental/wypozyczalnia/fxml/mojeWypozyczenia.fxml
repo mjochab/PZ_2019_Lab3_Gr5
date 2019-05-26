@@ -5,7 +5,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Bloom?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -15,16 +14,15 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="pracownikPane" prefHeight="900.0" prefWidth="1400.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.MenuPracownikController">
+<AnchorPane fx:id="pracownikPane" prefHeight="900.0" prefWidth="1400.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.MojeWypozyczeniaController">
     <children>
-        <TextField layoutX="38.0" layoutY="227.0" prefHeight="31.0" prefWidth="234.0" promptText="Marka" />
-        <TextField layoutX="38.0" layoutY="292.0" prefHeight="31.0" prefWidth="234.0" promptText="Model" />
-        <TableView fx:id="tabelka_moje_wypozyczenia" layoutX="301.0" layoutY="171.0" prefHeight="558.0" prefWidth="985.0">
+        <TableView fx:id="tabelka_moje_wypozyczenia" layoutX="301.0" layoutY="171.0" prefHeight="585.0" prefWidth="1020.0">
             <columns>
-                <TableColumn fx:id="col_marka" prefWidth="241.99998474121094" text="Marka" />
-                <TableColumn fx:id="col_model" prefWidth="276.0" text="Model" />
-                <TableColumn fx:id="col_odkiery" prefWidth="232.0" text="Od kiedy" />
-                <TableColumn fx:id="col_dokiedy" prefWidth="302.0" text="Do kiedy" />
+                <TableColumn fx:id="col_marka" prefWidth="177.0" text="Marka" />
+                <TableColumn fx:id="col_model" prefWidth="226.0" text="Model" />
+                <TableColumn fx:id="col_data_od" prefWidth="261.0" text="Data początkowa" />
+                <TableColumn fx:id="col_data_do" prefWidth="156.0" text="Data końcowa" />
+            <TableColumn fx:id="col_cena" prefWidth="199.0" text="Cena" />
 
             </columns>
         </TableView>
@@ -52,26 +50,11 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="1114.0" layoutY="740.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="173.0" style="-fx-background-color: #e27171;" text=" POTWIERDŹ">
+      <Button layoutX="69.0" layoutY="346.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="173.0" style="-fx-background-color: #e27171;" text="ZMIEŃ DATĘ">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="918.0" layoutY="741.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="173.0" style="-fx-background-color: #e27171;" text="EDYTUJ">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <ImageView fitHeight="27.0" fitWidth="27.0" layoutX="933.0" layoutY="752.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../Icons/edit.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="33.0" fitWidth="27.0" layoutX="1121.0" layoutY="751.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../Icons/confirm.png" />
-         </image>
-      </ImageView>
       <GridPane layoutY="842.0" prefHeight="68.0" prefWidth="1400.0" style="-fx-background-color: #6d0707;">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
@@ -214,8 +197,8 @@
             </ImageView>
          </children>
       </GridPane>
-      <DatePicker layoutX="38.0" layoutY="360.0" prefHeight="31.0" prefWidth="234.0" promptText="Data początkowa" />
-      <DatePicker layoutX="38.0" layoutY="419.0" prefHeight="31.0" prefWidth="234.0" promptText="Data końcowa" />
+      <DatePicker layoutX="38.0" layoutY="221.0" prefHeight="31.0" prefWidth="234.0" promptText="Data początkowa" />
+      <DatePicker layoutX="38.0" layoutY="276.0" prefHeight="31.0" prefWidth="234.0" promptText="Data końcowa" />
       <Label layoutX="665.0" layoutY="96.0" prefHeight="21.0" prefWidth="257.0" text="MOJE WYPOŻYCZENIA" textFill="#eeadad">
          <font>
             <Font size="25.0" />

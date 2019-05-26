@@ -125,8 +125,8 @@ public class historiaWypozyczenController implements Initializable {
 
         col_marka.setCellValueFactory(new PropertyValueFactory<>("marka"));
         col_model.setCellValueFactory(new PropertyValueFactory<>("model"));
-        col_data_do.setCellValueFactory(new PropertyValueFactory<>("data_od"));
-        col_data_od.setCellValueFactory(new PropertyValueFactory<>("data_do"));
+        col_data_od.setCellValueFactory(new PropertyValueFactory<>("data_od"));
+        col_data_do.setCellValueFactory(new PropertyValueFactory<>("data_do"));
         col_cena.setCellValueFactory(new PropertyValueFactory<>("cena"));
 
 
