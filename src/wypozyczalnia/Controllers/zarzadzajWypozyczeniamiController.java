@@ -46,9 +46,7 @@ public class zarzadzajWypozyczeniamiController implements Initializable {
     ObservableList<ModelTableWypozyczenie> oblist1 = FXCollections.observableArrayList();
     //ObservableList<ModelTableWypozyczenie> oblist2 = FXCollections.observableArrayList();
 
-    public static void alamakota(){
-        System.out.println("Ala ma kot");
-    }
+
 
     @FXML
 
@@ -56,18 +54,13 @@ public class zarzadzajWypozyczeniamiController implements Initializable {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/login.fxml"));
         pracownikPane.getChildren().setAll(pane);
     }
-    public void uruchom1(ActionEvent event) throws IOException {
 
-
-    }
     public void menuPracownik(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/menuPracownik.fxml"));
         pracownikPane.getChildren().setAll(pane);
     }
 
-    public void alamakota(ActionEvent event) throws  IOException{
-        System.out.println("x");
-    }
+
 
 
 
@@ -122,7 +115,7 @@ public class zarzadzajWypozyczeniamiController implements Initializable {
         };
     }
 
-        public void modujWypo(ActionEvent event) throws  IOException{
+    public void modujWypo(ActionEvent event) throws  IOException{
 
         System.out.println("2");
 
@@ -233,7 +226,65 @@ public class zarzadzajWypozyczeniamiController implements Initializable {
         System.out.println(tabelka_wypozyczenie);
 
         tabelka_wypozyczenie.setItems(oblist1);
+/*
+        tabelka_wypozyczenie.setOnMousePressed(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                String abc;
+                abc = tabelka_wypozyczenie.toString();
+                System.out.println(abc);
+                ArrayList<String> dane = new ArrayList<String>();
+                try {
 
+                    TablePosition pozycja = tabelka_wypozyczenie.getSelectionModel().getSelectedCells().get(0);
+                    int index = pozycja.getRow();
+
+                    index++;
+                    Class.forName("com.mysql.cj.jdbc.Driver");
+                    System.out.println(index);
+
+                    Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+
+                    PreparedStatement stmt = con.prepareStatement("SELECT * FROM wypozyczenie");
+                    String zapytanie = "Select * FROM wypozyczenie ORDER BY wypozyczenie_id LIMIT " + index;
+                    ResultSet rs = stmt.executeQuery(zapytanie);
+                    String a = "0";
+                    int i=0;
+                    while(rs.next()) {
+                        a = rs.getString(1);
+                        i++;
+                    }
+                    int numer = Integer.parseInt(a);
+                    System.out.println(numer);
+
+                    zapytanie = "Select data_od, data_do, user_id FROM wypozyczenie ORDER BY wypozyczenie_id LIMIT " + index;
+                    ResultSet rs2 = stmt.executeQuery(zapytanie);
+                    System.out.println(rs2);
+                    if(rs2.next()) {
+                        dane.add(rs2.getString("data_od"));
+                        dane.add(rs2.getString("data_do"));
+
+                        TdataStart.setValue(LocalDate.parse(dane.get(0)));
+                        TdataKoniec.setValue(LocalDate.parse(dane.get(1)));
+
+
+                    }
+
+
+                }catch (Exception e)
+                {
+                    Alert alert = new Alert(Alert.AlertType.WARNING);
+                    alert.setTitle("Informacja");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Zaznacz linie!");
+                    alert.showAndWait();
+                };
+
+
+            };
+
+        });
+*/
     }
 
 
