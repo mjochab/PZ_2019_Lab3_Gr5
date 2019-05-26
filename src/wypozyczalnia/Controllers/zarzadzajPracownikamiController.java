@@ -48,6 +48,8 @@ public class zarzadzajPracownikamiController implements Initializable {
     private TableColumn<ModelTable, String> col_email;
     @FXML
     private TableColumn<ModelTable, String> col_telefon;
+    @FXML
+    private Button btnclear;
 
     @FXML private TextField userImie;
     @FXML private TextField userNazwisko;
@@ -61,6 +63,18 @@ public class zarzadzajPracownikamiController implements Initializable {
 
 
     ObservableList<ModelTable> oblist2 = FXCollections.observableArrayList();
+
+    public void clearFields(ActionEvent event) throws IOException {
+        userLogin.clear();
+        userHaslo.clear();
+        userData.setValue(null);
+        userEmail.clear();
+        userMiejscowosc.clear();
+        userNazwisko.clear();
+        userImie.clear();
+        userPesel.clear();
+        userTelefon.clear();
+    }
 
 
 

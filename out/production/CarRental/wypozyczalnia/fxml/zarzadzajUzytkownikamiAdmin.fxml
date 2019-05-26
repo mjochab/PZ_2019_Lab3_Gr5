@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -15,18 +16,17 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="adminPane" prefHeight="900.0" prefWidth="1400.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.zarzadzajUzytkownikamiAdminController">
+<AnchorPane fx:id="adminPane" prefHeight="900.0" prefWidth="1400.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.zarzadzajUzytkownikamiAdminController">
     <children>
         <BorderPane prefHeight="30.0" prefWidth="700.0" />
-        <TextField fx:id="userLogin" layoutX="35.0" layoutY="261.0" promptText="Login" />
-        <TextField fx:id="userHaslo" layoutX="35.0" layoutY="300.0" promptText="Hasło" />
-        <TextField fx:id="userImie" layoutX="35.0" layoutY="338.0" promptText="Imie" />
-        <TextField fx:id="userNazwisko" layoutX="35.0" layoutY="379.0" promptText="Nazwisko" />
-        <TextField fx:id="userData" layoutX="35.0" layoutY="417.0" promptText="Data Urodzenia" />
-        <TextField fx:id="userMiejscowosc" layoutX="35.0" layoutY="455.0" promptText="Miejscowość" />
-        <TextField fx:id="userTelefon" layoutX="35.0" layoutY="493.0" promptText="Numer Telefonu" />
-        <TextField fx:id="userEmail" layoutX="35.0" layoutY="533.0" promptText="Email" />
-        <TextField fx:id="userPesel" layoutX="35.0" layoutY="574.0" promptText="Pesel" />
+        <TextField fx:id="userLogin" layoutX="24.0" layoutY="260.0" prefHeight="31.0" prefWidth="178.0" promptText="Login" />
+        <TextField fx:id="userHaslo" layoutX="24.0" layoutY="296.0" prefHeight="31.0" prefWidth="178.0" promptText="Hasło" />
+        <TextField fx:id="userImie" layoutX="24.0" layoutY="332.0" prefHeight="31.0" prefWidth="178.0" promptText="Imie" />
+        <TextField fx:id="userNazwisko" layoutX="24.0" layoutY="369.0" prefHeight="31.0" prefWidth="178.0" promptText="Nazwisko" />
+        <TextField fx:id="userMiejscowosc" layoutX="24.0" layoutY="442.0" prefHeight="31.0" prefWidth="178.0" promptText="Miejscowość" />
+        <TextField fx:id="userTelefon" layoutX="24.0" layoutY="478.0" prefHeight="31.0" prefWidth="178.0" promptText="Numer Telefonu" />
+        <TextField fx:id="userEmail" layoutX="24.0" layoutY="514.0" prefHeight="31.0" prefWidth="178.0" promptText="Email" />
+        <TextField fx:id="userPesel" layoutX="24.0" layoutY="550.0" prefHeight="31.0" prefWidth="178.0" promptText="Pesel" />
         <TableView fx:id="tabelka" layoutX="219.0" layoutY="172.0" prefHeight="541.0" prefWidth="1096.0">
             <columns>
                 <TableColumn fx:id="col_imie" prefWidth="120.00003051757812" text="Imię" />
@@ -181,7 +181,7 @@
             </ImageView>
          </children>
       </GridPane>
-      <Button layoutX="24.0" layoutY="87.0" mnemonicParsing="false" onAction="#menuPracownik" prefHeight="30.0" prefWidth="153.0" style="-fx-background-color: #e27171;" text="POWRÓT">
+      <Button layoutX="24.0" layoutY="87.0" mnemonicParsing="false" onAction="#menuAdmin" prefHeight="30.0" prefWidth="153.0" style="-fx-background-color: #e27171;" text="POWRÓT">
          <graphic>
             <ImageView fitHeight="36.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -213,7 +213,7 @@
             <Bloom />
          </effect>
       </Label>
-      <Button layoutX="68.0" layoutY="635.0" mnemonicParsing="false" onAction="#dodajUsera" prefHeight="48.0" prefWidth="122.0" style="-fx-background-color: #e27171;" text="DODAJ">
+      <Button layoutX="52.0" layoutY="605.0" mnemonicParsing="false" onAction="#dodajUsera" prefHeight="48.0" prefWidth="122.0" style="-fx-background-color: #e27171;" text="DODAJ">
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -261,5 +261,7 @@
             <Font size="18.0" />
          </font>
       </Button>
+      <Button fx:id="btnclear" layoutX="48.0" layoutY="212.0" mnemonicParsing="false" onAction="#clearFields" prefHeight="26.0" prefWidth="130.0" text="Wyczyść pola" />
+      <DatePicker fx:id="userData" layoutX="24.0" layoutY="405.0" prefHeight="31.0" prefWidth="178.0" promptText="Data Urodzenia" />
     </children>
 </AnchorPane>

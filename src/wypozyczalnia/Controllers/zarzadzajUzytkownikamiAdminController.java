@@ -16,18 +16,18 @@ import wypozyczalnia.DBConnector;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class zarzadzajUzytkownikamiAdminController implements Initializable  {
     @FXML
     private AnchorPane adminPane;
-    private AnchorPane zarzadzajPojazdamiPane;
-
-
     @FXML
     private TableView<ModelTable> tabelka;
     @FXML
@@ -49,18 +49,30 @@ public class zarzadzajUzytkownikamiAdminController implements Initializable  {
     @FXML
     private TableColumn<ModelTable, String> col_telefon;
 
-
-    ObservableList<ModelTable> oblist = FXCollections.observableArrayList();
-
     @FXML private TextField userImie;
     @FXML private TextField userNazwisko;
-    @FXML private TextField userData;
+    @FXML private DatePicker userData;
     @FXML private TextField userMiejscowosc;
     @FXML private TextField userPesel;
     @FXML private TextField userEmail;
     @FXML private TextField userLogin;
     @FXML private TextField userHaslo;
     @FXML private TextField userTelefon;
+
+
+    ObservableList<ModelTable> oblist2 = FXCollections.observableArrayList();
+
+    public void clearFields(ActionEvent event) throws IOException {
+        userLogin.clear();
+        userHaslo.clear();
+        userData.setValue(null);
+        userEmail.clear();
+        userMiejscowosc.clear();
+        userNazwisko.clear();
+        userImie.clear();
+        userPesel.clear();
+        userTelefon.clear();
+    }
 
     public void logOut(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/login.fxml"));
@@ -72,56 +84,204 @@ public class zarzadzajUzytkownikamiAdminController implements Initializable  {
         adminPane.getChildren().setAll(pane);
     }
 
+    private boolean walidacjaPol() {
+        if (userImie.getText().isEmpty() | userNazwisko.getText().isEmpty() | userLogin.getText().isEmpty()
+                | userEmail.getText().isEmpty() | userTelefon.getText().isEmpty()) {
+
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Informacja");
+            alert.setHeaderText(null);
+            alert.setContentText("Uzupełnij wszystkie pola");
+            alert.showAndWait();
 
 
-
-    public void dodajUsera(ActionEvent event) throws IOException{
-        String imie = String.valueOf(userImie.getCharacters());
-        String nazwisko = String.valueOf(userNazwisko.getCharacters());
-        String data = String.valueOf(userImie.getCharacters());
-        String rocznik = String.valueOf(userData.getCharacters());
-        String miejscowosc = String.valueOf(userMiejscowosc.getCharacters());
-        String pesel = String.valueOf(userPesel.getCharacters());
-
-
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
-            PreparedStatement stmt2 = con.prepareStatement("Select MAX(samochod_id) FROM klient");
-            ResultSet rs = stmt2.executeQuery("Select * FROM klient");
-            int i=1;
-            while(rs.next()){
-                i++;
-            }
-            String puste= " ";
-
-            PreparedStatement stmt = con.prepareStatement("INSERT INTO klient VALUES(?,?,?,?,?,?,?,?)");
-            stmt.setInt(1, i);
-            stmt.setString(2, puste);
-            stmt.setString(3, puste);
-            stmt.setString(4, imie);
-            stmt.setString(5, nazwisko);
-            stmt.setString(6, rocznik);
-            stmt.setString(7, miejscowosc);
-            stmt.setString(8, pesel);
-            stmt.executeUpdate();
-
-            rs = stmt2.executeQuery("SELECT * FROM `klient` WHERE klient_id = (SELECT MAX(klient_id) FROM klient)");
-            if(rs.next()) {
-                System.out.println(rs.getString(2));
-                oblist.add(new ModelTable( rs.getString(4), rs.getString(5),rs.getString(6), rs.getString(7),""+ rs.getLong(8),rs.getString(9), rs.getString(10), rs.getString(11)));            }
-
-        }catch (Exception e)
-        {
-            System.out.println(e);
+            return false;
         }
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajUzytkownikamiAdmin.fxml"));
-        adminPane.getChildren().setAll(pane);
-        tabelka.refresh();
+        if (userMiejscowosc.getText().isEmpty() | userPesel.getText().isEmpty()){
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Informacja");
+            alert.setHeaderText(null);
+            alert.setContentText("Uzupełnij wszystkie pola");
+            alert.showAndWait();
+
+            return false;
+        }
+        return true;
+    }
+
+    private boolean walidacjaDaty() {
+        if (userData.getValue().equals(null)) {
+
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Informacja");
+            alert.setHeaderText(null);
+            alert.setContentText("Uzupełnij wszystkie pola");
+            alert.showAndWait();
+
+
+            return false;
+        }
+        return true;
+    }
+
+    private boolean walidacjaImie(){
+        Pattern p = Pattern.compile("[a-zA-Z]+");
+        Matcher m = p.matcher(userImie.getText());
+
+        if(m.find() && m.group().equals(userImie.getText())){
+            return true;
+        }else
+        {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Informacja");
+            alert.setHeaderText(null);
+            alert.setContentText("Znaki specjalne w imieniu nie są obsługiwane");
+            alert.showAndWait();
+
+            return false;
+        }
+    }
+
+    private boolean walidacjaNazwisko(){
+        Pattern p = Pattern.compile("[a-zA-Z]+");
+        Matcher m = p.matcher(userNazwisko.getText());
+
+        if(m.find() && m.group().equals(userNazwisko.getText())){
+            return true;
+        }else
+        {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Informacja");
+            alert.setHeaderText(null);
+            alert.setContentText("Znaki specjalne w nazwisku nie są obsługiwane");
+            alert.showAndWait();
+
+            return false;
+        }
+    }
+
+    private boolean walidacjaMiejscowosc(){
+        Pattern p = Pattern.compile("[a-zA-Z]+");
+        Matcher m = p.matcher(userMiejscowosc.getText());
+
+        if(m.find() && m.group().equals(userMiejscowosc.getText())){
+            return true;
+        }else
+        {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Informacja");
+            alert.setHeaderText(null);
+            alert.setContentText("Znaki specjalne w nazwie miejscowości nie są obsługiwane");
+            alert.showAndWait();
+
+            return false;
+        }
 
     }
 
-    public void usunKlient(ActionEvent event) throws  IOException{
+    private boolean walidacjaEmail(){
+        Pattern p = Pattern.compile("^(.+)@(.+)$");
+        Matcher m = p.matcher(userEmail.getText());
+
+        if(m.find() && m.group().equals(userEmail.getText())){
+            return true;
+        }else
+        {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Informacja");
+            alert.setHeaderText(null);
+            alert.setContentText("Email niepoprawny");
+            alert.showAndWait();
+
+            return false;
+        }
+
+    }
+
+    private boolean walidacjaPesel(){
+        Pattern p = Pattern.compile("^[0-9]{11}$");
+        Matcher m = p.matcher(userPesel.getText());
+
+        if(m.find() && m.group().equals(userPesel.getText())){
+            return true;
+        }else
+        {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Informacja");
+            alert.setHeaderText(null);
+            alert.setContentText("PESEL niepoprawny");
+            alert.showAndWait();
+
+            return false;
+        }
+
+    }
+
+    public void modujUser(ActionEvent event) throws  IOException {
+        System.out.println("-");
+        String imie = String.valueOf(userImie.getCharacters());
+        String nazwisko = String.valueOf(userNazwisko.getCharacters());
+        String login = String.valueOf(userLogin.getCharacters());
+        String pesel = String.valueOf(userPesel.getText());
+        String data_urodzenia = userData.getValue().toString();
+        String miejscowosc = String.valueOf(userMiejscowosc.getCharacters());
+        String telefon = String.valueOf(userTelefon.getCharacters());
+        String email = String.valueOf(userEmail.getCharacters());
+        String haslo = String.valueOf(userHaslo.getCharacters());
+
+
+        TablePosition pozycja = tabelka.getSelectionModel().getSelectedCells().get(0);
+        int index = pozycja.getRow();
+
+        if (walidacjaPol() & walidacjaImie() & walidacjaNazwisko() & walidacjaMiejscowosc() & walidacjaEmail() & walidacjaPesel() & walidacjaDaty())
+            try {
+                index++;
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+
+                PreparedStatement stmt = con.prepareStatement("SELECT * FROM user");
+                String zapytanie = "Select * FROM user ORDER BY user_id LIMIT " + index;
+                ResultSet rs = stmt.executeQuery(zapytanie);
+                String a = "0";
+                int i = 0;
+                while (rs.next()) {
+                    a = rs.getString(1);
+                    i++;
+                }
+                int numer = Integer.parseInt(a);
+
+                System.out.println(numer);
+                PreparedStatement stmt2 = con.prepareStatement("UPDATE `user` SET `imie`=(?),`nazwisko`=(?),`login`=(?),`haslo`=(?),`pesel`=(?),`data_urodzenia`=(?),`miejscowosc`=(?),`tel`=(?), `email`=(?) WHERE user_id=(?)");
+                stmt2.setString(1, imie);
+                stmt2.setString(2, nazwisko);
+                stmt2.setString(3, login);
+                stmt2.setString(4, haslo);
+                stmt2.setString(5, pesel);
+                stmt2.setString(6, data_urodzenia);
+                stmt2.setString(7, miejscowosc);
+                stmt2.setString(8, telefon);
+                stmt2.setString(9, email);
+                stmt2.setInt(10, numer);
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Informacja");
+                alert.setHeaderText(null);
+                alert.setContentText("Dane klienta zostały zmodyfikowane pomyślnie!");
+                alert.showAndWait();
+
+                stmt2.executeUpdate();
+                tabelka.refresh();
+
+
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajUzytkownikamiAdmin.fxml"));
+        adminPane.getChildren().setAll(pane);
+
+    }
+
+    public void usunKlient(ActionEvent event) throws IOException {
         TablePosition pozycja = tabelka.getSelectionModel().getSelectedCells().get(0);
         int index = pozycja.getRow();
 
@@ -144,6 +304,14 @@ public class zarzadzajUzytkownikamiAdminController implements Initializable  {
 
             PreparedStatement stmt2 = con.prepareStatement("DELETE FROM user WHERE user_id = (?)");
             stmt2.setInt(1, numer);
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Informacja");
+            alert.setHeaderText(null);
+            alert.setContentText("Pomyślnie usunięto klienta!");
+            alert.showAndWait();
+
+
             stmt2.executeUpdate();
 
 
@@ -157,79 +325,72 @@ public class zarzadzajUzytkownikamiAdminController implements Initializable  {
         tabelka.refresh();
     }
 
-    public void modujUser(ActionEvent event) throws  IOException{
-        System.out.println("-");
-
-        TablePosition pozycja = tabelka.getSelectionModel().getSelectedCells().get(0);
-        int index = pozycja.getRow();
-
-        String login = String.valueOf(userLogin.getCharacters());
-        String haslo = String.valueOf(userHaslo.getCharacters());
+    public void dodajUsera(ActionEvent event) throws IOException{
         String imie = String.valueOf(userImie.getCharacters());
         String nazwisko = String.valueOf(userNazwisko.getCharacters());
-        String data = String.valueOf(userData.getCharacters());
+        String login = String.valueOf(userLogin.getCharacters());
+        String pesel = String.valueOf(userPesel.getText());
+        String data_urodzenia = userData.getValue().toString();
         String miejscowosc = String.valueOf(userMiejscowosc.getCharacters());
-        String tel = String.valueOf(userTelefon.getCharacters());
-        String mail = String.valueOf(userEmail.getCharacters());
-        String pesel = String.valueOf(userPesel.getCharacters());
-        String rodzaj = "rodzaj";
+        String telefon = String.valueOf(userTelefon.getCharacters());
+        String email = String.valueOf(userEmail.getCharacters());
 
+        if (walidacjaPol() & walidacjaImie() & walidacjaNazwisko() & walidacjaMiejscowosc() & walidacjaEmail() & walidacjaPesel() & walidacjaDaty())
+            try {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+                PreparedStatement stmt2 = con.prepareStatement("Select MAX(user_id) FROM `user` WHERE `rodzaj` = 'klient'");
+                ResultSet rs = stmt2.executeQuery("SELECT * FROM `user` WHERE `rodzaj` = 'klient'");
+                int i=1;
+                int n=1;
+                while(rs.next()){
+                    i++;
+                }
+                Integer puste= i+1;
+                String haslo= "haslo";
+                String rodzaj = "klient";
 
+                PreparedStatement stmt = con.prepareStatement("INSERT INTO user VALUES(?,?,?,?,?,?,?,?,?,?,?)");
+                stmt.setInt(1, i);
+                stmt.setString(2, login);
+                stmt.setString(3, haslo);
+                stmt.setString(4, imie);
+                stmt.setString(5, nazwisko);
+                stmt.setString(6, data_urodzenia);
+                stmt.setString(7, miejscowosc);
+                stmt.setString(8, telefon);
+                stmt.setString(9, email);
+                stmt.setString(10, pesel);
+                stmt.setString(11,rodzaj);
+                stmt.executeUpdate();
 
-        try {
-            index++;
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+                rs = stmt2.executeQuery("SELECT * FROM `user` WHERE user_id = (SELECT MAX(user_id) FROM user)");
+                if(rs.next()) {
+                    System.out.println(rs.getString(2));
+                    oblist2.add(new ModelTable( rs.getString(4),rs.getString(5),rs.getString(6), rs.getString(7), rs.getString(10), rs.getString(8), rs.getString(2), rs.getString(9)));
+                }
 
-            PreparedStatement stmt = con.prepareStatement("SELECT * FROM user");
-            String zapytanie = "Select * FROM user ORDER BY user_id LIMIT " + index;
-            ResultSet rs = stmt.executeQuery(zapytanie);
-            String a = "0";
-            int i=0;
-            while(rs.next()) {
-                a = rs.getString(1);
-                i++;
+            }catch (Exception e)
+            {
+                System.out.println(e);
             }
-            int numer = Integer.parseInt(a);
-            System.out.println(numer);
-            PreparedStatement stmt2 = con.prepareStatement("UPDATE `user` SET `login`=(?),`haslo`=(?),`imie`=(?),`nazwisko`=(?),`data_urodzenia`=(?),`miejscowosc`=(?),`tel`=(?), `email`=(?), `pesel`=(?), `rodzaj`=(?) WHERE user_id=(?)");
-            stmt2.setString(1, login);
-            stmt2.setString(2, haslo);
-            stmt2.setString(3, imie);
-            stmt2.setString(4, nazwisko);
-            stmt2.setString(5, data);
-            stmt2.setString(6, miejscowosc);
-            stmt2.setString(7, tel);
-            stmt2.setString(8, mail);
-            stmt2.setString(9, pesel);
-            stmt2.setString(10, rodzaj);
-            stmt2.setInt(11, numer);
-            stmt2.executeUpdate();
-            tabelka.refresh();
-
-
-        }catch (Exception e)
-        {
-            System.out.println(e);
-        }
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajUzytkownikamiAdmin.fxml"));
         adminPane.getChildren().setAll(pane);
-
+        tabelka.refresh();
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-
         try {
             Connection con = DBConnector.getConnection();
 
-            ResultSet rs = con.createStatement().executeQuery("select * from user");
+            ResultSet rs = con.createStatement().executeQuery("SELECT * FROM `user` WHERE `rodzaj` = 'klient'");
 
 
 
             while (rs.next()){
-                oblist.add(new ModelTable( rs.getString(4), rs.getString(5),rs.getString(6), rs.getString(7), rs.getString(10), rs.getString(8), rs.getString(3),rs.getString(9)));
+                oblist2.add(new ModelTable(rs.getString(4), rs.getString(5),rs.getString(6), rs.getString(7), rs.getString(10), rs.getString(8), rs.getString(2),rs.getString(9)));
             }
 
 
@@ -247,7 +408,8 @@ public class zarzadzajUzytkownikamiAdminController implements Initializable  {
         col_email.setCellValueFactory(new PropertyValueFactory<>("email"));
         col_pesel.setCellValueFactory(new PropertyValueFactory<>("pesel"));
 
-        tabelka.setItems(oblist);
+        tabelka.setItems(oblist2);
+
 
         tabelka.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
@@ -264,8 +426,8 @@ public class zarzadzajUzytkownikamiAdminController implements Initializable  {
                     Class.forName("com.mysql.cj.jdbc.Driver");
                     Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
 
-                    PreparedStatement stmt = con.prepareStatement("SELECT * FROM user");
-                    String zapytanie = "Select * FROM user ORDER BY user_id LIMIT " + index;
+                    PreparedStatement stmt = con.prepareStatement("SELECT * FROM `user` WHERE `rodzaj` = 'klient'");
+                    String zapytanie = "Select * FROM user WHERE `rodzaj` = 'klient' ORDER BY user_id LIMIT " + index;
                     ResultSet rs = stmt.executeQuery(zapytanie);
                     String a = "0";
                     int i=0;
@@ -276,9 +438,7 @@ public class zarzadzajUzytkownikamiAdminController implements Initializable  {
                     int numer = Integer.parseInt(a);
                     System.out.println(numer);
 
-
-
-                    zapytanie = "Select * FROM user where user_id = " + numer;
+                    zapytanie = "SELECT * FROM `user` WHERE `rodzaj` = 'klient' AND `user_id` = " + numer;
                     ResultSet rs2 = stmt.executeQuery(zapytanie);
                     System.out.println(rs2);
                     if(rs2.next()) {
@@ -297,12 +457,11 @@ public class zarzadzajUzytkownikamiAdminController implements Initializable  {
                         userHaslo.setText(String.valueOf(dane.get(1)));
                         userImie.setText(String.valueOf(dane.get(2)));
                         userNazwisko.setText(String.valueOf(dane.get(3)));
-                        userData.setText(String.valueOf(dane.get(4)));
+                        userData.setValue(LocalDate.parse(dane.get(4)));
                         userMiejscowosc.setText(String.valueOf(dane.get(5)));
                         userTelefon.setText(String.valueOf(dane.get(6)));
                         userEmail.setText(String.valueOf(dane.get(7)));
                         userPesel.setText(String.valueOf(dane.get(8)));
-
 
                     }
 
@@ -316,11 +475,10 @@ public class zarzadzajUzytkownikamiAdminController implements Initializable  {
                     alert.showAndWait();
                 };
 
-
-            };
-
-        });
+            }
+        }  );
 
 
-    }
-}
+    }}
+
+
