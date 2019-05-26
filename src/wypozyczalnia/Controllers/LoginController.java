@@ -187,6 +187,8 @@ public class LoginController implements Initializable {
 
     }
 
+    private SessionUser user;
+
     public void logIn(ActionEvent actionEvent) {
 
         Connection con = null;
