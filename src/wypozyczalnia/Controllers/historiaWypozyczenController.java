@@ -109,7 +109,7 @@ public class historiaWypozyczenController implements Initializable {
                     "                    ON samochod.samochod_id = wypozyczenie.samochod_id\n" +
                     "                    JOIN user\n" +
                     "                    ON wypozyczenie.user_id = user.user_id\n" +
-                    "                    WHERE user.rodzaj = \"worker\"" );
+                    "                    WHERE user.rodzaj = \"worker\" AND wypozyczenie.data_do <= CURRENT_DATE" );
                  //   "WHERE user.user_id= 47");
 
 

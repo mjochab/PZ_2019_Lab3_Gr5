@@ -5,11 +5,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
 
+import java.awt.*;
 import java.io.IOException;
 
 public class PodWynPController {
     @FXML
     private AnchorPane pracownikPane;
+    private Label markamodel_lbl;
 
 
 
@@ -28,6 +30,11 @@ public class PodWynPController {
         pracownikPane.getChildren().setAll(pane);
     }
 
+    public void markaModel (String marka){
+
+        this.markamodel_lbl.setText(marka+"!");
+
+    }
 
 
 }
