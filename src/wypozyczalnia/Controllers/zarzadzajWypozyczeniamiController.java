@@ -26,7 +26,6 @@ public class zarzadzajWypozyczeniamiController implements Initializable {
 
 
 
-
     @FXML private TextField Tpesel;
     @FXML private TextField Tmarka;
     @FXML private TextField Tcena;

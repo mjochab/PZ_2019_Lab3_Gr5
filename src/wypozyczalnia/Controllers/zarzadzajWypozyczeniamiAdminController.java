@@ -319,6 +319,7 @@ public class zarzadzajWypozyczeniamiAdminController implements Initializable {
                 oblist1.add(new ModelTableWypozyczenie(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6)));
 
             }
+
             System.out.println(oblist1);
 
 
@@ -326,8 +327,9 @@ public class zarzadzajWypozyczeniamiAdminController implements Initializable {
             Logger.getLogger(zarzadzajUzytkownikamiController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        col_Pesel.setCellValueFactory(new PropertyValueFactory<>("Pesel"));
 
+        col_Pesel.setCellValueFactory(new PropertyValueFactory<>("Pesel"));
+       System.out.println("dupa");
         col_Marka.setCellValueFactory(new PropertyValueFactory<>("Marka"));
 
         col_Model.setCellValueFactory(new PropertyValueFactory<>("Model"));

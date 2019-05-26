@@ -16,14 +16,14 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="adminPane" prefHeight="900.0" prefWidth="1400.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.MenuAdminController">
+<AnchorPane fx:id="adminPane" prefHeight="900.0" prefWidth="1400.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.zarzadzajWypozyczeniamiAdminController">
     <children>
         <BorderPane prefHeight="30.0" prefWidth="700.0" />
         <TextField layoutX="50.0" fx:id="userPesel" layoutY="485.0" prefHeight="31.0" prefWidth="183.0" promptText="Pesel" />
         <TextField layoutX="50.0" fx:id="Tmarka" layoutY="312.0" prefHeight="31.0" prefWidth="183.0" promptText="Marka" />
         <TextField layoutX="50.0" fx:id="Tcena" layoutY="527.0" prefHeight="31.0" prefWidth="183.0" promptText="Cena" />
         <TextField layoutX="50.0" fx:id="Tmodel" layoutY="356.0" prefHeight="31.0" prefWidth="183.0" promptText="Model" />
-        <TableView layoutX="257.0" layoutY="172.0" prefHeight="545.0" prefWidth="1022.0">
+        <TableView layoutX="257.0" fx:id="tabelka_wypozyczenie" layoutY="172.0" prefHeight="545.0" prefWidth="1022.0">
             <columns>
                 <TableColumn fx:id="col_Pesel" prefWidth="116.00003051757812" text="Pesel" />
                 <TableColumn fx:id="col_Marka" prefWidth="151.0" text="Marka" />
