@@ -109,23 +109,9 @@ public class zarzadzajUzytkownikamiController implements Initializable {
         return true;
     }
 
-    private boolean walidacjaDaty() {
-        if (userData.getValue().equals(null)) {
-
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Informacja");
-            alert.setHeaderText(null);
-            alert.setContentText("Uzupełnij wszystkie pola");
-            alert.showAndWait();
-
-
-            return false;
-        }
-        return true;
-    }
 
     private boolean walidacjaImie(){
-        Pattern p = Pattern.compile("[a-zA-Z]+");
+        Pattern p = Pattern.compile("[A-Za-zżźćńółęąśŻŹĆĄŚĘŁÓŃ]");
         Matcher m = p.matcher(userImie.getText());
 
         if(m.find() && m.group().equals(userImie.getText())){
@@ -143,7 +129,7 @@ public class zarzadzajUzytkownikamiController implements Initializable {
     }
 
     private boolean walidacjaNazwisko(){
-        Pattern p = Pattern.compile("[a-zA-Z]+");
+        Pattern p = Pattern.compile("[A-Za-zżźćńółęąśŻŹĆĄŚĘŁÓŃ]");
         Matcher m = p.matcher(userNazwisko.getText());
 
         if(m.find() && m.group().equals(userNazwisko.getText())){
@@ -161,7 +147,7 @@ public class zarzadzajUzytkownikamiController implements Initializable {
     }
 
     private boolean walidacjaMiejscowosc(){
-        Pattern p = Pattern.compile("[a-zA-Z]+");
+        Pattern p = Pattern.compile("[A-Za-zżźćńółęąśŻŹĆĄŚĘŁÓŃ]");
         Matcher m = p.matcher(userMiejscowosc.getText());
 
         if(m.find() && m.group().equals(userMiejscowosc.getText())){
@@ -233,7 +219,7 @@ public class zarzadzajUzytkownikamiController implements Initializable {
         TablePosition pozycja = tabelka.getSelectionModel().getSelectedCells().get(0);
         int index = pozycja.getRow();
 
-        if (walidacjaPol() & walidacjaImie() & walidacjaNazwisko() & walidacjaMiejscowosc() & walidacjaEmail() & walidacjaPesel() & walidacjaDaty())
+        if (walidacjaPol() & walidacjaImie() & walidacjaNazwisko() & walidacjaMiejscowosc() & walidacjaEmail() & walidacjaPesel() )
             try {
                 index++;
                 Class.forName("com.mysql.cj.jdbc.Driver");
@@ -335,7 +321,7 @@ public class zarzadzajUzytkownikamiController implements Initializable {
         String telefon = String.valueOf(userTelefon.getCharacters());
         String email = String.valueOf(userEmail.getCharacters());
 
-        if (walidacjaPol() & walidacjaImie() & walidacjaNazwisko() & walidacjaMiejscowosc() & walidacjaEmail() & walidacjaPesel() & walidacjaDaty())
+        if (walidacjaPol() & walidacjaImie() & walidacjaNazwisko() & walidacjaMiejscowosc() & walidacjaEmail() & walidacjaPesel())
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");

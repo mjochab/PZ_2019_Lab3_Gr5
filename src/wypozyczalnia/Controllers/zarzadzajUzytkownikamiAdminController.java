@@ -125,7 +125,7 @@ public class zarzadzajUzytkownikamiAdminController implements Initializable  {
     }
 
     private boolean walidacjaImie(){
-        Pattern p = Pattern.compile("[a-zA-Z]+");
+        Pattern p = Pattern.compile("[A-Za-zżźćńółęąśŻŹĆĄŚĘŁÓŃ]");
         Matcher m = p.matcher(userImie.getText());
 
         if(m.find() && m.group().equals(userImie.getText())){
@@ -143,7 +143,7 @@ public class zarzadzajUzytkownikamiAdminController implements Initializable  {
     }
 
     private boolean walidacjaNazwisko(){
-        Pattern p = Pattern.compile("[a-zA-Z]+");
+        Pattern p = Pattern.compile("[A-Za-zżźćńółęąśŻŹĆĄŚĘŁÓŃ]");
         Matcher m = p.matcher(userNazwisko.getText());
 
         if(m.find() && m.group().equals(userNazwisko.getText())){
@@ -161,7 +161,7 @@ public class zarzadzajUzytkownikamiAdminController implements Initializable  {
     }
 
     private boolean walidacjaMiejscowosc(){
-        Pattern p = Pattern.compile("[a-zA-Z]+");
+        Pattern p = Pattern.compile("[A-Za-zżźćńółęąśŻŹĆĄŚĘŁÓŃ]");
         Matcher m = p.matcher(userMiejscowosc.getText());
 
         if(m.find() && m.group().equals(userMiejscowosc.getText())){
