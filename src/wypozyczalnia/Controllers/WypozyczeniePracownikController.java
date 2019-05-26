@@ -1,25 +1,25 @@
 package wypozyczalnia.Controllers;
-
-        import javafx.collections.FXCollections;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-        import javafx.scene.control.cell.PropertyValueFactory;
-        import javafx.scene.layout.AnchorPane;
-        import wypozyczalnia.DBConnector;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
+import wypozyczalnia.DBConnector;
 
-        import java.io.IOException;
+import java.io.IOException;
 import java.net.URL;
-        import java.sql.Connection;
-        import java.sql.ResultSet;
-        import java.sql.SQLException;
-        import java.util.ResourceBundle;
-        import java.util.logging.Level;
-        import java.util.logging.Logger;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class WypozyczeniePracownikController implements Initializable {
     @FXML
@@ -68,6 +68,26 @@ public class WypozyczeniePracownikController implements Initializable {
         pracownikPane.getChildren().setAll(pane);
     }
 
+    private boolean walidacjaDostepnosc(){
+
+        String dostepnosc = tabelka_pojazdy.getSelectionModel().getSelectedItem().getDostepnosc();
+        String tak = "TAK";
+
+
+        if(dostepnosc == tak){
+            return true;
+        }else
+        {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Informacja");
+            alert.setHeaderText(null);
+            alert.setContentText("Wpisz koszt pojazdu w cyfrach");
+            alert.showAndWait();
+
+            return false;
+        }
+
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -99,7 +119,6 @@ public class WypozyczeniePracownikController implements Initializable {
         col_dostepnosc.setCellValueFactory(new PropertyValueFactory<>("dostepnosc"));
 
         tabelka_pojazdy.setItems(oblist1);
-
 
     }
 

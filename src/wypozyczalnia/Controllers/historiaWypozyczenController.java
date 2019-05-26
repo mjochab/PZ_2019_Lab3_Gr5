@@ -109,7 +109,7 @@ public class historiaWypozyczenController implements Initializable {
                     "                    ON samochod.samochod_id = wypozyczenie.samochod_id\n" +
                     "                    JOIN user\n" +
                     "                    ON wypozyczenie.user_id = user.user_id\n" +
-                    "                    WHERE user.rodzaj = \"worker\"" );
+                    "                    WHERE user.rodzaj = \"worker\" AND wypozyczenie.data_do <= CURRENT_DATE" );
                  //   "WHERE user.user_id= 47");
 
 
@@ -125,8 +125,8 @@ public class historiaWypozyczenController implements Initializable {
 
         col_marka.setCellValueFactory(new PropertyValueFactory<>("marka"));
         col_model.setCellValueFactory(new PropertyValueFactory<>("model"));
-        col_data_do.setCellValueFactory(new PropertyValueFactory<>("data_od"));
-        col_data_od.setCellValueFactory(new PropertyValueFactory<>("data_do"));
+        col_data_od.setCellValueFactory(new PropertyValueFactory<>("data_od"));
+        col_data_do.setCellValueFactory(new PropertyValueFactory<>("data_do"));
         col_cena.setCellValueFactory(new PropertyValueFactory<>("cena"));
 
 

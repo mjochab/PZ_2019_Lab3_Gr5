@@ -19,8 +19,8 @@
          <columns>
             <TableColumn fx:id="col_marka" prefWidth="240.99999237060547" text="Marka" />
             <TableColumn fx:id="col_model" prefWidth="221.0" text="Model" />
-            <TableColumn fx:id="col_data_do" prefWidth="241.0" text="Data początkowa" />
-            <TableColumn fx:id="col_data_od" prefWidth="253.0" text="Data końcowa" />
+            <TableColumn fx:id="col_data_od" prefWidth="241.0" text="Data początkowa" />
+            <TableColumn fx:id="col_data_do" prefWidth="253.0" text="Data końcowa" />
             <TableColumn fx:id="col_cena" prefWidth="225.0" text="Cena" />
          </columns>
       </TableView>
