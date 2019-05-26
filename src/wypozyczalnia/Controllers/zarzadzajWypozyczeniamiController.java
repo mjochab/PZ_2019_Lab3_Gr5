@@ -256,7 +256,10 @@ public class zarzadzajWypozyczeniamiController implements Initializable {
                     }
                     int numer = Integer.parseInt(a);
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 491cf98... zarzadzaj wypozyczeniami
                     zapytanie = "Select data_od, data_do, user_id FROM wypozyczenie ORDER BY wypozyczenie_id LIMIT " + index;
                     ResultSet rs2 = stmt.executeQuery(zapytanie);
                     System.out.println(rs2);
