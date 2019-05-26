@@ -19,6 +19,8 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class zarzadzajWypozyczeniamiAdminController implements Initializable {
     @FXML
@@ -217,57 +219,56 @@ public class zarzadzajWypozyczeniamiAdminController implements Initializable {
         String cena = String.valueOf(Tcena.getCharacters());
         String dataStart = TdataStart.getValue().toString();
         String dataStop = TdataKoniec.getValue().toString();
+        if(walidacjaCena() && walidacjaPesel() && walidacjaPol() && walidacjaModel() && walidacjaMarka() && walidacajaDataWypozyczenia()) {
+            try {
+                index++;
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
 
-        try {
-            index++;
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+                PreparedStatement stmt = con.prepareStatement("SELECT * FROM samochod");
+                String zapytanie = "Select * FROM wypozyczenie ORDER BY wypozyczenie_id LIMIT " + index;
+                ResultSet rs = stmt.executeQuery(zapytanie);
+                String a = "0";
+                int i = 0;
+                while (rs.next()) {
+                    a = rs.getString(1);
+                    i++;
+                }
+                int numer = Integer.parseInt(a);
+                System.out.println(numer);
 
-            PreparedStatement stmt = con.prepareStatement("SELECT * FROM samochod");
-            String zapytanie = "Select * FROM wypozyczenie ORDER BY wypozyczenie_id LIMIT " + index;
-            ResultSet rs = stmt.executeQuery(zapytanie);
-            String a = "0";
-            int i=0;
-            while(rs.next()) {
-                a = rs.getString(1);
-                i++;
+                String czlowiekID = "1";
+
+                stmt = con.prepareStatement("SELECT * FROM samochod");
+                rs = stmt.executeQuery("select user_id from user where pesel = '" + pesel + "'  limit 1");
+                while (rs.next()) {
+                    czlowiekID = rs.getString(1);
+                    i++;
+                }
+
+                String autoID = "1";
+                rs = stmt.executeQuery("select samochod_id from samochod where marka = '" + marka + "' and model='" + model + "' limit 1");
+                while (rs.next()) {
+                    autoID = rs.getString(1);
+                    i++;
+                }
+
+
+                PreparedStatement stmt2 = con.prepareStatement("UPDATE `wypozyczenie` SET `user_id`=(?),`samochod_id`=(?),`data_od`=(?),`data_do`=(?) where `wypozyczenie_id`=(?)");
+                stmt2.setString(1, czlowiekID);
+                stmt2.setString(2, autoID);
+                stmt2.setString(3, dataStart);
+                stmt2.setString(4, dataStop);
+                stmt2.setInt(5, index);
+                stmt2.executeUpdate();
+
+
+            } catch (Exception e) {
+                System.out.println(e);
             }
-            int numer = Integer.parseInt(a);
-            System.out.println(numer);
-
-            String czlowiekID = "1";
-
-            stmt = con.prepareStatement("SELECT * FROM samochod");
-            rs = stmt.executeQuery("select user_id from user where pesel = '"+ pesel +"'  limit 1");
-            while(rs.next()) {
-                czlowiekID = rs.getString(1);
-                i++;
-            }
-
-            String autoID ="1";
-            rs = stmt.executeQuery("select samochod_id from samochod where marka = '"+ marka+"' and model='"+model+"' limit 1");
-            while(rs.next()) {
-                autoID = rs.getString(1);
-                i++;
-            }
-
-
-
-            PreparedStatement stmt2 = con.prepareStatement("UPDATE `wypozyczenie` SET `user_id`=(?),`samochod_id`=(?),`data_od`=(?),`data_do`=(?) where `wypozyczenie_id`=(?)");
-            stmt2.setString(1, czlowiekID);
-            stmt2.setString(2, autoID);
-            stmt2.setString(3, dataStart);
-            stmt2.setString(4, dataStop);
-            stmt2.setInt(5, index);
-            stmt2.executeUpdate();
-
-
-        }catch (Exception e)
-        {
-            System.out.println(e);
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajWypozyczeniamiAdmin.fxml"));
+            adminPane.getChildren().setAll(pane);
         }
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajWypozyczeniami.fxml"));
-        adminPane.getChildren().setAll(pane);
 
     }
 
@@ -344,5 +345,120 @@ public class zarzadzajWypozyczeniamiAdminController implements Initializable {
 
         tabelka_wypozyczenie.setItems(oblist1);
 
+    }
+
+    private boolean walidacjaPol() {
+        if (Tcena.getText().isEmpty() | Tmarka.getText().isEmpty() | Tcena.getText().isEmpty()
+                | Tmodel.getText().isEmpty() | TdataStart.getValue().toString().isEmpty() | TdataKoniec.getValue().toString().isEmpty()) {
+
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Informacja");
+            alert.setHeaderText(null);
+            alert.setContentText("Uzupełnij wszystkie pola");
+            alert.showAndWait();
+
+
+            return false;
+        }
+        return true;
+    }
+
+    private boolean walidacjaCena(){
+        Pattern p = Pattern.compile("-?([1-9][0-9]*)?");
+        Matcher m = p.matcher(Tcena.getText());
+
+        if(m.find() && m.group().equals(Tcena.getText())){
+            return true;
+        }else
+        {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Informacja");
+            alert.setHeaderText(null);
+            alert.setContentText("Wpisz koszt pojazdu w cyfrach");
+            alert.showAndWait();
+
+            return false;
+        }
+
+    }
+
+    private boolean walidacjaPesel(){
+        Pattern p = Pattern.compile("-?([1-9][0-9]*)?");
+        Matcher m = p.matcher(Tcena.getText());
+
+        if(m.find() && m.group().equals(userPesel.getText())){
+            return true;
+        }else
+        {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Informacja");
+            alert.setHeaderText(null);
+            alert.setContentText("sprawdz pesel");
+            alert.showAndWait();
+
+            return false;
+        }
+
+    }
+
+    private boolean walidacjaMarka(){
+        Pattern p = Pattern.compile("([A-za-z0-9-/\"]+)");
+        Matcher m = p.matcher(Tmarka.getText());
+
+        if(m.find() && m.group().equals(Tmarka.getText())){
+            return true;
+        }else
+        {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Informacja");
+            alert.setHeaderText(null);
+            alert.setContentText("Znaki specjalne w nazwie marki nie są obsługiwane");
+            alert.showAndWait();
+
+            return false;
+        }
+
+    }
+    private boolean walidacjaModel(){
+        Pattern p = Pattern.compile("([A-za-z0-9-/\"]+)");
+        Matcher m = p.matcher(Tmodel.getText());
+
+        if(m.find() && m.group().equals(Tmodel.getText())){
+            return true;
+        }else
+        {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Informacja");
+            alert.setHeaderText(null);
+            alert.setContentText("Znaki specjalne w nazwie marki nie są obsługiwane");
+            alert.showAndWait();
+
+            return false;
+        }
+
+    }
+    private boolean walidacajaDataWypozyczenia(){
+        int i = TdataStart.getValue().getDayOfYear();
+        int j = TdataStart.getValue().getYear();
+        int k = TdataKoniec.getValue().getDayOfYear();
+        int l = TdataKoniec.getValue().getYear();
+
+
+        if(l<j){
+
+        }else{
+            if(k<i) {
+
+            }else{
+                return true;
+            }
+        }
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("Informacja");
+        alert.setHeaderText(null);
+        alert.setContentText("Sprawdz daty");
+        alert.showAndWait();
+
+        return false;
     }
 }
