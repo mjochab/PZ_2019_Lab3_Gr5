@@ -187,6 +187,8 @@ public class LoginController implements Initializable {
 
     }
 
+    public static int b;
+
     public void logIn(ActionEvent actionEvent) {
 
         Connection con = null;
@@ -252,6 +254,9 @@ public class LoginController implements Initializable {
                                 }
                             historiaWypozyczenController display = Loader.getController();
                             display.displayName(rs.getString("user_id"));
+
+                            LoginController.b = rs.getInt("user_id");
+
 
                             Node source = (Node) actionEvent.getSource();
                             Stage stage1 = (Stage) source.getScene().getWindow();
