@@ -50,7 +50,7 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="69.0" layoutY="346.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="173.0" style="-fx-background-color: #e27171;" text="ZMIEŃ DATĘ">
+      <Button layoutX="69.0" layoutY="346.0" mnemonicParsing="false" onAction="#edytujWypozyczenie" prefHeight="48.0" prefWidth="173.0" style="-fx-background-color: #e27171;" text="ZMIEŃ DATĘ">
          <font>
             <Font size="18.0" />
          </font>
@@ -197,8 +197,8 @@
             </ImageView>
          </children>
       </GridPane>
-      <DatePicker fx:id="dpDataStart" layoutX="38.0" layoutY="221.0" prefHeight="31.0" prefWidth="234.0" promptText="Data początkowa" />
-      <DatePicker fx:id="dpDataStop" layoutX="38.0" layoutY="276.0" prefHeight="31.0" prefWidth="234.0" promptText="Data końcowa" />
+      <DatePicker fx:id="dpDataOd" layoutX="38.0" layoutY="221.0" prefHeight="31.0" prefWidth="234.0" promptText="Data początkowa" />
+      <DatePicker fx:id="dpDataDo" layoutX="38.0" layoutY="276.0" prefHeight="31.0" prefWidth="234.0" promptText="Data końcowa" />
       <Label layoutX="665.0" layoutY="96.0" prefHeight="21.0" prefWidth="257.0" text="MOJE WYPOŻYCZENIA" textFill="#eeadad">
          <font>
             <Font size="25.0" />

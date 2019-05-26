@@ -29,10 +29,10 @@ public class MojeWypozyczeniaController implements Initializable {
     private AnchorPane zarzadzajPojazdamiPane;
 
     @FXML
-    private DatePicker dpDataStart;
+    private DatePicker dpDataOd;
 
     @FXML
-    private DatePicker dpDataStop;
+    private DatePicker dpDataDo;
 
     @FXML
     private TableView<ModelTableWypozyczenia> tabelka_moje_wypozyczenia;
@@ -62,30 +62,26 @@ public class MojeWypozyczeniaController implements Initializable {
         pracownikPane.getChildren().setAll(pane);
     }
 
-    /*
-    public void modujAuto(ActionEvent event) throws IOException {
+
+       public void edytujWypozyczenie(ActionEvent event) throws  IOException {
         System.out.println("-");
+
+        String data_od = dpDataOd.getValue().toString();
+        String data_do = dpDataDo.getValue().toString();
+
+
 
         TablePosition pozycja = tabelka_moje_wypozyczenia.getSelectionModel().getSelectedCells().get(0);
         int index = pozycja.getRow();
 
-        String marka = String.valueOf(autoMarka.getCharacters());
-        String model = String.valueOf(autoModel.getCharacters());
-        String Rodzaj = String.valueOf(autoRodzaj.getValue());
-        String Rocznik = String.valueOf(autoRocznik.getCharacters());
-        String Paliwo = String.valueOf(autoPaliwo.getValue());
-        String przebieg = String.valueOf(autoPrzebieg.getCharacters());
-        String cena = String.valueOf(autoCena.getCharacters());
-        String dostepnosc = String.valueOf(autoDostep.getValue());
 
-        if (walidacjaPol() & walidacjaCena() & walidacajaRok() & walidacjaPrzebieg() & walidacjaMarka() & walidacjaModel())
             try {
                 index++;
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
 
-                PreparedStatement stmt = con.prepareStatement("SELECT * FROM samochod");
-                String zapytanie = "Select * FROM samochod ORDER BY samochod_id LIMIT " + index;
+                PreparedStatement stmt = con.prepareStatement("SELECT * FROM wypozyczenie");
+                String zapytanie = "Select * FROM wypozyczenie ORDER BY wypozyczenie_id LIMIT " + index;
                 ResultSet rs = stmt.executeQuery(zapytanie);
                 String a = "0";
                 int i = 0;
@@ -94,22 +90,19 @@ public class MojeWypozyczeniaController implements Initializable {
                     i++;
                 }
                 int numer = Integer.parseInt(a);
+
                 System.out.println(numer);
-                PreparedStatement stmt2 = con.prepareStatement("UPDATE `samochod` SET `marka`=(?),`model`=(?),`rodzaj`=(?),`rocznik`=(?),`paliwo`=(?),`przebieg`=(?),`Cena`=(?), `dostepnosc`=(?) WHERE samochod_id=(?)");
-                stmt2.setString(1, marka);
-                stmt2.setString(2, model);
-                stmt2.setString(3, Rodzaj);
-                stmt2.setString(4, Rocznik);
-                stmt2.setString(5, Paliwo);
-                stmt2.setString(6, przebieg);
-                stmt2.setString(7, cena);
-                stmt2.setString(8, dostepnosc);
-                stmt2.setInt(9, numer);
+                PreparedStatement stmt2 = con.prepareStatement("UPDATE `wypozyczenie` SET `data_od`=(?),`data_do`=(?) WHERE `wypozyczenie_id` =(?)");
+
+                stmt2.setString(1, data_od);
+                stmt2.setString(2, data_do);
+
+                stmt2.setInt(3, numer);
 
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Informacja");
                 alert.setHeaderText(null);
-                alert.setContentText("Dane pojazdu zostały zmodyfikowane pomyślnie!");
+                alert.setContentText("Daty wypożyczenia zostały zaktualizowane!");
                 alert.showAndWait();
 
                 stmt2.executeUpdate();
@@ -119,11 +112,14 @@ public class MojeWypozyczeniaController implements Initializable {
             } catch (Exception e) {
                 System.out.println(e);
             }
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajPojazdami.fxml"));
-        pracownikPane.getChildren().setAll(pane);
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/mojeWypozyczenia.fxml"));
+            pracownikPane.getChildren().setAll(pane);
 
-    }
-    */
+        }
+
+
+
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -155,8 +151,8 @@ public class MojeWypozyczeniaController implements Initializable {
 
         col_marka.setCellValueFactory(new PropertyValueFactory<>("marka"));
         col_model.setCellValueFactory(new PropertyValueFactory<>("model"));
-        col_data_do.setCellValueFactory(new PropertyValueFactory<>("data_od"));
-        col_data_od.setCellValueFactory(new PropertyValueFactory<>("data_do"));
+        col_data_od.setCellValueFactory(new PropertyValueFactory<>("data_od"));
+        col_data_do.setCellValueFactory(new PropertyValueFactory<>("data_do"));
         col_cena.setCellValueFactory(new PropertyValueFactory<>("cena"));
 
 
@@ -197,9 +193,9 @@ public class MojeWypozyczeniaController implements Initializable {
                         dane.add(rs2.getString("data_od"));
                         dane.add(rs2.getString("data_do"));
 
+                        dpDataOd.setValue(LocalDate.parse(dane.get(0)));
+                        dpDataDo.setValue(LocalDate.parse(dane.get(1)));
 
-                        dpDataStart.setValue(LocalDate.parse(dane.get(1)));
-                        dpDataStop.setValue(LocalDate.parse(dane.get(2)));
 
                     }
 
