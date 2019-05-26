@@ -3,11 +3,13 @@ package wypozyczalnia.Controllers;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import wypozyczalnia.DBConnector;
 
@@ -56,61 +58,9 @@ public class zarzadzajWypozyczeniamiAdminController implements Initializable {
     }
 
 
-    public void klik(ActionEvent event) throws  IOException{
-        String abc;
-        abc = tabelka_wypozyczenie.toString();
-        System.out.println(abc);
-        ArrayList<String> dane = new ArrayList<String>();
-        try {
-            TablePosition pozycja = tabelka_wypozyczenie.getSelectionModel().getSelectedCells().get(0);
-            int index = pozycja.getRow();
-            index++;
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            System.out.println(index);
-
-            Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
-
-            PreparedStatement stmt = con.prepareStatement("SELECT * FROM wypozyczenie");
-            String zapytanie = "Select * FROM wypozyczenie ORDER BY wypozyczenie_id LIMIT " + index;
-            ResultSet rs = stmt.executeQuery(zapytanie);
-            String a = "0";
-            int i=0;
-            while(rs.next()) {
-                a = rs.getString(1);
-                i++;
-            }
-
-            zapytanie = "Select data_od, data_do, user_id FROM wypozyczenie ORDER BY wypozyczenie_id LIMIT " + index;
-            rs = stmt.executeQuery(zapytanie);
-            if(rs.next()){
-
-                TdataStart.setValue(LocalDate.parse(rs.getString(1)));
-                TdataKoniec.setValue(LocalDate.parse(rs.getString(2)));
-
-            }
-
-            int numer = Integer.parseInt(a);
-            System.out.println(numer);
-
-            zapytanie = "Select * FROM wypozyczenie where wypozyczenie_id = " + numer;
-
-
-
-            ResultSet rs2 = stmt.executeQuery(zapytanie);
-
-
-            int j=0;
-
-        }catch (Exception e)
-        {
-            System.out.println(e);
-        };
-    }
-
-
     public void modujWypo(ActionEvent event) throws  IOException{
 
-        System.out.println("2");
+
 
         TablePosition pozycja = tabelka_wypozyczenie.getSelectionModel().getSelectedCells().get(0);
         int index = pozycja.getRow();
@@ -145,7 +95,7 @@ public class zarzadzajWypozyczeniamiAdminController implements Initializable {
             } catch (Exception e) {
                 System.out.println(e);
             }
-            AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajWypozyczeniami.fxml"));
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajWypozyczeniamiAdmin.fxml"));
             adminPane.getChildren().setAll(pane);
         }
 
@@ -153,7 +103,7 @@ public class zarzadzajWypozyczeniamiAdminController implements Initializable {
 
     public void usunWypo(ActionEvent event) throws  IOException{
 
-        System.out.println("2");
+
 
         TablePosition pozycja = tabelka_wypozyczenie.getSelectionModel().getSelectedCells().get(0);
         int index = pozycja.getRow();
@@ -184,7 +134,7 @@ public class zarzadzajWypozyczeniamiAdminController implements Initializable {
         {
             System.out.println(e);
         };
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajWypozyczeniami.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajWypozyczeniamiAdmin.fxml"));
         adminPane.getChildren().setAll(pane);
     }
 
@@ -197,8 +147,7 @@ public class zarzadzajWypozyczeniamiAdminController implements Initializable {
             while (rs.next()) {
 
                 oblist1.add(new ModelTableWypozyczenie(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5)));
-                System.out.println(rs.getString(3));
-                System.out.println(rs.getString(4));
+
             }
             System.out.println(oblist1);
 
@@ -220,6 +169,61 @@ public class zarzadzajWypozyczeniamiAdminController implements Initializable {
         System.out.println(tabelka_wypozyczenie);
 
         tabelka_wypozyczenie.setItems(oblist1);
+
+        tabelka_wypozyczenie.setOnMousePressed(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                String abc;
+                abc = tabelka_wypozyczenie.toString();
+                System.out.println(abc);
+                ArrayList<String> dane = new ArrayList<String>();
+                try {
+
+                    TablePosition pozycja = tabelka_wypozyczenie.getSelectionModel().getSelectedCells().get(0);
+                    int index = pozycja.getRow();
+
+                    index++;
+                    Class.forName("com.mysql.cj.jdbc.Driver");
+
+
+                    Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+
+                    PreparedStatement stmt = con.prepareStatement("SELECT * FROM wypozyczenie");
+                    String zapytanie = "Select * FROM wypozyczenie ORDER BY wypozyczenie_id LIMIT " + index;
+                    ResultSet rs = stmt.executeQuery(zapytanie);
+                    String a = "0";
+                    int i=0;
+                    while(rs.next()) {
+                        a = rs.getString(1);
+                        i++;
+                    }
+                    int numer = Integer.parseInt(a);
+
+
+                    zapytanie = "Select data_od, data_do, user_id FROM wypozyczenie WHERE wypozyczenie_id = " + numer;
+                    ResultSet rs2 = stmt.executeQuery(zapytanie);
+                    System.out.println(rs2);
+                    if(rs2.next()) {
+                        dane.add(rs2.getString("data_od"));
+                        dane.add(rs2.getString("data_do"));
+
+                        TdataStart.setValue(LocalDate.parse(dane.get(0)));
+                        TdataKoniec.setValue(LocalDate.parse(dane.get(1)));
+
+                    }
+
+                }catch (Exception e)
+                {
+                    Alert alert = new Alert(Alert.AlertType.WARNING);
+                    alert.setTitle("Informacja");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Zaznacz linie!");
+                    alert.showAndWait();
+                };
+
+            };
+
+        });
 
     }
 

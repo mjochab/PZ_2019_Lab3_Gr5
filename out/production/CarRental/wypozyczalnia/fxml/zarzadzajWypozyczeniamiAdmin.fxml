@@ -5,12 +5,10 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Bloom?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
@@ -18,7 +16,7 @@
 
 <AnchorPane fx:id="adminPane" prefHeight="900.0" prefWidth="1400.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.zarzadzajWypozyczeniamiAdminController">
     <children>
-        <TableView fx:id="tabelka_wypozyczenie" layoutX="246.0" layoutY="188.0" prefHeight="511.0" prefWidth="993.0">
+        <TableView fx:id="tabelka_wypozyczenie" layoutX="246.0" layoutY="188.0" prefHeight="579.0" prefWidth="1045.0">
             <columns>
                 <TableColumn fx:id="col_Imie" prefWidth="153.99998474121094" text="Imie" />
                 <TableColumn fx:id="col_Nazwisko" prefWidth="149.0" text="Nazwisko" />
@@ -98,14 +96,9 @@
                 </ImageView>
             </children>
         </GridPane>
-        <Button layoutX="51.0" layoutY="229.0" mnemonicParsing="false" onAction="#klik" prefHeight="29.0" prefWidth="153.0" text="Uzupelnij pola poniżej">
-            <font>
-                <Font size="13.0" />
-            </font>
-        </Button>
-        <DatePicker fx:id="TdataStart" layoutX="43.0" layoutY="295.0" prefHeight="31.0" prefWidth="183.0" promptText="Data początkowa" />
-        <DatePicker fx:id="TdataKoniec" layoutX="43.0" layoutY="340.0" prefHeight="31.0" prefWidth="183.0" promptText="Data końcowa" />
-        <Button layoutX="246.0" layoutY="721.0" mnemonicParsing="false" onAction="#usunWypo" prefHeight="48.0" prefWidth="156.0" style="-fx-background-color: #e27171;" text="USUŃ">
+        <DatePicker fx:id="TdataStart" layoutX="43.0" layoutY="215.0" prefHeight="31.0" prefWidth="183.0" promptText="Data początkowa" />
+        <DatePicker fx:id="TdataKoniec" layoutX="43.0" layoutY="262.0" prefHeight="31.0" prefWidth="183.0" promptText="Data końcowa" />
+        <Button layoutX="57.0" layoutY="384.0" mnemonicParsing="false" onAction="#usunWypo" prefHeight="48.0" prefWidth="156.0" style="-fx-background-color: #e27171;" text="USUŃ">
             <graphic>
                 <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                     <image>
@@ -117,7 +110,7 @@
                 <Font size="18.0" />
             </font>
         </Button>
-        <Button layoutX="422.0" layoutY="721.0" mnemonicParsing="false" onAction="#modujWypo" prefHeight="48.0" prefWidth="156.0" style="-fx-background-color: #e27171;" text="EDYTUJ">
+        <Button layoutX="57.0" layoutY="314.0" mnemonicParsing="false" onAction="#modujWypo" prefHeight="48.0" prefWidth="156.0" style="-fx-background-color: #e27171;" text="EDYTUJ">
             <graphic>
                 <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                     <image>

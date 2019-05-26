@@ -59,7 +59,7 @@ public class zarzadzajWypozyczeniamiController implements Initializable {
 
     public void modujWypo(ActionEvent event) throws  IOException{
 
-        System.out.println("2");
+
 
         TablePosition pozycja = tabelka_wypozyczenie.getSelectionModel().getSelectedCells().get(0);
         int index = pozycja.getRow();
@@ -102,7 +102,7 @@ public class zarzadzajWypozyczeniamiController implements Initializable {
 
     public void usunWypo(ActionEvent event) throws  IOException{
 
-        System.out.println("2");
+
 
         TablePosition pozycja = tabelka_wypozyczenie.getSelectionModel().getSelectedCells().get(0);
         int index = pozycja.getRow();
@@ -183,7 +183,7 @@ public class zarzadzajWypozyczeniamiController implements Initializable {
 
                     index++;
                     Class.forName("com.mysql.cj.jdbc.Driver");
-                    System.out.println(index);
+
 
                     Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
 
@@ -197,7 +197,7 @@ public class zarzadzajWypozyczeniamiController implements Initializable {
                         i++;
                     }
                     int numer = Integer.parseInt(a);
-                    System.out.println(numer);
+
 
                     zapytanie = "Select data_od, data_do, user_id FROM wypozyczenie WHERE wypozyczenie_id = " + numer;
                     ResultSet rs2 = stmt.executeQuery(zapytanie);
