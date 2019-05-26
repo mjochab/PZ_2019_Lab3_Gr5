@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="pobranie daty urodzenia z PESELU">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="poprawa walidacji z polskimi znakami">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CarRental/wypozyczalnia/fxml/mojeWypozyczeniaK.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CarRental/wypozyczalnia/fxml/mojeWypozyczeniaK.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CarRental/wypozyczalnia/fxml/zarzadzajPracownikami.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CarRental/wypozyczalnia/fxml/zarzadzajPracownikami.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CarRental/wypozyczalnia/fxml/zarzadzajUzytkownikami.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CarRental/wypozyczalnia/fxml/zarzadzajUzytkownikami.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CarRental/wypozyczalnia/fxml/zarzadzajUzytkownikamiAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CarRental/wypozyczalnia/fxml/zarzadzajUzytkownikamiAdmin.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajPracownikamiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajPracownikamiController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajUzytkownikamiAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajUzytkownikamiAdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajUzytkownikamiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajUzytkownikamiController.java" afterDir="false" />
@@ -68,11 +72,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajUzytkownikamiAdminController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="163" column="65" selection-start-line="163" selection-start-column="65" selection-end-line="163" selection-end-column="65" />
+            <state relative-caret-position="279">
+              <caret line="449" lean-forward="true" selection-start-line="449" selection-end-line="449" />
               <folding>
                 <element signature="method#clearFields#0;class#zarzadzajUzytkownikamiAdminController#0" />
                 <element signature="method#logOut#0;class#zarzadzajUzytkownikamiAdminController#0" />
@@ -81,33 +85,26 @@
                 <element signature="method#walidacjaDaty#0;class#zarzadzajUzytkownikamiAdminController#0" />
                 <element signature="method#walidacjaImie#0;class#zarzadzajUzytkownikamiAdminController#0" />
                 <element signature="method#walidacjaNazwisko#0;class#zarzadzajUzytkownikamiAdminController#0" />
+                <element signature="method#walidacjaMiejscowosc#0;class#zarzadzajUzytkownikamiAdminController#0" />
                 <element signature="method#walidacjaEmail#0;class#zarzadzajUzytkownikamiAdminController#0" />
                 <element signature="method#walidacjaPesel#0;class#zarzadzajUzytkownikamiAdminController#0" />
-                <element signature="method#modujUser#0;class#zarzadzajUzytkownikamiAdminController#0" />
                 <element signature="method#usunKlient#0;class#zarzadzajUzytkownikamiAdminController#0" />
                 <element signature="method#datazpeselu#0;class#zarzadzajUzytkownikamiAdminController#0" />
                 <element signature="method#dodajUsera#0;class#zarzadzajUzytkownikamiAdminController#0" />
-                <element signature="method#initialize#0;class#zarzadzajUzytkownikamiAdminController#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajUzytkownikamiController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="113" column="65" selection-start-line="113" selection-start-column="65" selection-end-line="113" selection-end-column="65" />
+            <state relative-caret-position="224">
+              <caret line="435" selection-start-line="435" selection-end-line="435" />
               <folding>
-                <element signature="method#walidacjaNazwisko#0;class#zarzadzajUzytkownikamiController#0" />
-                <element signature="method#walidacjaMiejscowosc#0;class#zarzadzajUzytkownikamiController#0" />
-                <element signature="method#walidacjaEmail#0;class#zarzadzajUzytkownikamiController#0" />
-                <element signature="method#walidacjaPesel#0;class#zarzadzajUzytkownikamiController#0" />
-                <element signature="method#modujUser#0;class#zarzadzajUzytkownikamiController#0" />
+                <element signature="method#walidacjaPol#0;class#zarzadzajUzytkownikamiController#0" />
                 <element signature="method#usunKlient#0;class#zarzadzajUzytkownikamiController#0" />
                 <element signature="method#datazpeselu#0;class#zarzadzajUzytkownikamiController#0" />
-                <element signature="method#dodajKlienta#0;class#zarzadzajUzytkownikamiController#0" />
-                <element signature="method#initialize#0;class#zarzadzajUzytkownikamiController#0" />
               </folding>
             </state>
           </provider>
@@ -116,12 +113,21 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajPracownikamiController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="189" column="65" selection-start-line="189" selection-start-column="37" selection-end-line="189" selection-end-column="65" />
+            <state relative-caret-position="238">
+              <caret line="480" column="40" lean-forward="true" selection-start-line="480" selection-end-line="481" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#walidacjaPol#0;class#zarzadzajPracownikamiController#0" />
+                <element signature="method#clearFields#0;class#zarzadzajPracownikamiController#0" />
+                <element signature="method#logOut#0;class#zarzadzajPracownikamiController#0" />
+                <element signature="method#menuAdmin#0;class#zarzadzajPracownikamiController#0" />
+                <element signature="method#zarzadzajUzytkownikamiAdmin#0;class#zarzadzajPracownikamiController#0" />
+                <element signature="method#zarzadzajPojazdamiAdmin#0;class#zarzadzajPracownikamiController#0" />
+                <element signature="method#zarzadzajWypozyczeniamiAdmin#0;class#zarzadzajPracownikamiController#0" />
+                <element signature="method#zarzadzajPracownikami#0;class#zarzadzajPracownikamiController#0" />
                 <element signature="method#walidacjaDaty#0;class#zarzadzajPracownikamiController#0" />
+                <element signature="method#walidacjaImie#0;class#zarzadzajPracownikamiController#0" />
+                <element signature="method#walidacjaNazwisko#0;class#zarzadzajPracownikamiController#0" />
+                <element signature="method#walidacjaMiejscowosc#0;class#zarzadzajPracownikamiController#0" />
                 <element signature="method#walidacjaEmail#0;class#zarzadzajPracownikamiController#0" />
                 <element signature="method#datazpeselu#0;class#zarzadzajPracownikamiController#0" />
                 <element signature="method#walidacjaPesel#0;class#zarzadzajPracownikamiController#0" />
@@ -135,8 +141,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajPojazdamiController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="123" lean-forward="true" selection-start-line="123" selection-end-line="123" />
+            <state relative-caret-position="539">
+              <caret line="443" column="42" selection-start-line="443" selection-start-column="38" selection-end-line="443" selection-end-column="42" />
               <folding>
                 <element signature="method#walidacjaPol#0;class#zarzadzajPojazdamiController#0" />
                 <element signature="e#3573#3854#1" />
@@ -162,8 +168,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>tabelka</find>
-      <find>zarz</find>
       <find>kli</find>
       <find>uzupe;</find>
       <find>automarka</find>
@@ -192,6 +196,8 @@
       <find>klik</find>
       <find>system</find>
       <find>syste</find>
+      <find>stmt</find>
+      <find>oblist2</find>
     </findStrings>
   </component>
   <component name="FindManager">
@@ -267,8 +273,8 @@
         <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajPracownikami.fxml" />
         <option value="$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajUzytkownikamiAdmin.fxml" />
         <option value="$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajPracownikamiController.java" />
-        <option value="$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajUzytkownikamiAdminController.java" />
         <option value="$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajUzytkownikamiController.java" />
+        <option value="$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajUzytkownikamiAdminController.java" />
       </list>
     </option>
   </component>
@@ -281,8 +287,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="505" />
-    <option name="y" value="121" />
+    <option name="x" value="33" />
+    <option name="y" value="93" />
     <option name="width" value="1840" />
     <option name="height" value="1099" />
   </component>
@@ -346,7 +352,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558894124559" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558907144996" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="dynamic.classpath" value="false" />
@@ -856,7 +862,14 @@
       <option name="project" value="LOCAL" />
       <updated>1558892663917</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="poprawa walidacji z polskimi znakami">
+      <created>1558894148878</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1558894148878</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -907,7 +920,7 @@
     <frame x="-7" y="-7" width="1472" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.21529745" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.21529745" />
       <window_info id="Structure" order="1" weight="0.24966443" />
       <window_info id="Favorites" order="2" weight="0.3295302" />
       <window_info id="Designer" order="3" />
@@ -916,7 +929,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32733223" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.36729223" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.36595175" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39703903" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -943,7 +956,7 @@
       <window_info anchor="right" id="Theme Preview" order="10" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.22885907" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.21529745" />
       <window_info id="Structure" order="1" weight="0.24966443" />
       <window_info id="Favorites" order="2" weight="0.3295302" />
       <window_info id="Designer" order="3" />
@@ -951,20 +964,20 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3101983" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.398017" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32733223" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.36595175" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39703903" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32827735" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32707775" />
       <window_info anchor="bottom" id="Application Servers" order="7" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.19546743" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.19436997" />
       <window_info anchor="bottom" id="Problems" order="9" />
       <window_info anchor="bottom" id="Changes" order="10" />
       <window_info anchor="bottom" id="Profiler" order="11" />
-      <window_info anchor="bottom" id="Event Log" order="12" weight="0.3243626" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.31586403" />
-      <window_info anchor="bottom" id="Terminal" order="14" weight="0.32932165" />
+      <window_info anchor="bottom" id="Event Log" order="12" weight="0.3163539" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.31419286" />
+      <window_info anchor="bottom" id="Terminal" order="14" weight="0.3289689" />
       <window_info anchor="bottom" id="GitHub Pull Requests" order="15" weight="0.33694476" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24966443" />
@@ -997,7 +1010,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
-    <MESSAGE value="testowy insert" />
     <MESSAGE value="Implementacja TableView" />
     <MESSAGE value="TableView - Admin x3 , Pracownik 1x" />
     <MESSAGE value="Insert Test btn, hibernate imports out" />
@@ -1022,7 +1034,8 @@
     <MESSAGE value="panel administratora - wypozyczenia - walidacja danych" />
     <MESSAGE value="modyfikacja obydwu okien" />
     <MESSAGE value="pobranie daty urodzenia z PESELU" />
-    <option name="LAST_COMMIT_MESSAGE" value="pobranie daty urodzenia z PESELU" />
+    <MESSAGE value="poprawa walidacji z polskimi znakami" />
+    <option name="LAST_COMMIT_MESSAGE" value="poprawa walidacji z polskimi znakami" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -1161,13 +1174,6 @@
             <element signature="e#167#168#0" expanded="true" />
             <element signature="e#199#200#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/ModelTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="50" column="25" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -1366,14 +1372,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajPracownikami.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="639">
-          <caret line="222" column="18" selection-start-line="222" selection-start-column="18" selection-end-line="222" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajUzytkownikami.fxml">
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
       <provider editor-type-id="text-editor">
@@ -1382,10 +1380,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/ModelTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajPojazdamiController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="123" lean-forward="true" selection-start-line="123" selection-end-line="123" />
+        <state relative-caret-position="539">
+          <caret line="443" column="42" selection-start-line="443" selection-start-column="38" selection-end-line="443" selection-end-column="42" />
           <folding>
             <element signature="method#walidacjaPol#0;class#zarzadzajPojazdamiController#0" />
             <element signature="e#3573#3854#1" />
@@ -1396,14 +1401,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/fxml/zarzadzajPracownikami.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="639">
+          <caret line="222" column="18" selection-start-line="222" selection-start-column="18" selection-end-line="222" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajPracownikamiController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="189" column="65" selection-start-line="189" selection-start-column="37" selection-end-line="189" selection-end-column="65" />
+        <state relative-caret-position="238">
+          <caret line="480" column="40" lean-forward="true" selection-start-line="480" selection-end-line="481" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#walidacjaPol#0;class#zarzadzajPracownikamiController#0" />
+            <element signature="method#clearFields#0;class#zarzadzajPracownikamiController#0" />
+            <element signature="method#logOut#0;class#zarzadzajPracownikamiController#0" />
+            <element signature="method#menuAdmin#0;class#zarzadzajPracownikamiController#0" />
+            <element signature="method#zarzadzajUzytkownikamiAdmin#0;class#zarzadzajPracownikamiController#0" />
+            <element signature="method#zarzadzajPojazdamiAdmin#0;class#zarzadzajPracownikamiController#0" />
+            <element signature="method#zarzadzajWypozyczeniamiAdmin#0;class#zarzadzajPracownikamiController#0" />
+            <element signature="method#zarzadzajPracownikami#0;class#zarzadzajPracownikamiController#0" />
             <element signature="method#walidacjaDaty#0;class#zarzadzajPracownikamiController#0" />
+            <element signature="method#walidacjaImie#0;class#zarzadzajPracownikamiController#0" />
+            <element signature="method#walidacjaNazwisko#0;class#zarzadzajPracownikamiController#0" />
+            <element signature="method#walidacjaMiejscowosc#0;class#zarzadzajPracownikamiController#0" />
             <element signature="method#walidacjaEmail#0;class#zarzadzajPracownikamiController#0" />
             <element signature="method#datazpeselu#0;class#zarzadzajPracownikamiController#0" />
             <element signature="method#walidacjaPesel#0;class#zarzadzajPracownikamiController#0" />
@@ -1413,10 +1435,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajUzytkownikamiController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="435" selection-start-line="435" selection-end-line="435" />
+          <folding>
+            <element signature="method#walidacjaPol#0;class#zarzadzajUzytkownikamiController#0" />
+            <element signature="method#usunKlient#0;class#zarzadzajUzytkownikamiController#0" />
+            <element signature="method#datazpeselu#0;class#zarzadzajUzytkownikamiController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajUzytkownikamiAdminController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="163" column="65" selection-start-line="163" selection-start-column="65" selection-end-line="163" selection-end-column="65" />
+        <state relative-caret-position="279">
+          <caret line="449" lean-forward="true" selection-start-line="449" selection-end-line="449" />
           <folding>
             <element signature="method#clearFields#0;class#zarzadzajUzytkownikamiAdminController#0" />
             <element signature="method#logOut#0;class#zarzadzajUzytkownikamiAdminController#0" />
@@ -1425,31 +1459,12 @@
             <element signature="method#walidacjaDaty#0;class#zarzadzajUzytkownikamiAdminController#0" />
             <element signature="method#walidacjaImie#0;class#zarzadzajUzytkownikamiAdminController#0" />
             <element signature="method#walidacjaNazwisko#0;class#zarzadzajUzytkownikamiAdminController#0" />
+            <element signature="method#walidacjaMiejscowosc#0;class#zarzadzajUzytkownikamiAdminController#0" />
             <element signature="method#walidacjaEmail#0;class#zarzadzajUzytkownikamiAdminController#0" />
             <element signature="method#walidacjaPesel#0;class#zarzadzajUzytkownikamiAdminController#0" />
-            <element signature="method#modujUser#0;class#zarzadzajUzytkownikamiAdminController#0" />
             <element signature="method#usunKlient#0;class#zarzadzajUzytkownikamiAdminController#0" />
             <element signature="method#datazpeselu#0;class#zarzadzajUzytkownikamiAdminController#0" />
             <element signature="method#dodajUsera#0;class#zarzadzajUzytkownikamiAdminController#0" />
-            <element signature="method#initialize#0;class#zarzadzajUzytkownikamiAdminController#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/wypozyczalnia/Controllers/zarzadzajUzytkownikamiController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="113" column="65" selection-start-line="113" selection-start-column="65" selection-end-line="113" selection-end-column="65" />
-          <folding>
-            <element signature="method#walidacjaNazwisko#0;class#zarzadzajUzytkownikamiController#0" />
-            <element signature="method#walidacjaMiejscowosc#0;class#zarzadzajUzytkownikamiController#0" />
-            <element signature="method#walidacjaEmail#0;class#zarzadzajUzytkownikamiController#0" />
-            <element signature="method#walidacjaPesel#0;class#zarzadzajUzytkownikamiController#0" />
-            <element signature="method#modujUser#0;class#zarzadzajUzytkownikamiController#0" />
-            <element signature="method#usunKlient#0;class#zarzadzajUzytkownikamiController#0" />
-            <element signature="method#datazpeselu#0;class#zarzadzajUzytkownikamiController#0" />
-            <element signature="method#dodajKlienta#0;class#zarzadzajUzytkownikamiController#0" />
-            <element signature="method#initialize#0;class#zarzadzajUzytkownikamiController#0" />
           </folding>
         </state>
       </provider>

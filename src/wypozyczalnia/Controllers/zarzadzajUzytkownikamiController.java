@@ -341,6 +341,7 @@ public class zarzadzajUzytkownikamiController implements Initializable {
         String imie = String.valueOf(userImie.getCharacters());
         String nazwisko = String.valueOf(userNazwisko.getCharacters());
         String login = String.valueOf(userLogin.getCharacters());
+        String haslo = String.valueOf(userHaslo.getCharacters());
         String pesel = String.valueOf(userPesel.getText());
         String data_urodzenia = userData.getValue().toString();
         String miejscowosc = String.valueOf(userMiejscowosc.getCharacters());
@@ -353,41 +354,45 @@ public class zarzadzajUzytkownikamiController implements Initializable {
                 Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
                 PreparedStatement stmt2 = con.prepareStatement("Select MAX(user_id) FROM `user` WHERE `rodzaj` = 'klient'");
                 ResultSet rs = stmt2.executeQuery("SELECT * FROM `user` WHERE `rodzaj` = 'klient'");
-                int i=1;
-                int n=1;
-                while(rs.next()){
-                    i++;
-                }
-                Integer puste= i+1;
-                String haslo= "haslo";
+                PreparedStatement stmt3 = con.prepareStatement("SELECT * FROM user WHERE login ='"+ login+"';");
+                ResultSet rs1 = stmt3.executeQuery();
+
                 String rodzaj = "klient";
 
-                PreparedStatement stmt = con.prepareStatement("INSERT INTO user VALUES(?,?,?,?,?,?,?,?,?,?,?)");
-                stmt.setInt(1, i);
-                stmt.setString(2, login);
-                stmt.setString(3, haslo);
-                stmt.setString(4, imie);
-                stmt.setString(5, nazwisko);
-                stmt.setString(6, data_urodzenia);
-                stmt.setString(7, miejscowosc);
-                stmt.setString(8, telefon);
-                stmt.setString(9, email);
-                stmt.setString(10, pesel);
-                stmt.setString(11,rodzaj);
-                stmt.executeUpdate();
+                if(rs1.next()) {
+                    Alert alert = new Alert(Alert.AlertType.WARNING);
+                    alert.setTitle("Informacja");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Login zajęty!");
+                    alert.showAndWait();
+                }else {
+                    PreparedStatement stmt = con.prepareStatement("INSERT INTO user (login, haslo, imie, nazwisko, data_urodzenia, miejscowosc, tel, email, pesel, rodzaj) VALUES(?,?,?,?,?,?,?,?,?,?)");
+                    stmt.setString(1, login);
+                    stmt.setString(2, haslo);
+                    stmt.setString(3, imie);
+                    stmt.setString(4, nazwisko);
+                    stmt.setString(5, data_urodzenia);
+                    stmt.setString(6, miejscowosc);
+                    stmt.setString(7, telefon);
+                    stmt.setString(8, email);
+                    stmt.setString(9, pesel);
+                    stmt.setString(10, rodzaj);
+                    stmt.executeUpdate();
 
-                rs = stmt2.executeQuery("SELECT * FROM `user` WHERE user_id = (SELECT MAX(user_id) FROM user)");
-                if(rs.next()) {
-                    System.out.println(rs.getString(2));
-                    oblist2.add(new ModelTable( rs.getString(4),rs.getString(5),rs.getString(6), rs.getString(7), rs.getString(10), rs.getString(8), rs.getString(2), rs.getString(9)));
+                    rs = stmt2.executeQuery("SELECT * FROM `user` WHERE user_id = (SELECT MAX(user_id) FROM user)");
+                    if (rs.next()) {
+                        System.out.println(rs.getString(2));
+                        oblist2.add(new ModelTable(rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(10), rs.getString(8), rs.getString(2), rs.getString(9)));
+                    }
+                    AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajUzytkownikami.fxml"));
+                    pracownikPane.getChildren().setAll(pane);
                 }
 
             }catch (Exception e)
             {
                 System.out.println(e);
             }
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajUzytkownikami.fxml"));
-        pracownikPane.getChildren().setAll(pane);
+
         tabelka.refresh();
     }
 
@@ -426,6 +431,9 @@ public class zarzadzajUzytkownikamiController implements Initializable {
         tabelka.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
+                userLogin.setDisable(true);
+                userPesel.setDisable(true);
+
                 String abc;
                 abc = tabelka.toString();
                 System.out.println(abc);
