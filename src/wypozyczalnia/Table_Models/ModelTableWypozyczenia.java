@@ -2,7 +2,15 @@ package wypozyczalnia.Table_Models;
 
 public class ModelTableWypozyczenia {
 
-    String  marka, model, odkiedy, dokiedy, cena;
+    String pesel, marka, model, odkiedy, dokiedy, cena;
+
+    public String getPesel() {
+        return pesel;
+    }
+
+    public void setPesel(String pesel) {
+        this.pesel = pesel;
+    }
 
     public String getMarka() {
         return marka;
@@ -44,7 +52,8 @@ public class ModelTableWypozyczenia {
         this.cena = cena;
     }
 
-    public ModelTableWypozyczenia(String marka, String model, String odkiedy, String dokiedy, String cena) {
+    public ModelTableWypozyczenia(String pesel, String marka, String model, String odkiedy, String dokiedy, String cena) {
+        this.pesel = pesel;
         this.marka = marka;
         this.model = model;
         this.odkiedy = odkiedy;
