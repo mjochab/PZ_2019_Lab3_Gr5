@@ -1,6 +1,5 @@
 package wypozyczalnia.Controllers;
 
-import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -15,8 +14,6 @@ import wypozyczalnia.DBConnector;
 
 import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
-import wypozyczalnia.UserSession;
-
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
@@ -52,8 +49,8 @@ public class zarzadzajWypozyczeniamiAdminController implements Initializable {
     ObservableList<ModelTableWypozyczenie> oblist1 = FXCollections.observableArrayList();
 
     public void logOut(ActionEvent event) throws IOException {
-        UserSession.cleanUserSession();
-        Platform.exit();
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/login.fxml"));
+        adminPane.getChildren().setAll(pane);
     }
 
     public void menuAdmin(ActionEvent event) throws IOException {

@@ -1,27 +1,25 @@
 package wypozyczalnia.Controllers;
 
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
-import wypozyczalnia.UserSession;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
-public class TerminKlientController implements Initializable {
+public class TerminKlientController {
 
     @FXML
     private AnchorPane klientPane;
 
+<<<<<<< HEAD
 
     public void initialize(URL location, ResourceBundle resources) {
         
     }
 
+=======
+>>>>>>> parent of e2cf6e1... - Sesja logowania na singletionie,
     public void menuKlient(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/menuKlient.fxml"));
         klientPane.getChildren().setAll(pane);
@@ -33,8 +31,8 @@ public class TerminKlientController implements Initializable {
     }
 
     public void logOut(ActionEvent event) throws IOException {
-        UserSession.cleanUserSession();
-        Platform.exit();
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/login.fxml"));
+        klientPane.getChildren().setAll(pane);
     }
 
 }

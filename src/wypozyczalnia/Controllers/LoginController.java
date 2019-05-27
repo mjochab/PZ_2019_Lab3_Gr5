@@ -54,7 +54,11 @@ public class LoginController implements Initializable {
         rootPane.getChildren().setAll(pane);
     }
 
+<<<<<<< HEAD
     public void dodajInserty(ActionEvent event){
+=======
+    public void printHello(ActionEvent event){
+>>>>>>> parent of e2cf6e1... - Sesja logowania na singletionie,
 
     try {
         Class.forName("com.mysql.cj.jdbc.Driver");
