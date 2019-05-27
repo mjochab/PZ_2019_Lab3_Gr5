@@ -1,11 +1,13 @@
 package wypozyczalnia.Controllers;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import wypozyczalnia.UserSession;
 
 import java.io.IOException;
 import java.net.URL;
@@ -22,9 +24,9 @@ public class MenuKlientController implements Initializable {
 
 
     public void logOut(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/login.fxml"));
-        klientPane.getChildren().setAll(pane);
-    }
+        UserSession.cleanUserSession();
+        Platform.exit();
+}
 
     public void terminKlient(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/terminKlient.fxml"));
