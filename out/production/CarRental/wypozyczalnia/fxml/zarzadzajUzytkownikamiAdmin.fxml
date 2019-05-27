@@ -23,10 +23,11 @@
         <TextField fx:id="userHaslo" layoutX="24.0" layoutY="296.0" prefHeight="31.0" prefWidth="178.0" promptText="Hasło" />
         <TextField fx:id="userImie" layoutX="24.0" layoutY="332.0" prefHeight="31.0" prefWidth="178.0" promptText="Imie" />
         <TextField fx:id="userNazwisko" layoutX="24.0" layoutY="369.0" prefHeight="31.0" prefWidth="178.0" promptText="Nazwisko" />
+        <TextField fx:id="userPesel" layoutX="24.0" layoutY="405.0" onMouseExited="#datazpeselu" prefHeight="31.0" prefWidth="178.0" promptText="Pesel" />
         <TextField fx:id="userMiejscowosc" layoutX="24.0" layoutY="442.0" prefHeight="31.0" prefWidth="178.0" promptText="Miejscowość" />
         <TextField fx:id="userTelefon" layoutX="24.0" layoutY="478.0" prefHeight="31.0" prefWidth="178.0" promptText="Numer Telefonu" />
         <TextField fx:id="userEmail" layoutX="24.0" layoutY="514.0" prefHeight="31.0" prefWidth="178.0" promptText="Email" />
-        <TextField fx:id="userPesel" layoutX="24.0" layoutY="405.0" onMouseExited="#datazpeselu" prefHeight="31.0" prefWidth="178.0" promptText="Pesel" />
+      <DatePicker fx:id="userData" layoutX="24.0" layoutY="550.0" prefHeight="31.0" prefWidth="178.0" promptText="Data Urodzenia" />
         <TableView fx:id="tabelka" layoutX="219.0" layoutY="172.0" prefHeight="541.0" prefWidth="1096.0">
             <columns>
                 <TableColumn fx:id="col_imie" prefWidth="120.00003051757812" text="Imię" />
@@ -249,7 +250,7 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="1124.0" layoutY="740.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="191.0" style="-fx-background-color: #e27171;" text="Generuj raport">
+      <Button layoutX="1124.0" layoutY="740.0" mnemonicParsing="false" onAction="#generujRaport" prefHeight="50.0" prefWidth="191.0" style="-fx-background-color: #e27171;" text="Generuj raport">
          <graphic>
             <ImageView fitHeight="36.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -262,6 +263,5 @@
          </font>
       </Button>
       <Button fx:id="btnclear" layoutX="48.0" layoutY="212.0" mnemonicParsing="false" onAction="#clearFields" prefHeight="26.0" prefWidth="130.0" text="Wyczyść pola" />
-      <DatePicker fx:id="userData" layoutX="24.0" layoutY="550.0" prefHeight="31.0" prefWidth="178.0" promptText="Data Urodzenia" />
     </children>
 </AnchorPane>

@@ -21,10 +21,11 @@
         <TextField fx:id="userHaslo" accessibleRole="PASSWORD_FIELD" layoutX="38.0" layoutY="290.0" prefHeight="25.0" prefWidth="162.0" promptText="Hasło" />
         <TextField fx:id="userImie" layoutX="38.0" layoutY="328.0" prefHeight="25.0" prefWidth="162.0" promptText="Imie" />
         <TextField fx:id="userNazwisko" layoutX="38.0" layoutY="369.0" prefHeight="25.0" prefWidth="162.0" promptText="Nazwisko" />
+        <TextField fx:id="userPesel" layoutX="38.0" layoutY="407.0" onMouseExited="#datazpeselu" prefHeight="25.0" prefWidth="162.0" promptText="Pesel" />
         <TextField fx:id="userMiejscowosc" layoutX="38.0" layoutY="445.0" prefHeight="25.0" prefWidth="162.0" promptText="Miejscowość" />
         <TextField fx:id="userTelefon" layoutX="38.0" layoutY="483.0" prefHeight="25.0" prefWidth="162.0" promptText="Numer Telefonu" />
         <TextField fx:id="userEmail" layoutX="38.0" layoutY="523.0" prefHeight="25.0" prefWidth="162.0" promptText="Email" />
-        <TextField fx:id="userPesel" layoutX="38.0" layoutY="407.0" onMouseExited="#datazpeselu" prefHeight="25.0" prefWidth="162.0" promptText="Pesel" />
+      <DatePicker fx:id="userData" layoutX="38.0" layoutY="563.0" prefHeight="25.0" prefWidth="162.0" promptText="Data urodzenia" />
         <TableView fx:id="tabelka" layoutX="228.0" layoutY="184.0" prefHeight="534.0" prefWidth="1093.0">
             <columns>
                 <TableColumn fx:id="col_imie" prefWidth="109.00003051757812" text="Imię" />
@@ -247,7 +248,6 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <DatePicker fx:id="userData" layoutX="38.0" layoutY="563.0" prefHeight="25.0" prefWidth="162.0" promptText="Data urodzenia" />
       <Button fx:id="btnclear" layoutX="60.0" layoutY="203.0" mnemonicParsing="false" onAction="#clearFields" text="Wyczyść pola" />
     </children>
 </AnchorPane>
