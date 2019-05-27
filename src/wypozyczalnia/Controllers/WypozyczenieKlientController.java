@@ -46,7 +46,10 @@ public class WypozyczenieKlientController implements Initializable {
     private TableColumn<ModelTablePojazdy, String> col_dostepnosc;
 
     ObservableList<ModelTablePojazdy> oblist1 = FXCollections.observableArrayList();
-
+    public void logOut(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/login.fxml"));
+        klientPane.getChildren().setAll(pane);
+    }
 
     public void openMenu(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/menuKlient.fxml"));
