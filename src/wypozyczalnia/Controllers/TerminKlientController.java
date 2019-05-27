@@ -15,7 +15,8 @@ public class TerminKlientController {
 <<<<<<< HEAD
 
     public void initialize(URL location, ResourceBundle resources) {
-        
+       System.out.println(UserSession.getUsername());
+       System.out.println(UserSession.getID());
     }
 
 =======
