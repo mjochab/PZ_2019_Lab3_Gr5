@@ -249,6 +249,25 @@ public class zarzadzajPracownikamiController implements Initializable {
 
     }
 
+    private boolean walidacjaTelefonu(){
+        Pattern p = Pattern.compile("^[0-9]{9}$");
+        Matcher m = p.matcher(userTelefon.getText());
+
+        if(m.find() && m.group().equals(userTelefon.getText())){
+            return true;
+        }else
+        {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Informacja");
+            alert.setHeaderText(null);
+            alert.setContentText("Telefon niepoprawny");
+            alert.showAndWait();
+
+            return false;
+        }
+
+    }
+
     public void edytujPracownika(ActionEvent event) throws  IOException {
         String imie = String.valueOf(userImie.getCharacters());
         String nazwisko = String.valueOf(userNazwisko.getCharacters());
@@ -264,7 +283,7 @@ public class zarzadzajPracownikamiController implements Initializable {
         TablePosition pozycja = tabelka.getSelectionModel().getSelectedCells().get(0);
         int index = pozycja.getRow();
 
-        if (walidacjaPol() & walidacjaImie() & walidacjaNazwisko() & walidacjaMiejscowosc() & walidacjaEmail() & walidacjaPesel() & walidacjaDaty())
+        if (walidacjaTelefonu() & walidacjaPol() & walidacjaImie() & walidacjaNazwisko() & walidacjaMiejscowosc() & walidacjaEmail() & walidacjaPesel() & walidacjaDaty())
             try {
 
                 Class.forName("com.mysql.cj.jdbc.Driver");
@@ -339,7 +358,7 @@ public class zarzadzajPracownikamiController implements Initializable {
         String miejscowosc = String.valueOf(userMiejscowosc.getCharacters());
         String telefon = String.valueOf(userTelefon.getCharacters());
         String email = String.valueOf(userEmail.getCharacters());
-        if (walidacjaPol() & walidacjaImie() & walidacjaNazwisko() & walidacjaMiejscowosc() & walidacjaEmail() & walidacjaPesel() & walidacjaDaty())
+        if (walidacjaTelefonu() & walidacjaPol() & walidacjaImie() & walidacjaNazwisko() & walidacjaMiejscowosc() & walidacjaEmail() & walidacjaPesel() & walidacjaDaty())
              try {
                  Class.forName("com.mysql.cj.jdbc.Driver");
                  Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
@@ -359,7 +378,7 @@ public class zarzadzajPracownikamiController implements Initializable {
                      Alert alert = new Alert(Alert.AlertType.WARNING);
                      alert.setTitle("Informacja");
                      alert.setHeaderText(null);
-                     alert.setContentText("PESEL jest już w bazie!");
+                     alert.setContentText("Telefon jest już w bazie!");
                      alert.showAndWait();} else {
                      if (rs3.next()) {
                          Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -398,7 +417,7 @@ public class zarzadzajPracownikamiController implements Initializable {
 
                                  rs = stmt2.executeQuery("SELECT * FROM `user` WHERE user_id = (SELECT MAX(user_id) FROM user)");
                                  if (rs.next()) {
-                                     oblist2.add(new ModelTable(rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(10), rs.getString(8), rs.getString(2), rs.getString(9)));
+                                     oblist2.add(new ModelTable(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(9), rs.getString(7) , rs.getString(8)));
 
                                  }
                                  AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajPracownikami.fxml"));
@@ -423,17 +442,17 @@ public class zarzadzajPracownikamiController implements Initializable {
             ResultSet rs = con.createStatement().executeQuery("SELECT * FROM `user` WHERE `rodzaj` = 'worker'");
 
             while (rs.next()){
-                oblist2.add(new ModelTable(rs.getString(4), rs.getString(5),rs.getString(6), rs.getString(7), rs.getString(10), rs.getString(8), rs.getString(2),rs.getString(9)));
+                oblist2.add(new ModelTable(rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(10), rs.getString(8) , rs.getString(9)));
             }
 
         }catch (SQLException ex){
             Logger.getLogger(zarzadzajUzytkownikamiAdminController.class.getName()).log(Level.SEVERE,null, ex);
         }
 
-
+        col_login.setCellValueFactory(new PropertyValueFactory<>("login"));
+        col_haslo.setCellValueFactory(new PropertyValueFactory<>("haslo"));
         col_imie.setCellValueFactory(new PropertyValueFactory<>("imie"));
         col_nazwisko.setCellValueFactory(new PropertyValueFactory<>("nazwisko"));
-        col_login.setCellValueFactory(new PropertyValueFactory<>("login"));
         col_telefon.setCellValueFactory(new PropertyValueFactory<>("telefon"));
         col_data.setCellValueFactory(new PropertyValueFactory<>("data_urodzenia"));
         col_miejscowosc.setCellValueFactory(new PropertyValueFactory<>("miejscowosc"));
