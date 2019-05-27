@@ -5,12 +5,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import wypozyczalnia.Controllers.SessionUser;
+import wypozyczalnia.Controllers.UserSession;
 
 
 public class Main extends Application {
 
-    public SessionUser user;
+    //publis SessionUser user;
+    public UserSession userName, userType, userId;
 
     @Override
     public void start(Stage primaryStage) throws Exception{

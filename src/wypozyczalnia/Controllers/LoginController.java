@@ -187,7 +187,9 @@ public class LoginController implements Initializable {
 
     }
 
-    public SessionUser user;
+   // public SessionUser user;
+
+    public UserSession userName, userType, userId;
 
     public void logIn(ActionEvent actionEvent) {
 
@@ -206,11 +208,11 @@ public class LoginController implements Initializable {
                 rs = ps.executeQuery();
 
             if(rs.next()) {
-                user.setUserName(rs.getString("imie"));
-                user.setUserType(rs.getString("rodzaj"));
-                user.setUserId(rs.getInt("user_id"));
+                userName.setUserName(rs.getString("imie"));
+                userType.setUserType(rs.getString("rodzaj"));
+                userId.setUserId(rs.getInt("user_id"));
 
-                if(user.getUserName().equals("klient")) {
+                if(userName.getUserName().equals("klient")) {
                     FXMLLoader Loader = new FXMLLoader();
                     Loader.setLocation(getClass().getResource("../fxml/menuKlient.fxml"));
                     try {
@@ -229,7 +231,7 @@ public class LoginController implements Initializable {
                     Stage stage = new Stage();
                     stage.setScene(new Scene(p));
                     stage.show();
-                }else if(user.getUserType().equals("admin")){
+                }else if(userName.getUserType().equals("admin")){
                     FXMLLoader Loader = new FXMLLoader();
                     Loader.setLocation(getClass().getResource("../fxml/menuAdmin.fxml"));
                     try {
@@ -248,7 +250,7 @@ public class LoginController implements Initializable {
                     Stage stage = new Stage();
                     stage.setScene(new Scene(p));
                     stage.show();
-                }else if(user.getUserType().equals("worker")) {
+                }else if(userName.getUserType().equals("worker")) {
                     FXMLLoader Loader = new FXMLLoader();
                     Loader.setLocation(getClass().getResource("../fxml/menuPracownik.fxml"));
                     try {
