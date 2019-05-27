@@ -63,8 +63,6 @@ public class zarzadzajUzytkownikamiController implements Initializable {
     ObservableList<ModelTable> oblist2 = FXCollections.observableArrayList();
 
     public void clearFields(ActionEvent event) throws IOException {
-        userPesel.setDisable(false);
-        userLogin.setDisable(false);
         userLogin.clear();
         userHaslo.clear();
         userData.setValue(null);
@@ -207,8 +205,7 @@ public class zarzadzajUzytkownikamiController implements Initializable {
 
     public void modujUser(ActionEvent event) throws  IOException {
         System.out.println("-");
-        userPesel.setDisable(false);
-        userLogin.setDisable(false);
+
         String imie = String.valueOf(userImie.getCharacters());
         String nazwisko = String.valueOf(userNazwisko.getCharacters());
         String login = String.valueOf(userLogin.getCharacters());
@@ -272,8 +269,7 @@ public class zarzadzajUzytkownikamiController implements Initializable {
     }
 
     public void usunKlient(ActionEvent event) throws IOException {
-        userPesel.setDisable(false);
-        userLogin.setDisable(false);
+
         TablePosition pozycja = tabelka.getSelectionModel().getSelectedCells().get(0);
         int index = pozycja.getRow();
 
@@ -343,8 +339,7 @@ public class zarzadzajUzytkownikamiController implements Initializable {
     }
 
     public void dodajKlienta(ActionEvent event) throws IOException{
-        userPesel.setDisable(false);
-        userLogin.setDisable(false);
+
         String imie = String.valueOf(userImie.getCharacters());
         String nazwisko = String.valueOf(userNazwisko.getCharacters());
         String login = String.valueOf(userLogin.getCharacters());
@@ -438,8 +433,7 @@ public class zarzadzajUzytkownikamiController implements Initializable {
         tabelka.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
-                userLogin.setDisable(true);
-                userPesel.setDisable(true);
+
 
                 String abc;
                 abc = tabelka.toString();

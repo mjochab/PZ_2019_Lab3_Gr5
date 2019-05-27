@@ -63,8 +63,6 @@ public class zarzadzajUzytkownikamiAdminController implements Initializable  {
     ObservableList<ModelTable> oblist2 = FXCollections.observableArrayList();
 
     public void clearFields(ActionEvent event) throws IOException {
-        userLogin.clear();
-        userHaslo.clear();
         userData.setValue(null);
         userEmail.clear();
         userMiejscowosc.clear();
@@ -72,8 +70,6 @@ public class zarzadzajUzytkownikamiAdminController implements Initializable  {
         userImie.clear();
         userPesel.clear();
         userTelefon.clear();
-        userPesel.setDisable(false);
-        userLogin.setDisable(false);
     }
 
     public void logOut(ActionEvent event) throws IOException {
@@ -220,8 +216,6 @@ public class zarzadzajUzytkownikamiAdminController implements Initializable  {
     }
 
     public void modujUser(ActionEvent event) throws  IOException {
-        userPesel.setDisable(false);
-        userLogin.setDisable(false);
         System.out.println("-");
         String imie = String.valueOf(userImie.getCharacters());
         String nazwisko = String.valueOf(userNazwisko.getCharacters());
@@ -287,8 +281,6 @@ public class zarzadzajUzytkownikamiAdminController implements Initializable  {
     }
 
     public void usunKlient(ActionEvent event) throws IOException {
-        userPesel.setDisable(false);
-        userLogin.setDisable(false);
         TablePosition pozycja = tabelka.getSelectionModel().getSelectedCells().get(0);
         int index = pozycja.getRow();
 
@@ -358,8 +350,6 @@ public class zarzadzajUzytkownikamiAdminController implements Initializable  {
     }
 
     public void dodajUsera(ActionEvent event) throws IOException{
-        userPesel.setDisable(false);
-        userLogin.setDisable(false);
         String imie = String.valueOf(userImie.getCharacters());
         String nazwisko = String.valueOf(userNazwisko.getCharacters());
         String login = String.valueOf(userLogin.getCharacters());
@@ -453,8 +443,6 @@ public class zarzadzajUzytkownikamiAdminController implements Initializable  {
         tabelka.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
-                userLogin.setDisable(true);
-                userPesel.setDisable(true);
 
                 String abc;
                 abc = tabelka.toString();
