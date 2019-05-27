@@ -117,7 +117,9 @@ public class historiaWypozyczenKlientController implements Initializable {
                     "                    JOIN user\n" +
                     "                    ON wypozyczenie.user_id = user.user_id\n" +
                     "                    WHERE user.rodzaj = \"klient\"\n" +
-                    "                    AND wypozyczenie.data_do <"+"'"+dateFormat.format(date)+"'" );
+                    "                    AND wypozyczenie.data_do <"+"'"+dateFormat.format(date)+"' AND wypozyczenie.user_id = "+UserSession.getID() );
+
+
             //   "WHERE user.user_id= 47");
 
 
