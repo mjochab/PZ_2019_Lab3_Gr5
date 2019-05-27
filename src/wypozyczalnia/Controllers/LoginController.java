@@ -13,6 +13,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import wypozyczalnia.UserSession;
 
 import java.io.IOException;
 import java.net.URL;
@@ -54,7 +55,7 @@ public class LoginController implements Initializable {
         rootPane.getChildren().setAll(pane);
     }
 
-    public void printHello(ActionEvent event){
+ /*   public void printHello(ActionEvent event){
 
     try {
         Class.forName("com.mysql.cj.jdbc.Driver");
@@ -183,11 +184,11 @@ public class LoginController implements Initializable {
     }catch (Exception e)
     {
         System.out.println(e);
-    };
-
     }
 
-    public void logIn(ActionEvent actionEvent) {
+    }*/
+
+        public void logIn(ActionEvent actionEvent) {
 
         Connection con = null;
         PreparedStatement ps = null;
@@ -205,6 +206,7 @@ public class LoginController implements Initializable {
 
                     if (rs.next()) {
                         if(rs.getString("rodzaj").equals("klient")) {
+                            UserSession.getInstance(rs.getString("login"), rs.getString("haslo"), rs.getString("rodzaj"), rs.getInt("user_id"));
                             FXMLLoader Loader = new FXMLLoader();
                             Loader.setLocation(getClass().getResource("../fxml/menuKlient.fxml"));
                                 try {
@@ -224,6 +226,7 @@ public class LoginController implements Initializable {
                             stage.setScene(new Scene(p));
                             stage.show();
                         }else if(rs.getString("rodzaj").equals("admin")){
+                            UserSession.getInstance(rs.getString("login"), rs.getString("haslo"), rs.getString("rodzaj"), rs.getInt("user_id"));
                             FXMLLoader Loader = new FXMLLoader();
                             Loader.setLocation(getClass().getResource("../fxml/menuAdmin.fxml"));
                                 try {
@@ -243,6 +246,7 @@ public class LoginController implements Initializable {
                             stage.setScene(new Scene(p));
                             stage.show();
                         }else if(rs.getString("rodzaj").equals("worker")) {
+                            UserSession.getInstance(rs.getString("login"), rs.getString("haslo"), rs.getString("rodzaj"), rs.getInt("user_id"));
                             FXMLLoader Loader = new FXMLLoader();
                             Loader.setLocation(getClass().getResource("../fxml/menuPracownik.fxml"));
                                 try {
@@ -277,5 +281,5 @@ public class LoginController implements Initializable {
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
-    }
+        }
 }

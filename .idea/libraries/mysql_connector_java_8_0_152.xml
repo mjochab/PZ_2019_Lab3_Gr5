@@ -2,8 +2,11 @@
   <library name="mysql-connector-java-8.0.152">
     <CLASSES>
       <root url="jar://D:/Pobieranie/mysql-connector-java-8.0.15.jar!/" />
+      <root url="file://$PROJECT_DIR$/../GeneratingPDF" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../GeneratingPDF/src" />
+    </SOURCES>
   </library>
 </component>

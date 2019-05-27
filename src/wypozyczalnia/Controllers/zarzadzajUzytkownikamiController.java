@@ -1,5 +1,6 @@
 package wypozyczalnia.Controllers;
 
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -12,6 +13,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import wypozyczalnia.DBConnector;
+import wypozyczalnia.UserSession;
 
 import java.io.IOException;
 import java.net.URL;
@@ -59,7 +61,6 @@ public class zarzadzajUzytkownikamiController implements Initializable {
     @FXML private TextField userHaslo;
     @FXML private TextField userTelefon;
 
-
     ObservableList<ModelTable> oblist2 = FXCollections.observableArrayList();
 
     public void clearFields(ActionEvent event) throws IOException {
@@ -75,8 +76,8 @@ public class zarzadzajUzytkownikamiController implements Initializable {
     }
 
     public void logOut(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/login.fxml"));
-        pracownikPane.getChildren().setAll(pane);
+        UserSession.cleanUserSession();
+        Platform.exit();
     }
 
     public void menuPracownik(ActionEvent event) throws IOException {
@@ -517,6 +518,28 @@ public class zarzadzajUzytkownikamiController implements Initializable {
         }  );
 
 
-    }}
+    }
+
+    @FXML
+    public void generujRaport(ActionEvent actionEvent) {
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+
+            PreparedStatement ps = null;
+            ResultSet rs = null;
+
+            String query="SELECT * FROM client";
+            ps=connection.prepareStatement(query);
+            rs=ps.executeQuery();
+
+            while(rs.next()){
+                //(rs.getString("client_id")+ " "+rs.getString("login")+ " "+rs.getString("name")+ " "+rs.getString("surname")+ " "+rs.getString("date_birth")+ " "+rs.getString("city"));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}
 
 
