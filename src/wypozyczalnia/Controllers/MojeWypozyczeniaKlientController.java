@@ -12,7 +12,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import wypozyczalnia.DBConnector;
-import wypozyczalnia.UserSession;
 
 import java.io.IOException;
 import java.net.URL;
@@ -137,7 +136,7 @@ public class MojeWypozyczeniaKlientController implements Initializable {
                     "                    ON samochod.samochod_id = wypozyczenie.samochod_id\n" +
                     "                    JOIN user\n" +
                     "                    ON wypozyczenie.user_id = user.user_id\n" +
-                    "                    WHERE user.rodzaj = \"worker\" AND wypozyczenia.user_id="+ UserSession.getID());
+                    "                    WHERE user.rodzaj = \"worker\"" );
             //   "WHERE user.user_id= 47");
 
 

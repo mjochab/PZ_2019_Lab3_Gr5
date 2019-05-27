@@ -1,5 +1,6 @@
 package wypozyczalnia.Controllers;
 
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -12,12 +13,15 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import wypozyczalnia.DBConnector;
+import wypozyczalnia.UserSession;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -49,8 +53,8 @@ public class historiaWypozyczenController implements Initializable {
 
 
     public void logOut(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/login.fxml"));
-        pracownikPane.getChildren().setAll(pane);
+        UserSession.cleanUserSession();
+        Platform.exit();
     }
 
     public void menuPracownik(ActionEvent event) throws IOException {
@@ -97,7 +101,9 @@ public class historiaWypozyczenController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        java.util.Date date = new java.util.Date();
+      //  System.out.println("Current Date : " + dateFormat.format(date));
 
         try {
             Connection con = DBConnector.getConnection();
@@ -109,7 +115,8 @@ public class historiaWypozyczenController implements Initializable {
                     "                    ON samochod.samochod_id = wypozyczenie.samochod_id\n" +
                     "                    JOIN user\n" +
                     "                    ON wypozyczenie.user_id = user.user_id\n" +
-                    "                    WHERE user.rodzaj = \"worker\" AND wypozyczenie.data_do <= CURRENT_DATE" );
+                    "                    WHERE user.rodzaj = \"worker\"\n" +
+                    "                    AND wypozyczenie.data_do <"+"'"+dateFormat.format(date)+"'" );
                  //   "WHERE user.user_id= 47");
 
 

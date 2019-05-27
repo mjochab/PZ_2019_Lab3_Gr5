@@ -1,5 +1,6 @@
 package wypozyczalnia.Controllers;
 
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -9,11 +10,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import wypozyczalnia.DBConnector;
+import wypozyczalnia.UserSession;
 
-import javafx.event.EventHandler;
-import javafx.scene.input.MouseEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
@@ -52,8 +53,8 @@ public class zarzadzajWypozyczeniamiController implements Initializable {
     @FXML
 
     public void logOut(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/login.fxml"));
-        pracownikPane.getChildren().setAll(pane);
+        UserSession.cleanUserSession();
+        Platform.exit();
     }
 
     public void menuPracownik(ActionEvent event) throws IOException {

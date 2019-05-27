@@ -12,7 +12,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import wypozyczalnia.DBConnector;
-import wypozyczalnia.UserSession;
 
 import java.io.IOException;
 import java.net.URL;
@@ -85,7 +84,7 @@ public class MojeWypozyczeniaController implements Initializable {
                 Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
 
                 PreparedStatement stmt = con.prepareStatement("SELECT * FROM wypozyczenie");
-                String zapytanie = "Select * FROM wypozyczenie WHERE `user_id` = "+UserSession.getID()+" ORDER BY user_id LIMIT "+index;
+                String zapytanie = "Select * FROM wypozyczenie ORDER BY wypozyczenie_id LIMIT " + index;
                 ResultSet rs = stmt.executeQuery(zapytanie);
                 String a = "0";
                 int i = 0;
@@ -99,6 +98,7 @@ public class MojeWypozyczeniaController implements Initializable {
 
                 stmt2.setString(1, data_od);
                 stmt2.setString(2, data_do);
+
                 stmt2.setInt(3, numer);
 
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -137,7 +137,7 @@ public class MojeWypozyczeniaController implements Initializable {
                     "                    ON samochod.samochod_id = wypozyczenie.samochod_id\n" +
                     "                    JOIN user\n" +
                     "                    ON wypozyczenie.user_id = user.user_id\n" +
-                    "                    WHERE user.rodzaj = \"worker\" AND wypozyczenie.user_id="+UserSession.getID() );
+                    "                    WHERE user.rodzaj = \"worker\"" );
             //   "WHERE user.user_id= 47");
 
 
@@ -160,10 +160,12 @@ public class MojeWypozyczeniaController implements Initializable {
 
         tabelka_moje_wypozyczenia.setItems(oblist5);
 
-
         tabelka_moje_wypozyczenia.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
+                String abc;
+                abc = tabelka_moje_wypozyczenia.toString();
+
                 ArrayList<String> dane = new ArrayList<String>();
                 try {
 
@@ -174,8 +176,8 @@ public class MojeWypozyczeniaController implements Initializable {
                     Class.forName("com.mysql.cj.jdbc.Driver");
                     Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
 
-                    PreparedStatement stmt = con.prepareStatement("SELECT * FROM `wypozyczenie` WHERE `user_id`='"+UserSession.getID()+"'");
-                    String zapytanie = "Select * FROM wypozyczenie WHERE `user_id` = "+UserSession.getID()+" ORDER BY user_id LIMIT "+index;
+                    PreparedStatement stmt = con.prepareStatement("SELECT * FROM samochod");
+                    String zapytanie = "Select * FROM wypozyczenie ORDER BY wypozyczenie_id LIMIT " + index;
                     ResultSet rs = stmt.executeQuery(zapytanie);
                     String a = "0";
                     int i=0;
