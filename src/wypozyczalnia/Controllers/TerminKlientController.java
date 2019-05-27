@@ -5,6 +5,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.DatePicker;
 import javafx.scene.layout.AnchorPane;
 import wypozyczalnia.UserSession;
 
@@ -16,6 +18,10 @@ public class TerminKlientController implements Initializable {
 
     @FXML
     private AnchorPane klientPane;
+    @FXML
+    private DatePicker dataPoczatek;
+    @FXML
+    private DatePicker dataKoniec;
 
 
     public void initialize(URL location, ResourceBundle resources) {
@@ -28,13 +34,31 @@ public class TerminKlientController implements Initializable {
     }
 
     public void wypozyczenieKlient(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/wypozyczenieKlient.fxml"));
-        klientPane.getChildren().setAll(pane);
+        if(walidacjaData()) {
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/wypozyczenieKlient.fxml"));
+            klientPane.getChildren().setAll(pane);
+        }
     }
 
     public void logOut(ActionEvent event) throws IOException {
         UserSession.cleanUserSession();
         Platform.exit();
     }
+
+    private boolean walidacjaData()
+    {
+        if(dataPoczatek.getValue().toEpochDay()>=(dataKoniec.getValue().toEpochDay()))
+        {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Błąd!");
+            alert.setHeaderText(null);
+            alert.setContentText("Wybierz odpowiednie daty!");
+            alert.showAndWait();
+
+            return false;
+        }
+        return true;
+    }
+
 
 }

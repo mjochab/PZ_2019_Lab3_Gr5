@@ -31,15 +31,15 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-<<<<<<< HEAD
-            <Button fx:id="dodaj_inserty" alignment="CENTER" layoutX="424.0" layoutY="11.0" mnemonicParsing="false" onAction="#dodajInserty" prefHeight="28.0" prefWidth="96.0" style="-fx-background-color: #e27171;" text="Dodaj inserty" textFill="#fffefe">
+
+            <Button fx:id="dodaj_inserty" alignment="CENTER" layoutX="424.0" layoutY="11.0" mnemonicParsing="false"  prefHeight="28.0" prefWidth="96.0" style="-fx-background-color: #e27171;" text="Dodaj inserty" textFill="#fffefe">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Button>
-=======
-            <Button layoutX="425.0" layoutY="13.0" mnemonicParsing="false" onAction="#printHello" prefHeight="25.0" prefWidth="104.0" text="Dodaj Inserty" />
->>>>>>> parent of e2cf6e1... - Sesja logowania na singletionie,
+
+            <Button layoutX="425.0" layoutY="13.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="104.0" text="Dodaj Inserty" />
+
          </children>
          <opaqueInsets>
             <Insets />

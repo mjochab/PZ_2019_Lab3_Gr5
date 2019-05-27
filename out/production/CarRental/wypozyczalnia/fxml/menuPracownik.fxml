@@ -15,90 +15,76 @@
    <children>
       <AnchorPane layoutX="305.0" layoutY="268.0" prefHeight="409.0" prefWidth="791.0">
          <children>
-            <Button fx:id="zarzadzajUzytkownikami_btn" alignment="TOP_CENTER" contentDisplay="BOTTOM" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#zarzadzajUzytkownikami" prefHeight="99.0" prefWidth="242.0" style="-fx-background-color: #e27171;" text="ZARZĄDZAJ KLIENTAMI">
+            <Button fx:id="zarzadzajUzytkownikami_btn" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#zarzadzajUzytkownikami" prefHeight="99.0" prefWidth="242.0" style="-fx-background-color: #e27171;" text="ZARZĄDZAJ KLIENTAMI">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>
-               <graphic>
-                  <ImageView fitHeight="57.0" fitWidth="94.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Icons/users.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
             </Button>
-            <Button fx:id="zarzadzajPojazdami_btn" alignment="TOP_CENTER" contentDisplay="BOTTOM" layoutX="275.0" layoutY="14.0" mnemonicParsing="false" onAction="#zarzadzajPojazdami" prefHeight="99.0" prefWidth="242.0" style="-fx-background-color: #e27171;" text="ZARZĄDZAJ POJAZDAMI">
+            <Button fx:id="zarzadzajPojazdami_btn" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="275.0" layoutY="14.0" mnemonicParsing="false" onAction="#zarzadzajPojazdami" prefHeight="99.0" prefWidth="242.0" style="-fx-background-color: #e27171;" text="ZARZĄDZAJ POJAZDAMI">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>
-               <graphic>
-                  <ImageView fitHeight="57.0" fitWidth="94.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Icons/car.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
             </Button>
-            <Button fx:id="zarzadzajWypozyczeniami_btn" alignment="TOP_CENTER" contentDisplay="BOTTOM" layoutX="535.0" layoutY="14.0" mnemonicParsing="false" onAction="#zarzadzajWypozyczeniami" prefHeight="99.0" prefWidth="242.0" style="-fx-background-color: #e27171;" text="ZARZĄDZAJ WYPOŻYCZENIAMI">
+            <Button fx:id="zarzadzajWypozyczeniami_btn" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="535.0" layoutY="14.0" mnemonicParsing="false" onAction="#zarzadzajWypozyczeniami" prefHeight="99.0" prefWidth="242.0" style="-fx-background-color: #e27171;" text="ZARZĄDZAJ WYPOŻYCZENIAMI">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
-               <graphic>
-                  <ImageView fitHeight="60.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Icons/rent.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
             </Button>
-            <Button fx:id="mojeWypozyczenia" alignment="TOP_CENTER" contentDisplay="BOTTOM" layoutX="14.0" layoutY="155.0" mnemonicParsing="false" onAction="#mojeWypozyczenia" prefHeight="99.0" prefWidth="242.0" style="-fx-background-color: #e27171;" text="MOJE WYPOŻYCZENIA">
+            <Button fx:id="mojeWypozyczenia" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="14.0" layoutY="155.0" mnemonicParsing="false" onAction="#mojeWypozyczenia" prefHeight="99.0" prefWidth="242.0" style="-fx-background-color: #e27171;" text="MOJE WYPOŻYCZENIA">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>
-               <graphic>
-                  <ImageView fitHeight="57.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Icons/cars.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
             </Button>
-            <Button fx:id="wypozyczeniePracownik" alignment="TOP_CENTER" contentDisplay="BOTTOM" layoutX="275.0" layoutY="155.0" mnemonicParsing="false" onAction="#terminPracownik" prefHeight="99.0" prefWidth="242.0" style="-fx-background-color: #e27171;" text="WYPOŻYCZ SAMOCHÓD">
+            <Button fx:id="wypozyczeniePracownik" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="275.0" layoutY="155.0" mnemonicParsing="false" onAction="#terminPracownik" prefHeight="99.0" prefWidth="242.0" style="-fx-background-color: #e27171;" text="WYPOŻYCZ SAMOCHÓD">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>
-               <graphic>
-                  <ImageView fitHeight="57.0" fitWidth="94.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Icons/car.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
             </Button>
-            <Button fx:id="udostepnijPojazd" alignment="TOP_CENTER" contentDisplay="BOTTOM" layoutX="535.0" layoutY="155.0" mnemonicParsing="false" onAction="#udostepnijPojazd" prefHeight="99.0" prefWidth="242.0" style="-fx-background-color: #e27171;" text="TWOJE SAMOCHODY">
+            <Button fx:id="udostepnijPojazd" alignment="TOP_CENTER" layoutX="535.0" layoutY="155.0" mnemonicParsing="false" onAction="#udostepnijPojazd" prefHeight="99.0" prefWidth="242.0" style="-fx-background-color: #e27171;" text="TWOJE SAMOCHODY">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>
-               <graphic>
-                  <ImageView fitHeight="47.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Icons/share.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
             </Button>
-            <Button fx:id="historiaWypozyczen" alignment="TOP_CENTER" contentDisplay="BOTTOM" layoutX="275.0" layoutY="296.0" mnemonicParsing="false" onAction="#historiaWypozyczen" prefHeight="99.0" prefWidth="242.0" style="-fx-background-color: #e27171;" text="HISTORIA WYPOŻYCZEŃ">
+            <Button fx:id="historiaWypozyczen" alignment="TOP_CENTER" layoutX="275.0" layoutY="296.0" mnemonicParsing="false" onAction="#historiaWypozyczen" prefHeight="99.0" prefWidth="242.0" style="-fx-background-color: #e27171;" text="HISTORIA WYPOŻYCZEŃ">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>
-               <graphic>
-                  <ImageView fitHeight="52.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Icons/history.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
             </Button>
+            <ImageView fitHeight="52.0" fitWidth="55.0" layoutX="366.0" layoutY="338.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/history.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="57.0" fitWidth="65.0" layoutX="107.0" layoutY="197.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/cars.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="47.0" fitWidth="42.0" layoutX="633.0" layoutY="206.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/share.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="57.0" fitWidth="94.0" layoutX="368.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/car.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="57.0" fitWidth="94.0" layoutX="100.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/users.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="57.0" fitWidth="94.0" layoutX="368.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/car.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="60.0" fitWidth="68.0" layoutX="625.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/rent.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
       <Label fx:id="usernamedisplay_lbl" layoutX="670.0" layoutY="207.0" prefHeight="21.0" prefWidth="238.0" text="pracowniku" textFill="#eeadad">

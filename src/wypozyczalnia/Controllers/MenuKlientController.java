@@ -22,8 +22,7 @@ public class MenuKlientController implements Initializable {
 
 
     public void logOut(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/login.fxml"));
-        klientPane.getChildren().setAll(pane);
+        System.exit(0);
     }
 
     public void terminKlient(ActionEvent event) throws IOException {

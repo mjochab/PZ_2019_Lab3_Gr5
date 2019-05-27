@@ -17,6 +17,7 @@ public class TerminPracownikController implements Initializable {
     private AnchorPane pracownikPane;
     @FXML
     private DatePicker dataPoczatek;
+    @FXML
     private DatePicker dataKoniec;
 
 
@@ -32,20 +33,21 @@ public class TerminPracownikController implements Initializable {
         pracownikPane.getChildren().setAll(pane);
     }
     public void wypozyczeniePracownik(ActionEvent event) throws IOException {
-
-            AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/wypozyczeniePracownik.fxml"));
-            pracownikPane.getChildren().setAll(pane);
+            if(walidacjaData()) {
+                AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/wypozyczeniePracownik.fxml"));
+                pracownikPane.getChildren().setAll(pane);
+            }
         }
 
 
     private boolean walidacjaData()
     {
-        if(dataPoczatek.getValue()==dataKoniec.getValue())
+        if(dataPoczatek.getValue().toEpochDay()>=(dataKoniec.getValue().toEpochDay()))
         {
             Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Informacja");
+            alert.setTitle("Błąd!");
             alert.setHeaderText(null);
-            alert.setContentText("Uzupełnij wszystkie pola");
+            alert.setContentText("Wybierz odpowiednie daty!");
             alert.showAndWait();
 
             return false;
@@ -55,6 +57,7 @@ public class TerminPracownikController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
 
     }
 
