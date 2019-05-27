@@ -15,17 +15,17 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="pracownikPane" prefHeight="900.0" prefWidth="1400.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.zarzadzajUzytkownikamiController">
+<AnchorPane fx:id="pracownikPane" prefHeight="900.0" prefWidth="1400.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.zarzadzajUzytkownikamiController">
     <children>
       <TextField fx:id="userLogin" layoutX="20.0" layoutY="251.0" prefHeight="31.0" prefWidth="178.0" promptText="Login" />
       <TextField fx:id="userHaslo" accessibleRole="PASSWORD_FIELD" layoutX="20.0" layoutY="287.0" prefHeight="31.0" prefWidth="178.0" promptText="Hasło" />
       <TextField fx:id="userImie" layoutX="20.0" layoutY="323.0" prefHeight="31.0" prefWidth="178.0" promptText="Imie" />
       <TextField fx:id="userNazwisko" layoutX="20.0" layoutY="359.0" prefHeight="31.0" prefWidth="178.0" promptText="Nazwisko" />
-      <TextField fx:id="userData" layoutX="256.0" layoutY="123.0" promptText="Data Urodzenia" />
+      <TextField fx:id="userPesel" layoutX="20.0" layoutY="395.0" onMouseExited="#datazpeselu" prefHeight="31.0" prefWidth="178.0" promptText="Pesel" />
       <TextField fx:id="userMiejscowosc" layoutX="20.0" layoutY="432.0" prefHeight="31.0" prefWidth="178.0" promptText="Miejscowość" />
       <TextField fx:id="userTelefon" layoutX="20.0" layoutY="468.0" prefHeight="31.0" prefWidth="178.0" promptText="Numer Telefonu" />
       <TextField fx:id="userEmail" layoutX="20.0" layoutY="504.0" prefHeight="31.0" prefWidth="178.0" promptText="Email" />
-      <TextField fx:id="userPesel" layoutX="20.0" layoutY="395.0" onMouseExited="#datazpeselu" prefHeight="31.0" prefWidth="178.0" promptText="Pesel" />
+      <DatePicker layoutX="20.0" layoutY="540.0" prefHeight="31.0" prefWidth="178.0" promptText="Data Urodzenia" />
       <TableView fx:id="tabelka" layoutX="216.0" layoutY="194.0" prefHeight="552.0" prefWidth="1088.0">
           <columns>
               <TableColumn fx:id="col_imie" prefWidth="129.00003051757812" text="Imię" />
@@ -265,6 +265,5 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <DatePicker layoutX="20.0" layoutY="540.0" prefHeight="31.0" prefWidth="178.0" promptText="Data Urodzenia" />
     </children>
 </AnchorPane>
