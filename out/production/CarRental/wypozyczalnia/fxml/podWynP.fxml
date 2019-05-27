@@ -198,6 +198,9 @@
                   <Font name="System Bold" size="19.0" />
                </font>
             </Label>
+            <Label fx:id="markamodel_lbl" layoutX="180.0" layoutY="38.0" text="Label" />
+            <Label layoutX="128.0" layoutY="91.0" text="Label" />
+            <Label fx:id="cena_lbl" layoutX="224.0" layoutY="142.0" text="Label" />
          </children>
          <opaqueInsets>
             <Insets />

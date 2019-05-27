@@ -15,45 +15,54 @@
    <children>
       <AnchorPane layoutX="419.0" layoutY="351.0" prefHeight="251.0" prefWidth="563.0">
          <children>
-            <Button alignment="TOP_CENTER" contentDisplay="TOP" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#zarzadzajUzytkownikamiAdmin" prefHeight="99.0" prefWidth="242.0" style="-fx-background-color: #e27171;" text="ZARZĄDZAJ KLIENTAMI">
+            <Button alignment="TOP_CENTER" contentDisplay="BOTTOM" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#zarzadzajUzytkownikamiAdmin" prefHeight="99.0" prefWidth="242.0" style="-fx-background-color: #e27171;" text="ZARZĄDZAJ KLIENTAMI">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>
+               <graphic>
+                  <ImageView fitHeight="57.0" fitWidth="94.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icons/car.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Button>
-            <Button alignment="TOP_CENTER" contentDisplay="TOP" layoutX="303.0" layoutY="14.0" mnemonicParsing="false" onAction="#zarzadzajPojazdamiAdmin" prefHeight="99.0" prefWidth="242.0" style="-fx-background-color: #e27171;" text="ZARZĄDZAJ POJAZDAMI">
+            <Button alignment="TOP_CENTER" contentDisplay="BOTTOM" layoutX="303.0" layoutY="14.0" mnemonicParsing="false" onAction="#zarzadzajPojazdamiAdmin" prefHeight="99.0" prefWidth="242.0" style="-fx-background-color: #e27171;" text="ZARZĄDZAJ POJAZDAMI">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>
+               <graphic>
+                  <ImageView fitHeight="57.0" fitWidth="94.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icons/users.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Button>
-            <Button alignment="TOP_CENTER" contentDisplay="TOP" layoutX="14.0" layoutY="128.0" mnemonicParsing="false" onAction="#zarzadzajPracownikami" prefHeight="99.0" prefWidth="242.0" style="-fx-background-color: #e27171;" text="ZARZĄDZAJ PRACOWNIKAMI">
+            <Button alignment="TOP_CENTER" contentDisplay="BOTTOM" layoutX="14.0" layoutY="128.0" mnemonicParsing="false" onAction="#zarzadzajPracownikami" prefHeight="99.0" prefWidth="242.0" style="-fx-background-color: #e27171;" text="ZARZĄDZAJ PRACOWNIKAMI">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
+               <graphic>
+                  <ImageView fitHeight="57.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icons/worker.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Button>
-            <Button alignment="TOP_CENTER" contentDisplay="TOP" layoutX="303.0" layoutY="128.0" mnemonicParsing="false" onAction="#zarzadzajWypozyczeniamiAdmin" prefHeight="99.0" prefWidth="242.0" style="-fx-background-color: #e27171;" text="ZARZĄDZAJ WYPOŻYCZENIAMI">
+            <Button alignment="TOP_CENTER" contentDisplay="BOTTOM" layoutX="303.0" layoutY="128.0" mnemonicParsing="false" onAction="#zarzadzajWypozyczeniamiAdmin" prefHeight="99.0" prefWidth="242.0" style="-fx-background-color: #e27171;" text="ZARZĄDZAJ WYPOŻYCZENIAMI">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
+               <graphic>
+                  <ImageView fitHeight="57.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icons/rent.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Button>
-            <ImageView fitHeight="57.0" fitWidth="94.0" layoutX="396.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Icons/car.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="57.0" fitWidth="94.0" layoutX="107.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Icons/users.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="57.0" fitWidth="57.0" layoutX="105.0" layoutY="168.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Icons/worker.png" />
-               </image></ImageView>
-            <ImageView fitHeight="57.0" fitWidth="57.0" layoutX="396.0" layoutY="168.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Icons/rent.png" />
-               </image>
-            </ImageView>
          </children>
       </AnchorPane>
       <Label layoutX="622.0" layoutY="284.0" prefHeight="36.0" prefWidth="57.0" text="Witaj" textFill="#eeadad">

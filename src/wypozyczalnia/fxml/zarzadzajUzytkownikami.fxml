@@ -248,7 +248,7 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="1113.0" layoutY="765.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="191.0" style="-fx-background-color: #e27171;" text="Generuj raport">
+      <Button layoutX="1113.0" layoutY="765.0" mnemonicParsing="false" onAction="#generujRaport" prefHeight="50.0" prefWidth="191.0" style="-fx-background-color: #e27171;" text="Generuj raport">
          <graphic>
             <ImageView fitHeight="36.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                <image>
