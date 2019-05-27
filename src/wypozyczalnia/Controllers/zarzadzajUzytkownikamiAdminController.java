@@ -368,9 +368,27 @@ public class zarzadzajUzytkownikamiAdminController implements Initializable  {
                 ResultSet rs = stmt2.executeQuery("SELECT * FROM `user` WHERE `rodzaj` = 'klient'");
                 PreparedStatement stmt3 = con.prepareStatement("SELECT * FROM user WHERE login ='"+ login+"';");
                 ResultSet rs1 = stmt3.executeQuery();
-
                 String rodzaj = "klient";
 
+                PreparedStatement stmt4 = con.prepareStatement("SELECT * FROM user WHERE email ='"+ email+"';");
+                ResultSet rs2 = stmt4.executeQuery();
+                PreparedStatement stmt5 = con.prepareStatement("SELECT * FROM user WHERE pesel ='"+ pesel+"';");
+                ResultSet rs3 = stmt5.executeQuery();
+
+                if(rs3.next()) {
+                    Alert alert = new Alert(Alert.AlertType.WARNING);
+                    alert.setTitle("Informacja");
+                    alert.setHeaderText(null);
+                    alert.setContentText("PESEL jest już w bazie!");
+                    alert.showAndWait();
+                } else {
+                    if (rs2.next()) {
+                        Alert alert = new Alert(Alert.AlertType.WARNING);
+                        alert.setTitle("Informacja");
+                        alert.setHeaderText(null);
+                        alert.setContentText("Email jest już w bazie!");
+                        alert.showAndWait();
+                    } else {
                 if(rs1.next()) {
                     Alert alert = new Alert(Alert.AlertType.WARNING);
                     alert.setTitle("Informacja");
@@ -399,7 +417,7 @@ public class zarzadzajUzytkownikamiAdminController implements Initializable  {
                         adminPane.getChildren().setAll(pane);
                     }
 
-                }
+                }}}
             }catch (Exception e)
             {
                 System.out.println(e);
