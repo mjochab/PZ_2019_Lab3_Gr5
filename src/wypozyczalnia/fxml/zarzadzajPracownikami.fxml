@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="adminPane" prefHeight="900.0" prefWidth="1400.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.zarzadzajPracownikamiController">
+<AnchorPane fx:id="adminPane" prefHeight="900.0" prefWidth="1400.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.zarzadzajPracownikamiController">
     <children>
         <TextField fx:id="userLogin" layoutX="38.0" layoutY="251.0" prefHeight="25.0" prefWidth="162.0" promptText="Login" />
         <TextField fx:id="userHaslo" accessibleRole="PASSWORD_FIELD" layoutX="38.0" layoutY="290.0" prefHeight="25.0" prefWidth="162.0" promptText="Hasło" />
@@ -249,5 +249,6 @@
          </font>
       </Button>
       <Button fx:id="btnclear" layoutX="60.0" layoutY="203.0" mnemonicParsing="false" onAction="#clearFields" text="Wyczyść pola" />
+      <Label fx:id="useridL" layoutX="90.0" layoutY="167.0" text="Label" visible="false" />
     </children>
 </AnchorPane>
