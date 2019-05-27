@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 27 Maj 2019, 01:27
+-- Czas generowania: 27 Maj 2019, 22:01
 -- Wersja serwera: 10.1.38-MariaDB
 -- Wersja PHP: 7.3.3
 
@@ -46,28 +46,28 @@ CREATE TABLE `samochod` (
 --
 
 INSERT INTO `samochod` (`samochod_id`, `marka`, `model`, `rodzaj`, `rocznik`, `paliwo`, `przebieg`, `cena`, `dostepnosc`, `user_id`) VALUES
-(1, 'Audi', 'Q8', 'Suv', 2015, 'Benzyna', 95000, 1500, 'TAK', 47),
-(2, 'Audi', 'A3', 'Hatchback', 1996, 'Benzyna', 250000, 130, 'NIE', 46),
-(3, 'Pegueot', '206', 'Hatchback', 2006, 'Diesel', 150000, 250, 'TAK', 50),
-(4, 'Renault', 'Laguna', 'Kombi', 1999, 'Gaz', 250000, 135, 'NIE', 51),
-(5, 'Renault', 'Megane', 'Kombi', 2009, 'Diesel', 250000, 125, 'TAK', 48),
-(6, 'Renault', 'Clio', 'Hatchback', 2006, 'Gaz', 150000, 1500, 'NIE', 45),
-(7, 'Citroen', 'C4', 'Hatchback', 2006, 'Benzyna', 150000, 150, 'NIE', 48),
-(8, 'Audi', 'TT', 'Coupe', 2005, 'Benzyna', 58000, 300, 'TAK', 47),
-(9, 'Mazda', '6', 'Sedan', 2015, 'Benzyna', 15000, 500, 'TAK', 47),
-(10, 'Audi', 'A8', 'Limuzyna', 2013, 'Diesel', 35000, 900, 'TAK', 47),
-(11, 'Volvo', 'V40', 'Kombi', 2002, 'Benzyna', 195000, 150, 'TAK', 47),
-(12, 'Peugoet', '1007', 'Hatchback', 2005, 'Gaz', 158000, 1300, 'TAK', 47),
-(13, 'Porsche', 'Panamera', 'Suv', 2018, 'Benzyna', 23000, 950, 'TAK', 47),
-(14, 'Maseratti', 'Quattroporte', 'Sedan', 2005, 'Diesel', 123500, 850, 'TAK', 47),
-(15, 'Citroen', 'C6', 'Limuzyna', 2005, 'Diesel', 325000, 350, 'TAK', 47),
-(16, 'Volkswagen', 'Passat', 'Sedan', 1999, 'Diesel', 198000, 2500, 'TAK', 47),
-(17, 'Mercedes', 'G63', 'Suv', 2019, 'Benzyna', 5000, 1800, 'TAK', 47),
-(18, 'Mercedes', 'CLK', 'Coupe', 2003, 'Diesel', 350500, 350, 'TAK', 47),
-(19, 'Fiat', 'Tipo', 'Sedan', 2018, 'Gaz', 58400, 500, 'TAK', 47),
-(20, 'Fiat', 'Panda', 'Hatchback', 2007, 'Diesel', 175000, 140, 'TAK', 47),
-(21, 'Ford', 'Focus', 'Hatchback', 2015, 'Diesel', 100000, 730, 'TAK', 47),
-(22, 'Chevrolet', 'Camaro', 'Coupe', 2017, 'Benzyna', 35500, 1800, 'TAK', 47);
+(1, 'Audi', 'Q8', 'Suv', 2015, 'Benzyna', 95000, 1500, 'NIE', 93),
+(2, 'Audi', 'A3', 'Hatchback', 1996, 'Benzyna', 250000, 130, 'NIE', 93),
+(3, 'Pegueot', '206', 'Hatchback', 2006, 'Diesel', 150000, 250, 'NIE', 48),
+(4, 'Renault', 'Laguna', 'Kombi', 1999, 'Gaz', 250000, 135, 'TAK', 91),
+(5, 'Renault', 'Megane', 'Kombi', 2009, 'Diesel', 250000, 125, 'TAK', 93),
+(6, 'Renault', 'Clio', 'Hatchback', 2006, 'Gaz', 150000, 1500, 'NIE', 93),
+(7, 'Citroen', 'C4', 'Hatchback', 2006, 'Benzyna', 150000, 150, 'NIE', 92),
+(8, 'Audi', 'TT', 'Coupe', 2005, 'Benzyna', 58000, 300, 'NIE', 93),
+(9, 'Mazda', '6', 'Sedan', 2015, 'Benzyna', 15000, 500, 'TAK', 43),
+(10, 'Audi', 'A8', 'Limuzyna', 2013, 'Diesel', 35000, 900, 'TAK', 93),
+(11, 'Volvo', 'V40', 'Kombi', 2002, 'Benzyna', 195000, 150, 'TAK', 93),
+(12, 'Peugoet', '1007', 'Hatchback', 2005, 'Gaz', 158000, 1300, 'TAK', 93),
+(13, 'Porsche', 'Panamera', 'Suv', 2018, 'Benzyna', 23000, 950, 'TAK', 93),
+(14, 'Maseratti', 'Quattroporte', 'Sedan', 2005, 'Diesel', 123500, 850, 'TAK', 93),
+(15, 'Citroen', 'C6', 'Limuzyna', 2005, 'Diesel', 325000, 350, 'TAK', 93),
+(16, 'Volkswagen', 'Passat', 'Sedan', 1999, 'Diesel', 198000, 2500, 'TAK', 93),
+(17, 'Mercedes', 'G63', 'Suv', 2019, 'Benzyna', 5000, 1800, 'TAK', 93),
+(18, 'Mercedes', 'CLK', 'Coupe', 2003, 'Diesel', 350500, 350, 'TAK', 93),
+(19, 'Fiat', 'Tipo', 'Sedan', 2018, 'Gaz', 58400, 500, 'TAK', 38),
+(20, 'Fiat', 'Panda', 'Hatchback', 2007, 'Diesel', 175000, 140, 'TAK', 93),
+(21, 'Ford', 'Focus', 'Hatchback', 2015, 'Diesel', 100000, 730, 'TAK', 45),
+(22, 'Chevrolet', 'Camaro', 'Coupe', 2017, 'Benzyna', 35500, 1800, 'TAK', 93);
 
 -- --------------------------------------------------------
 
@@ -88,8 +88,8 @@ CREATE TABLE `udostepnienie` (
 --
 
 INSERT INTO `udostepnienie` (`udostepnienie_id`, `user_id`, `samochod_id`, `data_od`, `data_do`) VALUES
-(1, 49, 2, '2019-04-25', '2019-04-29'),
-(2, 47, 7, '2019-05-11', '2019-05-14'),
+(1, 91, 4, '2019-04-25', '2019-04-29'),
+(2, 92, 7, '2019-05-11', '2019-05-14'),
 (3, 45, 21, '2019-05-15', '2019-05-18'),
 (4, 38, 19, '2019-05-16', '2019-05-17'),
 (5, 43, 9, '2019-05-20', '2019-05-23'),
@@ -121,21 +121,24 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`user_id`, `login`, `haslo`, `imie`, `nazwisko`, `data_urodzenia`, `miejscowosc`, `tel`, `email`, `pesel`, `rodzaj`) VALUES
 (7, 'pracownik', 'pracownik', 'Lukasz', 'Kowalski', '1996-01-02', 'Sanok', 123456789, 'kofcio0@vp.pl', '96012012345', 'worker'),
-(38, 'klient1', 'klient1', 'Jan', 'Nowak', '1993-12-12', 'Lancut', 535123535, 'email1@email.pl', '93121212345', 'worker'),
-(42, 'klient2', 'klient3', 'Jan', 'Nowak', '1993-12-12', 'Lancut', 535000123, 'email2@email.pl', '93121254321', 'worker'),
-(43, 'klient3', 'klient3', 'Jan', 'Nowak', '1993-12-12', 'Łańcut', 535000500, 'email3@email.pl', '93121212543', 'worker'),
+(38, 'klient1', 'klient1', 'Jan', 'Nowak', '1993-12-12', 'Lancut', 535123535, 'email1@email.pl', '93121212345', 'klient'),
+(42, 'klient2', 'klient3', 'Jan', 'Nowak', '1993-12-12', 'Lancut', 535000123, 'email2@email.pl', '93121254321', 'klient'),
+(43, 'klient3', 'klient3', 'Jan', 'Nowak', '1993-12-12', 'Łańcut', 535000500, 'email3@email.pl', '93121212543', 'klient'),
 (45, 'klient5', 'klient5', 'Jan', 'Nowak', '1993-12-12', 'Łancut', 535890535, 'email12@email.pl', '93121200897', 'klient'),
 (46, 'worker1', 'worker1', 'Paweł', 'Szybki', '1993-12-12', 'Rzeszów', 535525525, 'email4@email.pl', '93121215432', 'worker'),
 (47, 'worker2', 'worker2', 'Paweł', 'Szybki', '1993-12-12', 'Rzeszów', 525545252, 'email5@email.pl', '93121209812', 'worker'),
 (48, 'worker3', 'worker3', 'Paweł', 'Wolny', '1993-12-12', 'Rzeszów', 525444333, 'email6@email.pl', '93121208732', 'worker'),
 (49, 'pracownik2', 'pracownik', 'Łukasz', 'Kowalski', '1996-01-02', 'Sanok', 333545321, 'kofcio1234@vp.pl', '96010222112', 'worker'),
-(50, 'tommy', 'tommy', 'Tomasz', 'Chudzik', '0000-00-00', 'Radymno', 776343537, 'email67@email.pl', '96021612345', 'admin'),
+(50, 'tommy', 'tommy', 'Tomasz', 'Chudzik', '1996-02-16', 'Radymno', 776343537, 'email67@email.pl', '96021612345', 'admin'),
 (51, 'luki', 'luki', 'Łukasz', 'Kowalski', '1993-12-12', 'Sanok', 776343639, 'email68@email.pl', '93121255667', 'admin'),
 (52, 'fifi', 'fifi', 'Filip', 'Konior', '1993-12-12', 'Łancut', 776343098, 'email69@email.pl', '93121200098', 'admin'),
 (53, 'pati', 'pati', 'Patryk', 'Krawiec', '1993-12-12', 'Rzeszów', 776343232, 'email57@email.pl', '93121207345', 'admin'),
 (54, 'adi', 'adi', 'Adrian', 'Czupich', '1993-12-12', 'Łancut', 776343555, 'email58@email.pl', '93121207776', 'admin'),
 (55, 'tommy123', 'tommy', 'Tomasz', 'Chudzik', '1996-02-20', 'Radymno', 678000535, 'chudy12@gmail.com', '96022077788', 'klient'),
-(56, 'tommy1234', 'tommy', 'Tomek', 'Chudy', '1996-02-20', 'Radymno', 567345890, 'chudy@gmail.com', '96022012333', 'worker');
+(56, 'tommy1234', 'tommy', 'Tomek', 'Chudy', '1996-02-20', 'Radymno', 567345890, 'chudy@gmail.com', '96022012333', 'worker'),
+(91, 'klient', 'klient', 'Janusz', 'Bach', '1989-07-07', 'Szczecin', 707963123, 'bach@gmail.com', '89070712345', 'klient'),
+(92, 'pracownik', 'pracownik', 'Mariusz', 'Strach', '1989-07-07', 'Szczecin', 707963434, 'strach@gmail.com', '89070754321', 'worker'),
+(93, 'admin', 'admin', 'Marian', 'Wolan', '1989-07-07', 'Radom', 704213434, 'wolan@gmail.com', '89070754344', 'admin');
 
 -- --------------------------------------------------------
 
@@ -156,12 +159,12 @@ CREATE TABLE `wypozyczenie` (
 --
 
 INSERT INTO `wypozyczenie` (`wypozyczenie_id`, `user_id`, `samochod_id`, `data_od`, `data_do`) VALUES
-(1, 49, 1, '2019-05-06', '2019-05-25'),
-(3, 47, 11, '2019-05-06', '2019-05-18'),
-(6, 48, 4, '2019-05-06', '2019-05-18'),
-(7, 38, 14, '2019-05-01', '2019-05-04'),
-(8, 45, 16, '2019-05-20', '2019-05-27'),
-(9, 45, 18, '2019-05-23', '2019-05-25');
+(1, 91, 1, '2019-05-06', '2019-05-25'),
+(3, 91, 3, '2019-05-06', '2019-05-18'),
+(6, 91, 2, '2019-05-06', '2019-05-18'),
+(7, 92, 6, '2019-05-01', '2019-05-04'),
+(8, 92, 7, '2019-05-20', '2019-05-27'),
+(9, 92, 9, '2019-05-23', '2019-05-25');
 
 --
 -- Indeksy dla zrzutów tabel
@@ -209,7 +212,7 @@ ALTER TABLE `wypozyczenie`
 -- AUTO_INCREMENT dla tabeli `samochod`
 --
 ALTER TABLE `samochod`
-  MODIFY `samochod_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `samochod_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
 
 --
 -- AUTO_INCREMENT dla tabeli `udostepnienie`
@@ -221,7 +224,7 @@ ALTER TABLE `udostepnienie`
 -- AUTO_INCREMENT dla tabeli `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
 
 --
 -- AUTO_INCREMENT dla tabeli `wypozyczenie`

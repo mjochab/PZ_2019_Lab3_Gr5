@@ -31,7 +31,11 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Button layoutX="425.0" layoutY="13.0" mnemonicParsing="false" onAction="#printHello" prefHeight="25.0" prefWidth="104.0" text="Dodaj Inserty" />
+            <Button fx:id="dodaj_inserty" alignment="CENTER" layoutX="424.0" layoutY="11.0" mnemonicParsing="false" onAction="#dodajInserty" prefHeight="28.0" prefWidth="96.0" style="-fx-background-color: #e27171;" text="Dodaj inserty" textFill="#fffefe">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
          </children>
          <opaqueInsets>
             <Insets />
@@ -179,7 +183,7 @@
             </ImageView>
          </children>
       </GridPane>
-      <AnchorPane layoutX="84.0" layoutY="238.0" opacity="0.95" prefHeight="383.0" prefWidth="268.0" style="-fx-background-color: #6d0707;">
+      <AnchorPane layoutX="84.0" layoutY="238.0" opacity="0.95" prefHeight="383.0" prefWidth="269.0" style="-fx-background-color: #6d0707;">
          <children>
             <TextField fx:id="login_tf" layoutX="15.0" layoutY="111.0" prefHeight="40.0" prefWidth="241.0" promptText="Nazwa użytkownika" />
             <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="223.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true">
