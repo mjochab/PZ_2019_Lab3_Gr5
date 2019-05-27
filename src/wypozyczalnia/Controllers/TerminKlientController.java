@@ -21,5 +21,9 @@ public class TerminKlientController {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/wypozyczenieKlient.fxml"));
         klientPane.getChildren().setAll(pane);
     }
+    public void logOut(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/login.fxml"));
+        klientPane.getChildren().setAll(pane);
+    }
 
 }
