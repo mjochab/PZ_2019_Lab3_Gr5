@@ -19,8 +19,7 @@ public class TerminKlientController implements Initializable {
 
 
     public void initialize(URL location, ResourceBundle resources) {
-       System.out.println(UserSession.getUsername());
-       System.out.println(UserSession.getID());
+        
     }
 
     public void menuKlient(ActionEvent event) throws IOException {
