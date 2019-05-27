@@ -1,5 +1,6 @@
 package wypozyczalnia.Controllers;
 
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -60,8 +61,8 @@ public class MojeWypozyczeniaController implements Initializable {
 
 
     public void logOut(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/login.fxml"));
-        pracownikPane.getChildren().setAll(pane);
+        UserSession.cleanUserSession();
+        Platform.exit();
     }
 
     public void menuPracownik(ActionEvent event) throws IOException {
@@ -69,6 +70,21 @@ public class MojeWypozyczeniaController implements Initializable {
         pracownikPane.getChildren().setAll(pane);
     }
 
+
+    private boolean walidacjaData()
+    {
+        if(dpDataOd.getValue().toEpochDay()>=(dpDataDo.getValue().toEpochDay()))
+        {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Błąd!");
+            alert.setHeaderText(null);
+            alert.setContentText("Wybierz odpowiednie daty!");
+            alert.showAndWait();
+
+            return false;
+        }
+        return true;
+    }
 
        public void edytujWypozyczenie(ActionEvent event) throws  IOException {
 
@@ -78,46 +94,46 @@ public class MojeWypozyczeniaController implements Initializable {
         TablePosition pozycja = tabelka_moje_wypozyczenia.getSelectionModel().getSelectedCells().get(0);
         int index = pozycja.getRow();
 
+           if(walidacjaData()) {
+               try {
+                   index++;
+                   Class.forName("com.mysql.cj.jdbc.Driver");
+                   Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
 
-            try {
-                index++;
-                Class.forName("com.mysql.cj.jdbc.Driver");
-                Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+                   PreparedStatement stmt = con.prepareStatement("SELECT * FROM wypozyczenie");
+                   String zapytanie = "Select * FROM wypozyczenie WHERE `user_id` = " + UserSession.getID() + " ORDER BY user_id LIMIT " + index;
+                   ResultSet rs = stmt.executeQuery(zapytanie);
+                   String a = "0";
+                   int i = 0;
+                   while (rs.next()) {
+                       a = rs.getString(1);
+                       i++;
+                   }
+                   int numer = Integer.parseInt(a);
 
-                PreparedStatement stmt = con.prepareStatement("SELECT * FROM wypozyczenie");
-                String zapytanie = "Select * FROM wypozyczenie WHERE `user_id` = "+UserSession.getID()+" ORDER BY user_id LIMIT "+index;
-                ResultSet rs = stmt.executeQuery(zapytanie);
-                String a = "0";
-                int i = 0;
-                while (rs.next()) {
-                    a = rs.getString(1);
-                    i++;
-                }
-                int numer = Integer.parseInt(a);
+                   PreparedStatement stmt2 = con.prepareStatement("UPDATE `wypozyczenie` SET `data_od`=(?),`data_do`=(?) WHERE `wypozyczenie_id` =(?)");
 
-                PreparedStatement stmt2 = con.prepareStatement("UPDATE `wypozyczenie` SET `data_od`=(?),`data_do`=(?) WHERE `wypozyczenie_id` =(?)");
+                   stmt2.setString(1, data_od);
+                   stmt2.setString(2, data_do);
+                   stmt2.setInt(3, numer);
 
-                stmt2.setString(1, data_od);
-                stmt2.setString(2, data_do);
-                stmt2.setInt(3, numer);
+                   Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                   alert.setTitle("Informacja");
+                   alert.setHeaderText(null);
+                   alert.setContentText("Daty wypożyczenia zostały zaktualizowane!");
+                   alert.showAndWait();
 
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Informacja");
-                alert.setHeaderText(null);
-                alert.setContentText("Daty wypożyczenia zostały zaktualizowane!");
-                alert.showAndWait();
-
-                stmt2.executeUpdate();
-                tabelka_moje_wypozyczenia.refresh();
+                   stmt2.executeUpdate();
+                   tabelka_moje_wypozyczenia.refresh();
 
 
-            } catch (Exception e) {
-                System.out.println(e);
-            }
-            AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/mojeWypozyczenia.fxml"));
-            pracownikPane.getChildren().setAll(pane);
+               } catch (Exception e) {
+                   System.out.println(e);
+               }
+               AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/mojeWypozyczenia.fxml"));
+               pracownikPane.getChildren().setAll(pane);
 
-        }
+           }}
 
 
 

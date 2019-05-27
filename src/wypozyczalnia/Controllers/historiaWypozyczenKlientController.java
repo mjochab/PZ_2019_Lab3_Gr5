@@ -125,7 +125,6 @@ public class historiaWypozyczenKlientController implements Initializable {
                 oblist5.add(new ModelTableWypozyczenia(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5)+ " zł/dzień", rs.getString(6)));
             }
 
-
         } catch (SQLException ex) {
             Logger.getLogger(historiaWypozyczenController.class.getName()).log(Level.SEVERE, null, ex);
         }
