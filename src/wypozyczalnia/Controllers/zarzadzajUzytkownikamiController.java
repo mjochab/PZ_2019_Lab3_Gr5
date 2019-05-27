@@ -285,6 +285,7 @@ public class zarzadzajUzytkownikamiController implements Initializable {
             }
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajUzytkownikami.fxml"));
         pracownikPane.getChildren().setAll(pane);
+        tabelka.refresh();
 
     }
 

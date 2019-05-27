@@ -63,34 +63,6 @@ public class historiaWypozyczenKlientController implements Initializable {
     }
 
 
-    /*private void zaladujwypozyczenia() {
-        nazwauzytkownika.setText(username);
-        Connection con = null;
-        PreparedStatement ps = null;
-        ResultSet rs = null;
-
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
-
-
-            ps = con.prepareStatement("SELECT * FROM h.historia_wypozyczen, k.klient WHERE k.klient_id=h.klient_id AND login = ?");
-
-            ps.setString(1,System.getProperty("user.name"));
-            rs = ps.executeQuery();
-
-
-
-
-        } catch(ClassNotFoundException | SQLException e){
-            e.printStackTrace();
-        }
-
-    }
-
-    String username = System.getProperty("user.name");
-*/
-
     String userid;
     public void displayName (String usernamedisplay){
 
@@ -116,7 +88,7 @@ public class historiaWypozyczenKlientController implements Initializable {
                     "                    ON samochod.samochod_id = wypozyczenie.samochod_id\n" +
                     "                    JOIN user\n" +
                     "                    ON wypozyczenie.user_id = user.user_id\n" +
-                    "                    WHERE user.rodzaj = \"klient\"\n" +
+                    "                    AND user.rodzaj = \"klient\" AND wypozyczenie.user_id=" +UserSession.getID()+
                     "                    AND wypozyczenie.data_do <"+"'"+dateFormat.format(date)+"'" );
             //   "WHERE user.user_id= 47");
 
@@ -125,9 +97,8 @@ public class historiaWypozyczenKlientController implements Initializable {
                 oblist5.add(new ModelTableWypozyczenia(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5)+ " zł/dzień", rs.getString(6)));
             }
 
-
         } catch (SQLException ex) {
-            Logger.getLogger(historiaWypozyczenController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(historiaWypozyczenKlientController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
 

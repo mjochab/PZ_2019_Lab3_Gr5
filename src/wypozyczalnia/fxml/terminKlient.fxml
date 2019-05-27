@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="klientPane" prefHeight="900.0" prefWidth="1400.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.TerminKlientController">
+<AnchorPane fx:id="klientPane" prefHeight="900.0" prefWidth="1400.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.TerminKlientController">
    <children>
       <ImageView fitHeight="766.0" fitWidth="1392.0" layoutX="7.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -184,8 +184,8 @@
                   <Font name="System Bold" size="19.0" />
                </font>
             </Label>
-            <DatePicker layoutX="153.0" layoutY="75.0" promptText="Wybierz datę" />
-            <DatePicker layoutX="153.0" layoutY="173.0" promptText="Wybierz datę" />
+            <DatePicker fx:id="dataPoczatek" layoutX="153.0" layoutY="75.0" promptText="Wybierz datę" />
+            <DatePicker fx:id="dataKoniec" layoutX="153.0" layoutY="173.0" promptText="Wybierz datę" />
             <Button layoutX="70.0" layoutY="277.0" mnemonicParsing="false" onAction="#menuKlient" prefHeight="48.0" prefWidth="167.0" style="-fx-background-color: #e27171;" text="ANULUJ">
                <graphic>
                   <ImageView fitHeight="36.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
@@ -227,10 +227,5 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Label fx:id="idUsera" layoutX="120.0" layoutY="93.0" prefHeight="17.0" prefWidth="96.0" text="Label" textFill="WHITE">
-         <font>
-            <Font size="31.0" />
-         </font>
-      </Label>
    </children>
 </AnchorPane>

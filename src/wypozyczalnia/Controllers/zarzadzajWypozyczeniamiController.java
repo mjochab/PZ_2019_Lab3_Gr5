@@ -18,6 +18,8 @@ import wypozyczalnia.UserSession;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -144,9 +146,13 @@ public class zarzadzajWypozyczeniamiController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        java.util.Date date = new java.util.Date();
+        //  System.out.println("Current Date : " + dateFormat.format(date));
+
         try {
             Connection con = DBConnector.getConnection();
-            ResultSet rs = con.createStatement().executeQuery("Select user.imie, user.nazwisko, wypozyczenie.data_od, wypozyczenie.data_do, samochod.cena from wypozyczenie inner join user on user.user_id = wypozyczenie.user_id inner join samochod on samochod.samochod_id = wypozyczenie.samochod_id;");
+            ResultSet rs = con.createStatement().executeQuery("Select user.imie, user.nazwisko, wypozyczenie.data_od, wypozyczenie.data_do, samochod.cena from wypozyczenie inner join user on user.user_id = wypozyczenie.user_id inner join samochod on samochod.samochod_id = wypozyczenie.samochod_id AND wypozyczenie.data_do >"+"'"+dateFormat.format(date)+"';");
 
             while (rs.next()) {
 

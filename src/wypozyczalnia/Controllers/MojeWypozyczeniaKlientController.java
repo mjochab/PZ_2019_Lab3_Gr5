@@ -79,50 +79,63 @@ public class MojeWypozyczeniaKlientController implements Initializable {
         TablePosition pozycja = tabelka_moje_wypozyczenia.getSelectionModel().getSelectedCells().get(0);
         int index = pozycja.getRow();
 
+        if (walidacjaData()) {
+            try {
+                index++;
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
 
-        try {
-            index++;
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+                PreparedStatement stmt = con.prepareStatement("SELECT * FROM wypozyczenie");
+                String zapytanie = "Select * FROM wypozyczenie WHERE `user_id` = " + UserSession.getID() + " ORDER BY user_id LIMIT " + index;
+                ResultSet rs = stmt.executeQuery(zapytanie);
+                String a = "0";
+                int i = 0;
+                while (rs.next()) {
+                    a = rs.getString(1);
+                    i++;
+                }
+                int numer = Integer.parseInt(a);
 
-            PreparedStatement stmt = con.prepareStatement("SELECT * FROM wypozyczenie");
-            String zapytanie = "Select * FROM wypozyczenie ORDER BY wypozyczenie_id LIMIT " + index;
-            ResultSet rs = stmt.executeQuery(zapytanie);
-            String a = "0";
-            int i = 0;
-            while (rs.next()) {
-                a = rs.getString(1);
-                i++;
+
+                PreparedStatement stmt2 = con.prepareStatement("UPDATE `wypozyczenie` SET `data_od`=(?),`data_do`=(?) WHERE `wypozyczenie_id` =(?)");
+
+                stmt2.setString(1, data_od);
+                stmt2.setString(2, data_do);
+
+                stmt2.setInt(3, numer);
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Informacja");
+                alert.setHeaderText(null);
+                alert.setContentText("Daty wypożyczenia zostały zaktualizowane!");
+                alert.showAndWait();
+
+                stmt2.executeUpdate();
+                tabelka_moje_wypozyczenia.refresh();
+
+
+            } catch (Exception e) {
+                System.out.println(e);
             }
-            int numer = Integer.parseInt(a);
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/mojeWypozyczeniaK.fxml"));
+            klientPane.getChildren().setAll(pane);
 
-
-            PreparedStatement stmt2 = con.prepareStatement("UPDATE `wypozyczenie` SET `data_od`=(?),`data_do`=(?) WHERE `wypozyczenie_id` =(?)");
-
-            stmt2.setString(1, data_od);
-            stmt2.setString(2, data_do);
-
-            stmt2.setInt(3, numer);
-
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Informacja");
+        }
+    }
+    private boolean walidacjaData()
+    {
+        if(dpDataOd.getValue().toEpochDay()>=(dpDataDo.getValue().toEpochDay()))
+        {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Błąd!");
             alert.setHeaderText(null);
-            alert.setContentText("Daty wypożyczenia zostały zaktualizowane!");
+            alert.setContentText("Wybierz odpowiednie daty!");
             alert.showAndWait();
 
-            stmt2.executeUpdate();
-            tabelka_moje_wypozyczenia.refresh();
-
-
-        } catch (Exception e) {
-            System.out.println(e);
+            return false;
         }
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/mojeWypozyczeniaK.fxml"));
-        klientPane.getChildren().setAll(pane);
-
+        return true;
     }
-
-
 
 
     @Override
@@ -131,6 +144,7 @@ public class MojeWypozyczeniaKlientController implements Initializable {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         java.util.Date date = new java.util.Date();
         //  System.out.println("Current Date : " + dateFormat.format(date));
+
 
         try {
             Connection con = DBConnector.getConnection();
@@ -142,8 +156,8 @@ public class MojeWypozyczeniaKlientController implements Initializable {
                     "                    ON samochod.samochod_id = wypozyczenie.samochod_id\n" +
                     "                    JOIN user\n" +
                     "                    ON wypozyczenie.user_id = user.user_id\n" +
-                    "                    WHERE user.rodzaj = \"klient\"\n" +
-                    "                    AND wypozyczenie.data_od >"+"'"+dateFormat.format(date)+"'");
+                    "                    AND user.rodzaj = \"klient\" AND wypozyczenie.user_id=" +UserSession.getID()+
+                    "                    AND wypozyczenie.data_do >"+"'"+dateFormat.format(date)+"'" );
             //   "WHERE user.user_id= 47");
 
 
@@ -182,8 +196,8 @@ public class MojeWypozyczeniaKlientController implements Initializable {
                     Class.forName("com.mysql.cj.jdbc.Driver");
                     Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
 
-                    PreparedStatement stmt = con.prepareStatement("SELECT * FROM samochod");
-                    String zapytanie = "Select * FROM wypozyczenie ORDER BY wypozyczenie_id LIMIT " + index;
+                    PreparedStatement stmt = con.prepareStatement("SELECT * FROM `wypozyczenie` WHERE `user_id`='"+UserSession.getID()+"'");
+                    String zapytanie = "Select * FROM wypozyczenie WHERE `user_id` = "+UserSession.getID()+" ORDER BY user_id LIMIT "+index;
                     ResultSet rs = stmt.executeQuery(zapytanie);
                     String a = "0";
                     int i=0;
