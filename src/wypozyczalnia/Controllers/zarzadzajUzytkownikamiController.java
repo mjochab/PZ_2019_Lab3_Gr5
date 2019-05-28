@@ -60,6 +60,7 @@ public class zarzadzajUzytkownikamiController implements Initializable {
     @FXML private TextField userLogin;
     @FXML private TextField userHaslo;
     @FXML private TextField userTelefon;
+    @FXML private Label useridL;
 
 
     ObservableList<ModelTable> oblist2 = FXCollections.observableArrayList();
@@ -110,7 +111,6 @@ public class zarzadzajUzytkownikamiController implements Initializable {
         }
         return true;
     }
-
 
     private boolean walidacjaImie(){
         Pattern p = Pattern.compile("[A-ZĄĘŁŃÓŚŹŻ][a-ząćęłńóśźż]+");
@@ -205,9 +205,41 @@ public class zarzadzajUzytkownikamiController implements Initializable {
 
     }
 
-    public void modujUser(ActionEvent event) throws  IOException {
-        System.out.println("-");
+    private boolean walidacjaDaty() {
+        if (userData.getValue().equals(null)) {
 
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Informacja");
+            alert.setHeaderText(null);
+            alert.setContentText("Uzupełnij wszystkie pola");
+            alert.showAndWait();
+
+
+            return false;
+        }
+        return true;
+    }
+
+    private boolean walidacjaTelefonu(){
+        Pattern p = Pattern.compile("^[0-9]{9}$");
+        Matcher m = p.matcher(userTelefon.getText());
+
+        if(m.find() && m.group().equals(userTelefon.getText())){
+            return true;
+        }else
+        {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Informacja");
+            alert.setHeaderText(null);
+            alert.setContentText("Telefon niepoprawny");
+            alert.showAndWait();
+
+            return false;
+        }
+
+    }
+
+    public void modujUser(ActionEvent event) throws  IOException {
         String imie = String.valueOf(userImie.getCharacters());
         String nazwisko = String.valueOf(userNazwisko.getCharacters());
         String login = String.valueOf(userLogin.getCharacters());
@@ -217,30 +249,17 @@ public class zarzadzajUzytkownikamiController implements Initializable {
         String telefon = String.valueOf(userTelefon.getCharacters());
         String email = String.valueOf(userEmail.getCharacters());
         String haslo = String.valueOf(userHaslo.getCharacters());
-
+        int userid = Integer.parseInt(useridL.getText());
 
         TablePosition pozycja = tabelka.getSelectionModel().getSelectedCells().get(0);
         int index = pozycja.getRow();
 
-        if (walidacjaPol() & walidacjaImie() & walidacjaNazwisko() & walidacjaMiejscowosc() & walidacjaEmail() & walidacjaPesel() )
+        if (walidacjaTelefonu() & walidacjaPol() & walidacjaImie() & walidacjaNazwisko() & walidacjaMiejscowosc() & walidacjaEmail() & walidacjaPesel() & walidacjaDaty())
             try {
-                index++;
+
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
-
-                PreparedStatement stmt = con.prepareStatement("SELECT * FROM user");
-                String zapytanie = "Select * FROM user ORDER BY user_id LIMIT " + index;
-                ResultSet rs = stmt.executeQuery(zapytanie);
-                String a = "0";
-                int i = 0;
-                while (rs.next()) {
-                    a = rs.getString(1);
-                    i++;
-                }
-                int numer = Integer.parseInt(a);
-
-                System.out.println(numer);
-                PreparedStatement stmt2 = con.prepareStatement("UPDATE `user` SET `imie`=(?),`nazwisko`=(?),`login`=(?),`haslo`=(?),`pesel`=(?),`data_urodzenia`=(?),`miejscowosc`=(?),`tel`=(?), `email`=(?) WHERE user_id=(?)");
+                PreparedStatement stmt2 = con.prepareStatement("UPDATE `user` SET `imie`=(?), `nazwisko` = (?), `login` = (?), `haslo`=(?), `pesel` = (?), `data_urodzenia` = (?),`miejscowosc` = (?), `tel` = (?), `email` = (?) WHERE `user_id` = (?)");
                 stmt2.setString(1, imie);
                 stmt2.setString(2, nazwisko);
                 stmt2.setString(3, login);
@@ -250,12 +269,12 @@ public class zarzadzajUzytkownikamiController implements Initializable {
                 stmt2.setString(7, miejscowosc);
                 stmt2.setString(8, telefon);
                 stmt2.setString(9, email);
-                stmt2.setInt(10, numer);
+                stmt2.setInt(10, userid);
 
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Informacja");
                 alert.setHeaderText(null);
-                alert.setContentText("Dane klienta zostały zmodyfikowane pomyślnie!");
+                alert.setContentText("Dane pracownika zostały zmodyfikowane pomyślnie!");
                 alert.showAndWait();
 
                 stmt2.executeUpdate();
@@ -263,7 +282,6 @@ public class zarzadzajUzytkownikamiController implements Initializable {
 
 
             } catch (Exception e) {
-                System.out.println(e);
             }
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajUzytkownikami.fxml"));
         pracownikPane.getChildren().setAll(pane);
@@ -272,34 +290,20 @@ public class zarzadzajUzytkownikamiController implements Initializable {
     }
 
     public void usunKlient(ActionEvent event) throws IOException {
-
         TablePosition pozycja = tabelka.getSelectionModel().getSelectedCells().get(0);
-        int index = pozycja.getRow();
+        int userid = Integer.parseInt(useridL.getText());
 
         try {
-            index++;
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
 
-            PreparedStatement stmt = con.prepareStatement("SELECT * FROM user");
-            String zapytanie = "Select * FROM user ORDER BY user_id LIMIT " + index;
-            ResultSet rs = stmt.executeQuery(zapytanie);
-            String a = "0";
-            int i=0;
-            while(rs.next()) {
-                a = rs.getString(1);
-                i++;
-            }
-            int numer = Integer.parseInt(a);
-            System.out.println(numer);
-
             PreparedStatement stmt2 = con.prepareStatement("DELETE FROM user WHERE user_id = (?)");
-            stmt2.setInt(1, numer);
+            stmt2.setInt(1, userid);
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Informacja");
             alert.setHeaderText(null);
-            alert.setContentText("Pomyślnie usunięto klienta!");
+            alert.setContentText("Pomyślnie usunięto pracownika!");
             alert.showAndWait();
 
 
@@ -308,7 +312,6 @@ public class zarzadzajUzytkownikamiController implements Initializable {
 
         }catch (Exception e)
         {
-            System.out.println(e);
         };
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajUzytkownikami.fxml"));
         pracownikPane.getChildren().setAll(pane);
@@ -353,69 +356,80 @@ public class zarzadzajUzytkownikamiController implements Initializable {
         String telefon = String.valueOf(userTelefon.getCharacters());
         String email = String.valueOf(userEmail.getCharacters());
 
-        if (walidacjaPol() & walidacjaImie() & walidacjaNazwisko() & walidacjaMiejscowosc() & walidacjaEmail() & walidacjaPesel())
+        if (walidacjaTelefonu() & walidacjaPol() & walidacjaImie() & walidacjaNazwisko() & walidacjaMiejscowosc() & walidacjaEmail() & walidacjaPesel() & walidacjaDaty())
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
-                PreparedStatement stmt2 = con.prepareStatement("Select MAX(user_id) FROM `user` WHERE `rodzaj` = 'klient'");
-                ResultSet rs = stmt2.executeQuery("SELECT * FROM `user` WHERE `rodzaj` = 'klient'");
+                PreparedStatement stmt2 = con.prepareStatement("Select MAX(user_id) FROM `user` ");
+                ResultSet rs = stmt2.executeQuery();
                 PreparedStatement stmt3 = con.prepareStatement("SELECT * FROM user WHERE login ='"+ login+"';");
                 ResultSet rs1 = stmt3.executeQuery();
-                String rodzaj = "klient";
                 PreparedStatement stmt4 = con.prepareStatement("SELECT * FROM user WHERE email ='"+ email+"';");
                 ResultSet rs2 = stmt4.executeQuery();
                 PreparedStatement stmt5 = con.prepareStatement("SELECT * FROM user WHERE pesel ='"+ pesel+"';");
                 ResultSet rs3 = stmt5.executeQuery();
+                PreparedStatement stmt6 = con.prepareStatement("SELECT * FROM user WHERE tel ='"+ telefon+"';");
+                ResultSet rs4 = stmt6.executeQuery();
+                String rodzaj = "klient";
 
-                if(rs3.next()) {
+                if(rs4.next()) {
                     Alert alert = new Alert(Alert.AlertType.WARNING);
                     alert.setTitle("Informacja");
                     alert.setHeaderText(null);
-                    alert.setContentText("PESEL jest już w bazie!");
-                    alert.showAndWait();
-                } else {
-                    if (rs2.next()) {
+                    alert.setContentText("Telefon jest już w bazie!");
+                    alert.showAndWait();} else {
+                    if (rs3.next()) {
                         Alert alert = new Alert(Alert.AlertType.WARNING);
                         alert.setTitle("Informacja");
                         alert.setHeaderText(null);
-                        alert.setContentText("Email jest już w bazie!");
+                        alert.setContentText("PESEL jest już w bazie!");
                         alert.showAndWait();
                     } else {
-                if(rs1.next()) {
-                    Alert alert = new Alert(Alert.AlertType.WARNING);
-                    alert.setTitle("Informacja");
-                    alert.setHeaderText(null);
-                    alert.setContentText("Login zajęty!");
-                    alert.showAndWait();
-                }else {
-                    PreparedStatement stmt = con.prepareStatement("INSERT INTO user (login, haslo, imie, nazwisko, data_urodzenia, miejscowosc, tel, email, pesel, rodzaj) VALUES(?,?,?,?,?,?,?,?,?,?)");
-                    stmt.setString(1, login);
-                    stmt.setString(2, haslo);
-                    stmt.setString(3, imie);
-                    stmt.setString(4, nazwisko);
-                    stmt.setString(5, data_urodzenia);
-                    stmt.setString(6, miejscowosc);
-                    stmt.setString(7, telefon);
-                    stmt.setString(8, email);
-                    stmt.setString(9, pesel);
-                    stmt.setString(10, rodzaj);
-                    stmt.executeUpdate();
+                        if (rs2.next()) {
+                            Alert alert = new Alert(Alert.AlertType.WARNING);
+                            alert.setTitle("Informacja");
+                            alert.setHeaderText(null);
+                            alert.setContentText("Email jest już w bazie!");
+                            alert.showAndWait();
+                        } else {
 
-                    rs = stmt2.executeQuery("SELECT * FROM `user` WHERE user_id = (SELECT MAX(user_id) FROM user)");
-                    if (rs.next()) {
-                        System.out.println(rs.getString(2));
-                        oblist2.add(new ModelTable(rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(10), rs.getString(8), rs.getString(2), rs.getString(9)));
+                            if (rs1.next()) {
+                                Alert alert = new Alert(Alert.AlertType.WARNING);
+                                alert.setTitle("Informacja");
+                                alert.setHeaderText(null);
+                                alert.setContentText("Login zajęty!");
+                                alert.showAndWait();
+                            } else {
+                                PreparedStatement stmt = con.prepareStatement("INSERT INTO user (login, haslo, imie, nazwisko, data_urodzenia, miejscowosc, tel, email, pesel, rodzaj) VALUES(?,?,?,?,?,?,?,?,?,?)");
+                                stmt.setString(1, login);
+                                stmt.setString(2, haslo);
+                                stmt.setString(3, imie);
+                                stmt.setString(4, nazwisko);
+                                stmt.setString(5, data_urodzenia);
+                                stmt.setString(6, miejscowosc);
+                                stmt.setString(7, telefon);
+                                stmt.setString(8, email);
+                                stmt.setString(9, pesel);
+                                stmt.setString(10, rodzaj);
+                                stmt.executeUpdate();
+
+                                rs = stmt2.executeQuery("SELECT * FROM `user` WHERE user_id = (SELECT MAX(user_id) FROM user)");
+                                if (rs.next()) {
+                                    oblist2.add(new ModelTable(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(9), rs.getString(7) , rs.getString(8)));
+
+                                }
+                                AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajUzytkownikami.fxml"));
+                                pracownikPane.getChildren().setAll(pane);
+                            }
+                        }
                     }
-                    AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajUzytkownikami.fxml"));
-                    pracownikPane.getChildren().setAll(pane);
-                }}}
-
+                }
             }catch (Exception e)
             {
-                System.out.println(e);
             }
 
         tabelka.refresh();
+
     }
 
     @Override
@@ -423,24 +437,20 @@ public class zarzadzajUzytkownikamiController implements Initializable {
 
         try {
             Connection con = DBConnector.getConnection();
-
             ResultSet rs = con.createStatement().executeQuery("SELECT * FROM `user` WHERE `rodzaj` = 'klient'");
 
-
-
             while (rs.next()){
-                oblist2.add(new ModelTable(rs.getString(4), rs.getString(5),rs.getString(6), rs.getString(7), rs.getString(10), rs.getString(8), rs.getString(2),rs.getString(9)));
+                oblist2.add(new ModelTable(rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(10), rs.getString(8) , rs.getString(9)));
             }
 
-
         }catch (SQLException ex){
-            Logger.getLogger(zarzadzajUzytkownikamiAdminController.class.getName()).log(Level.SEVERE,null, ex);
+            Logger.getLogger(zarzadzajUzytkownikamiController.class.getName()).log(Level.SEVERE,null, ex);
         }
 
-
+        col_login.setCellValueFactory(new PropertyValueFactory<>("login"));
+        col_haslo.setCellValueFactory(new PropertyValueFactory<>("haslo"));
         col_imie.setCellValueFactory(new PropertyValueFactory<>("imie"));
         col_nazwisko.setCellValueFactory(new PropertyValueFactory<>("nazwisko"));
-        col_login.setCellValueFactory(new PropertyValueFactory<>("login"));
         col_telefon.setCellValueFactory(new PropertyValueFactory<>("telefon"));
         col_data.setCellValueFactory(new PropertyValueFactory<>("data_urodzenia"));
         col_miejscowosc.setCellValueFactory(new PropertyValueFactory<>("miejscowosc"));
@@ -451,13 +461,9 @@ public class zarzadzajUzytkownikamiController implements Initializable {
 
 
         tabelka.setOnMousePressed(new EventHandler<MouseEvent>() {
+
             @Override
             public void handle(MouseEvent event) {
-
-
-                String abc;
-                abc = tabelka.toString();
-                System.out.println(abc);
                 ArrayList<String> dane = new ArrayList<String>();
                 try {
                     TablePosition pozycja = tabelka.getSelectionModel().getSelectedCells().get(0);
@@ -477,11 +483,9 @@ public class zarzadzajUzytkownikamiController implements Initializable {
                         i++;
                     }
                     int numer = Integer.parseInt(a);
-                    System.out.println(numer);
 
                     zapytanie = "SELECT * FROM `user` WHERE `rodzaj` = 'klient' AND `user_id` = " + numer;
                     ResultSet rs2 = stmt.executeQuery(zapytanie);
-                    System.out.println(rs2);
                     if(rs2.next()) {
                         dane.add(rs2.getString("login"));
                         dane.add(rs2.getString("haslo"));
@@ -493,7 +497,6 @@ public class zarzadzajUzytkownikamiController implements Initializable {
                         dane.add(rs2.getString("email"));
                         dane.add(rs2.getString("pesel"));
 
-
                         userLogin.setText(String.valueOf(dane.get(0)));
                         userHaslo.setText(String.valueOf(dane.get(1)));
                         userImie.setText(String.valueOf(dane.get(2)));
@@ -503,7 +506,7 @@ public class zarzadzajUzytkownikamiController implements Initializable {
                         userTelefon.setText(String.valueOf(dane.get(6)));
                         userEmail.setText(String.valueOf(dane.get(7)));
                         userPesel.setText(String.valueOf(dane.get(8)));
-
+                        useridL.setText(Integer.toString(numer));
                     }
 
 
