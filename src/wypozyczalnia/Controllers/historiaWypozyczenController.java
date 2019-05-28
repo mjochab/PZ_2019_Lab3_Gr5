@@ -101,6 +101,8 @@ public class historiaWypozyczenController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+        System.out.println(UserSession.getID());
+
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         java.util.Date date = new java.util.Date();
       //  System.out.println("Current Date : " + dateFormat.format(date));
@@ -116,7 +118,7 @@ public class historiaWypozyczenController implements Initializable {
                     "                    JOIN user\n" +
                     "                    ON wypozyczenie.user_id = user.user_id\n" +
                     "                    WHERE user.rodzaj = \"worker\"\n" +
-                    "                    AND wypozyczenie.data_do <"+"'"+dateFormat.format(date)+"' AND wypozyczenie.user_id = "+UserSession.getID() );
+                    "                    AND wypozyczenie.data_do <"+"'"+dateFormat.format(date)+"' AND wypozyczenie.user_id ="+UserSession.getID() );
                  //   "WHERE user.user_id= 47");
 
 

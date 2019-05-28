@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="klientPane" prefHeight="900.0" prefWidth="1400.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.WypozyczenieKlientController">
+<AnchorPane fx:id="klientPane" prefHeight="900.0" prefWidth="1400.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.WypozyczenieKlientController">
    <children>
       <BorderPane prefHeight="72.0" prefWidth="700.0" />
        <TableView fx:id="tabelka_pojazdy" layoutX="180.0" layoutY="255.0" prefHeight="449.0" prefWidth="1025.0">
@@ -221,5 +221,8 @@
             <Bloom />
          </effect>
       </Label>
+      <Label fx:id="marka_lbl" layoutX="315.0" layoutY="110.0" text="Label" />
+      <Label fx:id="model_lbl" layoutX="315.0" layoutY="158.0" text="Label" />
+      <Label fx:id="dostep_lbl" layoutX="323.0" layoutY="201.0" text="Label" />
    </children>
 </AnchorPane>
