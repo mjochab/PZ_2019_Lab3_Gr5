@@ -66,12 +66,6 @@ public class WypozyczenieKlientController implements Initializable {
         klientPane.getChildren().setAll(pane);
     }
 
-    public void wypozycz(ActionEvent event) throws IOException {
-
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/terminKlient.fxml"));
-        klientPane.getChildren().setAll(pane);
-    }
-
     ObservableList<ModelTableWypPoj> oblist1 = FXCollections.observableArrayList();
     public void logOut(ActionEvent event) throws IOException {
         UserSession.cleanUserSession();

@@ -43,7 +43,7 @@ public class MenuKlientController implements Initializable {
     }
 
     public void udostepnijPojazdK(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/udostepnijPojazdK.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/terminUdostepnijK.fxml"));
         klientPane.getChildren().setAll(pane);
     }
 

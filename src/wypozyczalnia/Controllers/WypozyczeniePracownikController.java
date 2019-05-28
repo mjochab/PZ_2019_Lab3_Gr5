@@ -13,7 +13,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import wypozyczalnia.DBConnector;
 import wypozyczalnia.UserSession;
-
+import wypozyczalnia.UserSession;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -55,6 +55,8 @@ public class WypozyczeniePracownikController implements Initializable {
         UserSession.cleanUserSession();
         Platform.exit();
     }
+
+
 
     public void menuPracownik(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/menuPracownik.fxml"));

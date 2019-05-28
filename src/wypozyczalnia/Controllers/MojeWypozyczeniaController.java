@@ -14,6 +14,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import wypozyczalnia.DBConnector;
 import wypozyczalnia.UserSession;
+import wypozyczalnia.RentCar;
+
 
 import java.io.IOException;
 import java.net.URL;
