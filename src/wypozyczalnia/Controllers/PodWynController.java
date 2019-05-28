@@ -80,6 +80,7 @@ public class PodWynController implements Initializable {
         String sid = Integer.toString(RentID.getSamochod_id());
         String doo = dataod.getText();
         String ddo = datado.getText();
+
        try {
            Class.forName("com.mysql.cj.jdbc.Driver");
            Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
@@ -89,8 +90,11 @@ public class PodWynController implements Initializable {
            stmt.setString(3,doo);
            stmt.setString(4,ddo);
            stmt.executeUpdate();
+           PreparedStatement stmt1 = con.prepareStatement("UPDATE `samochod` SET `dostepnosc`='NIE' WHERE `samochod_id` =" +sid);
+           stmt1.executeUpdate();
 
-
+            RentCar.cleanRentCar();
+            RentID.cleanUserSession();
            AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/menuKlient.fxml"));
            klientPane.getChildren().setAll(pane);
        }catch (Exception e)

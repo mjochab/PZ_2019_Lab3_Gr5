@@ -186,7 +186,7 @@
             </Label>
             <DatePicker fx:id="dataPoczatek" layoutX="153.0" layoutY="75.0" promptText="Wybierz datę" />
             <DatePicker fx:id="dataKoniec" layoutX="153.0" layoutY="173.0" promptText="Wybierz datę" />
-            <Button layoutX="70.0" layoutY="277.0" mnemonicParsing="false" onAction="#wypozyczenieKlient" prefHeight="48.0" prefWidth="167.0" style="-fx-background-color: #e27171;" text="ANULUJ">
+            <Button layoutX="70.0" layoutY="277.0" mnemonicParsing="false" onAction="#menuKlient" prefHeight="48.0" prefWidth="167.0" style="-fx-background-color: #e27171;" text="ANULUJ">
                <graphic>
                   <ImageView fitHeight="36.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                      <image>

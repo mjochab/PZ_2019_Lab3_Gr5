@@ -32,7 +32,6 @@ public class MojeWypozyczeniaController implements Initializable {
 
     @FXML
     private AnchorPane pracownikPane;
-    private AnchorPane zarzadzajPojazdamiPane;
 
     @FXML
     private DatePicker dpDataOd;
@@ -74,7 +73,57 @@ public class MojeWypozyczeniaController implements Initializable {
         pracownikPane.getChildren().setAll(pane);
     }
 
+    public void edytujWypozyczenie(ActionEvent event) throws  IOException {
 
+        String data_od = dpDataOd.getValue().toString();
+        String data_do = dpDataDo.getValue().toString();
+
+        TablePosition pozycja = tabelka_moje_wypozyczenia.getSelectionModel().getSelectedCells().get(0);
+        int index = pozycja.getRow();
+
+        if (walidacjaData()) {
+            try {
+                index++;
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+
+                PreparedStatement stmt = con.prepareStatement("SELECT * FROM wypozyczenie");
+                String zapytanie = "Select * FROM wypozyczenie WHERE `user_id` = " + UserSession.getID() + " ORDER BY user_id LIMIT " + index;
+                ResultSet rs = stmt.executeQuery(zapytanie);
+                String a = "0";
+                int i = 0;
+                while (rs.next()) {
+                    a = rs.getString(1);
+                    i++;
+                }
+                int numer = Integer.parseInt(a);
+
+
+                PreparedStatement stmt2 = con.prepareStatement("UPDATE `wypozyczenie` SET `data_od`=(?),`data_do`=(?) WHERE `wypozyczenie_id` =(?)");
+
+                stmt2.setString(1, data_od);
+                stmt2.setString(2, data_do);
+
+                stmt2.setInt(3, numer);
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Informacja");
+                alert.setHeaderText(null);
+                alert.setContentText("Daty wypożyczenia zostały zaktualizowane!");
+                alert.showAndWait();
+
+                stmt2.executeUpdate();
+                tabelka_moje_wypozyczenia.refresh();
+
+
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/mojeWypozyczenia.fxml"));
+            pracownikPane.getChildren().setAll(pane);
+
+        }
+    }
     private boolean walidacjaData()
     {
         if(dpDataOd.getValue().toEpochDay()>=(dpDataDo.getValue().toEpochDay()))
@@ -90,61 +139,9 @@ public class MojeWypozyczeniaController implements Initializable {
         return true;
     }
 
-       public void edytujWypozyczenie(ActionEvent event) throws  IOException {
-
-        String data_od = dpDataOd.getValue().toString();
-        String data_do = dpDataDo.getValue().toString();
-
-        TablePosition pozycja = tabelka_moje_wypozyczenia.getSelectionModel().getSelectedCells().get(0);
-        int index = pozycja.getRow();
-
-           if(walidacjaData()) {
-               try {
-                   index++;
-                   Class.forName("com.mysql.cj.jdbc.Driver");
-                   Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
-
-                   PreparedStatement stmt = con.prepareStatement("SELECT * FROM wypozyczenie");
-                   String zapytanie = "Select * FROM wypozyczenie WHERE `user_id` = " + UserSession.getID() + " ORDER BY user_id LIMIT " + index;
-                   ResultSet rs = stmt.executeQuery(zapytanie);
-                   String a = "0";
-                   int i = 0;
-                   while (rs.next()) {
-                       a = rs.getString(1);
-                       i++;
-                   }
-                   int numer = Integer.parseInt(a);
-
-                   PreparedStatement stmt2 = con.prepareStatement("UPDATE `wypozyczenie` SET `data_od`=(?),`data_do`=(?) WHERE `wypozyczenie_id` =(?)");
-
-                   stmt2.setString(1, data_od);
-                   stmt2.setString(2, data_do);
-                   stmt2.setInt(3, numer);
-
-                   Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                   alert.setTitle("Informacja");
-                   alert.setHeaderText(null);
-                   alert.setContentText("Daty wypożyczenia zostały zaktualizowane!");
-                   alert.showAndWait();
-
-                   stmt2.executeUpdate();
-                   tabelka_moje_wypozyczenia.refresh();
-
-
-               } catch (Exception e) {
-                   System.out.println(e);
-               }
-               AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/mojeWypozyczenia.fxml"));
-               pracownikPane.getChildren().setAll(pane);
-
-           }}
-
-
-
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
 
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         java.util.Date date = new java.util.Date();
@@ -161,7 +158,7 @@ public class MojeWypozyczeniaController implements Initializable {
                     "                    ON samochod.samochod_id = wypozyczenie.samochod_id\n" +
                     "                    JOIN user\n" +
                     "                    ON wypozyczenie.user_id = user.user_id\n" +
-                    "                    AND user.rodzaj = \"worker\" AND wypozyczenie.user_id=" +UserSession.getID()+
+                    "                    AND user.rodzaj = \"klient\" AND wypozyczenie.user_id=" +UserSession.getID()+
                     "                    AND wypozyczenie.data_do >"+"'"+dateFormat.format(date)+"'" );
             //   "WHERE user.user_id= 47");
 
@@ -176,7 +173,6 @@ public class MojeWypozyczeniaController implements Initializable {
         }
 
 
-
         col_marka.setCellValueFactory(new PropertyValueFactory<>("marka"));
         col_model.setCellValueFactory(new PropertyValueFactory<>("model"));
         col_data_od.setCellValueFactory(new PropertyValueFactory<>("data_od"));
@@ -186,10 +182,12 @@ public class MojeWypozyczeniaController implements Initializable {
 
         tabelka_moje_wypozyczenia.setItems(oblist5);
 
-
         tabelka_moje_wypozyczenia.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
+                String abc;
+                abc = tabelka_moje_wypozyczenia.toString();
+
                 ArrayList<String> dane = new ArrayList<String>();
                 try {
 

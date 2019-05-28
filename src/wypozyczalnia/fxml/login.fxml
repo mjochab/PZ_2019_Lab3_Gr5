@@ -21,17 +21,17 @@
             <Image url="@../Icons/Logos/CarLog.png" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="408.0" layoutY="779.0" opacity="0.95" prefHeight="46.0" prefWidth="529.0" style="-fx-background-color: #6d0707;">
+      <AnchorPane layoutX="408.0" layoutY="771.0" opacity="0.95" prefHeight="54.0" prefWidth="248.0" style="-fx-background-color: #6d0707;">
          <children>
-            <Button fx:id="adminPane" layoutX="212.0" layoutY="13.0" mnemonicParsing="false" onAction="#loadMenuAdmin" text="Menu Admin" />
-            <Button fx:id="pracPane" layoutX="308.0" layoutY="13.0" mnemonicParsing="false" onAction="#loadMenuPracownik" text="Menu Pracownik" />
-            <Button fx:id="klientPane" layoutX="126.0" layoutY="13.0" mnemonicParsing="false" onAction="#loadMenuKlient" text="Menu Klient" />
+            <Button fx:id="adminPane" layoutX="116.0" layoutY="23.0" mnemonicParsing="false" onAction="#loadMenuAdmin" text="Menu Admin" />
+            <Button fx:id="pracPane" layoutX="111.0" layoutY="31.0" mnemonicParsing="false" onAction="#loadMenuPracownik" text="Menu Pracownik" />
+            <Button fx:id="klientPane" layoutX="119.0" mnemonicParsing="false" onAction="#loadMenuKlient" text="Menu Klient" />
             <Label layoutX="14.0" layoutY="15.0" text="SZYBKI DOSTĘP" textFill="#eeadad">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Button fx:id="dodajInserty" alignment="CENTER" layoutX="419.0" layoutY="13.0" mnemonicParsing="false" onAction="#dodajInserty" prefHeight="21.0" prefWidth="96.0" style="-fx-background-color: #e27171;" text="Dodaj Inserty" textFill="#fffefe">
+            <Button fx:id="dodajInserty" alignment="CENTER" layoutX="128.0" layoutY="13.0" mnemonicParsing="false" onAction="#dodajInserty" prefHeight="21.0" prefWidth="96.0" style="-fx-background-color: #e27171;" text="Dodaj Inserty" textFill="#fffefe">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>

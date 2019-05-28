@@ -8,31 +8,38 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="pracownikPane" prefHeight="900.0" prefWidth="1400.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.WypozyczeniePracownikController">
-    <children>
-        <TableView fx:id="tabelka_pojazdy" layoutX="134.0" layoutY="241.0" prefHeight="454.0" prefWidth="1089.0">
-            <columns>
-                <TableColumn fx:id="col_marka" prefWidth="108.0" text="Marka" />
-                <TableColumn fx:id="col_model" prefWidth="228.0" text="Model" />
-                <TableColumn fx:id="col_rodzaj" prefWidth="126.00003051757812" text="Rodzaj" />
-                <TableColumn fx:id="col_rocznik" prefWidth="114.0" text="Rocznik" />
-                <TableColumn fx:id="col_paliwo" minWidth="0.0" prefWidth="151.0" text="Paliwo" />
-                <TableColumn fx:id="col_przebieg" prefWidth="152.0" text="Przebieg" />
-                <TableColumn fx:id="col_cena" prefWidth="121.0" text="Cena" />
-                <TableColumn fx:id="col_dostepnosc" prefWidth="89.0" text="Dostęp" />
+   <children>
+      <BorderPane prefHeight="72.0" prefWidth="700.0" />
+      <TableView fx:id="tabelka_pojazdy" layoutX="180.0" layoutY="255.0" prefHeight="449.0" prefWidth="1025.0">
+         <columns>
+            <TableColumn fx:id="col_marka" prefWidth="102.00001525878906" text="Marka" />
+            <TableColumn fx:id="col_model" prefWidth="168.0" text="Model" />
+            <TableColumn fx:id="col_rodzaj" prefWidth="105.0" text="Rodzaj" />
+            <TableColumn fx:id="col_rocznik" prefWidth="112.0" text="Rocznik" />
+            <TableColumn fx:id="col_paliwo" minWidth="0.0" prefWidth="162.0" text="Paliwo" />
+            <TableColumn fx:id="col_przebieg" prefWidth="189.0" text="Przebieg" />
+            <TableColumn fx:id="col_cena" prefWidth="108.0" text="Cena" />
+            <TableColumn fx:id="col_dostepnosc" prefWidth="78.0" text="Dostęp" />
 
-            </columns>
-        </TableView>
-      <Button layoutX="1204.0" layoutY="87.0" mnemonicParsing="false" onAction="#logOut" prefHeight="30.0" prefWidth="153.0" style="-fx-background-color: #e27171;" text="WYLOGUJ">
+         </columns>
+      </TableView>
+      <Label alignment="CENTER" layoutX="180.0" layoutY="222.0" prefHeight="27.0" prefWidth="320.0" text="Lista samochodów do wypożyczenia:" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="1040.0" layoutY="738.0" mnemonicParsing="false" onAction="#podWynP" prefHeight="48.0" prefWidth="165.0" style="-fx-background-color: #e27171;" text="WYPOŻYCZ">
          <graphic>
-            <ImageView fitHeight="36.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Icons/logout.png" />
+                  <Image url="@../Icons/confirm.png" />
                </image>
             </ImageView>
          </graphic>
@@ -111,18 +118,6 @@
             </ImageView>
          </children>
       </GridPane>
-      <Button layoutX="57.0" layoutY="87.0" mnemonicParsing="false" onAction="#menuPracownik" prefHeight="30.0" prefWidth="153.0" style="-fx-background-color: #e27171;" text="POWRÓT">
-         <graphic>
-            <ImageView fitHeight="36.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Icons/back.png" />
-               </image>
-            </ImageView>
-         </graphic>
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
       <GridPane layoutY="832.0" prefHeight="68.0" prefWidth="1400.0" style="-fx-background-color: #6d0707;">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
@@ -194,24 +189,11 @@
             </ImageView>
          </children>
       </GridPane>
-      <Label layoutX="559.0" layoutY="123.0" prefHeight="36.0" prefWidth="304.0" text="WYPOŻYCZANIE POJAZDU" textFill="#eeadad">
-         <font>
-            <Font size="25.0" />
-         </font>
-         <effect>
-            <Bloom />
-         </effect>
-      </Label>
-      <Label alignment="CENTER" layoutX="134.0" layoutY="207.0" prefHeight="27.0" prefWidth="320.0" text="Lista samochodów do wypożyczenia:" textAlignment="CENTER" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
-      <Button layoutX="1058.0" layoutY="722.0" mnemonicParsing="false" onAction="#podWynP" prefHeight="48.0" prefWidth="165.0" style="-fx-background-color: #e27171;" text="WYPOŻYCZ">
+      <Button layoutX="1217.0" layoutY="96.0" mnemonicParsing="false" onAction="#logOut" prefHeight="30.0" prefWidth="153.0" style="-fx-background-color: #e27171;" text="WYLOGUJ">
          <graphic>
-            <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="36.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Icons/confirm.png" />
+                  <Image url="@../Icons/logout.png" />
                </image>
             </ImageView>
          </graphic>
@@ -219,5 +201,29 @@
             <Font size="18.0" />
          </font>
       </Button>
-    </children>
+      <Button layoutX="27.0" layoutY="96.0" mnemonicParsing="false" onAction="#menuPracownik" prefHeight="30.0" prefWidth="153.0" style="-fx-background-color: #e27171;" text="POWRÓT">
+         <graphic>
+            <ImageView fitHeight="36.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/back.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Label layoutX="548.0" layoutY="102.0" prefHeight="36.0" prefWidth="304.0" text="WYPOŻYCZANIE POJAZDU" textFill="#eeadad">
+         <font>
+            <Font size="25.0" />
+         </font>
+         <effect>
+            <Bloom />
+         </effect>
+      </Label>
+      <Label fx:id="marka_lbl" layoutX="315.0" layoutY="110.0" text="Label" visible="false" />
+      <Label fx:id="model_lbl" layoutX="315.0" layoutY="158.0" text="Label" visible="false" />
+      <Label fx:id="dostep_lbl" layoutX="323.0" layoutY="201.0" text="Label" visible="false" />
+      <Label fx:id="samochod_id_lbl" layoutX="579.0" layoutY="184.0" text="Label" textFill="WHITE" visible="false" />
+   </children>
 </AnchorPane>

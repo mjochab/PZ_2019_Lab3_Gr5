@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="adminPane" prefHeight="900.0" prefWidth="1400.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.zarzadzajUzytkownikamiAdminController">
+<AnchorPane fx:id="adminPane" prefHeight="900.0" prefWidth="1400.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.zarzadzajUzytkownikamiAdminController">
     <children>
         <BorderPane prefHeight="30.0" prefWidth="700.0" />
         <TextField fx:id="userLogin" layoutX="24.0" layoutY="260.0" prefHeight="31.0" prefWidth="178.0" promptText="Login" />
@@ -251,7 +251,7 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="1124.0" layoutY="740.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="191.0" style="-fx-background-color: #e27171;" text="Generuj raport">
+      <Button layoutX="1124.0" layoutY="740.0" mnemonicParsing="false" onAction="#generujRaport" prefHeight="50.0" prefWidth="191.0" style="-fx-background-color: #e27171;" text="Generuj raport">
          <graphic>
             <ImageView fitHeight="36.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                <image>
