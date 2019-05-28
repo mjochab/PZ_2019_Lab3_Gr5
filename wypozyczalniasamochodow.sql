@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 28 Maj 2019, 01:58
+-- Czas generowania: 28 Maj 2019, 06:49
 -- Wersja serwera: 10.1.38-MariaDB
 -- Wersja PHP: 7.3.3
 
@@ -67,22 +67,7 @@ INSERT INTO `samochod` (`samochod_id`, `marka`, `model`, `rodzaj`, `rocznik`, `p
 (19, 'Fiat', 'Tipo', 'Sedan', 2018, 'Gaz', 58400, 500, 'TAK', 38),
 (20, 'Fiat', 'Panda', 'Hatchback', 2007, 'Diesel', 175000, 140, 'TAK', 93),
 (21, 'Ford', 'Focus', 'Hatchback', 2015, 'Diesel', 100000, 730, 'TAK', 45),
-(22, 'Chevrolet', 'Camaro', 'Coupe', 2017, 'Benzyna', 35500, 1800, 'TAK', 93),
-(23, 'Ferrari', 'Enzo', 'Coupe', 2008, 'Benzyna', 25000, 5979, 'TAK', 51),
-(24, 'Lamborghini', 'Hurracan', 'Coupe', 2016, 'Benzyna', 34532, 5979, 'TAK', 51),
-(25, 'Lada', 'Samara', 'Hatchback', 1995, 'Benzyna', 350500, 59, 'TAK', 51),
-(26, 'Pagani', 'Zonda', 'Coupe', 2008, 'Benzyna', 5000, 9755, 'TAK', 51),
-(27, 'Honda', 'CRX', 'Hatchback', 1996, 'Benzyna', 255600, 125, 'TAK', 51),
-(28, 'Ferrari', 'Enzo', 'Coupe', 2008, 'Benzyna', 25000, 5979, 'TAK', 51),
-(29, 'Lamborghini', 'Hurracan', 'Coupe', 2016, 'Benzyna', 34532, 5979, 'TAK', 51),
-(30, 'Lada', 'Samara', 'Hatchback', 1995, 'Benzyna', 350500, 59, 'TAK', 51),
-(31, 'Pagani', 'Zonda', 'Coupe', 2008, 'Benzyna', 5000, 9755, 'TAK', 51),
-(32, 'Honda', 'CRX', 'Hatchback', 1996, 'Benzyna', 255600, 125, 'TAK', 51),
-(33, 'Ferrari', 'Enzo', 'Coupe', 2008, 'Benzyna', 25000, 5979, 'TAK', 51),
-(34, 'Lamborghini', 'Hurracan', 'Coupe', 2016, 'Benzyna', 34532, 5979, 'TAK', 51),
-(35, 'Lada', 'Samara', 'Hatchback', 1995, 'Benzyna', 350500, 59, 'TAK', 51),
-(36, 'Pagani', 'Zonda', 'Coupe', 2008, 'Benzyna', 5000, 9755, 'TAK', 51),
-(37, 'Honda', 'Civic', 'Hatchback', 1996, 'Benzyna', 255600, 125, 'TAK', 51);
+(22, 'Chevrolet', 'Camaro', 'Coupe', 2017, 'Benzyna', 35500, 1800, 'TAK', 93);
 
 -- --------------------------------------------------------
 
@@ -153,14 +138,6 @@ INSERT INTO `user` (`user_id`, `login`, `haslo`, `imie`, `nazwisko`, `data_urodz
 (91, 'klient', 'klient', 'Janusz', 'Bach', '1989-07-07', 'Szczecin', 707963123, 'bach@gmail.com', '89070712345', 'klient'),
 (92, 'pracownik', 'pracownik', 'Mariusz', 'Strach', '1989-07-07', 'Szczecin', 707963434, 'strach@gmail.com', '89070754321', 'worker'),
 (93, 'admin', 'admin', 'Marian', 'Wolan', '1989-07-07', 'Radom', 704213434, 'wolan@gmail.com', '89070754344', 'admin'),
-(94, 'pracownik1000', 'pracownik1000', 'Ryszard', 'Nowak', '1991-05-20', 'Warszawa', 773050222, 'pracownik1000@email.com', '91052012345', 'worker'),
-(95, 'klient1000', 'klient1000', 'Piotr', 'Pawlikowski', '1992-03-26', 'Warszawa', 773050333, 'klient1000@email.com', '92032612345', 'worker'),
-(96, 'admin1000', 'admin1000', 'Piotr', 'Pawlikowski', '1984-08-11', 'Warszawa', 773050444, 'admin1000@email.com', '84081112345', 'worker'),
-(97, 'pracownik1000', 'pracownik1000', 'Ryszard', 'Nowak', '1991-05-20', 'Warszawa', 773050222, 'pracownik1000@email.com', '91052012345', 'worker'),
-(98, 'klient1000', 'klient1000', 'Piotr', 'Pawlikowski', '1992-03-26', 'Warszawa', 773050333, 'klient1000@email.com', '92032612345', 'worker'),
-(99, 'admin1000', 'admin1000', 'Piotr', 'Pawlikowski', '1984-08-11', 'Warszawa', 773050444, 'admin1000@email.com', '84081112345', 'worker'),
-(100, 'pracownik1000', 'pracownik1000', 'Ryszard', 'Nowak', '1991-05-20', 'Warszawa', 773050222, 'pracownik1000@email.com', '91052012345', 'worker'),
-(101, 'klient1000', 'klient1000', 'Piotr', 'Pawlikowski', '1992-03-26', 'Warszawa', 773050333, 'klient1000@email.com', '92032612345', 'worker'),
 (102, 'admin1001', 'admin1000', 'Piotr', 'Pawlikowski', '1984-08-11', 'Warszawa', 773050444, 'admin1000@email.com', '84081112345', 'worker'),
 (103, 'admin1002', 'admin1000', 'Piotr', 'Pawlikowski', '1984-08-11', 'Warszawa', 773050494, 'admin1088@email.com', '84081112999', 'worker');
 
