@@ -369,6 +369,7 @@ public class zarzadzajPojazdamiController implements Initializable {
 
         }
     }
+
     public void czyscForm (){
         autoMarka.clear();
         autoDostep.setValue("");

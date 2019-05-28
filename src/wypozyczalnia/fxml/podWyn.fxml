@@ -173,7 +173,7 @@
       </Label>
       <AnchorPane layoutX="480.0" layoutY="179.0" opacity="0.95" prefHeight="345.0" prefWidth="504.0" style="-fx-background-color: #6d0707;">
          <children>
-            <Button alignment="CENTER" layoutX="335.0" layoutY="278.0" mnemonicParsing="false" onAction="#openMenu" prefHeight="46.0" prefWidth="131.0" style="-fx-background-color: #e27171;" text="ZATWIERDŹ" textFill="#fffefe">
+            <Button fx:id="add" alignment="CENTER" layoutX="335.0" layoutY="278.0" mnemonicParsing="false" onAction="#openMenu" prefHeight="46.0" prefWidth="131.0" style="-fx-background-color: #e27171;" text="MENU KLIENT" textFill="#fffefe">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -193,17 +193,42 @@
                   <Bloom />
                </effect>
             </Label>
-            <Label layoutX="14.0" layoutY="87.0" text="Ilość dni:" textFill="#eeadad">
-               <font>
-                  <Font name="System Bold" size="19.0" />
-               </font>
-            </Label>
             <Label layoutX="14.0" layoutY="34.0" text="Nazwa pojazdu:" textFill="#eeadad">
                <font>
                   <Font name="System Bold" size="19.0" />
                </font>
             </Label>
-            <Label layoutX="14.0" layoutY="138.0" text="Koszt wypożyczenia:" textFill="#eeadad">
+            <Label layoutX="14.0" layoutY="84.0" text="Data Początkowa:" textFill="#eeadad">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="133.0" text="Data Końcowa:" textFill="#eeadad">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="184.0" text="Cena za dzień:" textFill="#eeadad">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <Label fx:id="marka" layoutX="210.0" layoutY="34.0" text="Nazwa pojazdu" textFill="#eeadad">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <Label fx:id="data_od" layoutX="210.0" layoutY="84.0" text="Data Początkowa" textFill="#eeadad">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <Label fx:id="data_do" layoutX="210.0" layoutY="133.0" text="Data Końcowa" textFill="#eeadad">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="210.0" layoutY="184.0" text="Cena za dzień" textFill="#eeadad">
                <font>
                   <Font name="System Bold" size="19.0" />
                </font>

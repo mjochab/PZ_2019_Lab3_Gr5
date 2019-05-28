@@ -15,7 +15,7 @@
    <children>
       <AnchorPane layoutX="454.0" layoutY="255.0" prefHeight="355.0" prefWidth="573.0">
          <children>
-            <Button alignment="TOP_CENTER" contentDisplay="TOP" layoutX="30.0" layoutY="67.0" mnemonicParsing="false" onAction="#terminKlient" prefHeight="99.0" prefWidth="242.0" style="-fx-background-color: #e27171;" text="WYPOŻYCZ SAMOCHÓD">
+            <Button alignment="TOP_CENTER" contentDisplay="TOP" layoutX="30.0" layoutY="67.0" mnemonicParsing="false" onAction="#wypozyczenieKlient" prefHeight="99.0" prefWidth="242.0" style="-fx-background-color: #e27171;" text="WYPOŻYCZ SAMOCHÓD">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>

@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.layout.AnchorPane;
 import wypozyczalnia.UserSession;
@@ -22,6 +23,8 @@ public class TerminKlientController implements Initializable {
     private DatePicker dataPoczatek;
     @FXML
     private DatePicker dataKoniec;
+    @FXML
+    private Button add_wypo;
 
 
     public void initialize(URL location, ResourceBundle resources) {

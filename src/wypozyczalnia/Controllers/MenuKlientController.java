@@ -28,6 +28,15 @@ public class MenuKlientController implements Initializable {
         Platform.exit();
     }
 
+    public void wypozyczenieKlient(ActionEvent event) throws IOException {
+ {
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/wypozyczenieKlient.fxml"));
+            klientPane.getChildren().setAll(pane);
+        }
+    }
+
+
+
     public void terminKlient(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/terminKlient.fxml"));
         klientPane.getChildren().setAll(pane);
