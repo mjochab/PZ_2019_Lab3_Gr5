@@ -312,7 +312,7 @@ public class zarzadzajPojazdamiController implements Initializable {
         //int Przebieg = Integer.parseInt(przebieg);
         String cena = String.valueOf(autoCena.getCharacters());
         String dostepnosc = String.valueOf(autoDostep.getValue());
-        Integer user_id = 37;
+        Integer user_id = 1000;
         //float Cena = Float.parseFloat(cena);
         /*System.out.println(marka);
         System.out.println(model);

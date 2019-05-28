@@ -62,7 +62,33 @@ public class historiaWypozyczenController implements Initializable {
         pracownikPane.getChildren().setAll(pane);
     }
 
+    /*private void zaladujwypozyczenia() {
+        nazwauzytkownika.setText(username);
+        Connection con = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
 
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+
+
+            ps = con.prepareStatement("SELECT * FROM h.historia_wypozyczen, k.klient WHERE k.klient_id=h.klient_id AND login = ?");
+
+            ps.setString(1,System.getProperty("user.name"));
+            rs = ps.executeQuery();
+
+
+
+
+        } catch(ClassNotFoundException | SQLException e){
+            e.printStackTrace();
+        }
+
+    }
+
+    String username = System.getProperty("user.name");
+*/
 
     String userid;
     public void displayName (String usernamedisplay){
@@ -74,6 +100,8 @@ public class historiaWypozyczenController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+        System.out.println(UserSession.getID());
 
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         java.util.Date date = new java.util.Date();
@@ -89,9 +117,9 @@ public class historiaWypozyczenController implements Initializable {
                     "                    ON samochod.samochod_id = wypozyczenie.samochod_id\n" +
                     "                    JOIN user\n" +
                     "                    ON wypozyczenie.user_id = user.user_id\n" +
-                    "                    AND user.rodzaj = \"worker\" AND wypozyczenie.user_id=" +UserSession.getID()+
-                    "                    AND wypozyczenie.data_do <"+"'"+dateFormat.format(date)+"'" );
-            //   "WHERE user.user_id= 47");
+                    "                    WHERE user.rodzaj = \"worker\"\n" +
+                    "                    AND wypozyczenie.data_do <"+"'"+dateFormat.format(date)+"' AND wypozyczenie.user_id ="+UserSession.getID() );
+                 //   "WHERE user.user_id= 47");
 
 
             while (rs.next()) {
