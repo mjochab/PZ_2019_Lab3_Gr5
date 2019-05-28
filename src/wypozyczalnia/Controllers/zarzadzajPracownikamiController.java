@@ -148,6 +148,25 @@ public class zarzadzajPracownikamiController implements Initializable {
 
     }
 
+    private boolean walidacjaLogin(){
+        Pattern p = Pattern.compile("([A-ZĄĘŁŃÓŚŹŻ0-9][a-ząćęłńóśźż0-9]+)");
+        Matcher m = p.matcher(userLogin.getText());
+
+        if(m.find() && m.group().equals(userLogin.getText())){
+            return true;
+        }else
+        {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Informacja");
+            alert.setHeaderText(null);
+            alert.setContentText("Znaki specjalne w imieniu nie są obsługiwane");
+            alert.showAndWait();
+
+            return false;
+        }
+
+    }
+
     private boolean walidacjaNazwisko(){
         Pattern p = Pattern.compile("[A-ZĄĘŁŃÓŚŹŻ][a-ząćęłńóśźż]+");
         Matcher m = p.matcher(userNazwisko.getText());
@@ -283,7 +302,7 @@ public class zarzadzajPracownikamiController implements Initializable {
         TablePosition pozycja = tabelka.getSelectionModel().getSelectedCells().get(0);
         int index = pozycja.getRow();
 
-        if (walidacjaTelefonu() & walidacjaPol() & walidacjaImie() & walidacjaNazwisko() & walidacjaMiejscowosc() & walidacjaEmail() & walidacjaPesel() & walidacjaDaty())
+        if (walidacjaLogin() & walidacjaTelefonu() & walidacjaPol() & walidacjaImie() & walidacjaNazwisko() & walidacjaMiejscowosc() & walidacjaEmail() & walidacjaPesel() & walidacjaDaty())
             try {
 
                 Class.forName("com.mysql.cj.jdbc.Driver");
@@ -318,8 +337,6 @@ public class zarzadzajPracownikamiController implements Initializable {
         }
 
     public void usunPracownika(ActionEvent event) throws IOException {
-
-        TablePosition pozycja = tabelka.getSelectionModel().getSelectedCells().get(0);
         int userid = Integer.parseInt(useridL.getText());
 
         try {
@@ -334,10 +351,9 @@ public class zarzadzajPracownikamiController implements Initializable {
             alert.setHeaderText(null);
             alert.setContentText("Pomyślnie usunięto pracownika!");
             alert.showAndWait();
-
+            tabelka.refresh();
 
             stmt2.executeUpdate();
-
 
         }catch (Exception e)
         {
@@ -345,7 +361,6 @@ public class zarzadzajPracownikamiController implements Initializable {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/zarzadzajPracownikami.fxml"));
         adminPane.getChildren().setAll(pane);
 
-        tabelka.refresh();
     }
 
     public void dodajPracownika(ActionEvent event) throws IOException{
@@ -358,7 +373,7 @@ public class zarzadzajPracownikamiController implements Initializable {
         String miejscowosc = String.valueOf(userMiejscowosc.getCharacters());
         String telefon = String.valueOf(userTelefon.getCharacters());
         String email = String.valueOf(userEmail.getCharacters());
-        if (walidacjaTelefonu() & walidacjaPol() & walidacjaImie() & walidacjaNazwisko() & walidacjaMiejscowosc() & walidacjaEmail() & walidacjaPesel() & walidacjaDaty())
+        if (walidacjaLogin() & walidacjaTelefonu() & walidacjaPol() & walidacjaImie() & walidacjaNazwisko() & walidacjaMiejscowosc() & walidacjaEmail() & walidacjaPesel() & walidacjaDaty())
              try {
                  Class.forName("com.mysql.cj.jdbc.Driver");
                  Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
@@ -475,7 +490,7 @@ public class zarzadzajPracownikamiController implements Initializable {
                     Class.forName("com.mysql.cj.jdbc.Driver");
                     Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
 
-                    PreparedStatement stmt = con.prepareStatement("SELECT * FROM `user` WHERE `rodzaj` = 'worker'");
+                    PreparedStatement stmt = con.prepareStatement("Select * FROM user WHERE `rodzaj` = 'worker' ORDER BY user_id LIMIT " + index);
                     String zapytanie = "Select * FROM user WHERE `rodzaj` = 'worker' ORDER BY user_id LIMIT " + index;
                     ResultSet rs = stmt.executeQuery(zapytanie);
                     String a = "0";

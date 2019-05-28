@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="adminPane" prefHeight="900.0" prefWidth="1400.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.zarzadzajPracownikamiController">
+<AnchorPane fx:id="adminPane" prefHeight="900.0" prefWidth="1400.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.zarzadzajPracownikamiController">
     <children>
         <TextField fx:id="userLogin" layoutX="38.0" layoutY="251.0" prefHeight="25.0" prefWidth="162.0" promptText="Login" />
         <TextField fx:id="userHaslo" accessibleRole="PASSWORD_FIELD" layoutX="38.0" layoutY="290.0" prefHeight="25.0" prefWidth="162.0" promptText="Hasło" />
@@ -28,14 +28,15 @@
       <DatePicker fx:id="userData" layoutX="38.0" layoutY="563.0" prefHeight="25.0" prefWidth="162.0" promptText="Data urodzenia" />
         <TableView fx:id="tabelka" layoutX="228.0" layoutY="184.0" prefHeight="534.0" prefWidth="1093.0">
             <columns>
+                <TableColumn fx:id="col_login" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="97.0" text="Login" />
+            <TableColumn fx:id="col_haslo" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="97.0" text="Hasło" />
                 <TableColumn fx:id="col_imie" prefWidth="109.00003051757812" text="Imię" />
                 <TableColumn fx:id="col_nazwisko" prefWidth="102.0" text="Nazwisko" />
-                <TableColumn fx:id="col_login" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="97.0" text="Login" />
-                <TableColumn fx:id="col_telefon" minWidth="88.0" prefWidth="110.0" text="Telefon" />
-                <TableColumn fx:id="col_data" prefWidth="143.0" text="Data_ur" />
-                <TableColumn fx:id="col_miejscowosc" prefWidth="145.0" text="Miejscowość" />
-                <TableColumn fx:id="col_email" prefWidth="176.0" text="Email" />
-                <TableColumn fx:id="col_pesel" prefWidth="194.0" text="Pesel" />
+                <TableColumn fx:id="col_data" prefWidth="121.5999755859375" text="Data_ur" />
+                <TableColumn fx:id="col_miejscowosc" prefWidth="135.199951171875" text="Miejscowość" />
+                <TableColumn fx:id="col_pesel" prefWidth="140.00006103515625" text="Pesel" />
+                <TableColumn fx:id="col_telefon" minWidth="88.0" prefWidth="137.60009765625" text="Telefon" />
+                <TableColumn fx:id="col_email" prefWidth="149.5999999999999" text="Email" />
             </columns>
         </TableView>
       <GridPane prefHeight="68.0" prefWidth="1400.0" style="-fx-background-color: #6d0707;">
@@ -249,5 +250,6 @@
          </font>
       </Button>
       <Button fx:id="btnclear" layoutX="60.0" layoutY="203.0" mnemonicParsing="false" onAction="#clearFields" text="Wyczyść pola" />
+      <Label fx:id="useridL" layoutX="90.0" layoutY="167.0" text="Label" visible="false" />
     </children>
 </AnchorPane>
