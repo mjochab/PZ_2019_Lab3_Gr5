@@ -34,10 +34,20 @@ public class LoginController implements Initializable {
     @FXML
     private Button dodajInserty;
 
+    @FXML
+    private Button pracPane;
+    @FXML
+    private Button adminPane;
+    @FXML
+    private Button klientPane;
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         notyfikacja_lbl.setVisible(false);
+        pracPane.setVisible(false);
+        klientPane.setVisible(false);
+        adminPane.setVisible(false);
     }
 
     public void loadMenuAdmin(ActionEvent event) throws IOException {

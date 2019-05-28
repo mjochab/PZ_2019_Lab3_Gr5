@@ -89,8 +89,11 @@ public class PodWynController implements Initializable {
            stmt.setString(3,doo);
            stmt.setString(4,ddo);
            stmt.executeUpdate();
+           PreparedStatement stmt1 = con.prepareStatement("UPDATE `samochod` SET `dostepnosc`='NIE' WHERE `samochod_id` =" +sid);
+           stmt1.executeUpdate();
 
-
+            RentCar.cleanRentCar();
+            RentID.cleanUserSession();
            AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/menuKlient.fxml"));
            klientPane.getChildren().setAll(pane);
        }catch (Exception e)
