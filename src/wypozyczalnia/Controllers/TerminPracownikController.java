@@ -6,41 +6,73 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.layout.AnchorPane;
+import wypozyczalnia.RentCar;
+import wypozyczalnia.RentID;
 import wypozyczalnia.UserSession;
-
+import wypozyczalnia.UserSession;
 import java.io.IOException;
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
 
 public class TerminPracownikController implements Initializable {
+
     @FXML
     private AnchorPane pracownikPane;
     @FXML
     private DatePicker dataPoczatek;
     @FXML
     private DatePicker dataKoniec;
+    @FXML
+    private Button add_wypo;
 
 
+    public void initialize(URL location, ResourceBundle resources) {
+
+    }
+
+    public void add_wypo(ActionEvent event) throws IOException {
 
 
-    public void logOut(ActionEvent event) throws IOException {
-        UserSession.cleanUserSession();
-        Platform.exit();
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/PodWynP.fxml"));
+        pracownikPane.getChildren().setAll(pane);
+
     }
 
     public void menuPracownik(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/menuPracownik.fxml"));
         pracownikPane.getChildren().setAll(pane);
     }
-    public void wypozyczeniePracownik(ActionEvent event) throws IOException {
-            if(walidacjaData()) {
-                AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/wypozyczeniePracownik.fxml"));
-                pracownikPane.getChildren().setAll(pane);
-            }
-        }
 
+    public void wypozyczeniePracownik(ActionEvent event) throws IOException {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
+        java.util.Date date = new java.util.Date();
+        //  System.out.println("Current Date : " + dateFormat.format(date));
+        if (walidacjaData()) {
+            RentCar.getInstance(dataKoniec.getValue().toString(), dataPoczatek.getValue().toString(), 0, 0, RentID.getSamochod_id());
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/wypozyczeniePracownik.fxml"));
+            pracownikPane.getChildren().setAll(pane);
+        }
+        else
+        {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Informacja");
+            alert.setHeaderText(null);
+            alert.setContentText("Data koncowa nieprawidłowa!");
+            alert.showAndWait();
+        }
+    }
+
+
+    public void logOut(ActionEvent event) throws IOException {
+        UserSession.cleanUserSession();
+        Platform.exit();
+    }
 
     private boolean walidacjaData()
     {
@@ -56,13 +88,6 @@ public class TerminPracownikController implements Initializable {
         }
         return true;
     }
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-
-
-    }
-
 
 
 }

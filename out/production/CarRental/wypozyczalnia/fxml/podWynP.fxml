@@ -3,22 +3,25 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Bloom?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="pracownikPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1400.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.PodWynPController">
-    <children>
-      <ImageView fitHeight="766.0" fitWidth="1392.0" layoutX="1.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
+<AnchorPane fx:id="pracownikPane" prefHeight="900.0" prefWidth="1400.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.PodWynPController">
+   <children>
+      <ImageView fitHeight="766.0" fitWidth="1327.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Icons/Logos/CarLog.png" />
          </image>
       </ImageView>
+      <BorderPane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="28.0" prefWidth="800.0" />
       <GridPane prefHeight="68.0" prefWidth="1400.0" style="-fx-background-color: #6d0707;">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
@@ -90,7 +93,7 @@
             </ImageView>
          </children>
       </GridPane>
-      <GridPane layoutX="1.0" layoutY="832.0" prefHeight="68.0" prefWidth="1400.0" style="-fx-background-color: #6d0707;">
+      <GridPane layoutY="832.0" prefHeight="68.0" prefWidth="1400.0" style="-fx-background-color: #6d0707;">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="707.0" />
@@ -161,9 +164,17 @@
             </ImageView>
          </children>
       </GridPane>
-      <AnchorPane layoutX="448.0" layoutY="278.0" opacity="0.95" prefHeight="345.0" prefWidth="504.0" style="-fx-background-color: #6d0707;">
+      <Label layoutX="534.0" layoutY="102.0" prefHeight="36.0" prefWidth="395.0" text="PODSUMOWANIE WYPOŻYCZENIA" textFill="#eeadad">
+         <font>
+            <Font size="25.0" />
+         </font>
+         <effect>
+            <Bloom />
+         </effect>
+      </Label>
+      <AnchorPane layoutX="480.0" layoutY="179.0" opacity="0.95" prefHeight="345.0" prefWidth="504.0" style="-fx-background-color: #6d0707;">
          <children>
-            <Button alignment="CENTER" layoutX="335.0" layoutY="278.0" mnemonicParsing="false" onAction="#menuPracownik" prefHeight="46.0" prefWidth="131.0" style="-fx-background-color: #e27171;" text="ZATWIERDŹ" textFill="#fffefe">
+            <Button alignment="CENTER" layoutX="335.0" layoutY="278.0" mnemonicParsing="false" onAction="#openMenu" prefHeight="46.0" prefWidth="131.0" style="-fx-background-color: #e27171;" text="POTWIERDŹ" textFill="#fffefe">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -183,28 +194,34 @@
                   <Bloom />
                </effect>
             </Label>
-            <Label layoutX="14.0" layoutY="87.0" text="Ilość dni:" textFill="#eeadad">
-               <font>
-                  <Font name="System Bold" size="19.0" />
-               </font>
-            </Label>
             <Label layoutX="14.0" layoutY="34.0" text="Nazwa pojazdu:" textFill="#eeadad">
                <font>
                   <Font name="System Bold" size="19.0" />
                </font>
             </Label>
-            <Label layoutX="14.0" layoutY="138.0" text="Koszt wypożyczenia:" textFill="#eeadad">
+            <Label layoutX="14.0" layoutY="84.0" text="Data Początkowa:" textFill="#eeadad">
                <font>
                   <Font name="System Bold" size="19.0" />
                </font>
             </Label>
-            <Label fx:id="markamodel_lbl" layoutX="180.0" layoutY="38.0" text="Label" />
-            <Label layoutX="128.0" layoutY="91.0" text="Label" />
-            <Label fx:id="cena_lbl" layoutX="224.0" layoutY="142.0" text="Label" />
+            <Label layoutX="14.0" layoutY="133.0" text="Data Końcowa:" textFill="#eeadad">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="184.0" text="Cena za dzień:" textFill="#eeadad">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <TextField fx:id="marka" disable="true" layoutX="213.0" layoutY="36.0" />
+            <TextField fx:id="dataod" disable="true" layoutX="213.0" layoutY="86.0" />
+            <TextField fx:id="datado" disable="true" layoutX="213.0" layoutY="135.0" />
+            <TextField fx:id="cena" disable="true" layoutX="213.0" layoutY="186.0" />
          </children>
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
       </AnchorPane>
-    </children>
+   </children>
 </AnchorPane>

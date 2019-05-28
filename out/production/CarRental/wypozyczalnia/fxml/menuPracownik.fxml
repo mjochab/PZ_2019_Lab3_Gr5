@@ -35,7 +35,7 @@
                   <Font name="System Bold" size="17.0" />
                </font>
             </Button>
-            <Button fx:id="wypozyczeniePracownik" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="275.0" layoutY="155.0" mnemonicParsing="false" onAction="#terminPracownik" prefHeight="99.0" prefWidth="242.0" style="-fx-background-color: #e27171;" text="WYPOŻYCZ SAMOCHÓD">
+            <Button alignment="TOP_CENTER" contentDisplay="TOP" layoutX="275.0" layoutY="155.0" mnemonicParsing="false" onAction="#terminPracownik" prefHeight="99.0" prefWidth="242.0" style="-fx-background-color: #e27171;" text="WYPOŻYCZ SAMOCHÓD">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>

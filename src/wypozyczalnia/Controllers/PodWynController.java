@@ -80,6 +80,7 @@ public class PodWynController implements Initializable {
         String sid = Integer.toString(RentID.getSamochod_id());
         String doo = dataod.getText();
         String ddo = datado.getText();
+
        try {
            Class.forName("com.mysql.cj.jdbc.Driver");
            Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
