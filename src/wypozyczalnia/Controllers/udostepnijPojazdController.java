@@ -18,6 +18,7 @@ import wypozyczalnia.UserSession;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -29,23 +30,31 @@ public class udostepnijPojazdController implements Initializable {
     private AnchorPane zarzadzajPojazdamiPane;
 
     @FXML
-    private TableView<ModelTablePojazdy> tabelka_pojazdy;
+    private DatePicker dpDataOd;
+
     @FXML
-    private TableColumn<ModelTablePojazdy, String> col_marka;
+    private DatePicker dpDataDo;
+
     @FXML
-    private TableColumn<ModelTablePojazdy, String> col_model;
+    private TableView<ModelTableUdostepnienie> tabelka_pojazdy;
     @FXML
-    private TableColumn<ModelTablePojazdy, String> col_rodzaj;
+    private TableColumn<ModelTableUdostepnienie, String> col_marka;
     @FXML
-    private TableColumn<ModelTablePojazdy, Integer> col_rocznik;
+    private TableColumn<ModelTableUdostepnienie, String> col_model;
     @FXML
-    private TableColumn<ModelTablePojazdy, String> col_paliwo;
+    private TableColumn<ModelTableUdostepnienie, String> col_rodzaj;
     @FXML
-    private TableColumn<ModelTablePojazdy, Integer> col_przebieg;
+    private TableColumn<ModelTableUdostepnienie, Integer> col_rocznik;
     @FXML
-    private TableColumn<ModelTablePojazdy, Integer> col_cena;
+    private TableColumn<ModelTableUdostepnienie, String> col_paliwo;
     @FXML
-    private TableColumn<ModelTablePojazdy, String> col_dostepnosc;
+    private TableColumn<ModelTableUdostepnienie, Integer> col_przebieg;
+    @FXML
+    private TableColumn<ModelTableUdostepnienie, Integer> col_cena;
+    @FXML
+    private TableColumn<ModelTableUdostepnienie, String> col_dataod;
+    @FXML
+    private TableColumn<ModelTableUdostepnienie, String> col_datado;
 
 
     @FXML private TextField autoMarka;
@@ -72,7 +81,7 @@ public class udostepnijPojazdController implements Initializable {
 
 
 
-    ObservableList<ModelTablePojazdy> oblist1 = FXCollections.observableArrayList();
+    ObservableList<ModelTableUdostepnienie> oblist1 = FXCollections.observableArrayList();
 
 
     public void usunAuto(ActionEvent event) throws  IOException{
@@ -176,7 +185,8 @@ public class udostepnijPojazdController implements Initializable {
         String przebieg = String.valueOf(autoPrzebieg.getCharacters());
         //int Przebieg = Integer.parseInt(przebieg);
         String cena = String.valueOf(autoCena.getCharacters());
-        String dostep = String.valueOf(autoDostep.getValue());
+        String dataod = dpDataOd.getValue().toString();
+        String datado = dpDataDo.getValue().toString();
         //float Cena = Float.parseFloat(cena);
         /*System.out.println(marka);
         System.out.println(model);
@@ -195,7 +205,7 @@ public class udostepnijPojazdController implements Initializable {
                 i++;
             }
 
-            PreparedStatement stmt = con.prepareStatement("INSERT INTO samochod VALUES(?,?,?,?,?,?,?,?,?)");
+            PreparedStatement stmt = con.prepareStatement("INSERT INTO samochod VALUES(?,?,?,?,?,?,?,?,?,?)");
             stmt.setInt(1, i);
             stmt.setString(2, marka);
             stmt.setString(3, model);
@@ -204,14 +214,15 @@ public class udostepnijPojazdController implements Initializable {
             stmt.setString(6, Paliwo);
             stmt.setString(7, przebieg);
             stmt.setString(8, cena);
-            stmt.setString(9, dostep);
+            stmt.setString(9, dataod);
+            stmt.setString(10, datado);
 
             stmt.executeUpdate();
 
             rs = stmt2.executeQuery("SELECT * FROM `samochod` WHERE samochod_id = (SELECT MAX(samochod_id) FROM samochod)");
             if(rs.next()) {
                 System.out.println(rs.getString(2));
-                oblist1.add(new ModelTablePojazdy(rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),rs.getString(9)));            }
+                 oblist1.add(new ModelTableUdostepnienie(rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),rs.getString(9),rs.getString(10)));            }
 
         }catch (Exception e)
         {
@@ -243,8 +254,8 @@ public class udostepnijPojazdController implements Initializable {
             ResultSet rs = con.createStatement().executeQuery("SELECT * FROM `samochod` WHERE `user_id` = '37'");
 
             while (rs.next()) {
-                //oblist1.add(new ModelTablePojazdy(rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7)));
-                oblist1.add(new ModelTablePojazdy(rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),rs.getString(9)));            }
+                //oblist1.add(new ModelTableUdostepnienie(rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7)));
+                oblist1.add(new ModelTableUdostepnienie(rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),rs.getString(9),rs.getString(10)));            }
 
 
 
@@ -260,14 +271,15 @@ public class udostepnijPojazdController implements Initializable {
         col_paliwo.setCellValueFactory(new PropertyValueFactory<>("paliwo"));
         col_przebieg.setCellValueFactory(new PropertyValueFactory<>("przebieg"));
         col_cena.setCellValueFactory(new PropertyValueFactory<>("cena"));
-        col_dostepnosc.setCellValueFactory(new PropertyValueFactory<>("dostepnosc"));
+        col_dataod.setCellValueFactory(new PropertyValueFactory<>("data_od"));
+        col_datado.setCellValueFactory(new PropertyValueFactory<>("data_do"));
 
 
         tabelka_pojazdy.setItems(oblist1);
 
 
 
-        autoDostep.getItems().addAll("TAK","NIE");
+
         autoPaliwo.getItems().addAll("Diesel","Benzyna","Gaz");
         autoRodzaj.getItems().addAll("Sedan","Kombi","Hatchback","Coupe","Limuzyna","Suv","Kabriolet","Roadster");
 
@@ -312,7 +324,8 @@ public class udostepnijPojazdController implements Initializable {
                         dane.add(rs2.getString("paliwo"));
                         dane.add(rs2.getString("przebieg"));
                         dane.add(rs2.getString("cena"));
-                        dane.add(rs2.getString("dostepnosc"));
+                        dane.add(rs2.getString("data_od"));
+                        dane.add(rs2.getString("data_do"));
 
                         autoMarka.setText(String.valueOf(dane.get(0)));
                         autoModel.setText(String.valueOf(dane.get(1)));
@@ -321,7 +334,8 @@ public class udostepnijPojazdController implements Initializable {
                         autoPaliwo.setValue(String.valueOf(dane.get(4)));
                         autoPrzebieg.setText(String.valueOf(dane.get(5)));
                         autoCena.setText(String.valueOf(dane.get(6)));
-                        autoDostep.setValue(String.valueOf(dane.get(7)));
+                        dpDataOd.setValue(LocalDate.parse(dane.get(7)));
+                        dpDataDo.setValue(LocalDate.parse(dane.get(8)));
 
                     }
 

@@ -239,6 +239,25 @@ public class zarzadzajUzytkownikamiController implements Initializable {
 
     }
 
+    private boolean walidacjaLogin(){
+        Pattern p = Pattern.compile("([A-ZĄĘŁŃÓŚŹŻ0-9][a-ząćęłńóśźż0-9]+)");
+        Matcher m = p.matcher(userLogin.getText());
+
+        if(m.find() && m.group().equals(userLogin.getText())){
+            return true;
+        }else
+        {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Informacja");
+            alert.setHeaderText(null);
+            alert.setContentText("Znaki specjalne w imieniu nie są obsługiwane");
+            alert.showAndWait();
+
+            return false;
+        }
+
+    }
+
     public void modujUser(ActionEvent event) throws  IOException {
         String imie = String.valueOf(userImie.getCharacters());
         String nazwisko = String.valueOf(userNazwisko.getCharacters());
@@ -254,7 +273,7 @@ public class zarzadzajUzytkownikamiController implements Initializable {
         TablePosition pozycja = tabelka.getSelectionModel().getSelectedCells().get(0);
         int index = pozycja.getRow();
 
-        if (walidacjaTelefonu() & walidacjaPol() & walidacjaImie() & walidacjaNazwisko() & walidacjaMiejscowosc() & walidacjaEmail() & walidacjaPesel() & walidacjaDaty())
+        if (walidacjaLogin() & walidacjaTelefonu() & walidacjaPol() & walidacjaImie() & walidacjaNazwisko() & walidacjaMiejscowosc() & walidacjaEmail() & walidacjaPesel() & walidacjaDaty())
             try {
 
                 Class.forName("com.mysql.cj.jdbc.Driver");
@@ -356,7 +375,7 @@ public class zarzadzajUzytkownikamiController implements Initializable {
         String telefon = String.valueOf(userTelefon.getCharacters());
         String email = String.valueOf(userEmail.getCharacters());
 
-        if (walidacjaTelefonu() & walidacjaPol() & walidacjaImie() & walidacjaNazwisko() & walidacjaMiejscowosc() & walidacjaEmail() & walidacjaPesel() & walidacjaDaty())
+        if (walidacjaLogin() & walidacjaTelefonu() & walidacjaPol() & walidacjaImie() & walidacjaNazwisko() & walidacjaMiejscowosc() & walidacjaEmail() & walidacjaPesel() & walidacjaDaty())
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
