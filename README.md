@@ -28,6 +28,10 @@
 
 ## Diagramy:
 
+####   - ERD:
+   ![baza](https://user-images.githubusercontent.com/47949957/58460528-22924200-812e-11e9-8695-229be85098a1.PNG)
+
+
 ####   - Przypadków użycia:
    ![diagram_przypadkow_uzycia](https://user-images.githubusercontent.com/47949957/53828833-05126980-3f7f-11e9-96ee-613342b55891.png)
    
