@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="klientPane" prefHeight="900.0" prefWidth="1400.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.TerminKlientController">
+<AnchorPane fx:id="klientPane" prefHeight="900.0" prefWidth="1400.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.TerminKlientController">
    <children>
       <ImageView fitHeight="766.0" fitWidth="1392.0" layoutX="7.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -198,7 +198,7 @@
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button fx:id="add_wypo" layoutX="266.0" layoutY="277.0" mnemonicParsing="false" onAction="#podWyn" prefHeight="48.0" prefWidth="165.0" style="-fx-background-color: #e27171;" text="ZATWIERDŹ">
+            <Button layoutX="266.0" layoutY="277.0" mnemonicParsing="false" onAction="#wypozyczenieKlient" prefHeight="48.0" prefWidth="165.0" style="-fx-background-color: #e27171;" text="ZATWIERDŹ">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                      <image>

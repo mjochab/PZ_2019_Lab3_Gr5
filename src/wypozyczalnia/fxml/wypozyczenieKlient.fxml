@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="klientPane" prefHeight="900.0" prefWidth="1400.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.WypozyczenieKlientController">
+<AnchorPane fx:id="klientPane" prefHeight="900.0" prefWidth="1400.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.WypozyczenieKlientController">
    <children>
       <BorderPane prefHeight="72.0" prefWidth="700.0" />
        <TableView fx:id="tabelka_pojazdy" layoutX="180.0" layoutY="255.0" prefHeight="449.0" prefWidth="1025.0">
@@ -35,7 +35,7 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Button layoutX="1040.0" layoutY="738.0" mnemonicParsing="false" onAction="#wypozycz" prefHeight="48.0" prefWidth="165.0" style="-fx-background-color: #e27171;" text="WYPOŻYCZ">
+      <Button layoutX="1040.0" layoutY="738.0" mnemonicParsing="false" onAction="#podWyn" prefHeight="48.0" prefWidth="165.0" style="-fx-background-color: #e27171;" text="WYPOŻYCZ">
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -221,9 +221,9 @@
             <Bloom />
          </effect>
       </Label>
-      <Label fx:id="marka_lbl" layoutX="315.0" layoutY="110.0" text="Label" />
-      <Label fx:id="model_lbl" layoutX="315.0" layoutY="158.0" text="Label" />
-      <Label fx:id="dostep_lbl" layoutX="323.0" layoutY="201.0" text="Label" />
-      <Label fx:id="samochod_id_lbl" layoutX="579.0" layoutY="184.0" text="Label" />
+      <Label fx:id="marka_lbl" layoutX="315.0" layoutY="110.0" text="Label" visible="false" />
+      <Label fx:id="model_lbl" layoutX="315.0" layoutY="158.0" text="Label" visible="false" />
+      <Label fx:id="dostep_lbl" layoutX="323.0" layoutY="201.0" text="Label" visible="false" />
+      <Label fx:id="samochod_id_lbl" layoutX="579.0" layoutY="184.0" text="Label" textFill="WHITE" />
    </children>
 </AnchorPane>

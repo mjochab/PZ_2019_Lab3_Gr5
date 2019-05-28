@@ -3,7 +3,6 @@ package wypozyczalnia;
 public final class UserSession {
 
     private static UserSession instance;
-
     private static String login;
     private static String haslo;
     private static String rola;
@@ -14,6 +13,7 @@ public final class UserSession {
         this.haslo = haslo;
         this.rola = rola;
         this.user_id = user_id;
+
     }
 
     public static UserSession getInstance(String login, String haslo, String rola, int user_id) {
@@ -38,6 +38,8 @@ public final class UserSession {
     public static int getID() {
         return user_id;
     }
+
+
 
 
     public static void cleanUserSession() {

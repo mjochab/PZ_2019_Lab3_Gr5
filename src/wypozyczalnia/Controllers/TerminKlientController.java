@@ -9,8 +9,10 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.layout.AnchorPane;
+import wypozyczalnia.RentCar;
+import wypozyczalnia.RentID;
 import wypozyczalnia.UserSession;
-
+import wypozyczalnia.UserSession;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -30,18 +32,25 @@ public class TerminKlientController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
     }
+    public void add_wypo (ActionEvent event) throws IOException {
 
+
+
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/PodWyn.fxml"));
+            klientPane.getChildren().setAll(pane);
+
+    }
     public void menuKlient(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/menuKlient.fxml"));
         klientPane.getChildren().setAll(pane);
     }
 
     public void wypozyczenieKlient(ActionEvent event) throws IOException {
-        if(walidacjaData()) {
+            RentCar.getInstance(dataKoniec.getValue().toString(), dataPoczatek.getValue().toString(), 0, 0, RentID.getSamochod_id());
             AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/wypozyczenieKlient.fxml"));
             klientPane.getChildren().setAll(pane);
         }
-    }
+
 
     public void logOut(ActionEvent event) throws IOException {
         UserSession.cleanUserSession();

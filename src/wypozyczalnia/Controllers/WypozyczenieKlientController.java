@@ -14,7 +14,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import wypozyczalnia.DBConnector;
 import wypozyczalnia.UserSession;
-
+import wypozyczalnia.RentID;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
@@ -22,6 +22,8 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
 public class WypozyczenieKlientController implements Initializable {
 
@@ -56,7 +58,7 @@ public class WypozyczenieKlientController implements Initializable {
     private Label samochod_id_lbl;
     @FXML
     private Button wypozycz;
-
+    String samochod_id;
     String marka;
 
     public void menuKlient(ActionEvent event) throws IOException {
@@ -65,29 +67,6 @@ public class WypozyczenieKlientController implements Initializable {
     }
 
     public void wypozycz(ActionEvent event) throws IOException {
-    String samochod_id;
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
-            PreparedStatement stmt2 = con.prepareStatement("Select MAX(samochod_id) FROM samochod");
-            ResultSet rs = stmt2.executeQuery("Select * FROM samochod");
-            int i = 1;
-            while (rs.next()) {
-                i++;
-            }
-
-
-            rs = stmt2.executeQuery("SELECT * FROM `samochod` WHERE samochod_id = (SELECT MAX(samochod_id) FROM samochod)");
-            if (rs.next()) {
-                System.out.println(rs.getString(2));
-                oblist1.add(new ModelTableWypPoj(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9)));
-            }
-
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-
-
 
         AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/terminKlient.fxml"));
         klientPane.getChildren().setAll(pane);
@@ -106,6 +85,10 @@ public class WypozyczenieKlientController implements Initializable {
 
     public void podWyn(ActionEvent event) throws IOException {
         if(walidacjaDostep()) {
+            String aaa = samochod_id_lbl.getText();
+
+            RentID.getInstance(Integer.parseInt(aaa));
+
             AnchorPane pane = FXMLLoader.load(getClass().getResource("../fxml/podWyn.fxml"));
             klientPane.getChildren().setAll(pane);
         }
@@ -141,7 +124,7 @@ public class WypozyczenieKlientController implements Initializable {
         try {
             Connection con = DBConnector.getConnection();
 
-            ResultSet rs = con.createStatement().executeQuery("select * from `samochod`");
+            ResultSet rs = con.createStatement().executeQuery("SELECT * FROM `samochod` WHERE `dostepnosc` = 'TAK'");
 
             while (rs.next()) {
                 //oblist1.add(new ModelTableWypPoj(rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7)));
@@ -169,7 +152,6 @@ public class WypozyczenieKlientController implements Initializable {
         tabelka_pojazdy.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
-
                 String abc;
                 abc = tabelka_pojazdy.toString();
                 System.out.println(abc);
@@ -184,7 +166,7 @@ public class WypozyczenieKlientController implements Initializable {
                     Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
 
                     PreparedStatement stmt = con.prepareStatement("SELECT * FROM samochod");
-                    String zapytanie = "Select * FROM samochod ORDER BY samochod_id LIMIT " + index;
+                    String zapytanie = "Select * FROM samochod WHERE dostepnosc = 'TAK' ORDER BY samochod_id LIMIT " + index;
                     ResultSet rs = stmt.executeQuery(zapytanie);
                     String a = "0";
                     int i=0;
@@ -202,20 +184,15 @@ public class WypozyczenieKlientController implements Initializable {
                         dane.add(rs2.getString("samochod_id"));
                         dane.add(rs2.getString("marka"));
                         dane.add(rs2.getString("model"));
-                        dane.add(rs2.getString("rodzaj"));
-                        dane.add(rs2.getString("rocznik"));
-                        dane.add(rs2.getString("paliwo"));
-                        dane.add(rs2.getString("przebieg"));
-                        dane.add(rs2.getString("cena"));
                         dane.add(rs2.getString("dostepnosc"));
-
 
                         samochod_id_lbl.setText(String.valueOf(dane.get(0)));
                         marka_lbl.setText(String.valueOf(dane.get(1)));
                         model_lbl.setText(String.valueOf(dane.get(2)));
-                        dostep_lbl.setText(String.valueOf(dane.get(8)));
+                        dostep_lbl.setText(String.valueOf(dane.get(3)));
 
-                        
+
+
                     }
 
 
@@ -228,7 +205,6 @@ public class WypozyczenieKlientController implements Initializable {
                     alert.showAndWait();
                 };
 
-                System.out.println(marka);
 
             };
 
