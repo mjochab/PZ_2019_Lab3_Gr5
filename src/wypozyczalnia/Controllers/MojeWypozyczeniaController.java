@@ -143,6 +143,7 @@ public class MojeWypozyczeniaController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         java.util.Date date = new java.util.Date();
         //  System.out.println("Current Date : " + dateFormat.format(date));
@@ -158,7 +159,7 @@ public class MojeWypozyczeniaController implements Initializable {
                     "                    ON samochod.samochod_id = wypozyczenie.samochod_id\n" +
                     "                    JOIN user\n" +
                     "                    ON wypozyczenie.user_id = user.user_id\n" +
-                    "                    AND user.rodzaj = \"klient\" AND wypozyczenie.user_id=" +UserSession.getID()+
+                    "                    AND user.rodzaj = \"worker\" AND wypozyczenie.user_id=" +UserSession.getID()+
                     "                    AND wypozyczenie.data_do >"+"'"+dateFormat.format(date)+"'" );
             //   "WHERE user.user_id= 47");
 
@@ -171,6 +172,7 @@ public class MojeWypozyczeniaController implements Initializable {
         } catch (SQLException ex) {
             Logger.getLogger(historiaWypozyczenController.class.getName()).log(Level.SEVERE, null, ex);
         }
+
 
 
         col_marka.setCellValueFactory(new PropertyValueFactory<>("marka"));

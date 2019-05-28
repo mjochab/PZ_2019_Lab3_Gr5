@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 28 Maj 2019, 01:51
+-- Czas generowania: 28 Maj 2019, 01:58
 -- Wersja serwera: 10.1.38-MariaDB
 -- Wersja PHP: 7.3.3
 
@@ -135,7 +135,6 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `login`, `haslo`, `imie`, `nazwisko`, `data_urodzenia`, `miejscowosc`, `tel`, `email`, `pesel`, `rodzaj`) VALUES
-(7, 'pracownik', 'pracownik', 'Lukasz', 'Kowalski', '1996-01-02', 'Sanok', 123456789, 'kofcio0@vp.pl', '96012012345', 'worker'),
 (38, 'klient1', 'klient1', 'Jan', 'Nowak', '1993-12-12', 'Lancut', 535123535, 'email1@email.pl', '93121212345', 'klient'),
 (42, 'klient2', 'klient3', 'Jan', 'Nowak', '1993-12-12', 'Lancut', 535000123, 'email2@email.pl', '93121254321', 'klient'),
 (43, 'klient3', 'klient3', 'Jan', 'Nowak', '1993-12-12', 'Łańcut', 535000500, 'email3@email.pl', '93121212543', 'klient'),
