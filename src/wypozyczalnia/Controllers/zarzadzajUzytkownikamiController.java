@@ -240,7 +240,7 @@ public class zarzadzajUzytkownikamiController implements Initializable {
     }
 
     private boolean walidacjaLogin(){
-        Pattern p = Pattern.compile("([A-ZĄĘŁŃÓŚŹŻ0-9][a-ząćęłńóśźż0-9]+)");
+        Pattern p = Pattern.compile("[a-zA-Z0-9]+");
         Matcher m = p.matcher(userLogin.getText());
 
         if(m.find() && m.group().equals(userLogin.getText())){
@@ -250,7 +250,7 @@ public class zarzadzajUzytkownikamiController implements Initializable {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Informacja");
             alert.setHeaderText(null);
-            alert.setContentText("Znaki specjalne w imieniu nie są obsługiwane");
+            alert.setContentText("Znaki specjalne w loginie nie są obsługiwane");
             alert.showAndWait();
 
             return false;
