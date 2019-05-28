@@ -1,5 +1,8 @@
 package wypozyczalnia.Controllers;
 
+import com.itextpdf.text.Document;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -15,6 +18,7 @@ import javafx.scene.layout.AnchorPane;
 import wypozyczalnia.DBConnector;
 import wypozyczalnia.UserSession;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
@@ -450,6 +454,43 @@ public class zarzadzajUzytkownikamiAdminController implements Initializable  {
 
     }
 
+    public void generujRaport(ActionEvent event) {
+        try{
+
+            String file_name="Lista klientow.pdf";
+            Document document = new Document();
+            PdfWriter.getInstance(document, new FileOutputStream(file_name));
+            document.open();
+
+            Paragraph para1 = new Paragraph("Aktualny spis klientów: \n\n\n");
+            document.add(para1);
+
+            Connection connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1/projekt_zespolowe?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+
+
+            PreparedStatement ps = null;
+            ResultSet rs = null;
+
+            String query="SELECT * FROM user WHERE `rodzaj` = 'klient'";
+            ps=connection.prepareStatement(query);
+            rs=ps.executeQuery();
+
+            while(rs.next()){
+                Paragraph para = new Paragraph(rs.getString("user_id")+ " "+rs.getString("login")+ " "+rs.getString("imie")+ " "+rs.getString("nazwisko")+ " "+rs.getString("data_urodzenia")+ " "+rs.getString("miejscowosc"));
+                document.add(para);
+                document.add(new Paragraph(" "));
+            }
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Sukces");
+            alert.setHeaderText("Pomyślnie wygenerowano PDF!");
+            alert.showAndWait();
+            document.close();
+
+        }
+        catch (Exception e){
+            System.err.println(e);
+        }
+    }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
