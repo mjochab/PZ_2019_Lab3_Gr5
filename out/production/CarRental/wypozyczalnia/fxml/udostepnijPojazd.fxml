@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -15,13 +16,13 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="pracownikPane" prefHeight="900.0" prefWidth="1400.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.udostepnijPojazdController">
+<AnchorPane fx:id="pracownikPane" prefHeight="900.0" prefWidth="1400.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wypozyczalnia.Controllers.udostepnijPojazdController">
    <children>
       <TextField fx:id="autoModel" layoutX="12.0" layoutY="265.0" prefHeight="31.0" prefWidth="215.0" promptText="Model" />
       <TextField fx:id="autoRocznik" layoutX="12.0" layoutY="381.0" prefHeight="31.0" prefWidth="215.0" promptText="Rocznik" />
       <TextField fx:id="autoPrzebieg" layoutX="12.0" layoutY="457.0" prefHeight="31.0" prefWidth="215.0" promptText="Przebieg" />
       <TextField fx:id="autoCena" layoutX="12.0" layoutY="497.0" prefHeight="31.0" prefWidth="215.0" promptText="Cena" />
-      <TableView fx:id="tabelka_pojazdy" layoutX="251.0" layoutY="208.0" prefHeight="523.0" prefWidth="1008.0">
+      <TableView fx:id="tabelka_pojazdy" layoutX="251.0" layoutY="208.0" prefHeight="522.0" prefWidth="1134.0">
          <columns>
             <TableColumn fx:id="col_marka" prefWidth="80.99996948242188" text="Marka" />
             <TableColumn fx:id="col_model" prefWidth="145.00003051757812" text="Model" />
@@ -30,7 +31,8 @@
             <TableColumn fx:id="col_paliwo" prefWidth="140.0" text="Paliwo" />
             <TableColumn fx:id="col_przebieg" prefWidth="150.0" text="Przebieg" />
             <TableColumn fx:id="col_cena" prefWidth="126.0" text="Cena" />
-            <TableColumn fx:id="col_dostepnosc" prefWidth="120.0" text="Dostęp" />
+            <TableColumn fx:id="col_dataod" prefWidth="127.0" text="Data od" />
+            <TableColumn fx:id="col_datado" prefWidth="123.0" text="Data do" />
          </columns>
       </TableView>
       <GridPane prefHeight="68.0" prefWidth="1400.0" style="-fx-background-color: #6d0707;">
@@ -176,13 +178,7 @@
          </children>
       </GridPane>
       <TextField fx:id="autoMarka" layoutX="12.0" layoutY="303.0" prefHeight="31.0" prefWidth="215.0" promptText="Marka" />
-      <Label layoutX="10.0" layoutY="541.0" prefHeight="20.0" prefWidth="153.0" text="Dostępność (tak/nie):" textFill="#ddc4c4">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <ChoiceBox fx:id="autoDostep" layoutX="166.0" layoutY="536.0" prefHeight="31.0" prefWidth="61.0" />
-      <Button layoutX="105.0" layoutY="583.0" mnemonicParsing="false" onAction="#dodajAuto" prefHeight="48.0" prefWidth="122.0" style="-fx-background-color: #e27171;" text="DODAJ">
+      <Button layoutX="110.0" layoutY="637.0" mnemonicParsing="false" onAction="#dodajAuto" prefHeight="48.0" prefWidth="122.0" style="-fx-background-color: #e27171;" text="DODAJ">
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -242,7 +238,7 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Label layoutX="599.0" layoutY="121.0" prefHeight="36.0" prefWidth="313.0" text="ZARZĄDZANIE POJAZDAMI" textFill="#eeadad">
+      <Label layoutX="599.0" layoutY="121.0" prefHeight="36.0" prefWidth="313.0" text="UDOSTĘPNIJ SWÓJ POJAZD" textFill="#eeadad">
          <font>
             <Font size="25.0" />
          </font>
@@ -263,5 +259,7 @@
          </font>
       </Label>
       <Button layoutX="52.0" layoutY="223.0" mnemonicParsing="false" onAction="#clearFields" prefHeight="26.0" prefWidth="134.0" text="Wyczyść pola" />
+      <DatePicker fx:id="dpDataOd" layoutX="12.0" layoutY="534.0" prefHeight="31.0" prefWidth="215.0" promptText="Data Od" />
+      <DatePicker fx:id="dpDataDo" layoutX="12.0" layoutY="573.0" prefHeight="31.0" prefWidth="215.0" promptText="Data Do" />
    </children>
 </AnchorPane>
